@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemma 4 Developer Agent — Live Competition Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81',
+            },
+            dark: {
+              bg: '#0B0F19',
+              card: '#111827',
+              border: '#1F2937',
+              subtle: '#374151'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+    body { font-family: 'Inter', sans-serif; background-color: #0B0F19; color: #F3F4F6; }
+    code, pre { font-family: 'JetBrains Mono', monospace; }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="border-b border-dark-border bg-dark-bg/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
+        </div>
+        <div>
+          <h1 class="text-base font-bold text-white flex items-center gap-2">
+            Gemma 4 Developer Agent
+            <span class="text-xs px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 font-mono font-medium">LIVE</span>
+          </h1>
+          <p class="text-xs text-gray-400">Team: <span class="font-semibold text-gray-200" id="team-name">Tsuyoshi Chiba</span></p>
+        </div>
+      </div>
+      
+      <div class="flex items-center space-x-4">
+        <div class="text-right hidden sm:block">
+          <p class="text-xs text-gray-400 font-mono">Last Updated: <span id="last-updated" class="text-gray-200">Loading...</span></p>
+          <p class="text-[11px] text-emerald-400 flex items-center justify-end gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Syncs via GitHub Actions hourly
+          </p>
+        </div>
+        <a href="https://www.kaggle.com/competitions/gemma-4-developer-agent/leaderboard" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-dark-card hover:bg-dark-border text-gray-200 border border-dark-border transition">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          Leaderboard
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+    <!-- ACTIVE JOB BANNER -->
+    <div id="active-job-card" class="glass-card rounded-2xl p-6 border-brand-500/30 relative overflow-hidden shadow-2xl shadow-brand-900/10 hidden">
+      <div class="absolute -right-16 -top-16 w-64 h-64 bg-brand-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+        <div class="flex items-center space-x-3">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+          </span>
+          <h2 class="text-sm font-semibold tracking-wide uppercase text-amber-400 font-mono flex items-center gap-2">
+            Live Sandbox Evaluation in Progress
+          </h2>
+          <span class="text-xs px-2.5 py-0.5 rounded-md bg-dark-card text-gray-300 border border-dark-border font-mono" id="active-ref">Ref: Loading...</span>
+        </div>
+        <div class="text-xs text-gray-400 font-mono">
+          Est. Completion: <span id="active-eta" class="text-gray-200 font-semibold">Calculating...</span>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-200 font-medium mb-4" id="active-desc">Loading active submission details...</p>
+
+      <!-- Progress Bar -->
+      <div class="space-y-1.5">
+        <div class="flex justify-between text-xs font-mono text-gray-400">
+          <span>Elapsed: <strong id="active-elapsed" class="text-gray-200">0h</strong> / ~28h</span>
+          <span id="active-pct" class="text-brand-400 font-bold">0%</span>
+        </div>
+        <div class="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden p-0.5 border border-dark-border">
+          <div id="active-bar" class="h-full bg-gradient-to-r from-brand-600 via-indigo-500 to-emerald-400 rounded-full transition-all duration-1000 ease-out" style="width: 5%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS OVERVIEW CARDS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      
+      <!-- Card 1: Best Public Score -->
+      <div class="glass-card rounded-2xl p-5 relative overflow-hidden">
+        <div class="flex items-center justify-between text-gray-400 mb-2">
+          <span class="text-xs font-medium uppercase tracking-wider">Best Public Score</span>
+          <i data-lucide="award" class="w-4 h-4 text-amber-400"></i>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-3xl font-extrabold text-white font-mono" id="stat-score">0.20</span>
+          <span class="text-xs text-emerald-400 font-mono font-medium">12 / 58 tasks</span>
+        </div>
+        <p class="text-xs text-gray-400 mt-2 flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-amber-500"></span> Bronze Medal Zone (Top 7.2%)
+        </p>
+      </div>
+
+      <!-- Card 2: Leaderboard Rank -->
+      <div class="glass-card rounded-2xl p-5 relative overflow-hidden">
+        <div class="flex items-center justify-between text-gray-400 mb-2">
+          <span class="text-xs font-medium uppercase tracking-wider">Current Standings</span>
+          <i data-lucide="trending-up" class="w-4 h-4 text-brand-400"></i>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-3xl font-extrabold text-white font-mono" id="stat-rank">#314</span>
+          <span class="text-xs text-gray-400 font-mono">/ 4,356 teams</span>
+        </div>
+        <p class="text-xs text-gray-400 mt-2">
+          Top <strong class="text-gray-200">7.21%</strong> across competition
+        </p>
+      </div>
+
+      <!-- Card 3: Gold Medal Target -->
+      <div class="glass-card rounded-2xl p-5 relative overflow-hidden">
+        <div class="flex items-center justify-between text-gray-400 mb-2">
+          <span class="text-xs font-medium uppercase tracking-wider">Gold Cutoff</span>
+          <i data-lucide="sparkles" class="w-4 h-4 text-yellow-300"></i>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-3xl font-extrabold text-white font-mono">0.24</span>
+          <span class="text-xs text-amber-400 font-mono">Top 9</span>
+        </div>
+        <p class="text-xs text-gray-400 mt-2">
+          Gap to Gold: <strong class="text-amber-400 font-mono">+2 tasks</strong> (+0.034)
+        </p>
+      </div>
+
+      <!-- Card 4: Next Staged Variant -->
+      <div class="glass-card rounded-2xl p-5 relative overflow-hidden border-indigo-500/20">
+        <div class="flex items-center justify-between text-gray-400 mb-2">
+          <span class="text-xs font-medium uppercase tracking-wider">Next In Queue</span>
+          <i data-lucide="layers" class="w-4 h-4 text-indigo-400"></i>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-xl font-bold text-white font-mono">V12.2</span>
+          <span class="text-xs text-indigo-400 font-mono">Deep-Anchor</span>
+        </div>
+        <p class="text-xs text-gray-400 mt-2 font-mono">
+          T=0.2 / 4096 Think (Staged & Validated)
+        </p>
+      </div>
+
+    </div>
+
+    <!-- MAIN CHARTS ROW -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Chart 1: Ablation Score Progression (2 Columns) -->
+      <div class="lg:col-span-2 glass-card rounded-2xl p-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+          <div>
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <i data-lucide="line-chart" class="w-4 h-4 text-brand-400"></i>
+              Ablation & Score Progression
+            </h3>
+            <p class="text-xs text-gray-400">Public score evolution across deployed architectural iterations</p>
+          </div>
+          <div class="flex items-center gap-3 text-xs font-mono">
+            <span class="flex items-center gap-1.5 text-gray-300">
+              <span class="w-3 h-0.5 bg-brand-400"></span> Score
+            </span>
+            <span class="flex items-center gap-1.5 text-gray-400">
+              <span class="w-3 h-0.5 bg-amber-400/60 border-t border-dashed"></span> Gold Target (0.24)
+            </span>
+          </div>
+        </div>
+        
+        <div class="h-72 w-full">
+          <canvas id="scoreChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Cutoff Radar / Comparison (1 Column) -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2 mb-1">
+            <i data-lucide="target" class="w-4 h-4 text-amber-400"></i>
+            Leaderboard Tiers
+          </h3>
+          <p class="text-xs text-gray-400 mb-6">Distance to competitive medal boundaries (58 tasks)</p>
+
+          <div class="space-y-4 font-mono text-xs">
+            
+            <!-- Tier 1: World 1st -->
+            <div>
+              <div class="flex justify-between text-gray-300 mb-1">
+                <span>Rank 1 (Yurnero)</span>
+                <span class="font-bold text-white">0.29 (17 solved)</span>
+              </div>
+              <div class="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                <div class="h-full bg-purple-500 rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Tier 2: Safe Gold -->
+            <div>
+              <div class="flex justify-between text-gray-300 mb-1">
+                <span class="text-amber-400">Safe Gold (Top 9)</span>
+                <span class="font-bold text-amber-400">0.24 (14 solved)</span>
+              </div>
+              <div class="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                <div class="h-full bg-amber-400 rounded-full" style="width: 82.7%"></div>
+              </div>
+            </div>
+
+            <!-- Tier 3: Gold Boundary -->
+            <div>
+              <div class="flex justify-between text-gray-400 mb-1">
+                <span>Gold Boundary (~60 teams tied)</span>
+                <span class="font-semibold text-gray-300">0.22 (13 solved)</span>
+              </div>
+              <div class="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                <div class="h-full bg-yellow-600 rounded-full" style="width: 75.8%"></div>
+              </div>
+            </div>
+
+            <!-- Tier 4: My Team -->
+            <div class="p-3 rounded-xl bg-brand-500/10 border border-brand-500/30">
+              <div class="flex justify-between text-brand-300 font-bold mb-1">
+                <span>★ Our Best (Rank 314)</span>
+                <span>0.20 (12 solved)</span>
+              </div>
+              <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                <div class="h-full bg-brand-500 rounded-full" style="width: 68.9%"></div>
+              </div>
+              <p class="text-[11px] text-gray-400 mt-2 font-sans">
+                Need <strong class="text-amber-400">+2 tasks</strong> to break firmly into Gold medal position.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-dark-border text-[11px] text-gray-400">
+          Scoring logic: Truncation at 2 decimal digits (1 task = 0.01724...).
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ARCHITECTURAL PILLARS / KEY FINDINGS -->
+    <div class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+          Architectural Pillars & Hard Constraints
+        </h3>
+        <span class="text-xs text-gray-400">Reverse-Engineered Specs</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="findings-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- SUBMISSION HISTORY TABLE -->
+    <div class="glass-card rounded-2xl p-6 overflow-hidden">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="history" class="w-4 h-4 text-brand-400"></i>
+            Official Submission Ledger
+          </h3>
+          <p class="text-xs text-gray-400">Complete execution record on Kaggle 58-task sandbox harness</p>
+        </div>
+        <span class="text-xs font-mono text-gray-400" id="total-subs-count">Loading...</span>
+      </div>
+
+      <div class="overflow-x-auto -mx-6">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-dark-card/50 text-gray-400 font-mono uppercase tracking-wider border-y border-dark-border">
+            <tr>
+              <th class="py-3 px-6">Ref</th>
+              <th class="py-3 px-6">Date (JST)</th>
+              <th class="py-3 px-6">Status</th>
+              <th class="py-3 px-6 text-right">Score</th>
+              <th class="py-3 px-6">Description / Key Configuration</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-dark-border font-mono" id="submissions-tbody">
+            <tr>
+              <td colspan="5" class="py-8 text-center text-gray-500">Loading ledger data...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- COMMUNITY DISCUSSIONS -->
+    <div class="glass-card rounded-2xl p-6">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="message-square" class="w-4 h-4 text-sky-400"></i>
+            Community Intelligence & Host Announcements
+          </h3>
+          <p class="text-xs text-gray-400">Live topics from Kaggle Discussions</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="discussions-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-dark-border py-8 text-center text-xs text-gray-500 space-y-2">
+    <p>Google - The Gemma 4 Developer Agent Competition Dashboard</p>
+    <p class="font-mono text-gray-400">Architected by Senior Technical Pair Programming Agent • Built with Tailwind, Chart.js & Kaggle API</p>
+  </footer>
+
+  <!-- DATA HYDRATION SCRIPT -->
+  <script>
+    async function loadDashboard() {
+      try {
+        const res = await fetch('data/dashboard_data.json?t=' + Date.now());
+        if (!res.ok) throw new Error('Failed to load JSON');
+        const data = await res.json();
+        renderDashboard(data);
+      } catch (err) {
+        console.error('Data load error:', err);
+        document.getElementById('last-updated').textContent = 'Error loading data';
+      }
+    }
+
+    function renderDashboard(data) {
+      // 1. Meta
+      document.getElementById('last-updated').textContent = data.last_updated_jst || data.last_updated_utc;
+      if (data.my_team) {
+        document.getElementById('team-name').textContent = data.my_team.team_name || 'Tsuyoshi Chiba';
+        document.getElementById('stat-rank').textContent = '#' + (data.my_team.rank || 314);
+      }
+      document.getElementById('stat-score').textContent = (data.best_score || 0.20).toFixed(2);
+
+      // 2. Active Job Banner
+      const job = data.active_job;
+      const jobCard = document.getElementById('active-job-card');
+      if (job) {
+        jobCard.classList.remove('hidden');
+        document.getElementById('active-ref').textContent = `Ref: ${job.ref}`;
+        document.getElementById('active-desc').textContent = job.description;
+        document.getElementById('active-elapsed').textContent = `${job.elapsed_hours}h`;
+        document.getElementById('active-pct').textContent = `${job.progress_pct}%`;
+        document.getElementById('active-eta').textContent = job.est_completion_jst;
+        document.getElementById('active-bar').style.width = `${job.progress_pct}%`;
+      } else {
+        jobCard.classList.add('hidden');
+      }
+
+      // 3. Key Findings Grid
+      const grid = document.getElementById('findings-grid');
+      grid.innerHTML = (data.key_findings || []).map(f => `
+        <div class="glass-card rounded-xl p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-brand-500/20 text-brand-300 font-mono">${f.tag}</span>
+            </div>
+            <h4 class="text-xs font-bold text-white mb-1.5">${f.title}</h4>
+            <p class="text-[11px] text-gray-400 leading-relaxed">${f.desc}</p>
+          </div>
+        </div>
+      `).join('');
+
+      // 4. Submissions Ledger Table
+      const subs = data.submissions || [];
+      document.getElementById('total-subs-count').textContent = `${subs.length} attempts recorded`;
+      const tbody = document.getElementById('submissions-tbody');
+      
+      tbody.innerHTML = subs.map(s => {
+        let statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-gray-800 text-gray-300 border border-gray-700">${s.status}</span>`;
+        if (s.status === 'COMPLETE') {
+          statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">COMPLETE</span>`;
+        } else if (s.status === 'PENDING') {
+          statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30 animate-pulse">PENDING</span>`;
+        }
+
+        const scoreStr = s.score !== null ? s.score.toFixed(2) : '—';
+        const isBest = s.score && Math.abs(s.score - data.best_score) < 0.001;
+
+        return `
+          <tr class="hover:bg-dark-card/30 transition">
+            <td class="py-3 px-6 text-gray-300">${s.ref}</td>
+            <td class="py-3 px-6 text-gray-400 whitespace-nowrap">${s.date_jst || s.date_utc}</td>
+            <td class="py-3 px-6">${statusBadge}</td>
+            <td class="py-3 px-6 text-right font-bold ${isBest ? 'text-amber-400 font-extrabold' : 'text-gray-200'}">
+              ${scoreStr} ${isBest ? '★' : ''}
+            </td>
+            <td class="py-3 px-6 text-gray-300 max-w-md truncate" title="${s.description}">
+              ${s.description}
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // 5. Discussions Container
+      const disc = document.getElementById('discussions-container');
+      disc.innerHTML = (data.discussions || []).map(d => `
+        <div class="p-3 rounded-xl bg-dark-card/50 border border-dark-border hover:border-gray-700 transition flex items-center justify-between gap-3">
+          <div class="min-w-0">
+            <a href="https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/${d.id}" target="_blank"
+               class="text-xs font-medium text-gray-200 hover:text-brand-400 truncate block transition">
+              ${d.title}
+            </a>
+            <div class="flex items-center gap-3 text-[10px] text-gray-500 font-mono mt-1">
+              <span>Topic #${d.id}</span>
+              <span>•</span>
+              <span>${d.comments} comments</span>
+            </div>
+          </div>
+          <span class="text-xs font-mono font-bold text-gray-400 bg-dark-bg px-2 py-1 rounded border border-dark-border">
+            +${d.votes}
+          </span>
+        </div>
+      `).join('');
+
+      // 6. Chart.js Ablation Curve
+      renderChart(subs);
+      lucide.createIcons();
+    }
+
+    function renderChart(submissions) {
+      // Filter complete submissions and reverse for chronological order
+      const completed = submissions
+        .filter(s => s.status === 'COMPLETE' && s.score !== null)
+        .slice()
+        .reverse();
+
+      const labels = completed.map((s, idx) => `V${idx + 1}`);
+      const scores = completed.map(s => s.score);
+      const target = completed.map(() => 0.24);
+
+      const ctx = document.getElementById('scoreChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Public Score',
+              data: scores,
+              borderColor: '#6366f1',
+              backgroundColor: 'rgba(99, 102, 241, 0.1)',
+              borderWidth: 3,
+              pointBackgroundColor: '#818cf8',
+              pointBorderColor: '#0B0F19',
+              pointBorderWidth: 2,
+              pointRadius: 5,
+              tension: 0.3,
+              fill: true
+            },
+            {
+              label: 'Gold Cutoff (0.24)',
+              data: target,
+              borderColor: 'rgba(251, 191, 36, 0.7)',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              pointRadius: 0,
+              fill: false
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#111827',
+              borderColor: '#374151',
+              borderWidth: 1,
+              titleFont: { family: 'JetBrains Mono', size: 12 },
+              bodyFont: { family: 'JetBrains Mono', size: 12 },
+              padding: 10,
+              callbacks: {
+                label: function(context) {
+                  return `Score: ${context.parsed.y.toFixed(2)}`;
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              min: 0.0,
+              max: 0.30,
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { color: '#9CA3AF', font: { family: 'JetBrains Mono', size: 10 } }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { color: '#9CA3AF', font: { family: 'JetBrains Mono', size: 10 } }
+            }
+          }
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadDashboard();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
