@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-03 23:58:05 UTC",
-  "last_updated_jst": "2026-11-04 08:58:05 JST",
+  "last_updated_utc": "2026-11-04 00:01:13 UTC",
+  "last_updated_jst": "2026-11-04 09:01:13 JST",
   "active_job": {
     "ref": 57933549,
     "description": "V12.1 Pathspec-Exclusion (Localization Boost + Coupled, T=0.2, 2048 Think): Follow-up to Ref 57884809 (Score 0.15)",
     "start_jst": "2026-11-03 13:59:27 JST",
     "elapsed_hours": 19.0,
-    "progress_pct": 67.8,
+    "progress_pct": 68.0,
     "est_completion_jst": "2026-11-04 17:59:27 JST"
   },
   "my_team": {
