@@ -34,7 +34,22 @@ AIはとても賢いですが、実は**「おっちょこちょいな弱点」*
 （例：「古いバージョン専用のテスト」と「新しいバージョン専用のテスト」が両方入っていて、どうやっても合格できないバグ）。
 つまり、**本当の満点は58問ではなく実質56問！** 1問の正解がますます貴重になっています。
 
-### ⑤ ぼくたちが提出している「魔法の ZIP ファイル（submission.zip）」の中身ってなに？
+### ⑤ 実際にはどんな問題が出るの？（身近なたとえで見てみよう！）
+AIロボットに渡される問題は、世界中で何千万人も使っている有名アプリの「本物のバグ（欠陥）」です。
+
+**【出題の例：『ファイルのアップロードが動かない！』事件】**
+- **お願いの手紙（問題文）**:
+  「ユーザーから『普通の本物のファイルはアップロードできるのに、アプリが作った特別なファイル（代理オブジェクト）をアップロードしようとすると、エラーになって止まっちゃう！直して！』と怒りの手紙が届いたよ。」
+- **AIが探すリポジトリ（教科書）**:
+  何百個ものファイル、合計何万行ものプログラムの中から、原因があるファイルを自分で探します。
+- **AIが見つけた原因**:
+  プログラムの中に `if isinstance(fp, _SupportsRead):`（本物のファイル型かどうかだけを厳しくチェックする）と書かれていて、特別なファイルが門前払いされていた！
+- **AIが書くべき正解（解法パッチ）**:
+  「本物のファイル型」に加えて、**「または、中身を読める機能（read）を持っているなら通してあげる」** という条件（`or hasattr(fp, "read")`）をたった1行書き足すだけ！
+- **これのどこが難しいの？**:
+  直すコードはたった1行でも、**「何万行もあるファイルの中から、8分以内にたった1箇所の間違いを見つけ出し、他の場所を一切壊さずに直す」** のは、人間のベテランプログラマーでも冷や汗が出るほど大変だからです！
+
+### ⑥ ぼくたちが提出している「魔法の ZIP ファイル（submission.zip）」の中身ってなに？
 「AIの大会」というと、何十ギガバイトもある巨大なロボットの頭脳を丸ごとアップロードしているように思えますよね。
 でも実は、**提出しているのはたった「3キロバイト（写真1枚の1000分の1以下！）」の小さな ZIP ファイル** なんです！
 
@@ -52,7 +67,7 @@ Googleのテスト会場には、すでに巨大な最新AI（Gemma 4）が待�
 
 この 4 つのファイルが組み合わさることで、ただの AI が **「世界トップクラスの自律プログラマー」** に変身します！
 
-### ⑥ いま戦っていること
+### ⑦ いま戦っていること
 - **V12.1 の結果が出ました！**: 本日夕方 17:45 に採点が完了し、前回の 9問（0.15）から **10問（0.17）へと確実に正解数を伸ばしました！** 「関係ないページを見ない」作戦がしっかり効いた証拠です。
 - **そして即座に最強の最新AI（V12.3）が出陣！**: 採点完了からたったの 5秒後、手元の見張り番ロボットが本日分の提出枠を使って、新兵器「超高速サーチ（findfile）＋ 1問7分の安全時計」を搭載した **V12.3（Ref 57978613）** をテスト会場へ送り込みました！
 - 現在、Googleの秘密の部屋で 58問を受験中です（明日 11月5日の夜に結果が出る予定です！）。
@@ -174,6 +189,134 @@ Score = (解決したタスク数) / 58
 > **ゴールドメダル獲得の絶対条件**:
 > 全体 4,356 チーム中 **Top 18 位（上位 0.4%）以内**。
 > 現在のスコア `0.20`（12問解決）から、**あと 1 問解決（0.22）でゴールド圏突入、あと 2 問解決（0.24）で確実なゴールドメダル圏（Top 9 以内）** に到達します。
+
+---
+
+### 1.5 実際に出題される問題・与えられる情報・解法の完全実例
+
+本コンペでエージェントが実際に直面するタスクの「入力データ」「具体的課題」「正解パッチ（解法）」の全容を、手元の公式データセット（[`data/tasks.jsonl`](file:///Users/echo/kaggle/gemma-4-developer-agent/data/tasks.jsonl)）の実例に基づき解説します。
+
+#### ① エージェントに与えられる「全情報」と作業環境
+1 つのタスクが開始されると、ハーネスは白紙の Linux コンテナ環境を作成し、エージェントに以下の情報と環境を提供します：
+
+```
+【エージェントに渡される入力データ (Input Prompt)】
+  1. problem_statement : GitHub 上に投稿された Issue の生テキスト（バグ報告やエラーログ）
+  2. hints_text        : Issue にぶら下がった開発者のコメントや関連 PR の議論
+  3. repo              : 対象リポジトリ名（例: fastapi/fastapi, psf/requests, Textualize/rich）
+  4. base_commit       : バグが存在する時点の Git コミットハッシュ（この状態で /workspace に展開）
+
+【エージェントから隠蔽されている情報 (Hidden / Ground Truth)】
+  ・patch              : 人間のコア開発者がコミットした「正解修正コード（正解 diff）」
+  ・test_patch         : 採点機が正誤判定のために実行する「非公開の新規テストコード」
+```
+
+エージェントにはインターネット接続はなく、あらかじめインストールされた Python 仮想環境と `/workspace` 内のコードベースのみが与えられます。
+
+---
+
+#### ② 実際に出題される問題の実例と解法（3大パターン）
+
+手元のデータセット 129 問から、典型的な 3 つの実例を紹介します。
+
+##### 実例 A【境界値・型判定バグ: Requests `requests_7502`】
+世界中で使われる HTTP 通信ライブラリ `requests` における、オブジェクト型判定の欠陥です。
+
+- **問題文（`problem_statement`）**:
+  > *"Fix `_encode_files` detection for `__getattr__`-based file wrappers."*  
+  > （ファイルアップロード処理 `_encode_files` において、`__getattr__` を使ったファイルラッパーオブジェクトを渡すと、ファイルとして認識されず例外が発生するバグを修正してください。）
+- **バグの根本原因**:
+  - `src/requests/models.py` 内で、ファイルかどうかを `isinstance(fp, _SupportsRead)` で厳格に型判定していた。
+  - しかし、Django や AWS S3 等のライブラリが生成するプロキシオブジェクト（代理オブジェクト）は、このクラスを直接継承していないため弾かれていた。
+- **正解パッチ（解法 diff）**:
+  ```diff
+  --- a/src/requests/models.py
+  +++ b/src/requests/models.py
+  @@ -236,7 +236,9 @@ def _encode_files(
+               if isinstance(fp, (str, bytes, bytearray)):
+                   fdata = fp
+  -            elif isinstance(fp, _SupportsRead):  # defensive check for untyped callers
+  +            # data that proxies attributes to underlying objects needs hasattr
+  +            # defensive check for untyped callers
+  +            elif isinstance(fp, _SupportsRead) or hasattr(fp, "read"):
+                   fdata = fp
+  ```
+  - **解説**: 修正量は **わずか 2 行**。`or hasattr(fp, "read")`（read メソッドを持っているならファイルとみなす）を追加するだけで解決します。
+
+##### 実例 B【プロトコル契約違反バグ: FastAPI `fastapi_15588`】
+Web フレームワーク `FastAPI` における、Server-Sent Events (SSE) 通信のバリデーション欠陥です。
+
+- **問題文（`problem_statement`）**:
+  > *"Validate Server Sent Event fields to avoid applications from sending broken data."*  
+  > （SSE 通信において、イベント名や ID フィールドに改行コードが含まれているとプロトコル仕様が壊れるため、改行が含まれていた場合は例外を投げるバリデーションを追加してください。）
+- **正解パッチ（解法 diff）**:
+  ```diff
+  --- a/fastapi/sse.py
+  +++ b/fastapi/sse.py
+  @@ -33,10 +33,20 @@ class EventSourceResponse(StreamingResponse):
+       media_type = "text/event-stream"
+   
+  -def _check_id_no_null(v: str | None) -> str | None:
+  +def _check_single_line(v: str | None, field_name: str) -> str | None:
+  +    if v is not None and ("\r" in v or "\n" in v):
+  +        raise ValueError(f"SSE '{field_name}' must be a single line")
+  +    return v
+  +
+  +def _check_event_single_line(v: str | None) -> str | None:
+  +    return _check_single_line(v, "event")
+  ```
+  - **解説**: `fastapi/sse.py` を特定し、改行コード（`\r`, `\n`）を検出した際に仕様通りのエラーメッセージ `ValueError("SSE '...' must be a single line")` を発生させる関数を定義します。
+
+##### 実例 C【描画・スタイルバグ: Rich `rich_4079`】
+ターミナルリッチ表示ライブラリ `rich` における Markdown テーブル描画の崩れです。
+
+- **問題文（`problem_statement`）**:
+  > *"Inline table code. Fixes issue #4038."*  
+  > （Markdown の表（Table）の中でインラインコード \`code\` を使用した際、セルの折り返しや背景スタイルの適用順序が狂う問題を修正してください。）
+- **正解パッチ（解法 diff）**:
+  - `rich/markdown.py` の `TableElement` クラス内にある `on_text` メソッドで、Text オブジェクトを初期化する際のスタイル適用順序を 1 行変更。
+
+---
+
+#### ③ AI エージェントはどうやってこれを解くのか？（4 フェーズの自律プロセス）
+
+エージェント（Gemma 4）は、人間が介入できない完全自律環境で、以下の 4 段階のツール呼び出しを連携させて問題を解きます。
+
+```mermaid
+flowchart TD
+    Issue["GitHub Issue (問題文) 受領"] --> P1["Phase 1: 局所化 (Locate)\nUniversal findfile / git grep\n何万行から対象ファイルを特定"]
+    P1 --> P2["Phase 2: 読解 (Read)\nread_file (40〜80行)\n対象関数と前後の文脈を把握"]
+    P2 --> P3["Phase 3: 外科手術的修正 (Edit)\nedit_file (3〜5行ユニーク置換)\n最小限の差分 (diff) を生成"]
+    P3 --> P4["Phase 4: 検証と提出 (Verify & Submit)\npytest -x / git diff 確認\nsubmit_patch で提出"]
+```
+
+1. **Phase 1: 高速局所化（Locate: 1〜3 手目）**:
+   - 問題文から `_encode_files` や `_SupportsRead` といった固有の識別子を抽出。
+   - `findfile`（IDF スコアリング）または `git grep -n "TOKEN"` を 1 コール実行し、`src/requests/models.py` の 236 行目付近に対象コードがあることを突き止める。
+2. **Phase 2: ピンポイント読解（Read: 4〜6 手目）**:
+   - `read_file(path="src/requests/models.py", start_line=220, end_line=260)` を呼び出し、前後の条件分岐と型チェックの書き方を把握する。
+3. **Phase 3: 外科手術的修正（Edit: 7〜11 手目）**:
+   - `edit_file` を呼び出し、`old_string`（前後の行を含めた 4 行）を `new_string`（`or hasattr(fp, "read")` を加えた行）で置換する。
+4. **Phase 4: 検証と提出（Verify & Submit: 12 手目以降）**:
+   - `python -m pytest tests/test_requests.py -k "encode_files" -x -q` で手元検証。
+   - `git diff` を確認し、余計なテスト改変がないことを確認して `submit_patch` を実行。
+
+---
+
+#### ④ なぜ「たった 2 行の修正」が世界トップ AI にとっても超難問なのか？
+
+世界中の最先端 AI でも「全体の 3 割（17 問）」しか解けない理由は、コード修正そのものではなく、**コンペ特有の過酷な物理的落とし穴** にあります。
+
+1. **針の穴を探す探索の壁（局所化の失敗）**:
+   - リポジトリには何百ものファイルが存在します。アルファベット順で `docs/` や `tests/` が先頭にあるため、不用意に grep を叩くと検索結果がノイズで埋まり、**「直すべきファイルがどれか分からないまま 8 分が経過してタイムアウト（0点）」** になります。
+2. **記憶喪失の壁（ADK 14,336 トークンの崖）**:
+   - 迷走してファイルをたくさん読みすぎると、累積履歴が 14k トークンを超え、Google ADK の要約機能が発動して「最初のお願いの手紙の内容（厳密な関数名やエラー文字列）」を忘れてしまいます。
+3. **偽陰性の罠（テスト環境のバグ）**:
+   - スコアラー環境のプラグイン不足（`anyio` 等）により、**正しい修正をしたのに手元の pytest が赤（失敗）になる** ケースが頻発します。未熟な AI は「自分の修正が間違っていた」と勘違いし、せっかくの正解コードを自分で消して 0 点になります（Grader-First 規律が必要な理由）。
+4. **構造的デッドタスクの存在**:
+   - 前述（第 11 章）の通り、テスト環境の出題ミスにより、神が書いた完璧なパッチを当てても絶対に合格できないタスクが混ざっています。
+
+当チームの V9 や V12.3 は、これらの落とし穴を 1 つずつ塞ぎ、**「迷わず、焦らず、壊さず、8分以内にピンポイントで外科手術を行う」** ように極小プロンプトで調教されています。
 
 ---
 
