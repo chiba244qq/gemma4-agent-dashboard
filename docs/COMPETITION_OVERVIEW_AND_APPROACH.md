@@ -301,6 +301,9 @@ flowchart TD
    - `python -m pytest tests/test_requests.py -k "encode_files" -x -q` で手元検証。
    - `git diff` を確認し、余計なテスト改変がないことを確認して `submit_patch` を実行。
 
+> [!TIP] より詳しい実例データと失敗ログの解剖
+> 実際に入力される生の JSON プロンプト、エージェントの生ログ（Step-by-Step の Tool 呼び出し推移）、採点機が裏で実行した非公開テストコード（`test_patch`）、および 0 点に終わる典型的な失敗ログの生データについては、専用詳細実例集 **[`docs/REAL_WORLD_TASK_CASE_STUDIES.md`](file:///Users/echo/kaggle/gemma-4-developer-agent/docs/REAL_WORLD_TASK_CASE_STUDIES.md)**（FastAPI `fastapi_15588`、Requests `requests_7505`、Rich 等を網羅）にて完全公開しています。合わせてご参照ください。
+
 ---
 
 #### ④ なぜ「たった 2 行の修正」が世界トップ AI にとっても超難問なのか？
