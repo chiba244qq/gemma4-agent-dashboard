@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-04 15:56:33 UTC",
-  "last_updated_jst": "2026-11-05 00:56:33 JST",
+  "last_updated_utc": "2026-11-04 21:43:51 UTC",
+  "last_updated_jst": "2026-11-05 06:43:51 JST",
   "active_job": {
     "ref": 57978613,
     "description": "V12.3 findfile-Safe (IDF-Ranker 3.2% Miss + 7m Cap + T=0.2/2048 Think): Follow-up to Ref 57933549 (Score 0.17)",
     "start_jst": "2026-11-04 17:45:16 JST",
-    "elapsed_hours": 7.2,
-    "progress_pct": 25.7,
+    "elapsed_hours": 13.0,
+    "progress_pct": 46.3,
     "est_completion_jst": "2026-11-05 21:45:16 JST"
   },
   "my_team": {
@@ -263,16 +263,16 @@
       "comments": 2
     },
     {
+      "id": 755527,
+      "title": "The queue time should improve once the ARC-2 backlogs are cleared",
+      "votes": 0,
+      "comments": 2
+    },
+    {
       "id": 755677,
       "title": "Scoring zero when using LoRA adapters",
       "votes": 0,
-      "comments": 4
-    },
-    {
-      "id": 755542,
-      "title": "Sending public tasks to a hosted model provider: how should the Competition Data rule be read?",
-      "votes": 0,
-      "comments": 1
+      "comments": 5
     }
   ],
   "key_findings": [
