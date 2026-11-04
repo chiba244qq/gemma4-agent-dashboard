@@ -2,55 +2,73 @@
   {
     "id": "COMPETITION_OVERVIEW_AND_APPROACH",
     "file": "docs/COMPETITION_OVERVIEW_AND_APPROACH.md",
-    "date": "2026-11-04",
+    "order": 1,
+    "status": "active",
+    "step_label": "STEP 1: 最初に読むべきマスター文書",
+    "date": "2026-11-04 (最新版)",
     "title": "コンペ概要と現在の取り組み・全歴史総括（中学生向け超入門付き）",
-    "badge": "最新総括",
+    "badge": "必読・最新マスター",
     "badge_color": "brand",
-    "summary": "中学生向けかんたん解説から、V1〜V12.1の全変遷、Compaction Cliff等の重要発見、現行採点結果（V11→V12.1）までを網羅したマスター総括文書。"
+    "summary": "【最初にお読みください】中学生向け超入門、提出ファイル（submission.zip）の内部解剖、V1〜V12.3の全変遷、解けない問題（デッドタスク）や12時間壁の最新知見まで、大会のすべてを1本で理解できる最新総括書。"
   },
   {
     "id": "COMPETITION_ROADMAP",
     "file": "docs/COMPETITION_ROADMAP.md",
-    "date": "2026-11-03",
+    "order": 2,
+    "status": "active",
+    "step_label": "STEP 2: 進行管理とスケジュール",
+    "date": "2026-11-04 (更新)",
     "title": "総合作戦ロードマップ & アクションアイテム台帳",
-    "badge": "ロードマップ",
+    "badge": "実行計画",
     "badge_color": "emerald",
-    "summary": "Day 1から最終提出までのフェーズ別作戦計画（Paper Track、Main Track、Final 2枠選定）と、リアルタイムのチェックリスト。"
-  },
-  {
-    "id": "GOLD_MEDAL_STRATEGY",
-    "file": "docs/GOLD_MEDAL_STRATEGY.md",
-    "date": "2026-11-01",
-    "title": "ゴールドメダル獲得に向けた数理的戦略書",
-    "badge": "戦略書",
-    "badge_color": "amber",
-    "summary": "4,356チームにおけるGoldカットオフ（Top 18 / 0.22〜0.24+）の数理分析と、未解決プールからあと2問を拾い上げる具体的アプローチ。"
+    "summary": "【進行管理】Day 1から最終提出までのフェーズ別作戦計画、日次提出のリアルタイム進捗、および当チームの現在地（自己ベスト0.20 / Rank 314）とゴールド境界（0.24）へのマイルストーン。"
   },
   {
     "id": "STRATEGY_AND_OPERATIONS",
     "file": "docs/STRATEGY_AND_OPERATIONS.md",
+    "order": 3,
+    "status": "active",
+    "step_label": "STEP 3: 自動化と運用ルール",
     "date": "2026-10-31",
     "title": "日次提出サイクルと運用プロトコル規定書",
     "badge": "運用規律",
     "badge_color": "sky",
-    "summary": "Kaggleの排他制御（PENDINGロック）とUTC 00:00リセットに最適化した日次提出パイプライン、監視自動化、安全枠運用の手引き。"
+    "summary": "【運用の手引き】Kaggleの排他制御（PENDINGロック）とUTC 00:00リセットに最適化した日次提出パイプライン、手元Macの自動監視デーモンによる秒速提出の仕組みを定義。"
+  },
+  {
+    "id": "GOLD_MEDAL_STRATEGY",
+    "file": "docs/GOLD_MEDAL_STRATEGY.md",
+    "order": 4,
+    "status": "deprecated",
+    "step_label": "REFERENCE: 初期分析（一部前提変更あり）",
+    "date": "2026-11-01 (旧版)",
+    "title": "ゴールドメダル獲得に向けた数理的戦略書（初期計画）",
+    "badge": "⚠️ 一部前提訂正あり",
+    "badge_color": "amber",
+    "summary": "【現状非即応・参考】4,356チームのメダル境界分析。※本文中の「0.22でゴールド」は提出順同点処理によりRank 70へ沈むことが判明し、現在は「0.24必須」に訂正済み（OVERVIEW第7章参照）。"
   },
   {
     "id": "PAPER_TRACK_WRITEUP_JA",
     "file": "docs/PAPER_TRACK_WRITEUP_JA.md",
-    "date": "2026-10-28",
+    "order": 5,
+    "status": "deprecated",
+    "step_label": "ARCHIVE: 論文ドラフト（優先度低・凍結中）",
+    "date": "2026-10-28 (凍結)",
     "title": "Paper Track ($35,000) 論文原稿（日本語ドラフト）",
-    "badge": "論文ドラフト",
-    "badge_color": "purple",
-    "summary": "Gemma 4 31Bのコンテキスト圧縮の崖、Grader-First原則、黄金予算の実機アブレーションを学術論文形式で体系化したドラフト。"
+    "badge": "📦 凍結アーカイブ",
+    "badge_color": "gray",
+    "summary": "【現状非即応・凍結】Gemma 4のコンテキスト圧縮崖や黄金予算を論文形式でまとめた初期原稿。現在はユーザー指示に基づきMain Track（メダル獲得）へ全リソースを集中しているため更新凍結中。"
   },
   {
     "id": "PAPER_TRACK_WRITEUP",
     "file": "docs/PAPER_TRACK_WRITEUP.md",
-    "date": "2026-10-28",
-    "title": "Paper Track ($35,000) Competition Writeup (English Official)",
-    "badge": "Official Paper",
-    "badge_color": "indigo",
-    "summary": "Official English writeup draft detailing methodology, ablation studies, and architectural breakthroughs for the Paper Track prize."
+    "order": 6,
+    "status": "deprecated",
+    "step_label": "ARCHIVE: Official Paper Draft (Frozen)",
+    "date": "2026-10-28 (Frozen)",
+    "title": "Paper Track Competition Writeup (English Official Draft)",
+    "badge": "📦 Inactive Draft",
+    "badge_color": "gray",
+    "summary": "【Inactive / Frozen】Early academic paper draft detailing methodology as of Day 8. Kept for historical reference while all resources are focused on the Main Track."
   }
 ]
