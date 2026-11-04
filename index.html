@@ -7,6 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -41,6 +42,23 @@
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
+    /* Markdown Modal Styles */
+    .md-content h1 { font-size: 1.75rem; font-weight: 800; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #ffffff; border-bottom: 1px solid #374151; padding-bottom: 0.5rem; }
+    .md-content h2 { font-size: 1.35rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #f3f4f6; border-bottom: 1px solid #1f2937; padding-bottom: 0.35rem; }
+    .md-content h3 { font-size: 1.15rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem; color: #e5e7eb; }
+    .md-content h4 { font-size: 1.0rem; font-weight: 600; margin-top: 1.0rem; margin-bottom: 0.5rem; color: #d1d5db; }
+    .md-content p { margin-bottom: 0.85rem; line-height: 1.65; color: #d1d5db; font-size: 0.875rem; }
+    .md-content ul, .md-content ol { margin-left: 1.5rem; margin-bottom: 1.0rem; font-size: 0.875rem; color: #d1d5db; }
+    .md-content ul { list-style-type: disc; }
+    .md-content ol { list-style-type: decimal; }
+    .md-content li { margin-bottom: 0.35rem; }
+    .md-content pre { background: #0B0F19; border: 1px solid #1F2937; padding: 1rem; border-radius: 0.75rem; overflow-x: auto; margin-bottom: 1rem; }
+    .md-content code { background: #1f2937; color: #818cf8; padding: 0.15rem 0.35rem; border-radius: 0.25rem; font-size: 0.825rem; }
+    .md-content pre code { background: transparent; color: #e5e7eb; padding: 0; font-size: 0.825rem; }
+    .md-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.25rem; font-size: 0.825rem; }
+    .md-content th, .md-content td { border: 1px solid #374151; padding: 0.5rem 0.75rem; text-align: left; }
+    .md-content th { background: #1f2937; color: #f9fafb; font-weight: 600; }
+    .md-content blockquote { border-left: 4px solid #6366f1; padding-left: 1rem; margin-left: 0; margin-bottom: 1rem; color: #9ca3af; font-style: italic; }
   </style>
 </head>
 <body class="min-h-screen antialiased selection:bg-brand-500 selection:text-white">
@@ -391,6 +409,24 @@
       </div>
     </div>
 
+    <!-- DOCUMENT ARCHIVE (CHRONOLOGICAL) -->
+    <div class="glass-card rounded-2xl p-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="book-open" class="w-4 h-4 text-brand-400"></i>
+            Strategy & Research Documents Archive (時系列ドキュメント)
+          </h3>
+          <p class="text-xs text-gray-400">これまでに策定・検証した戦略書、論文ドラフト、ロードマップを時系列で閲覧・全文プレビューできます</p>
+        </div>
+        <span class="text-xs font-mono text-gray-400" id="docs-count">6 documents available</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="docs-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
     <!-- COMMUNITY DISCUSSIONS -->
     <div class="glass-card rounded-2xl p-6">
       <div class="flex items-center justify-between mb-4">
@@ -410,6 +446,31 @@
 
   </main>
 
+  <!-- MARKDOWN VIEWER MODAL -->
+  <div id="doc-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 sm:p-6">
+    <div class="glass-card bg-dark-card border border-dark-border w-full max-w-4xl max-h-[90vh] rounded-2xl flex flex-col shadow-2xl overflow-hidden">
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-dark-border flex items-center justify-between bg-dark-bg/60">
+        <div class="flex items-center gap-3 min-w-0">
+          <i data-lucide="file-text" class="w-5 h-5 text-brand-400 shrink-0"></i>
+          <h3 id="modal-title" class="text-sm sm:text-base font-bold text-white truncate">Document Title</h3>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="modal-raw-link" href="#" target="_blank" class="px-2.5 py-1 text-xs font-mono rounded bg-dark-bg hover:bg-dark-border text-gray-300 border border-dark-border transition">
+            Raw .md
+          </a>
+          <button onclick="closeDocModal()" class="w-8 h-8 rounded-lg bg-dark-bg hover:bg-dark-border text-gray-400 hover:text-white flex items-center justify-center border border-dark-border transition">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Modal Body -->
+      <div id="modal-body" class="p-6 overflow-y-auto flex-1 md-content text-gray-200">
+        <div class="text-center py-12 text-gray-500 font-mono">Loading document...</div>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="border-t border-dark-border py-8 text-center text-xs text-gray-500 space-y-2">
     <p>Google - The Gemma 4 Developer Agent Competition Dashboard</p>
@@ -428,7 +489,82 @@
         console.error('Data load error:', err);
         document.getElementById('last-updated').textContent = 'Error loading data';
       }
+
+      // Load Document Manifest
+      try {
+        const dRes = await fetch('docs/manifest.json?t=' + Date.now());
+        if (dRes.ok) {
+          const docs = await dRes.json();
+          renderDocuments(docs);
+        }
+      } catch (err) {
+        console.error('Doc manifest error:', err);
+      }
     }
+
+    function renderDocuments(docs) {
+      const container = document.getElementById('docs-container');
+      if (!container) return;
+      document.getElementById('docs-count').textContent = `${docs.length} documents indexed`;
+
+      container.innerHTML = docs.map(d => {
+        let badgeClass = 'bg-brand-500/10 text-brand-400 border-brand-500/30';
+        if (d.badge_color === 'emerald') badgeClass = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30';
+        if (d.badge_color === 'amber') badgeClass = 'bg-amber-500/10 text-amber-400 border-amber-500/30';
+        if (d.badge_color === 'sky') badgeClass = 'bg-sky-500/10 text-sky-400 border-sky-500/30';
+        if (d.badge_color === 'purple') badgeClass = 'bg-purple-500/10 text-purple-400 border-purple-500/30';
+
+        return `
+          <div class="glass-card rounded-xl p-4 flex flex-col justify-between hover:border-gray-600 transition group">
+            <div>
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded font-mono border ${badgeClass}">${d.badge}</span>
+                <span class="text-[11px] font-mono text-gray-500">${d.date}</span>
+              </div>
+              <h4 class="text-xs font-bold text-white group-hover:text-brand-300 transition line-clamp-2 mb-2">${d.title}</h4>
+              <p class="text-[11px] text-gray-400 leading-relaxed line-clamp-3 mb-4">${d.summary}</p>
+            </div>
+            <button onclick="openDocModal('${d.file}', '${d.title.replace(/'/g, "\\'")}')"
+                    class="w-full py-1.5 px-3 rounded-lg bg-dark-card hover:bg-brand-600 text-gray-200 hover:text-white text-xs font-medium border border-dark-border flex items-center justify-center gap-1.5 transition">
+              <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+              全文を読む (Preview)
+            </button>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    async function openDocModal(filePath, title) {
+      const modal = document.getElementById('doc-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalBody = document.getElementById('modal-body');
+      const rawLink = document.getElementById('modal-raw-link');
+
+      modalTitle.textContent = title;
+      rawLink.href = filePath;
+      modalBody.innerHTML = '<div class="text-center py-12 text-gray-500 font-mono">Loading markdown file...</div>';
+      modal.classList.remove('hidden');
+
+      try {
+        const res = await fetch(filePath + '?t=' + Date.now());
+        if (!res.ok) throw new Error('File not found');
+        const text = await res.text();
+        modalBody.innerHTML = marked.parse(text);
+      } catch (err) {
+        modalBody.innerHTML = `<div class="p-4 rounded bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-mono">Failed to load: ${err.message}</div>`;
+      }
+      lucide.createIcons();
+    }
+
+    function closeDocModal() {
+      document.getElementById('doc-modal').classList.add('hidden');
+    }
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDocModal();
+    });
 
     function renderDashboard(data) {
       // 1. Meta
