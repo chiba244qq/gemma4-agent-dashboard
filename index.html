@@ -363,15 +363,25 @@
 
     <!-- ARCHITECTURAL PILLARS / KEY FINDINGS -->
     <div class="space-y-4">
-      <div class="flex items-center justify-between">
-        <h3 class="text-base font-bold text-white flex items-center gap-2">
-          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
-          Architectural Pillars & Hard Constraints
-        </h3>
-        <span class="text-xs text-gray-400">Reverse-Engineered Specs</span>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+            Architectural Pillars & Hard Constraints（重要技術仕様・アーキテクチャの柱と制約）
+          </h3>
+          <p class="text-xs text-gray-400">リバースエンジニアリングで特定したハードウェア定数と評価環境の物理的境界条件</p>
+        </div>
+        <div class="inline-flex items-center p-0.5 rounded-lg bg-dark-card border border-dark-border text-xs self-start sm:self-auto">
+          <button id="btn-pillars-ja" onclick="setPillarsLang('ja')" class="px-3 py-1 rounded-md font-medium transition bg-brand-500 text-white shadow-sm">
+            🇯🇵 日本語
+          </button>
+          <button id="btn-pillars-en" onclick="setPillarsLang('en')" class="px-3 py-1 rounded-md font-medium text-gray-400 hover:text-white transition">
+            🇺🇸 English
+          </button>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="findings-grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4" id="findings-grid">
         <!-- Rendered by JS -->
       </div>
     </div>
@@ -616,19 +626,92 @@
         jobCard.classList.add('hidden');
       }
 
-      // 3. Key Findings Grid
-      const grid = document.getElementById('findings-grid');
-      grid.innerHTML = (data.key_findings || []).map(f => `
-        <div class="glass-card rounded-xl p-4 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-brand-500/20 text-brand-300 font-mono">${f.tag}</span>
+      // 3. Key Findings Grid (Architectural Pillars with JA / EN Toggle)
+      window.pillarsData = data.key_findings || [];
+      window.pillarsLang = 'ja'; // default Japanese
+
+      window.setPillarsLang = function(lang) {
+        window.pillarsLang = lang;
+        const btnJa = document.getElementById('btn-pillars-ja');
+        const btnEn = document.getElementById('btn-pillars-en');
+        if (btnJa && btnEn) {
+          if (lang === 'ja') {
+            btnJa.className = "px-3 py-1 rounded-md font-medium transition bg-brand-500 text-white shadow-sm";
+            btnEn.className = "px-3 py-1 rounded-md font-medium text-gray-400 hover:text-white transition";
+          } else {
+            btnEn.className = "px-3 py-1 rounded-md font-medium transition bg-brand-500 text-white shadow-sm";
+            btnJa.className = "px-3 py-1 rounded-md font-medium text-gray-400 hover:text-white transition";
+          }
+        }
+        renderPillars();
+      };
+
+      window.togglePillarDetail = function(idx) {
+        const detailEl = document.getElementById(`pillar-detail-${idx}`);
+        const iconEl = document.getElementById(`pillar-icon-${idx}`);
+        if (!detailEl) return;
+        if (detailEl.classList.contains('hidden')) {
+          detailEl.classList.remove('hidden');
+          if (iconEl) iconEl.style.transform = 'rotate(180deg)';
+        } else {
+          detailEl.classList.add('hidden');
+          if (iconEl) iconEl.style.transform = 'rotate(0deg)';
+        }
+      };
+
+      function renderPillars() {
+        const grid = document.getElementById('findings-grid');
+        if (!grid) return;
+        const isJa = window.pillarsLang === 'ja';
+
+        const tagColors = {
+          'BREAKTHROUGH': 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30',
+          'CRITICAL': 'bg-rose-500/20 text-rose-300 border border-rose-500/30',
+          'TIMEOUT': 'bg-amber-500/20 text-amber-300 border border-amber-500/30',
+          'HARDWARE': 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30',
+          'STABILITY': 'bg-purple-500/20 text-purple-300 border border-purple-500/30'
+        };
+
+        grid.innerHTML = (window.pillarsData || []).map((f, idx) => {
+          const tag = isJa ? (f.tag_ja || f.tag) : (f.tag_en || f.tag);
+          const rawTag = f.tag || 'BREAKTHROUGH';
+          const badgeClass = tagColors[rawTag] || 'bg-brand-500/20 text-brand-300 border border-brand-500/30';
+          const title = isJa ? (f.title_ja || f.title) : (f.title_en || f.title);
+          const desc = isJa ? (f.desc_ja || f.desc) : (f.desc_en || f.desc);
+          const detail = isJa ? f.detail_ja : null;
+
+          return `
+            <div class="glass-card rounded-xl p-4 flex flex-col justify-between transition hover:border-gray-600/60 shadow-lg">
+              <div>
+                <div class="flex items-center justify-between mb-2.5">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded font-mono ${badgeClass}">${tag}</span>
+                  <span class="text-[10px] text-gray-500 font-mono">#0${idx + 1}</span>
+                </div>
+                <h4 class="text-xs font-bold text-white mb-2 leading-snug">${title}</h4>
+                <p class="text-[11px] text-gray-300 leading-relaxed">${desc}</p>
+              </div>
+
+              ${detail ? `
+                <div class="mt-3 pt-2.5 border-t border-dark-border">
+                  <button onclick="togglePillarDetail(${idx})" class="w-full text-left flex items-center justify-between text-[10px] text-brand-400 hover:text-brand-300 font-mono transition">
+                    <span>💡 技術背景・対策</span>
+                    <i id="pillar-icon-${idx}" data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200"></i>
+                  </button>
+                  <div id="pillar-detail-${idx}" class="hidden mt-2 p-2.5 rounded-lg bg-dark-bg/80 border border-dark-border text-[10.5px] text-gray-300 leading-relaxed font-sans whitespace-pre-line">
+                    ${detail}
+                  </div>
+                </div>
+              ` : ''}
             </div>
-            <h4 class="text-xs font-bold text-white mb-1.5">${f.title}</h4>
-            <p class="text-[11px] text-gray-400 leading-relaxed">${f.desc}</p>
-          </div>
-        </div>
-      `).join('');
+          `;
+        }).join('');
+
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+      }
+
+      renderPillars();
 
       // 4. Submissions Ledger Table
       const subs = data.submissions || [];
