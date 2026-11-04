@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-04 07:35:24 UTC",
-  "last_updated_jst": "2026-11-04 16:35:24 JST",
+  "last_updated_utc": "2026-11-04 08:05:25 UTC",
+  "last_updated_jst": "2026-11-04 17:05:25 JST",
   "active_job": {
     "ref": 57933549,
     "description": "V12.1 Pathspec-Exclusion (Localization Boost + Coupled, T=0.2, 2048 Think): Follow-up to Ref 57884809 (Score 0.15)",
     "start_jst": "2026-11-03 13:59:27 JST",
-    "elapsed_hours": 26.6,
-    "progress_pct": 95.0,
+    "elapsed_hours": 27.1,
+    "progress_pct": 96.8,
     "est_completion_jst": "2026-11-04 17:59:27 JST"
   },
   "my_team": {
@@ -268,6 +268,11 @@
   ],
   "key_findings": [
     {
+      "title": "findfile IDF-Ranker Breakthrough (LocBench)",
+      "tag": "BREAKTHROUGH",
+      "desc": "Local N=63 benchmark shows findfile (fastapi/ only) cuts miss rate from 54.0% (V11) and 28.6% (V12.1) down to 3.2%, achieving 74.6% Top-3 and 82.5% Top-5 hit rate."
+    },
+    {
       "title": "Unresolvable Dead Tasks (Topic 755554)",
       "tag": "CRITICAL",
       "desc": "fastapi_14186 and rich_3486 have conflicting test decorators (@needs_pydanticv1 vs v2). Skipped required tests cause 0 score even on reference patch. Real denominator is 56, not 58."
@@ -286,11 +291,6 @@
       "title": "ADK 14,336-Token Compaction Cliff",
       "tag": "STABILITY",
       "desc": "Google ADK summarizer drops all tool calls/results, causing instant amnesia. V11/V12 keep tokens under 14k."
-    },
-    {
-      "title": "Exclude Pathspecs (79.4% Localization)",
-      "tag": "PRECISION",
-      "desc": "Using ':!tests' ':!docs_src' prevents grep window truncation, boosting exact file localization from 58.7% to 79.4%."
     }
   ]
 }
