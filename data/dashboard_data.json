@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-04 01:47:59 UTC",
-  "last_updated_jst": "2026-11-04 10:47:59 JST",
+  "last_updated_utc": "2026-11-04 05:46:41 UTC",
+  "last_updated_jst": "2026-11-04 14:46:41 JST",
   "active_job": {
     "ref": 57933549,
     "description": "V12.1 Pathspec-Exclusion (Localization Boost + Coupled, T=0.2, 2048 Think): Follow-up to Ref 57884809 (Score 0.15)",
     "start_jst": "2026-11-03 13:59:27 JST",
-    "elapsed_hours": 20.8,
-    "progress_pct": 74.3,
+    "elapsed_hours": 24.8,
+    "progress_pct": 88.5,
     "est_completion_jst": "2026-11-04 17:59:27 JST"
   },
   "my_team": {
@@ -254,16 +254,16 @@
       "comments": 2
     },
     {
-      "id": 755554,
-      "title": "[fastapi_14186] Task unresolvable: required test skipped due to @needs_pydanticv1 and Pydantic v2 setup",
+      "id": 755611,
+      "title": "Are the reported LoRA issues fixed? I don't see any updates.",
       "votes": 0,
       "comments": 0
     },
     {
-      "id": 755542,
-      "title": "Sending public tasks to a hosted model provider: how should the Competition Data rule be read?",
+      "id": 755527,
+      "title": "The queue time should improve once the ARC-2 backlogs are cleared",
       "votes": 0,
-      "comments": 0
+      "comments": 1
     }
   ],
   "key_findings": [
