@@ -114,6 +114,74 @@
       </div>
     </div>
 
+    <!-- 中学生でもわかる！超入門解説セクション -->
+    <div class="glass-card rounded-2xl p-6 border-indigo-500/30 bg-gradient-to-br from-dark-card via-dark-card to-brand-900/10">
+      <div class="flex items-center justify-between cursor-pointer" onclick="document.getElementById('easy-guide-content').classList.toggle('hidden'); document.getElementById('guide-chevron').classList.toggle('rotate-180')">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-base">
+            💡
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              3分でわかる！この大会ってなに？（中学生向けかんたん解説）
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-normal">初心者向け</span>
+            </h3>
+            <p class="text-xs text-gray-400">AIが自分でプログラミングの宿題を解く世界大会と、ぼくたちの作戦</p>
+          </div>
+        </div>
+        <i data-lucide="chevron-down" id="guide-chevron" class="w-5 h-5 text-gray-400 transition-transform duration-200"></i>
+      </div>
+
+      <div id="easy-guide-content" class="mt-6 pt-6 border-t border-dark-border space-y-6">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+          <!-- Box 1 -->
+          <div class="p-4 rounded-xl bg-dark-bg/60 border border-dark-border space-y-2">
+            <div class="flex items-center gap-2 text-indigo-400 font-bold text-xs">
+              <span class="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center text-[11px]">1</span>
+              どんな大会なの？
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              Googleが主催する世界大会（参加 <strong>4,356チーム</strong>）。「ここが動かないよ！」というバグ報告の手紙をAIに渡し、<strong>AIが自分でファイルを探し、プログラムを直してテストに合格できるか</strong>を競っています。制限時間は1問たったの8分、道具を使えるのは28回まで！
+            </p>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="p-4 rounded-xl bg-dark-bg/60 border border-dark-border space-y-2">
+            <div class="flex items-center gap-2 text-amber-400 font-bold text-xs">
+              <span class="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center text-[11px]">2</span>
+              今どのくらいすごいの？
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              全部で58問の超難問が出ます。人間でも1問解くのに何時間もかかる難しさで、<strong>世界1位でも17問（約3割）</strong>しか解けていません。ぼくたちのAIは現在 <strong>12問正解（世界314位 / 銅メダル圏内）</strong>！あとたった2問（14問正解）で<strong>世界トップ9位（金メダル確定）</strong>に入れます！
+            </p>
+          </div>
+
+          <!-- Box 3 -->
+          <div class="p-4 rounded-xl bg-dark-bg/60 border border-dark-border space-y-2">
+            <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs">
+              <span class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-[11px]">3</span>
+              ぼくたちの勝ち筋（裏技）
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              AIは道具を使いすぎると「頭がいっぱいになって最初の問題を忘れちゃう病気（記憶喪失の崖）」があります。ぼくたちは「必要な行だけ少しずつ読む」「関係ないおまけページは最初から見ない」という賢いルールを教えて、AIが自滅しないように改造しました！
+            </p>
+          </div>
+
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-brand-500/10 border border-brand-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 text-gray-200">
+            <span class="text-base">🔥</span>
+            <span><strong>いま戦っていること：</strong> 改良した最新AI（V12.1）がGoogleの秘密のテスト部屋で58問を受験中！結果は<strong>本日夕方（17〜18時頃）</strong>に判明します！</span>
+          </div>
+          <span class="font-mono text-brand-300 font-semibold whitespace-nowrap">目標: 14問正解（スコア 0.24）突破</span>
+        </div>
+
+      </div>
+    </div>
+
     <!-- STATS OVERVIEW CARDS -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       
