@@ -137,24 +137,29 @@ def main():
         "discussions": topics,
         "key_findings": [
             {
-                "title": "ADK 14,336-Token Compaction Cliff",
+                "title": "Unresolvable Dead Tasks (Topic 755554)",
                 "tag": "CRITICAL",
+                "desc": "fastapi_14186 and rich_3486 have conflicting test decorators (@needs_pydanticv1 vs v2). Skipped required tests cause 0 score even on reference patch. Real denominator is 56, not 58."
+            },
+            {
+                "title": "12-Hour Global Timeout Wall (Notebook Audit)",
+                "tag": "TIMEOUT",
+                "desc": "At 8m cap per task, 120 tasks hit the 12h overall limit (No Score). 7m cap buys 40m safe margin and guarantees completion."
+            },
+            {
+                "title": "300s Budget = 5,000 Output Tokens Constant",
+                "tag": "HARDWARE",
+                "desc": "Hardware generation speed is fixed at 17.25 tok/s (76% of time). Restating read code wastes 58ms/tok. 100% of zero-patch failures never reached edit_file."
+            },
+            {
+                "title": "ADK 14,336-Token Compaction Cliff",
+                "tag": "STABILITY",
                 "desc": "Google ADK summarizer drops all tool calls/results, causing instant amnesia. V11/V12 keep tokens under 14k."
             },
             {
-                "title": "Grader-First Discipline",
-                "tag": "STABILITY",
-                "desc": "Ignore local pytest failure (fixture/-p no:anyio bugs); submit source diff unconditionally."
-            },
-            {
                 "title": "Exclude Pathspecs (79.4% Localization)",
-                "tag": "NEW (V12.1)",
+                "tag": "PRECISION",
                 "desc": "Using ':!tests' ':!docs_src' prevents grep window truncation, boosting exact file localization from 58.7% to 79.4%."
-            },
-            {
-                "title": "Single-Agent Pure 6 Tools",
-                "tag": "ARCHITECTURE",
-                "desc": "Continuation Nudge bug resets SequentialAgent to Stage 1. Single agent + tight prompting is the only viable path."
             }
         ]
     }
