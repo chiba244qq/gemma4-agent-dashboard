@@ -1,13 +1,13 @@
 {
-  "last_updated_utc": "2026-11-05 01:58:46 UTC",
-  "last_updated_jst": "2026-11-05 10:58:46 JST",
+  "last_updated_utc": "2026-11-05 03:50:52 UTC",
+  "last_updated_jst": "2026-11-05 12:50:52 JST",
   "active_job": {
-    "ref": 57978613,
-    "description": "V12.3 findfile-Safe (IDF-Ranker 3.2% Miss + 7m Cap + T=0.2/2048 Think): Follow-up to Ref 57933549 (Score 0.17)",
-    "start_jst": "2026-11-04 17:45:16 JST",
-    "elapsed_hours": 17.2,
-    "progress_pct": 61.5,
-    "est_completion_jst": "2026-11-05 21:45:16 JST"
+    "ref": 58008114,
+    "description": "V9.1 Base-Restore (V9 Ultimate LB 0.20 Prompt + No-Restatement, T=0.2, 2048 Think, 8m): Follow-up to Ref 57978613 (Score 0.17)",
+    "start_jst": "2026-11-05 12:33:15 JST",
+    "elapsed_hours": 0.3,
+    "progress_pct": 5.0,
+    "est_completion_jst": "2026-11-06 16:33:15 JST"
   },
   "my_team": {
     "rank": 314,
@@ -25,11 +25,20 @@
   },
   "submissions": [
     {
+      "ref": 58008114,
+      "date_utc": "2026-11-05 03:33:15 UTC",
+      "date_jst": "2026-11-05 12:33:15 JST",
+      "status": "PENDING",
+      "score": null,
+      "description": "V9.1 Base-Restore (V9 Ultimate LB 0.20 Prompt + No-Restatement, T=0.2, 2048 Think, 8m): Follow-up to Ref 57978613 (Score 0.17)",
+      "error": ""
+    },
+    {
       "ref": 57978613,
       "date_utc": "2026-11-04 08:45:16 UTC",
       "date_jst": "2026-11-04 17:45:16 JST",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.17,
       "description": "V12.3 findfile-Safe (IDF-Ranker 3.2% Miss + 7m Cap + T=0.2/2048 Think): Follow-up to Ref 57933549 (Score 0.17)",
       "error": ""
     },
