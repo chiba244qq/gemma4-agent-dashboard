@@ -68,6 +68,7 @@
     .md-content th, .md-content td { border: 1px solid #374151; padding: 0.5rem 0.75rem; text-align: left; }
     .md-content th { background: #1f2937; color: #f9fafb; font-weight: 600; }
     .md-content blockquote { border-left: 4px solid #6366f1; padding-left: 1rem; margin-left: 0; margin-bottom: 1rem; color: #9ca3af; font-style: italic; }
+    .md-content svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
   </style>
 </head>
 <body class="min-h-screen antialiased selection:bg-brand-500 selection:text-white">
@@ -714,17 +715,46 @@
         const text = await res.text();
         modalBody.innerHTML = marked.parse(text);
 
-        // Convert ```mermaid code blocks into rendered SVG diagrams
-        const mermaidCodes = modalBody.querySelectorAll('pre code.language-mermaid');
-        mermaidCodes.forEach((codeEl) => {
-          const preEl = codeEl.parentElement;
-          const div = document.createElement('div');
-          div.className = 'mermaid bg-dark-bg/90 border border-dark-border rounded-xl p-4 my-4 flex justify-center overflow-x-auto';
-          div.textContent = (codeEl.textContent || '').replace(/\\n/g, '<br/>');
-          preEl.replaceWith(div);
-        });
-        if (mermaidCodes.length > 0 && window.mermaid) {
-          await mermaid.run({ nodes: modalBody.querySelectorAll('.mermaid') });
+        // Robust Mermaid diagram rendering
+        if (window.mermaid) {
+          try {
+            mermaid.initialize({
+              startOnLoad: false,
+              theme: 'dark',
+              securityLevel: 'loose',
+              fontFamily: 'Inter, sans-serif'
+            });
+          } catch (initErr) {}
+
+          const codeBlocks = modalBody.querySelectorAll('pre code');
+          let chartIdx = 0;
+          for (let i = 0; i < codeBlocks.length; i++) {
+            const codeEl = codeBlocks[i];
+            const rawCode = (codeEl.textContent || '').trim();
+            const isMermaid = codeEl.className.includes('mermaid') ||
+                              rawCode.startsWith('flowchart') ||
+                              rawCode.startsWith('sequenceDiagram') ||
+                              rawCode.startsWith('graph');
+
+            if (isMermaid) {
+              const preEl = codeEl.closest('pre');
+              const chartId = 'mermaid-chart-' + Date.now() + '-' + (chartIdx++);
+              try {
+                const renderResult = await mermaid.render(chartId, rawCode);
+                const svgHtml = typeof renderResult === 'string' ? renderResult : renderResult.svg;
+                const div = document.createElement('div');
+                div.className = 'my-6 p-4 rounded-xl bg-dark-bg/95 border border-dark-border flex justify-center overflow-x-auto shadow-inner';
+                div.innerHTML = svgHtml;
+                if (preEl) {
+                  preEl.replaceWith(div);
+                }
+              } catch (renderErr) {
+                console.warn('Mermaid render error for block ' + chartIdx + ':', renderErr);
+                const strayEl = document.getElementById('d' + chartId);
+                if (strayEl) strayEl.remove();
+              }
+            }
+          }
         }
       } catch (err) {
         modalBody.innerHTML = `<div class="p-4 rounded bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-mono">Failed to load: ${err.message}</div>`;
