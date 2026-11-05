@@ -436,11 +436,18 @@
           </h3>
           <p class="text-xs text-gray-400">手元 Mac で実測した4つの事前検証結果と、「ローカル検証 vs Kaggle 本番（4×L4 GPU）」のギャップ・真のボトルネック分析</p>
         </div>
-        <button onclick="openDocModal('docs/LOCAL_VERIFICATION_AND_BENCHMARKS.md', 'ローカル事前検証・オフラインベンチマーク結果総括')"
-                class="px-3 py-1.5 rounded-lg bg-sky-500/15 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-xs font-medium flex items-center gap-1.5 transition shadow-sm self-start sm:self-auto">
-          <i data-lucide="file-bar-chart" class="w-3.5 h-3.5"></i>
-          📊 ローカル検証レポート全文を読む
-        </button>
+        <div class="flex flex-wrap items-center gap-2 self-start sm:self-auto">
+          <a href="https://colab.research.google.com/github/chiba244qq/gemma4-agent-dashboard/blob/main/notebooks/colab_gemma4_auto_benchmark.ipynb" target="_blank"
+             class="px-3 py-1.5 rounded-lg bg-purple-500/15 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 text-xs font-medium flex items-center gap-1.5 transition shadow-sm">
+            <i data-lucide="play-circle" class="w-3.5 h-3.5 text-purple-400"></i>
+            🚀 Colab Pro (A100) で自動検証を開く
+          </a>
+          <button onclick="openDocModal('docs/LOCAL_VERIFICATION_AND_BENCHMARKS.md', 'ローカル事前検証・オフラインベンチマーク結果総括')"
+                  class="px-3 py-1.5 rounded-lg bg-sky-500/15 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-xs font-medium flex items-center gap-1.5 transition shadow-sm">
+            <i data-lucide="file-bar-chart" class="w-3.5 h-3.5"></i>
+            📊 ローカル検証レポート全文
+          </button>
+        </div>
       </div>
 
       <!-- 3 Key Metric Highlights -->
@@ -647,20 +654,34 @@
       </div>
     </div>
 
-    <!-- COMMUNITY DISCUSSIONS -->
-    <div class="glass-card rounded-2xl p-6">
-      <div class="flex items-center justify-between mb-4">
+    <!-- COMMUNITY DISCUSSIONS & GEMINI PRO INSIGHTS -->
+    <div class="glass-card rounded-2xl p-6 space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
           <h3 class="text-base font-bold text-white flex items-center gap-2">
-            <i data-lucide="message-square" class="w-4 h-4 text-sky-400"></i>
-            Community Intelligence & Host Announcements
+            <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
+            Community Intelligence & Gemini Pro Strategic Insights
           </h3>
-          <p class="text-xs text-gray-400">Live topics from Kaggle Discussions</p>
+          <p class="text-xs text-gray-400">Kaggle 公式ディスカッションの自動巡回と、Gemini Pro によるエージェント設計への戦略示唆</p>
         </div>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-purple-500/10 text-purple-300 border border-purple-500/30">
+          <i data-lucide="bot" class="w-3.5 h-3.5"></i> Gemini Pro AI Analyzed
+        </span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="discussions-container">
+      <!-- Gemini AI Insights Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="gemini-insights-container">
         <!-- Rendered by JS -->
+      </div>
+
+      <!-- Live Discussions Grid -->
+      <div class="pt-2 border-t border-dark-border/80 space-y-2">
+        <div class="text-[11px] font-mono text-gray-400 flex items-center gap-1.5">
+          <i data-lucide="message-square" class="w-3.5 h-3.5 text-sky-400"></i> 最新アクティブトピック（Kaggle Forum 直結）
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3" id="discussions-container">
+          <!-- Rendered by JS -->
+        </div>
       </div>
     </div>
 
@@ -1134,7 +1155,35 @@
         `;
       }).join('');
 
-      // 5. Discussions Container
+      // 5. Gemini Forum Insights & Discussions Container
+      const insightsContainer = document.getElementById('gemini-insights-container');
+      if (insightsContainer && data.gemini_forum_insights) {
+        insightsContainer.innerHTML = data.gemini_forum_insights.map(item => `
+          <div class="p-3.5 rounded-xl bg-dark-bg/80 border border-purple-500/30 flex flex-col justify-between space-y-2 relative overflow-hidden">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/40">
+                  ${item.badge}
+                </span>
+                <a href="https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/${item.topic_id}" target="_blank"
+                   class="text-[10px] font-mono text-gray-500 hover:text-brand-300 transition flex items-center gap-1">
+                  Topic #${item.topic_id} <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+              <h4 class="text-xs font-bold text-white mb-1.5 leading-snug">
+                ${item.title}
+              </h4>
+              <p class="text-[11px] text-gray-300 leading-relaxed font-sans">
+                ${item.insight}
+              </p>
+            </div>
+            <div class="pt-2 border-t border-dark-border/60 text-[10px] font-mono text-emerald-400 flex items-center gap-1">
+              <i data-lucide="check" class="w-3 h-3"></i> エージェント設計（V9.1 / V10）に反映済
+            </div>
+          </div>
+        `).join('');
+      }
+
       const disc = document.getElementById('discussions-container');
       disc.innerHTML = (data.discussions || []).map(d => `
         <div class="p-3 rounded-xl bg-dark-card/50 border border-dark-border hover:border-gray-700 transition flex items-center justify-between gap-3">

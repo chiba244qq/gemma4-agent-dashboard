@@ -118,6 +118,38 @@ def main():
     except Exception as e:
         print("Forum fetch failed:", e)
 
+    # Preserve existing gemini insights if present
+    gemini_insights = []
+    if OUTPUT_FILE.exists():
+        try:
+            with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+                prev_data = json.load(f)
+                gemini_insights = prev_data.get("gemini_forum_insights", [])
+        except Exception:
+            pass
+
+    if not gemini_insights:
+        gemini_insights = [
+            {
+                "topic_id": 747248,
+                "title": "Private Dataset Specification & Solvability",
+                "badge": "Host Confirmed",
+                "insight": "ホスト公式発表: Private は公開リポジトリ（FastAPI/Rich）と重複ゼロ、全問100%解決可能、かつ async def 修正は0件（100%同期コード）。特定リポジトリへの過学習を排し、普遍的なPython標準仕様の抽出が最善解。"
+            },
+            {
+                "topic_id": 745998,
+                "title": "Temperature & Diverse Sampling Strategies",
+                "badge": "Community Breakthrough",
+                "insight": "Idrisメソッド等の検証により、同一の決定論的モデル（T=0.2）でのループを脱出するために Temperature 1.0 + Top-P 0.95 による多様性探索が有効と実証。次期候補 V10 の採用根拠。"
+            },
+            {
+                "topic_id": 746112,
+                "title": "14,336-Token Compaction Cliff & Generation Latency",
+                "badge": "Physical Constraint",
+                "insight": "実推論速度 17.25 tok/s (58ms/tok) の物理制約下では、思考や復唱でのトークン浪費が 58% Empty Patch の主因。既存コード復唱を禁止し、Call 8〜12 での早期編集到達がスコアを左右する。"
+            }
+        ]
+
     # 5. Assemble payload
     payload = {
         "last_updated_utc": now_utc.strftime("%Y-%m-%d %H:%M:%S UTC"),
@@ -125,6 +157,7 @@ def main():
         "active_job": active_submission,
         "my_team": my_team_info,
         "best_score": best_score,
+        "gemini_forum_insights": gemini_insights,
         "cutoffs": {
             "first_place": 0.29,
             "gold_safe": 0.24,

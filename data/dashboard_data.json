@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-05 07:07:57 UTC",
-  "last_updated_jst": "2026-11-05 16:07:57 JST",
+  "last_updated_utc": "2026-11-05 07:33:20 UTC",
+  "last_updated_jst": "2026-11-05 16:33:20 JST",
   "active_job": {
     "ref": 58008114,
     "description": "V9.1 Base-Restore (V9 Ultimate LB 0.20 Prompt + No-Restatement, T=0.2, 2048 Think, 8m): Follow-up to Ref 57978613 (Score 0.17)",
     "start_jst": "2026-11-05 12:33:15 JST",
-    "elapsed_hours": 3.6,
-    "progress_pct": 12.8,
+    "elapsed_hours": 4.0,
+    "progress_pct": 14.3,
     "est_completion_jst": "2026-11-06 16:33:15 JST"
   },
   "my_team": {
@@ -16,6 +16,26 @@
     "is_my_team": true
   },
   "best_score": 0.2,
+  "gemini_forum_insights": [
+    {
+      "topic_id": 747248,
+      "title": "Private Dataset Specification & Solvability",
+      "badge": "Host Confirmed",
+      "insight": "ホスト公式発表: Private は公開リポジトリ（FastAPI/Rich）と重複ゼロ、全問100%解決可能、かつ async def 修正は0件（100%同期コード）。特定リポジトリへの過学習を排し、普遍的なPython標準仕様の抽出が最善解。"
+    },
+    {
+      "topic_id": 745998,
+      "title": "Temperature & Diverse Sampling Strategies",
+      "badge": "Community Breakthrough",
+      "insight": "Idrisメソッド等の検証により、同一の決定論的モデル（T=0.2）でのループを脱出するために Temperature 1.0 + Top-P 0.95 による多様性探索が有効と実証。次期候補 V10 の採用根拠。"
+    },
+    {
+      "topic_id": 746112,
+      "title": "14,336-Token Compaction Cliff & Generation Latency",
+      "badge": "Physical Constraint",
+      "insight": "実推論速度 17.25 tok/s (58ms/tok) の物理制約下では、思考や復唱でのトークン浪費が 58% Empty Patch の主因。既存コード復唱を禁止し、Call 8〜12 での早期編集到達がスコアを左右する。"
+    }
+  ],
   "cutoffs": {
     "first_place": 0.29,
     "gold_safe": 0.24,
