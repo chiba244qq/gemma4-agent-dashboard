@@ -135,6 +135,122 @@ def main():
         "submissions": submissions,
         "leaderboard_sample": leaderboard[:15],
         "discussions": topics,
+        "pipeline": [
+            {
+                "version": "V9.1 Base-Restore",
+                "ref": 58008114,
+                "status": "RUNNING (PENDING)",
+                "status_color": "emerald",
+                "badge": "現在投入中（Day 15）",
+                "target_date": "採点進行中 (11/6 午前〜昼 結果確定見込み)",
+                "expected_score": "0.20 〜 0.24",
+                "objective": "自己ベスト V9 原文の完全復元 ＋ 復唱禁止による時間短縮",
+                "benefits": [
+                    "V12系でスコア低下を招いた「:!docs_src」除外を撤廃し、V9本来の広い探索視野を回復",
+                    "「Do NOT restate existing code」規律により、17.25 tok/s (58ms/tok) の冗長出力を大幅削減",
+                    "8分枠 (480s) を維持しつつ実効時間を短縮し、12時間壁を安全回避して 0.20+ 奪還を狙う"
+                ],
+                "risks": "8分設定のためタスク所要時間が上振れると全体完走が26〜28hに迫るリスクが残る",
+                "condition": "現在 Kaggle 採点機上で進行中（4xL4 GPU）"
+            },
+            {
+                "version": "V10 Diverse Sampling (Idris Method)",
+                "ref": None,
+                "status": "NEXT CANDIDATE A (上振れ狙い)",
+                "status_color": "purple",
+                "badge": "次期候補 A (上振れ突破)",
+                "target_date": "Day 16 (2026-11-06 投入候補)",
+                "expected_score": "0.22 〜 0.25 (ゴールド境界突破)",
+                "objective": "Temperature 1.0 + Top-P 0.95 による多様な探索空間の獲得",
+                "benefits": [
+                    "単一決定論的エージェント特有の「同じ誤答ループ」を脱出し、これまで解けなかった難問を打破",
+                    "ディスカッション実証済みの多様性サンプリングにより、解法パターンの探索幅を最大化",
+                    "14問解決 (0.24) を達成し、ゴールド圏内（Top 10）へ浮上する主戦力"
+                ],
+                "risks": "高温サンプリングによる構文エラー・ハルシネーションの増加リスク",
+                "condition": "V9.1 が 0.20+ を記録し、基礎推論の安定性が確認された場合に採択"
+            },
+            {
+                "version": "V9.2 Early-Edit Trigger",
+                "ref": None,
+                "status": "NEXT CANDIDATE B (安定改善)",
+                "status_color": "sky",
+                "badge": "次期候補 B (手堅い改善)",
+                "target_date": "Day 16 (2026-11-06 代替候補)",
+                "expected_score": "0.20 〜 0.22",
+                "objective": "失敗の58%を占める「未編集死（Empty Patch）」の強制打破",
+                "benefits": [
+                    "Call 8 までに edit_file が未実行の場合、「直ちに最小パッチを適用せよ」と規律強制",
+                    "正解ファイル特定後の長考・追加読み込みによる時間切れゼロ点を完全撲滅",
+                    "Grader-First 原則と連動し、環境エラーでも最小限の diff を残して部分点を拾う"
+                ],
+                "risks": "十分な推敲を行わないまま粗いパッチを投入し、テスト失敗率が上がる懸念",
+                "condition": "V9.1 のログで Empty Patch が依然として多発していた場合に優先採択"
+            },
+            {
+                "version": "V13 Coupled-Sync Hunter",
+                "ref": None,
+                "status": "FUTURE CANDIDATE (Private対策)",
+                "status_color": "indigo",
+                "badge": "最終盤候補 (連動追随)",
+                "target_date": "Day 17 (2026-11-07 投入予定)",
+                "expected_score": "0.24+",
+                "objective": "28.6% 存在する「複数ファイル連動修正タスク」の追随解決",
+                "benefits": [
+                    "主ファイルを編集した直後、定義変更されたシンボルを grep し連動ファイルを1回だけ確認",
+                    "1ファイルのみ修正して ImportError や引数不整合で落ちていた難問を救済",
+                    "Private テストセット（未知の同期 Python コードベース）での普遍的汎化力を担保"
+                ],
+                "risks": "探索ターン数とトークン消費の増加（14,336 崖への接近リスク）",
+                "condition": "単一ファイル修正の安定後に導入"
+            }
+        ],
+        "unsolved_challenges": [
+            {
+                "id": "CHALLENGE-01",
+                "title": "58% Empty Patch の壁（未編集死の撲滅）",
+                "category": "推論速度・行動規律",
+                "severity": "CRITICAL",
+                "severity_color": "rose",
+                "metric": "失敗タスクの 58% (34/58問)",
+                "fact": "エージェントは特別ツールなしでも 93% の確率で 3 手目までに正解ファイルを開けている。しかし、開いた後に 58% が 1 行もコードを編集できず時間切れで 0 点（0-byte diff）になっている。",
+                "bottleneck": "4×L4 GPU 環境の推論速度が 17.25 tok/s (58ms/tok) と遅いため、思考（Thinking）や既存コードの復唱、read_file の追加呼出で 5,000 トークン上限を使い果たしてしまう。",
+                "current_hypothesis": "V9.1 で「復唱禁止」を入れ実効トークンを削る。それでも残る場合は V9.2 で「Call 8 初回編集強制」を導入し、思考より先に edit_file を打たせる。"
+            },
+            {
+                "id": "CHALLENGE-02",
+                "title": "12時間壁と8分枠の綱引き（スループット vs 深さ）",
+                "category": "物理タイムアウト制約",
+                "severity": "CRITICAL",
+                "severity_color": "rose",
+                "metric": "全体 12h 上限 (1秒超過で No Score 0点)",
+                "fact": "7分枠（V12.3）は 18時間48分で確実に安全完走するが、7〜8分で解ける後半の難問を逃し 0.17 に圧縮。8分枠は 0.20 を出せるが全体時間が 26〜28 時間に迫り、12 時間壁の崖っぷちになる。",
+                "bottleneck": "Kaggle 採点サーバーの 12 時間グローバル制限。58 問を 1 問ずつ順次実行するため、1 問あたりの平均秒数が直接全体の完走可否を決定する。",
+                "current_hypothesis": "タスク上限時間は 8 分を維持しつつ、ツール出力の切り詰め（head -20）と復唱禁止により「中央値 5〜6 分」で解かせて早期 return を促す。"
+            },
+            {
+                "id": "CHALLENGE-03",
+                "title": "28.6% の複数ファイル連動見落とし（Coupled Files Drift）",
+                "category": "コンテキスト把握・局所化",
+                "severity": "HIGH",
+                "severity_color": "amber",
+                "metric": "可解タスクの 28.6% (34/119問)",
+                "fact": "全可解タスクの 28.6% は 2 ファイル以上の連動修正を必要とする（例: FastAPI の applications.py と routing.py）。エージェントは 1 ファイル目を直すと満足して終了し、連動側の不整合でテストが落ちる。",
+                "bottleneck": "コンテキスト長制限（14k崖）を恐れるあまり単一ファイルに集中しすぎるバイアスと、モデルの複数ステップ計画能力の限界。",
+                "current_hypothesis": "主ファイル編集後に連動シンボルの grep を 1 手だけ許容する規律（V13 Coupled-Sync Hunter）を設計中。"
+            },
+            {
+                "id": "CHALLENGE-04",
+                "title": "Private テストセットへの未知リポジトリ適応（ドメインシフト）",
+                "category": "汎化性能・過学習回避",
+                "severity": "HIGH",
+                "severity_color": "amber",
+                "metric": "Private 重複 0% / 100% 同期コード",
+                "fact": "ホスト公式発表により、公開リポジトリ（FastAPI/Rich）は Private に 1 つも含まれず、Private は全問同期 Python コードであることが確定。公開セット専用ハックは Private で全滅する。",
+                "bottleneck": "ローカル検証や公開スコアを上げるために「:!docs_src」などの特定リポジトリ構造に依存した除外ルールを入れると、未知リポジトリで正解ファイルを不可視化してしまう。",
+                "current_hypothesis": "リポジトリ固有の仮定を全廃し、V9 の普遍的プロンプト規律（標準仕様抽出・3〜5行最小ブロック編集・Grader-First）を堅持する。"
+            }
+        ],
         "key_findings": [
             {
                 "title": "ADK 14,336-Token Compaction Cliff",

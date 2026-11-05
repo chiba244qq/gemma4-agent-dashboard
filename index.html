@@ -403,7 +403,30 @@
       </div>
     </div>
 
-    <!-- LOCAL PRE-SUBMISSION VERIFICATION & BENCHMARKS -->
+    <!-- NEXT RELEASE PIPELINE & STRATEGY ROADMAP -->
+    <div class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="git-merge" class="w-4 h-4 text-brand-400"></i>
+            Submission Pipeline & Next Release Candidates（投入パイプライン＆次期候補別メリット・狙い）
+          </h3>
+          <p class="text-xs text-gray-400">1日1回の提出枠を最大効率化するための投入候補ロードマップ・狙い・メリット・リスクと採択条件</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Day 15 採点進行中 (V9.1)
+          </span>
+        </div>
+      </div>
+
+      <!-- Pipeline Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="pipeline-grid">
+        <!-- Rendered by JS / Fallback in HTML -->
+      </div>
+    </div>
+
+    <!-- LOCAL PRE-SUBMISSION VERIFICATION & BENCHMARKS (RENEWED & STRUCTURED) -->
     <div class="glass-card rounded-2xl p-6 space-y-5">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
@@ -411,7 +434,7 @@
             <i data-lucide="flask-conical" class="w-4 h-4 text-sky-400"></i>
             Local Pre-Submission Verification & Offline Benchmarks（サブミット前のローカル効果検証・実測データ）
           </h3>
-          <p class="text-xs text-gray-400">1日1回の提出前に手元 Mac で実測したオフライン検証データと、「ローカル検証 vs Kaggle 本番（4×L4 GPU）」の境界・ギャップ分析</p>
+          <p class="text-xs text-gray-400">手元 Mac で実測した4つの事前検証結果と、「ローカル検証 vs Kaggle 本番（4×L4 GPU）」のギャップ・真のボトルネック分析</p>
         </div>
         <button onclick="openDocModal('docs/LOCAL_VERIFICATION_AND_BENCHMARKS.md', 'ローカル事前検証・オフラインベンチマーク結果総括')"
                 class="px-3 py-1.5 rounded-lg bg-sky-500/15 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-xs font-medium flex items-center gap-1.5 transition shadow-sm self-start sm:self-auto">
@@ -420,14 +443,53 @@
         </button>
       </div>
 
+      <!-- 3 Key Metric Highlights -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="p-4 rounded-xl bg-dark-bg/80 border border-sky-500/30 relative overflow-hidden">
+          <div class="text-[10px] font-mono font-bold text-sky-400 mb-1 flex items-center gap-1.5">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> 検証 ①：ファイル探索アルゴリズム
+          </div>
+          <div class="text-2xl font-black text-white font-mono mt-1">
+            54.0% <span class="text-emerald-400 text-lg">➔ 3.2%</span>
+          </div>
+          <p class="text-[11px] text-gray-300 mt-1">
+            FastAPI N=63問の実測で探索見落とし（Miss）を劇的削減。V12.3 findfile で Top-5 正解率 <strong class="text-emerald-300 font-mono">82.5%</strong> を達成。
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-dark-bg/80 border border-purple-500/30 relative overflow-hidden">
+          <div class="text-[10px] font-mono font-bold text-purple-400 mb-1 flex items-center gap-1.5">
+            <i data-lucide="shield" class="w-3.5 h-3.5"></i> 検証 ②：ADK 14k 崖の事前遮断
+          </div>
+          <div class="text-2xl font-black text-white font-mono mt-1">
+            964 <span class="text-purple-300 text-xs font-normal">avg tokens / task</span>
+          </div>
+          <p class="text-[11px] text-gray-300 mt-1">
+            探索時の平均出力を 964 tok に圧縮（最大 2,302 tok）。ADK 14,336 崖の 7% 未満に抑制し、<strong class="text-purple-300">突然の記憶喪失を 100% 回避</strong>。
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-dark-bg/80 border border-amber-500/30 relative overflow-hidden">
+          <div class="text-[10px] font-mono font-bold text-amber-400 mb-1 flex items-center gap-1.5">
+            <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> 検証 ④：本番 4×L4 GPU とのギャップ
+          </div>
+          <div class="text-2xl font-black text-white font-mono mt-1">
+            93% 開封 <span class="text-rose-400 text-base font-normal">vs 58% 未編集死</span>
+          </div>
+          <p class="text-[11px] text-gray-300 mt-1">
+            AI は 3 手目で正解を開けているが、17.25 tok/s の推論遅延と長考で <strong class="text-rose-300">58% が 1 行も書けず時間切れ（Empty Patch）</strong>。
+          </p>
+        </div>
+      </div>
+
       <!-- 2-Column Layout: Benchmark Table + Summary Cards -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
         <!-- Col 1: Localization Benchmark Table (7 cols) -->
         <div class="lg:col-span-7 bg-dark-bg/60 rounded-xl border border-dark-border p-4 space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold text-white flex items-center gap-1.5">
-              <span class="px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-[10px]">検証 ①</span>
-              ファイル探索アルゴリズム A/B ベンチマーク（FastAPI N=63 問・各 base_commit 実測）
+              <span class="px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-[10px]">実測データ</span>
+              探索手法 A/B テスト結果比較（FastAPI N=63 問・各 base_commit 独立実行）
             </span>
             <span class="text-[10px] font-mono text-gray-500">logs/benchmark_findfile_results.txt</span>
           </div>
@@ -479,20 +541,20 @@
           </p>
         </div>
 
-        <!-- Col 2: Coupled Discovery, Task Anatomy & Local-vs-Cloud Gap (5 cols) -->
+        <!-- Col 2: Coupled Discovery & The Gap Analysis (5 cols) -->
         <div class="lg:col-span-5 flex flex-col justify-between gap-3">
           <!-- Card A: Coupled Discovery & Token Safety -->
           <div class="bg-dark-bg/60 rounded-xl border border-dark-border p-3.5 space-y-1.5">
             <div class="flex items-center justify-between">
               <span class="text-xs font-bold text-white flex items-center gap-1.5">
                 <span class="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono text-[10px]">検証 ②・③</span>
-                複数ファイル連動 (N=23) ＆ 全129問パッチ構造解析
+                複数ファイル連動 (N=23) ＆ 全129問パッチ規模解析
               </span>
             </div>
             <ul class="text-[11px] text-gray-300 space-y-1 leading-relaxed">
-              <li>・<strong class="text-white">14k 記憶喪失の回避検証:</strong> 探索時の平均出力は <span class="text-emerald-300 font-mono font-bold">964 tokens</span> (最大 2,302 tok) と 14,336 崖の 7% 未満に制御。</li>
-              <li>・<strong class="text-white">正解パッチ規模 (可解119問):</strong> 修正行数中央値は <span class="text-brand-300 font-mono font-bold">12.0行</span> (77.3%が50行以内)。単一ファイル <span class="font-mono">71.4%</span> / 複数連動 <span class="font-mono">28.6%</span>。</li>
-              <li>・<strong class="text-white">ZIP 静的バリデーション:</strong> <code class="text-gray-400">validate_submission_package.py</code> により YAML・組込ツール・容量を全件事前検査（V5〜V9.1 まで <span class="text-emerald-400 font-bold">10回連続完走・エラー0</span>）。</li>
+              <li>・<strong class="text-white">修正行数中央値:</strong> <span class="text-brand-300 font-mono font-bold">12.0行</span> (77.3%が50行以内)。修正規模は小さく、3〜5行のピンポイント編集で十分。</li>
+              <li>・<strong class="text-white">ファイル修正分布:</strong> 単一ファイル <span class="font-mono text-emerald-400">71.4%</span> / 複数ファイル連動 <span class="font-mono text-amber-400">28.6%</span>。</li>
+              <li>・<strong class="text-white">ZIP 静的バリデーション:</strong> <code class="text-gray-400">validate_submission_package.py</code> で構文・YAML・ツールを検査（V5〜V9.1 まで <span class="text-emerald-400 font-bold">10回連続完走・エラー0</span>）。</li>
             </ul>
           </div>
 
@@ -501,15 +563,36 @@
             <div class="flex items-center justify-between">
               <span class="text-xs font-bold text-amber-300 flex items-center gap-1.5">
                 <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-amber-400"></i>
-                なぜローカル Miss 3.2% (V12.3) でも本番スコアは 0.17 だったのか？
+                なぜローカル Miss 3.2% でも本番スコアは 0.17 だったのか？
               </span>
             </div>
             <p class="text-[11px] text-gray-300 leading-relaxed">
-              ローカルでは「検索ヒット率・トークン量・構文」は100%検証可能ですが、<strong class="text-white">「Gemma 4 (31B) の実推論（4×L4 GPU 96GB必須）」と「非公開テスト採点」は Kaggle 本番でしか実行できません</strong>。
-              本番検証の結果、①AIは特別ツールなしでも93%の確率で3手目までに正解ファイルを開けていること、②しかし <code class="text-amber-300">:!docs_src</code> 除外によりドキュメント修正問題（全体の11.6%）を取りこぼしていたことが判明。この両知見を統合し、現在 <strong class="text-emerald-300">V9.1（V9の広い視野を100%復元＋復唱禁止による時間短縮）</strong> を投入しています。
+              手元 Mac では「構文検査・検索ヒット率・トークン量」は 100% 検証可能ですが、<strong class="text-white">「Gemma 4 (31B) の実推論速度（17.25 tok/s）」と「非公開テスト採点」は本番 4×L4 GPU でしか測れません</strong>。<br>
+              本番ログの解析により、①AIは特別ツールがなくても 93% の確率で 3 手目までに正解ファイルを開けていること、②真の死因は「開いた後に 58% が 1 行も書けずに時間切れになる（Empty Patch）」こと、③<code class="text-amber-300">:!docs_src</code> 除外によりドキュメント修正問題（全体の11.6%）を取りこぼしていたことが判明しました。
             </p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- KNOWN UNSOLVED CHALLENGES (わかっているが未解決の4大核心課題) -->
+    <div class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-rose-400"></i>
+            Known Unsolved Challenges（わかっているが未解決の4大核心課題）
+          </h3>
+          <p class="text-xs text-gray-400">実機ログと採点解析で特定済みだが、まだ完全解決に至っていない技術的ボトルネックと現在検証中の仮説</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-gray-400">4 Open Issues Under Active Research</span>
+        </div>
+      </div>
+
+      <!-- Challenges Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="challenges-grid">
+        <!-- Rendered by JS / Fallback in HTML -->
       </div>
     </div>
 
@@ -793,6 +876,144 @@
         document.getElementById('active-bar').style.width = `${job.progress_pct}%`;
       } else {
         jobCard.classList.add('hidden');
+      }
+
+      // 2.5 Pipeline Cards (Next Release Candidates)
+      const pipelineGrid = document.getElementById('pipeline-grid');
+      if (pipelineGrid && data.pipeline) {
+        const colorMaps = {
+          emerald: {
+            border: 'border-emerald-500/40',
+            bg: 'bg-emerald-500/5',
+            badge: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+            text: 'text-emerald-400',
+            glow: 'shadow-emerald-950/20'
+          },
+          purple: {
+            border: 'border-purple-500/40',
+            bg: 'bg-purple-500/5',
+            badge: 'bg-purple-500/20 text-purple-300 border-purple-500/40',
+            text: 'text-purple-400',
+            glow: 'shadow-purple-950/20'
+          },
+          sky: {
+            border: 'border-sky-500/40',
+            bg: 'bg-sky-500/5',
+            badge: 'bg-sky-500/20 text-sky-300 border-sky-500/40',
+            text: 'text-sky-400',
+            glow: 'shadow-sky-950/20'
+          },
+          indigo: {
+            border: 'border-indigo-500/40',
+            bg: 'bg-indigo-500/5',
+            badge: 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40',
+            text: 'text-indigo-400',
+            glow: 'shadow-indigo-950/20'
+          }
+        };
+
+        pipelineGrid.innerHTML = data.pipeline.map(p => {
+          const c = colorMaps[p.status_color] || colorMaps.emerald;
+          const isRunning = p.status.includes('RUNNING') || p.status.includes('PENDING');
+
+          return `
+            <div class="glass-card rounded-xl p-4 flex flex-col justify-between border ${c.border} ${c.bg} transition hover:border-gray-500 shadow-lg ${c.glow} relative overflow-hidden">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded font-mono border ${c.badge} flex items-center gap-1.5">
+                    ${isRunning ? '<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>' : ''}
+                    ${p.badge || p.status}
+                  </span>
+                  <span class="text-[10px] font-mono text-gray-400 font-bold">${p.expected_score}</span>
+                </div>
+
+                <div class="mb-2">
+                  <h4 class="text-sm font-extrabold text-white flex items-center gap-1.5">
+                    ${p.version}
+                  </h4>
+                  <div class="text-[10px] font-mono text-gray-400 mt-0.5 flex items-center gap-1">
+                    <i data-lucide="calendar" class="w-3 h-3 text-gray-500"></i> ${p.target_date}
+                  </div>
+                </div>
+
+                <div class="p-2 rounded-lg bg-dark-bg/80 border border-dark-border/80 text-[11px] text-gray-200 mb-3 font-medium">
+                  🎯 <strong class="text-white">狙い:</strong> ${p.objective}
+                </div>
+
+                <div class="space-y-1.5 text-[11px] text-gray-300 mb-3">
+                  <div class="text-[10px] font-bold font-mono text-gray-400 uppercase tracking-wider flex items-center gap-1">
+                    <i data-lucide="zap" class="w-3 h-3 text-amber-400"></i> 導入メリット & 特徴
+                  </div>
+                  <ul class="space-y-1 text-[11px] text-gray-300 pl-1 leading-relaxed">
+                    ${p.benefits.map(b => `<li class="flex items-start gap-1.5"><span class="text-emerald-400 font-bold">✓</span> <span>${b}</span></li>`).join('')}
+                  </ul>
+                </div>
+              </div>
+
+              <div class="pt-2 border-t border-dark-border/80 space-y-1.5">
+                <div class="text-[10.5px] text-amber-300/90 leading-tight flex items-start gap-1">
+                  <i data-lucide="alert-triangle" class="w-3 h-3 text-amber-400 shrink-0 mt-0.5"></i>
+                  <span><strong class="text-amber-200">懸念:</strong> ${p.risks}</span>
+                </div>
+                <div class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                  <i data-lucide="flag" class="w-3 h-3 text-gray-500"></i>
+                  <span>条件: ${p.condition}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 2.8 Known Unsolved Challenges Cards
+      const challengesGrid = document.getElementById('challenges-grid');
+      if (challengesGrid && data.unsolved_challenges) {
+        challengesGrid.innerHTML = data.unsolved_challenges.map(c => {
+          const isCritical = c.severity === 'CRITICAL';
+          const badgeClass = isCritical
+            ? 'bg-rose-500/20 text-rose-300 border-rose-500/40'
+            : 'bg-amber-500/20 text-amber-300 border-amber-500/40';
+          const borderClass = isCritical ? 'border-rose-500/30' : 'border-amber-500/30';
+
+          return `
+            <div class="glass-card rounded-xl p-4 flex flex-col justify-between border ${borderClass} bg-dark-card/50 transition hover:border-gray-500 shadow-lg">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded font-mono border ${badgeClass}">
+                    ${c.severity} • ${c.category}
+                  </span>
+                  <span class="text-[10px] font-mono text-gray-500">${c.id}</span>
+                </div>
+
+                <h4 class="text-xs font-bold text-white mb-2 leading-snug">
+                  ${c.title}
+                </h4>
+
+                <div class="inline-block px-2 py-1 rounded bg-dark-bg border border-dark-border font-mono text-[11px] font-bold text-rose-400 mb-2.5">
+                  実測規模: ${c.metric}
+                </div>
+
+                <div class="space-y-2 text-[11px] leading-relaxed">
+                  <p class="text-gray-300">
+                    <strong class="text-gray-100">【事実】</strong>${c.fact}
+                  </p>
+                  <p class="text-gray-400">
+                    <strong class="text-rose-300">【真因・ボトルネック】</strong>${c.bottleneck}
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-3 pt-2.5 border-t border-dark-border bg-dark-bg/60 -mx-4 -mb-4 p-3 rounded-b-xl">
+                <div class="text-[10px] font-bold font-mono text-emerald-400 mb-0.5 flex items-center gap-1">
+                  <i data-lucide="compass" class="w-3 h-3 text-emerald-400"></i> 現在の仮説と打ち手
+                </div>
+                <p class="text-[10.5px] text-gray-300 leading-snug">
+                  ${c.current_hypothesis}
+                </p>
+              </div>
+            </div>
+          `;
+        }).join('');
       }
 
       // 3. Key Findings Grid (Architectural Pillars with JA / EN Toggle)
