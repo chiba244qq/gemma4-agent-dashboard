@@ -369,15 +369,22 @@
             <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
             Architectural Pillars & Hard Constraints（重要技術仕様・アーキテクチャの柱と制約）
           </h3>
-          <p class="text-xs text-gray-400">リバースエンジニアリングで特定したハードウェア定数と評価環境の物理的境界条件</p>
+          <p class="text-xs text-gray-400">リバースエンジニアリング・実機計測・12回の提出実験で特定した物理的境界条件と突破設計</p>
         </div>
-        <div class="inline-flex items-center p-0.5 rounded-lg bg-dark-card border border-dark-border text-xs self-start sm:self-auto">
-          <button id="btn-pillars-ja" onclick="setPillarsLang('ja')" class="px-3 py-1 rounded-md font-medium transition bg-brand-500 text-white shadow-sm">
-            🇯🇵 日本語
+        <div class="flex flex-wrap items-center gap-2 self-start sm:self-auto">
+          <button onclick="openDocModal('docs/ARCHITECTURAL_PILLARS_AND_CONSTRAINTS.md', 'Architectural Pillars & Hard Constraints 完全図解ガイド')"
+                  class="px-3 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 text-xs font-medium flex items-center gap-1.5 transition shadow-sm">
+            <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+            📖 図解入り完全解説を読む
           </button>
-          <button id="btn-pillars-en" onclick="setPillarsLang('en')" class="px-3 py-1 rounded-md font-medium text-gray-400 hover:text-white transition">
-            🇺🇸 English
-          </button>
+          <div class="inline-flex items-center p-0.5 rounded-lg bg-dark-card border border-dark-border text-xs">
+            <button id="btn-pillars-ja" onclick="setPillarsLang('ja')" class="px-3 py-1 rounded-md font-medium transition bg-brand-500 text-white shadow-sm">
+              🇯🇵 日本語
+            </button>
+            <button id="btn-pillars-en" onclick="setPillarsLang('en')" class="px-3 py-1 rounded-md font-medium text-gray-400 hover:text-white transition">
+              🇺🇸 English
+            </button>
+          </div>
         </div>
       </div>
 

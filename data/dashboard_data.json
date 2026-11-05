@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-05 03:50:52 UTC",
-  "last_updated_jst": "2026-11-05 12:50:52 JST",
+  "last_updated_utc": "2026-11-05 05:06:15 UTC",
+  "last_updated_jst": "2026-11-05 14:06:15 JST",
   "active_job": {
     "ref": 58008114,
     "description": "V9.1 Base-Restore (V9 Ultimate LB 0.20 Prompt + No-Restatement, T=0.2, 2048 Think, 8m): Follow-up to Ref 57978613 (Score 0.17)",
     "start_jst": "2026-11-05 12:33:15 JST",
-    "elapsed_hours": 0.3,
-    "progress_pct": 5.0,
+    "elapsed_hours": 1.6,
+    "progress_pct": 5.5,
     "est_completion_jst": "2026-11-06 16:33:15 JST"
   },
   "my_team": {
@@ -286,64 +286,64 @@
   ],
   "key_findings": [
     {
-      "title": "findfile IDF-Ranker Breakthrough (LocBench)",
-      "title_en": "findfile IDF-Ranker Breakthrough (LocBench)",
-      "title_ja": "findfile IDFランク付け探索による探索失敗率の激減",
-      "tag": "BREAKTHROUGH",
-      "tag_en": "BREAKTHROUGH",
-      "tag_ja": "技術的突破",
-      "desc": "Local N=63 benchmark shows findfile cuts miss rate from 54.0% (V11) down to 3.2%, achieving 74.6% Top-3 and 82.5% Top-5 hit rate.",
-      "desc_en": "Local N=63 benchmark shows findfile (fastapi/ only) cuts miss rate from 54.0% (V11) and 28.6% (V12.1) down to 3.2%, achieving 74.6% Top-3 and 82.5% Top-5 hit rate.",
-      "desc_ja": "ローカルベンチマーク（N=63）において、TF-IDF重み付けによる専用探索ツール『findfile』を導入。探索ミス率がV11の54.0%、V12.1の28.6%からわずか3.2%へと激減。Top-3的中率74.6%、Top-5的中率82.5%を達成し、初手でのファイル特定失敗を事実上根絶。",
-      "detail_ja": "【背景・技術仕様】\nLLMが広大なリポジトリで最初に対象ファイルを見失うと、無駄なファイル読み込み（1回あたり数千トークン・数十秒）を繰り返しタイムアウトに至ります。findfileはタスク指示文からストップワードを除去し、ファイルパスの希少性（IDF）でスコアリングして上位10件を即座に特定します。"
-    },
-    {
-      "title": "Unresolvable Dead Tasks (Topic 755554)",
-      "title_en": "Unresolvable Dead Tasks (Topic 755554)",
-      "title_ja": "解法が存在しない「デッドタスク」の存在（実質分母56問）",
-      "tag": "CRITICAL",
-      "tag_en": "CRITICAL",
-      "tag_ja": "致命的制約",
-      "desc": "fastapi_14186 and rich_3486 have conflicting test decorators (@needs_pydanticv1 vs v2). Skipped required tests cause 0 score even on reference patch. Real denominator is 56, not 58.",
-      "desc_en": "fastapi_14186 and rich_3486 have conflicting test decorators (@needs_pydanticv1 vs v2). Skipped required tests cause 0 score even on reference patch. Real denominator is 56, not 58.",
-      "desc_ja": "全58問中、fastapi_14186およびrich_3486の2問は評価ハーネス側の依存ライブラリ不整合（@needs_pydanticv1/v2の衝突等）により、公式のリファレンス正解パッチを適用してもテストがスキップされ0点になります。競技の実質的分母は58問ではなく56問です。",
-      "detail_ja": "【背景・技術仕様】\nKaggle公式Discussions（トピック755554）でも報告されている仕様バグです。提出エージェントがどんなに完璧なコードを書いても得点できないため、これら2問の失敗でアーキテクチャの優劣を判断してはならず、最大獲得可能スコアは実質 56/58 ≒ 0.965 となります。"
-    },
-    {
-      "title": "12-Hour Global Timeout Wall (Notebook Audit)",
-      "title_en": "12-Hour Global Timeout Wall (Notebook Audit)",
-      "title_ja": "12時間グローバルタイムアウトの壁（VOID即死回避の7分キャップ）",
-      "tag": "TIMEOUT",
-      "tag_en": "TIMEOUT",
-      "tag_ja": "時間制約",
-      "desc": "At 8m cap per task, 120 tasks hit the 12h overall limit (No Score). 7m cap buys 40m safe margin and guarantees completion.",
-      "desc_en": "At 8m cap per task, 120 tasks hit the 12h overall limit (No Score). 7m cap buys 40m safe margin and guarantees completion.",
-      "desc_ja": "Kaggle評価環境には全体で12時間（43,200秒）という絶対上限があり、1秒でも超過すると全問0点（No Score/失格）になります。1問あたり8分キャップでは全問試行時に12時間の壁に衝突する危険があるため、7分（420秒）キャップを適用し約40分の安全マージンを確保して完走を保証しています。",
-      "detail_ja": "【背景・技術仕様】\n1問ごとのタイムアウト処理だけでなく、エージェント初期化やハーネスのコンテナリセットオーバーヘッド（1問あたり数秒〜十数秒）が累積します。7分（420秒）打ち切りにより、全タスクで最大時間を使い切ったとしても43,200秒以内に確実に全問の採点処理を通過させます。"
-    },
-    {
-      "title": "300s Budget = 5,000 Output Tokens Constant",
-      "title_en": "300s Budget = 5,000 Output Tokens Constant",
-      "title_ja": "300秒の推論予算 ＝ 出力約5,000トークンの物理定数（復唱厳禁）",
-      "tag": "HARDWARE",
-      "tag_en": "HARDWARE",
-      "tag_ja": "推論速度",
-      "desc": "Hardware generation speed is fixed at 17.25 tok/s (76% of time). Restating read code wastes 58ms/tok. 100% of zero-patch failures never reached edit_file.",
-      "desc_en": "Hardware generation speed is fixed at 17.25 tok/s (76% of time). Restating read code wastes 58ms/tok. 100% of zero-patch failures never reached edit_file.",
-      "desc_ja": "Gemma 4のハードウェア推論速度は17.25トークン/秒（1トークンあたり約58ms）で固定されています。読み込んだコードの復唱や過剰な独白は秒単位の時間を浪費します。パッチ生成に至らなかった失敗（Score 0）の100%は、復唱や迷走により edit_file に到達する前に時間切れになったことが原因です。",
-      "detail_ja": "【背景・技術仕様】\nモデル思考時間（Thinking）と出力トークン数の合計が推論時間を決定します。思考予算を2048トークンに制御し、かつ「読み込んだファイル内容をレスポンスで復唱（オウム返し）してはならない」という1行の規律を加えるだけで、貴重な時間を節約して確実にパッチ編集ツールへ到達させます。"
-    },
-    {
       "title": "ADK 14,336-Token Compaction Cliff",
       "title_en": "ADK 14,336-Token Compaction Cliff",
-      "title_ja": "Google ADK 14,336トークン圧縮崖（記憶喪失とツール破壊）",
+      "title_ja": "① Google ADK 14,336トークン圧縮崖（突然の記憶喪失）",
       "tag": "STABILITY",
       "tag_en": "STABILITY",
       "tag_ja": "記憶制約",
-      "desc": "Google ADK summarizer drops all tool calls/results, causing instant amnesia. V11/V12 keep tokens under 14k.",
-      "desc_en": "Google ADK summarizer drops all tool calls/results, causing instant amnesia. V11/V12 keep tokens under 14k.",
-      "desc_ja": "Google Agent Development Kit (ADK)のコンパクション機能は、累積トークンが14,336を超えると履歴の要約を行い、過去のツール呼び出し履歴やエラーログをすべて消去します。これによりエージェントは突然記憶喪失に陥りループするため、履歴トークンを14,000未満に保つ設計が不可欠です。",
-      "detail_ja": "【背景・技術仕様】\nファイルの中身を丸ごと読み込むと1回で数千トークンを消費し、すぐに14kの崖に到達します。必要な範囲のみをピンポイントで読む（行数指定・オフセット）、無駄な思考出力を抑える、不要な探索ログを圧縮させないことが完走率と正答率の生命線です。"
+      "desc": "Google ADK summarizer drops all tool calls/results at 14,336 tokens, cutting resolution rate from 47.7% (0 compactions) to 7.1% (2+ compactions).",
+      "desc_en": "Google ADK summarizer drops all tool calls/results at 14,336 tokens, cutting resolution rate from 47.7% (0 compactions) to 7.1% (2+ compactions).",
+      "desc_ja": "Google ADKの履歴管理は累積14,336トークンを超えた瞬間に過去の全ツール結果・行番号・要件を要約消去します。実測で解決率が47.7%（0回）➔ 26.4%（1回）➔ 7.1%（2回以上）へ激減するため、14k未満の維持が必須です。",
+      "detail_ja": "【背景・技術仕様】\nファイルを丸ごと読み込むと1回で数千トークンを消費し、即座に14kの崖に到達します。read_fileを40〜80行に絞り、コマンド出力も head -20 で切り詰める必要があります（ただしプロンプト自体を削りすぎるとV11のように基礎推論力が落ちる点に注意）。"
+    },
+    {
+      "title": "17.25 tok/s Speed & 58% Empty Patch Trap",
+      "title_en": "17.25 tok/s Speed & 58% Empty Patch Trap",
+      "title_ja": "② 17.25 tok/s 物理定数と「未編集ゼロ点（58%）」の罠",
+      "tag": "HARDWARE",
+      "tag_en": "HARDWARE",
+      "tag_ja": "推論速度・未編集罠",
+      "desc": "Generation speed is fixed at 17.25 tok/s (~5,000 tokens/task). 93% of failed runs open the right file by Turn 3, yet 58% die with 0-byte empty patches.",
+      "desc_en": "Generation speed is fixed at 17.25 tok/s (~5,000 tokens/task). 93% of failed runs open the right file by Turn 3, yet 58% die with 0-byte empty patches.",
+      "desc_ja": "4×L4環境での生成速度は17.25 tok/s（58ms/tok、1問上限約5,000トークン）で固定。失敗タスクの93%は3手目までに正解ファイルを開いているにもかかわらず、58%がコード復唱や長考で時間切れとなり「1文字も編集せず（Empty Patch）」0点で死んでいます。",
+      "detail_ja": "【背景・技術仕様】\nV12.3で探索ミス率を3.2%に下げてもスコアが0.17で不変だった理由がこれです。ボトルネックは「ファイルを探すこと」ではなく「開いた後に復唱せず即座に edit_file を実行させること（No Restatement & Call 9-12 初回編集強制）」にあります。"
+    },
+    {
+      "title": "12-Hour Global Timeout Wall (7m vs 8m Cap)",
+      "title_en": "12-Hour Global Timeout Wall (7m vs 8m Cap)",
+      "title_ja": "③ 12時間グローバルタイムアウト壁（7分 vs 8分のジレンマ）",
+      "tag": "TIMEOUT",
+      "tag_en": "TIMEOUT",
+      "tag_ja": "時間制約",
+      "desc": "8m cap runs at ~28h edge (causing 0.24 / 0.17 / No Score variance). 7m cap (V12.3) finishes in 18h48m (-9h), trading late solves for 100% completion.",
+      "desc_en": "8m cap runs at ~28h edge (causing 0.24 / 0.17 / No Score variance). 7m cap (V12.3) finishes in 18h48m (-9h), trading late solves for 100% completion.",
+      "desc_ja": "全体制限（12hエンジン上限 / 実測約28h）を1秒でも超えると全問0点（No Score）で失格となります。8分設定は境界線上にあり、同一ZIPでも『0.24 / 0.17 / No Score』に分裂します。7分設定（V12.3）は実測18時間48分（-9時間短縮）で確実に完走します。",
+      "detail_ja": "【背景・技術仕様】\n7分キャップは完走を100%保証する一方、7〜8分目にギリギリ解ける1〜2問を切り捨てるためスコアが0.17前後に圧縮されます。現在進行中のV9.1は「8分枠を維持しつつ、復唱禁止で実質実行時間を削る」ハイブリッド戦略を採っています。"
+    },
+    {
+      "title": "Grader-First Rule (Two-Container Trap)",
+      "title_en": "Grader-First Rule (Two-Container Trap)",
+      "title_ja": "④ Grader-First 原則（二段階コンテナと偽陰性の罠）",
+      "tag": "CRITICAL",
+      "tag_en": "CRITICAL",
+      "tag_ja": "採点仕様",
+      "desc": "Agent sandbox lacks anyio/typing_inspection wheels, causing false-negative pytest failures. Reverting valid edits via git checkout causes self-destruction.",
+      "desc_en": "Agent sandbox lacks anyio/typing_inspection wheels, causing false-negative pytest failures. Reverting valid edits via git checkout causes self-destruction.",
+      "desc_ja": "エージェントの作業コンテナ（Container A）は -p no:anyio 強制や wheel 不足により、正しいコードでも pytest がエラー（偽陰性）を出します。これに騙されて git checkout で正解パッチを自ら消去する自己破壊を防ぐ規律が Grader-First です。",
+      "detail_ja": "【背景・技術仕様】\n本番採点機（Container B）は提出された git diff だけをまっさらな完全環境に適用し、JUnit XML の4条件で採点します。手元のテストが環境起因で赤でも、仕様に合致したソース diff が残っていれば満点になります。"
+    },
+    {
+      "title": "Private Domain Shift & Dead Tasks (Host Verified)",
+      "title_en": "Private Domain Shift & Dead Tasks (Host Verified)",
+      "title_ja": "⑤ 本番 Private の完全ドメインシフトとデッドタスク",
+      "tag": "BREAKTHROUGH",
+      "tag_en": "BREAKTHROUGH",
+      "tag_ja": "本番環境仕様",
+      "desc": "Host confirmed: (1) 0% of public repos (FastAPI/Rich) appear in Private test set, (2) 100% of Private tasks are solvable, (3) 0% touch async def.",
+      "desc_en": "Host confirmed: (1) 0% of public repos (FastAPI/Rich) appear in Private test set, (2) 100% of Private tasks are solvable, (3) 0% touch async def.",
+      "desc_ja": "ホスト公式発表（Topic 747248 / 745998）により、①公開リポジトリ（FastAPI, Rich等）は本番テストセットに1つも含まれない、②公開にあるデッドタスク（2問）と違い本番は全問100%解決可能、③本番に async def 修正は0件（100%同期コード）と確定。",
+      "detail_ja": "【背景・技術仕様】\nしたがって、FastAPI特有のディレクトリ構造や非同期専用ハックへの過学習（Overfitting）は本番Privateで一斉転落（Shakeup）を招きます。未知の同期Pythonリポジトリで普遍的に機能するV9系の仕様抽出＋3〜5行ブロック編集が最善の武器となります。"
     }
   ]
 }

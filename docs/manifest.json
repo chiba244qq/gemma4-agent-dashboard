@@ -24,11 +24,23 @@
     "summary": "【実戦実例集】エージェントに渡される生プロンプト、各ターンの思考・Tool呼び出し生ログ、正解diff、採点機が裏で実行する非公開テストコード、および0点失格の失敗生ログを完全網羅。"
   },
   {
-    "id": "COMPETITION_ROADMAP",
-    "file": "docs/COMPETITION_ROADMAP.md",
+    "id": "ARCHITECTURAL_PILLARS_AND_CONSTRAINTS",
+    "file": "docs/ARCHITECTURAL_PILLARS_AND_CONSTRAINTS.md",
     "order": 3,
     "status": "active",
-    "step_label": "STEP 3: 進行管理とスケジュール",
+    "step_label": "STEP 3: 重要技術仕様とハード制約の図解",
+    "date": "2026-11-05 (新規追加)",
+    "title": "Architectural Pillars & Hard Constraints（重要技術仕様・アーキテクチャの柱とハード制約）完全図解ガイド",
+    "badge": "図解・技術仕様",
+    "badge_color": "emerald",
+    "summary": "【物理制約と設計原則】14,336トークン記憶喪失の崖、17.25 tok/s生成速度とEmpty Patch（未編集死）の真実、12時間タイムアウト壁、Grader-First、Privateドメインシフトを図解で徹底解説。"
+  },
+  {
+    "id": "COMPETITION_ROADMAP",
+    "file": "docs/COMPETITION_ROADMAP.md",
+    "order": 4,
+    "status": "active",
+    "step_label": "STEP 4: 進行管理とスケジュール",
     "date": "2026-11-04 (更新)",
     "title": "総合作戦ロードマップ & アクションアイテム台帳",
     "badge": "実行計画",
@@ -38,9 +50,9 @@
   {
     "id": "STRATEGY_AND_OPERATIONS",
     "file": "docs/STRATEGY_AND_OPERATIONS.md",
-    "order": 4,
+    "order": 5,
     "status": "active",
-    "step_label": "STEP 4: 自動化と運用ルール",
+    "step_label": "STEP 5: 自動化と運用ルール",
     "date": "2026-10-31",
     "title": "日次提出サイクルと運用プロトコル規定書",
     "badge": "運用規律",
@@ -50,7 +62,7 @@
   {
     "id": "GOLD_MEDAL_STRATEGY",
     "file": "docs/GOLD_MEDAL_STRATEGY.md",
-    "order": 5,
+    "order": 6,
     "status": "deprecated",
     "step_label": "REFERENCE: 初期分析（一部前提変更あり）",
     "date": "2026-11-01 (旧版)",
@@ -62,7 +74,7 @@
   {
     "id": "PAPER_TRACK_WRITEUP_JA",
     "file": "docs/PAPER_TRACK_WRITEUP_JA.md",
-    "order": 6,
+    "order": 7,
     "status": "deprecated",
     "step_label": "ARCHIVE: 論文ドラフト（優先度低・凍結中）",
     "date": "2026-10-28 (凍結)",
@@ -74,7 +86,7 @@
   {
     "id": "PAPER_TRACK_WRITEUP",
     "file": "docs/PAPER_TRACK_WRITEUP.md",
-    "order": 7,
+    "order": 8,
     "status": "deprecated",
     "step_label": "ARCHIVE: Official Paper Draft (Frozen)",
     "date": "2026-10-28 (Frozen)",
