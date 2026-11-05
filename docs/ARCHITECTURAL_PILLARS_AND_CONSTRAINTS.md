@@ -10,22 +10,22 @@
 
 ```mermaid
 flowchart TD
-    Start["タスク開始 (全58問)"] --> T1["① 探索フェーズ (Locate)"]
+    Start["タスク開始 (全58問)"] --> T1["1. 探索フェーズ (Locate)"]
     
-    T1 -->|"ファイルを闇雲に開く\n(累積 14,336 トークン超過)"| Trap1["💀 罠①：ADK Compaction Cliff\n過去の記憶・行番号・要件が全消去され\n無限ループで自滅"]
-    T1 -->|"ピンポイント読込 (40〜80行)"| T2["② 思考・設計フェーズ (Think)"]
+    T1 -->|"ファイルを丸ごと開く (14,336 tok 超過)"| Trap1["罠1: ADK Compaction Cliff - 履歴と行番号が全消去され無限ループ"]
+    T1 -->|"ピンポイント読込 (40-80行)"| T2["2. 思考・設計フェーズ (Think)"]
 
-    T2 -->|"読んだコードを復唱・長考\n(17.25 tok/s = 58ms/tok 浪費)"| Trap2["💀 罠②：5,000トークン物理上限 & 未編集死\n1文字も編集できないまま時間切れ\n(全失敗の54%〜62%がこの未編集ゼロ点)"]
-    T2 -->|"復唱禁止・Turn 9〜12で即時編集"| T3["③ 編集・検証フェーズ (Edit & Verify)"]
+    T2 -->|"読んだコードを復唱・長考 (58ms/tok 浪費)"| Trap2["罠2: 5,000 tok 物理上限と未編集死 - 全失敗の58%が空パッチ"]
+    T2 -->|"復唱禁止・Turn 9-12 で即時編集"| T3["3. 編集・検証フェーズ (Edit & Verify)"]
 
-    T3 -->|"ローカル pytest が環境バグで失敗\n(anyio 不足・fixture エラー)"| Trap3["💀 罠③：偽陰性による自己破壊\n『自分の修正が間違っていた』と勘違いし\ngit checkout で正解コードを自ら消去"]
-    T3 -->|"Grader-First 原則で差分を維持"| T4["④ 全体ランタイム管理 (Global Wall)"]
+    T3 -->|"ローカル pytest が環境バグで失敗"| Trap3["罠3: 偽陰性による自己破壊 - git checkout で正解を自ら消去"]
+    T3 -->|"Grader-First 原則で差分を維持"| T4["4. 全体ランタイム管理 (Global Wall)"]
 
-    T4 -->|"1問8分×全問で合計12時間超過"| Trap4["💀 罠④：12時間グローバルタイムアウト\n1秒でも超えると全問没収 (No Score / 失格)"]
-    T4 -->|"時間予算内 (7〜8分 + 復唱禁止) で完走"| T5["⑤ 最終評価 (Public vs Private)"]
+    T4 -->|"1問8分 x 全問で合計12時間超過"| Trap4["罠4: 12時間グローバルタイムアウト - 全問没収 (No Score)"]
+    T4 -->|"時間予算内 (7-8分 + 復唱禁止) で完走"| T5["5. 最終評価 (Public vs Private)"]
 
-    T5 -->|"FastAPI や非同期処理に特化しすぎる"| Trap5["💀 罠⑤：Private ドメインシフト\n本番は FastAPI/Rich ゼロ & 非同期 0%\n過学習エージェントが一斉転落"]
-    T5 -->|"普遍的な Python 同期契約を遵守"| Goal["🏆 本番テストセットで高スコア獲得"]
+    T5 -->|"FastAPI や非同期処理に特化しすぎる"| Trap5["罠5: Private ドメインシフト - 本番は既存リポ0%・非同期0%"]
+    T5 -->|"普遍的な Python 同期契約を遵守"| Goal["本番テストセットで高スコア獲得"]
 ```
 
 以下、5 つの柱と制約のそれぞれについて、**「物理的メカニズム」「実測データ」「図解」「具体的な対策とトレードオフ」** を詳しく解説します。
@@ -46,22 +46,20 @@ sequenceDiagram
     participant ADK as Google ADK 履歴管理
     participant S as サンドボックス (/workspace)
 
-    Note over A,ADK: Turn 1〜3: 順調な調査 (累積 8,500 tokens)
-    A->>S: read_file("fastapi/routing.py", 1〜100行)
+    Note over A,ADK: Turn 1-3: 順調な調査 (累積 8,500 tokens)
+    A->>S: read_file (routing.py, 1-100行)
     S-->>ADK: 100行のコード + 行番号 (累積 11,200 tokens)
     
     Note over A,S: Turn 4: 大きなファイルを読む
-    A->>S: read_file("fastapi/applications.py", 1〜300行)
-    S-->>ADK: 300行のコード (累積 15,800 tokens 🚨 14,336 超過！)
+    A->>S: read_file (applications.py, 1-300行)
+    S-->>ADK: 300行のコード (累積 15,800 tokens -> 14,336 超過)
 
-    rect rgb(120, 30, 30)
-        Note over ADK: 💥 Compaction Cliff 発動！
-        ADK->>ADK: Turn 1〜4 の全ツール呼び出し・コード・行番号を完全削除！
-        ADK->>ADK: 数行の曖昧な要約文だけに置き換え：<br/>"エージェントは routing.py と applications.py を調査した。"
-    end
+    Note over ADK: Compaction Cliff 発動
+    ADK->>ADK: Turn 1-4 の全ツール呼び出し・コード・行番号を完全削除
+    ADK->>ADK: 数行の曖昧な要約文だけに置き換え
 
     ADK-->>A: 要約後のスカスカな履歴を渡す
-    Note over A: 😨 記憶喪失発生！<br/>「あれ？何行目を直すんだっけ？<br/>どんなエラーメッセージにするんだっけ？<br/>もう一度 routing.py を最初から読み直そう…」
+    Note over A: 記憶喪失発生 (何行目を直すのか消失し最初から読み直しループ)
 ```
 
 ### 1.2 実測データで見る破壊力
@@ -110,10 +108,10 @@ Kaggle の評価環境は **NVIDIA L4 GPU × 4 基（計 96GB VRAM）** 上で�
 さらに重要な事実として、コミュニティの実機トレース検証（`busyaprime` 氏 68 ラン、`prvsiyan` 氏 96 ラン）および当チームの V12.3 検証により、以下の衝撃的な内訳が判明しています。
 
 ```mermaid
-pie title 失敗したタスク（0点）の原因内訳（実機トレース分析）
-    "正解ファイルを開いたが、1文字も編集できずに時間切れ (Empty Patch)" : 58
-    "編集は行ったが、ロジックミスや連動漏れでテスト不一致" : 35
-    "正解ファイルにそもそも辿り着けなかった (Localization Miss)" : 7
+flowchart LR
+    All["全失敗タスク (100%)"] --> C1["58%: 正解ファイルを開いたが1文字も編集せず時間切れ (Empty Patch)"]
+    All --> C2["35%: 編集は行ったがロジックミスや連動漏れでテスト不一致"]
+    All --> C3["7%: 正解ファイルに辿り着けなかった (Localization Miss)"]
 ```
 
 * **重要な真実**:
@@ -136,21 +134,19 @@ Kaggle のコンペティション環境には、全タスク（裏の検証セ�
 本日確認した公開検証ノートブック（`alexust` 氏：*"One Bundle, Three Outcomes: 0.24, 0.17, No Score"*）と、当チームの V12.1（8分）vs V12.3（7分）の比較により、1問あたりの制限時間設定のメカニズムが完全に解明されました。
 
 ```mermaid
-flowchart LR
-    subgraph Cap8["設定 A：1問 8分キャップ (max_time_minutes: 8)"]
-        direction TB
-        C8_1["総所要時間: 27時間46分〜28時間超\n(12時間エンジン上限のギリギリ境界線)"]
-        C8_2["サーバー負荷が軽い日\n➔ 完走して 0.20〜0.24 (12〜14問)"]
-        C8_3["サーバー負荷が重い日 (1.7倍遅延)\n➔ 12時間の壁に激突し No Score (失格)"]
+flowchart TD
+    subgraph Cap8["設定 A: 1問 8分キャップ (max_time_minutes: 8)"]
+        C8_1["総所要時間: 27時間46分〜28時間超 (12時間エンジン上限の境界線)"]
+        C8_2["サーバー負荷が軽い日 -> 完走して 0.20〜0.24 (12〜14問)"]
+        C8_3["サーバー負荷が重い日 (1.7倍遅延) -> 12時間の壁に衝突し No Score (失格)"]
         C8_1 --> C8_2
         C8_1 --> C8_3
     end
 
-    subgraph Cap7["設定 B：1問 7分キャップ (max_time_minutes: 7)"]
-        direction TB
-        C7_1["総所要時間: 18時間48分 (当チーム V12.3 実測)\n(約9時間の圧倒的な安全マージン)"]
-        C7_2["どんなにサーバーが重くても\n100% 確実に完走 (No Score ゼロ)"]
-        C7_3["代償：7分〜8分の間にギリギリ解けていた\n1〜2問を取りこぼし、0.17 前後に圧縮"]
+    subgraph Cap7["設定 B: 1問 7分キャップ (max_time_minutes: 7)"]
+        C7_1["総所要時間: 18時間48分 (V12.3 実測 / 約9時間の安全マージン)"]
+        C7_2["サーバーが重くても 100% 完走 (No Score ゼロ)"]
+        C7_3["代償: 7〜8分目に解けていた1〜2問を取りこぼし 0.17 前後に圧縮"]
         C7_1 --> C7_2
         C7_1 --> C7_3
     end
@@ -168,23 +164,23 @@ flowchart LR
 `swegemma` ハーネスは、セキュリティと公平性を担保するため、**「エージェントが作業するコンテナ（Container A）」と「本番採点を行うコンテナ（Container B）」を完全に分離** しています。
 
 ```mermaid
-flowchart TB
+flowchart TD
     subgraph Phase1["Phase 1: Container A (エージェントの作業部屋)"]
         A1["エージェントが正しい修正パッチを作成"]
         A2["確認のために pytest を実行"]
-        A3["⚠️ ハーネスが pytest -p no:anyio を強制適用\nまたは typing_inspection 等の wheel 不整合"]
-        A4["❌ コードは正しいのに、テストがエラー (Red) で落ちる！\n(fixture 'anyio_backend' not found 等)"]
+        A3["ハーネスが pytest -p no:anyio を強制適用 / wheel 不足"]
+        A4["コードは正しいのにテストがエラー (Red) で落ちる"]
         A1 --> A2 --> A3 --> A4
     end
 
-    A4 -->|"未対策のエージェント"| Bad["😱『自分の修正がテストを壊した！』と誤認\ngit checkout -- . でせっかくの正解を白紙に戻す\n➔ 空パッチ提出で 0 点"]
-    A4 -->|"Grader-First 規律を持つエージェント"| Good["😎『これは環境起因のエラーであり自分のバグではない』\n修正コードをそのまま維持して submit_patch！"]
+    A4 -->|"未対策のエージェント"| Bad["自分の修正が壊したと誤認し git checkout で正解を消去 -> 0点"]
+    A4 -->|"Grader-First 規律を持つエージェント"| Good["環境起因のエラーは無視し修正コードを維持して submit_patch"]
 
     subgraph Phase2["Phase 2: Container B (隠れ採点機 Hidden Grader)"]
         G1["提出された git diff だけを抽出"]
         G2["まっさらな本番検証コンテナに適用"]
         G3["ホストの完全なテスト環境で JUnit XML 採点"]
-        G4["⭕ 見事に全テスト PASS ➔ 得点獲得！"]
+        G4["全テスト PASS -> 得点獲得"]
         Good --> G1 --> G2 --> G3 --> G4
     end
 ```

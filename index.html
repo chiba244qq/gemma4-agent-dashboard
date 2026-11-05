@@ -8,7 +8,16 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'dark',
+        securityLevel: 'loose',
+        fontFamily: 'Inter, sans-serif'
+      });
+    }
     tailwind.config = {
       darkMode: 'class',
       theme: {
@@ -704,6 +713,19 @@
         if (!res.ok) throw new Error('File not found');
         const text = await res.text();
         modalBody.innerHTML = marked.parse(text);
+
+        // Convert ```mermaid code blocks into rendered SVG diagrams
+        const mermaidCodes = modalBody.querySelectorAll('pre code.language-mermaid');
+        mermaidCodes.forEach((codeEl) => {
+          const preEl = codeEl.parentElement;
+          const div = document.createElement('div');
+          div.className = 'mermaid bg-dark-bg/90 border border-dark-border rounded-xl p-4 my-4 flex justify-center overflow-x-auto';
+          div.textContent = (codeEl.textContent || '').replace(/\\n/g, '<br/>');
+          preEl.replaceWith(div);
+        });
+        if (mermaidCodes.length > 0 && window.mermaid) {
+          await mermaid.run({ nodes: modalBody.querySelectorAll('.mermaid') });
+        }
       } catch (err) {
         modalBody.innerHTML = `<div class="p-4 rounded bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-mono">Failed to load: ${err.message}</div>`;
       }
