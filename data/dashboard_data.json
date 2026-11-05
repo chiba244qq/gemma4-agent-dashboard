@@ -1,14 +1,7 @@
 {
-  "last_updated_utc": "2026-11-05 17:50:23 UTC",
-  "last_updated_jst": "2026-11-06 02:50:23 JST",
-  "active_job": {
-    "ref": 58008114,
-    "description": "V9.1 Base-Restore (V9 Ultimate LB 0.20 Prompt + No-Restatement, T=0.2, 2048 Think, 8m): Follow-up to Ref 57978613 (Score 0.17)",
-    "start_jst": "2026-11-05 12:33:15 JST",
-    "elapsed_hours": 14.3,
-    "progress_pct": 51.0,
-    "est_completion_jst": "2026-11-06 16:33:15 JST"
-  },
+  "last_updated_utc": "2026-11-05 23:14:22 UTC",
+  "last_updated_jst": "2026-11-06 08:14:22 JST",
+  "active_job": null,
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -48,8 +41,8 @@
       "ref": 58008114,
       "date_utc": "2026-11-05 03:33:15 UTC",
       "date_jst": "2026-11-05 12:33:15 JST",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.15,
       "description": "V9.1 Base-Restore (V9 Ultimate LB 0.20 Prompt + No-Restatement, T=0.2, 2048 Think, 8m): Follow-up to Ref 57978613 (Score 0.17)",
       "error": ""
     },
