@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-05 09:17:51 UTC",
-  "last_updated_jst": "2026-11-05 18:17:51 JST",
+  "last_updated_utc": "2026-11-05 16:01:10 UTC",
+  "last_updated_jst": "2026-11-06 01:01:10 JST",
   "active_job": {
     "ref": 58008114,
     "description": "V9.1 Base-Restore (V9 Ultimate LB 0.20 Prompt + No-Restatement, T=0.2, 2048 Think, 8m): Follow-up to Ref 57978613 (Score 0.17)",
     "start_jst": "2026-11-05 12:33:15 JST",
-    "elapsed_hours": 5.7,
-    "progress_pct": 20.5,
+    "elapsed_hours": 12.5,
+    "progress_pct": 44.5,
     "est_completion_jst": "2026-11-06 16:33:15 JST"
   },
   "my_team": {
