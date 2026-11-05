@@ -393,6 +393,116 @@
       </div>
     </div>
 
+    <!-- LOCAL PRE-SUBMISSION VERIFICATION & BENCHMARKS -->
+    <div class="glass-card rounded-2xl p-6 space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="flask-conical" class="w-4 h-4 text-sky-400"></i>
+            Local Pre-Submission Verification & Offline Benchmarks（サブミット前のローカル効果検証・実測データ）
+          </h3>
+          <p class="text-xs text-gray-400">1日1回の提出前に手元 Mac で実測したオフライン検証データと、「ローカル検証 vs Kaggle 本番（4×L4 GPU）」の境界・ギャップ分析</p>
+        </div>
+        <button onclick="openDocModal('docs/LOCAL_VERIFICATION_AND_BENCHMARKS.md', 'ローカル事前検証・オフラインベンチマーク結果総括')"
+                class="px-3 py-1.5 rounded-lg bg-sky-500/15 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-xs font-medium flex items-center gap-1.5 transition shadow-sm self-start sm:self-auto">
+          <i data-lucide="file-bar-chart" class="w-3.5 h-3.5"></i>
+          📊 ローカル検証レポート全文を読む
+        </button>
+      </div>
+
+      <!-- 2-Column Layout: Benchmark Table + Summary Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <!-- Col 1: Localization Benchmark Table (7 cols) -->
+        <div class="lg:col-span-7 bg-dark-bg/60 rounded-xl border border-dark-border p-4 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-white flex items-center gap-1.5">
+              <span class="px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-[10px]">検証 ①</span>
+              ファイル探索アルゴリズム A/B ベンチマーク（FastAPI N=63 問・各 base_commit 実測）
+            </span>
+            <span class="text-[10px] font-mono text-gray-500">logs/benchmark_findfile_results.txt</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-[11px] font-mono">
+              <thead class="text-gray-400 border-b border-dark-border">
+                <tr>
+                  <th class="py-2 pr-2">探索手法 (Method)</th>
+                  <th class="py-2 px-2 text-right">Top-1</th>
+                  <th class="py-2 px-2 text-right">Top-3</th>
+                  <th class="py-2 px-2 text-right">Top-5</th>
+                  <th class="py-2 pl-2 text-right">見落とし率 (Miss)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-dark-border/60 text-gray-300">
+                <tr>
+                  <td class="py-2 pr-2">1. V11 Grep Baseline (<code class="text-gray-400">*.py | head -25</code>)</td>
+                  <td class="py-2 px-2 text-right">9.5% (6)</td>
+                  <td class="py-2 px-2 text-right">19.0% (12)</td>
+                  <td class="py-2 px-2 text-right">25.4% (16)</td>
+                  <td class="py-2 pl-2 text-right text-rose-400 font-bold">54.0% (34問)</td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-2">2. V12.1 Pathspec 除外 (<code class="text-gray-400">:!tests :!docs_src</code>)</td>
+                  <td class="py-2 px-2 text-right">23.8% (15)</td>
+                  <td class="py-2 px-2 text-right">49.2% (31)</td>
+                  <td class="py-2 px-2 text-right text-emerald-300">66.7% (42)</td>
+                  <td class="py-2 pl-2 text-right text-amber-300 font-bold">28.6% (18問)</td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-2">3. findfile Raw (全 .py IDF ランク付け)</td>
+                  <td class="py-2 px-2 text-right">19.0% (12)</td>
+                  <td class="py-2 px-2 text-right">47.6% (30)</td>
+                  <td class="py-2 px-2 text-right">57.1% (36)</td>
+                  <td class="py-2 pl-2 text-right text-emerald-400 font-bold">3.2% (2問)</td>
+                </tr>
+                <tr class="bg-emerald-500/5">
+                  <td class="py-2 pr-2 font-bold text-white">4. V12.3 findfile Pkg (除外 + IDF + 名前加点)</td>
+                  <td class="py-2 px-2 text-right text-emerald-300 font-bold">34.9% (22)</td>
+                  <td class="py-2 px-2 text-right text-emerald-300 font-bold">74.6% (47)</td>
+                  <td class="py-2 px-2 text-right text-emerald-300 font-bold">82.5% (52)</td>
+                  <td class="py-2 pl-2 text-right text-emerald-400 font-extrabold">3.2% (2問)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-[11px] text-gray-400 leading-relaxed pt-1 border-t border-dark-border/60">
+            💡 <strong class="text-gray-200">3キーワード合成時 (3×25行枠) A/B テスト:</strong> 除外なし <code class="text-gray-300">58.7% (37/63)</code> ➔ Pathspec 除外あり <code class="text-emerald-300 font-bold">79.4% (50/63)</code> へ +20.7% 向上。
+          </p>
+        </div>
+
+        <!-- Col 2: Coupled Discovery, Task Anatomy & Local-vs-Cloud Gap (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col justify-between gap-3">
+          <!-- Card A: Coupled Discovery & Token Safety -->
+          <div class="bg-dark-bg/60 rounded-xl border border-dark-border p-3.5 space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-white flex items-center gap-1.5">
+                <span class="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono text-[10px]">検証 ②・③</span>
+                複数ファイル連動 (N=23) ＆ 全129問パッチ構造解析
+              </span>
+            </div>
+            <ul class="text-[11px] text-gray-300 space-y-1 leading-relaxed">
+              <li>・<strong class="text-white">14k 記憶喪失の回避検証:</strong> 探索時の平均出力は <span class="text-emerald-300 font-mono font-bold">964 tokens</span> (最大 2,302 tok) と 14,336 崖の 7% 未満に制御。</li>
+              <li>・<strong class="text-white">正解パッチ規模 (可解119問):</strong> 修正行数中央値は <span class="text-brand-300 font-mono font-bold">12.0行</span> (77.3%が50行以内)。単一ファイル <span class="font-mono">71.4%</span> / 複数連動 <span class="font-mono">28.6%</span>。</li>
+              <li>・<strong class="text-white">ZIP 静的バリデーション:</strong> <code class="text-gray-400">validate_submission_package.py</code> により YAML・組込ツール・容量を全件事前検査（V5〜V9.1 まで <span class="text-emerald-400 font-bold">10回連続完走・エラー0</span>）。</li>
+            </ul>
+          </div>
+
+          <!-- Card B: What can vs cannot be verified locally (The Gap Analysis) -->
+          <div class="bg-amber-500/5 rounded-xl border border-amber-500/25 p-3.5 space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-amber-300 flex items-center gap-1.5">
+                <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-amber-400"></i>
+                なぜローカル Miss 3.2% (V12.3) でも本番スコアは 0.17 だったのか？
+              </span>
+            </div>
+            <p class="text-[11px] text-gray-300 leading-relaxed">
+              ローカルでは「検索ヒット率・トークン量・構文」は100%検証可能ですが、<strong class="text-white">「Gemma 4 (31B) の実推論（4×L4 GPU 96GB必須）」と「非公開テスト採点」は Kaggle 本番でしか実行できません</strong>。
+              本番検証の結果、①AIは特別ツールなしでも93%の確率で3手目までに正解ファイルを開けていること、②しかし <code class="text-amber-300">:!docs_src</code> 除外によりドキュメント修正問題（全体の11.6%）を取りこぼしていたことが判明。この両知見を統合し、現在 <strong class="text-emerald-300">V9.1（V9の広い視野を100%復元＋復唱禁止による時間短縮）</strong> を投入しています。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- SUBMISSION HISTORY TABLE -->
     <div class="glass-card rounded-2xl p-6 overflow-hidden">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">

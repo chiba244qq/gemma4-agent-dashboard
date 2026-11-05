@@ -36,11 +36,23 @@
     "summary": "【物理制約と設計原則】14,336トークン記憶喪失の崖、17.25 tok/s生成速度とEmpty Patch（未編集死）の真実、12時間タイムアウト壁、Grader-First、Privateドメインシフトを図解で徹底解説。"
   },
   {
-    "id": "COMPETITION_ROADMAP",
-    "file": "docs/COMPETITION_ROADMAP.md",
+    "id": "LOCAL_VERIFICATION_AND_BENCHMARKS",
+    "file": "docs/LOCAL_VERIFICATION_AND_BENCHMARKS.md",
     "order": 4,
     "status": "active",
-    "step_label": "STEP 4: 進行管理とスケジュール",
+    "step_label": "STEP 4: ローカル事前検証と実測データ",
+    "date": "2026-11-05 (新規追加)",
+    "title": "ローカル事前検証・オフラインベンチマーク結果総括（何が事前検証でき、何が本番でしか測れないか）",
+    "badge": "事前検証ログ",
+    "badge_color": "sky",
+    "summary": "【ローカル効果検証】提出前にMac上で実測した4つの検証（①N=63探索A/Bテスト、②N=23連動・トークン計測、③129問パッチ構造解析、④ZIP静的検査）の結果と、本番スコアとのギャップ分析。"
+  },
+  {
+    "id": "COMPETITION_ROADMAP",
+    "file": "docs/COMPETITION_ROADMAP.md",
+    "order": 5,
+    "status": "active",
+    "step_label": "STEP 5: 進行管理とスケジュール",
     "date": "2026-11-04 (更新)",
     "title": "総合作戦ロードマップ & アクションアイテム台帳",
     "badge": "実行計画",
@@ -50,9 +62,9 @@
   {
     "id": "STRATEGY_AND_OPERATIONS",
     "file": "docs/STRATEGY_AND_OPERATIONS.md",
-    "order": 5,
+    "order": 6,
     "status": "active",
-    "step_label": "STEP 5: 自動化と運用ルール",
+    "step_label": "STEP 6: 自動化と運用ルール",
     "date": "2026-10-31",
     "title": "日次提出サイクルと運用プロトコル規定書",
     "badge": "運用規律",
@@ -62,7 +74,7 @@
   {
     "id": "GOLD_MEDAL_STRATEGY",
     "file": "docs/GOLD_MEDAL_STRATEGY.md",
-    "order": 6,
+    "order": 7,
     "status": "deprecated",
     "step_label": "REFERENCE: 初期分析（一部前提変更あり）",
     "date": "2026-11-01 (旧版)",
@@ -74,7 +86,7 @@
   {
     "id": "PAPER_TRACK_WRITEUP_JA",
     "file": "docs/PAPER_TRACK_WRITEUP_JA.md",
-    "order": 7,
+    "order": 8,
     "status": "deprecated",
     "step_label": "ARCHIVE: 論文ドラフト（優先度低・凍結中）",
     "date": "2026-10-28 (凍結)",
@@ -86,7 +98,7 @@
   {
     "id": "PAPER_TRACK_WRITEUP",
     "file": "docs/PAPER_TRACK_WRITEUP.md",
-    "order": 8,
+    "order": 9,
     "status": "deprecated",
     "step_label": "ARCHIVE: Official Paper Draft (Frozen)",
     "date": "2026-10-28 (Frozen)",
