@@ -1,5 +1,6 @@
 {
-  "audit_timestamp_jst": "2026-11-06 12:49:08 JST",
+  "audit_timestamp_jst": "2026-11-06 13:55:23 JST",
+  "active_model": "google/gemma-2-9b-it",
   "device": "Tesla T4",
   "suites": {
     "suite_1_e2e_patch": {
@@ -20,19 +21,19 @@
       "results_by_temp": {
         "0.0": {
           "valid_syntax": true,
-          "latency_sec": 15.38
+          "latency_sec": 18.79
         },
         "0.2": {
           "valid_syntax": true,
-          "latency_sec": 14.35
+          "latency_sec": 13.63
         },
         "0.7": {
           "valid_syntax": true,
-          "latency_sec": 15.11
+          "latency_sec": 15.03
         },
         "1.0": {
           "valid_syntax": true,
-          "latency_sec": 20.42
+          "latency_sec": 20.18
         }
       },
       "safe_zone": "T <= 0.2 推奨"
@@ -48,7 +49,7 @@
       "title": "テーマ 5: 複数ファイル連動修正 (Multi-Turn 厳密検証)",
       "coupled_completed_count": 1,
       "total_tasks": 1,
-      "latency_sec": 17.03,
+      "latency_sec": 18.56,
       "status": "✅ 厳密PASS (Turn 2でrouting.py編集完遂)"
     },
     "suite_6_sync_async_twins": {
@@ -59,9 +60,9 @@
     },
     "suite_7_long_context_load": {
       "title": "テーマ 7: Call 8 履歴蓄積時の推論精度・遅延 (厳密検証)",
-      "long_ctx_latency_sec": 39.81,
+      "long_ctx_latency_sec": 41.1,
       "syntax_intact": true,
-      "overhead_sec": 25.31
+      "overhead_sec": 26.6
     },
     "suite_8_unknown_repo_generalization": {
       "title": "テーマ 8: Private 未知リポジトリ汎化 (ドメインシフト耐性)",
