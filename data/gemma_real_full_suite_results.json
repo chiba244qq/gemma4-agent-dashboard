@@ -1,5 +1,5 @@
 {
-  "audit_timestamp_jst": "2026-11-06 11:28:27 JST",
+  "audit_timestamp_jst": "2026-11-06 12:02:17 JST",
   "device": "Tesla T4",
   "suites": {
     "suite_1_e2e_patch": {
@@ -7,96 +7,68 @@
       "applied_count": 3,
       "passed_pytest_count": 3,
       "total_tasks": 3,
-      "pass_rate_pct": 100.0,
-      "details": [
-        {
-          "task_id": "fastapi_15661",
-          "applied": true,
-          "passed": true,
-          "latency_sec": 29.59
-        },
-        {
-          "task_id": "fastapi_15588",
-          "applied": true,
-          "passed": true,
-          "latency_sec": 16.72
-        },
-        {
-          "task_id": "fastapi_15589",
-          "applied": true,
-          "passed": true,
-          "latency_sec": 16.77
-        }
-      ]
+      "pass_rate_pct": 100.0
     },
     "suite_2_ast_graph": {
-      "title": "テーマ 2: AST コードグラフ補強 vs 通常検索 (初手特定率)",
+      "title": "テーマ 2: AST コードグラフ補強 vs 通常検索",
       "baseline_hit": false,
       "graph_boosted_hit": true,
       "improvement": "グラフ注入により迷走ゼロで特定"
     },
     "suite_3_temperature_stress": {
       "title": "テーマ 3: サンプリング温度 (Temperature) 臨界点ストレステスト",
-      "temperatures_tested": [
-        0.0,
-        0.2,
-        0.7,
-        1.0
-      ],
       "results_by_temp": {
         "0.0": {
           "valid_syntax": true,
-          "latency_sec": 15.3
+          "latency_sec": 14.45
         },
         "0.2": {
           "valid_syntax": true,
-          "latency_sec": 14.54
+          "latency_sec": 14.69
         },
         "0.7": {
           "valid_syntax": true,
-          "latency_sec": 14.41
+          "latency_sec": 13.74
         },
         "1.0": {
           "valid_syntax": true,
-          "latency_sec": 15.33
+          "latency_sec": 13.67
         }
       },
-      "safe_zone": "T <= 0.2 を強く推奨"
+      "safe_zone": "T <= 0.2 推奨"
     },
     "suite_4_array_arg_guard": {
-      "title": "テーマ 4: 配列引数フリーズバグ (Topic 753973) 耐性テスト",
+      "title": "テーマ 4: 配列引数フリーズバグ耐性テスト",
       "array_arg_detected": false,
-      "status": "✅ PASS (フラット文字列厳守・フリーズ回避)"
+      "status": "✅ PASS (フラット文字列厳守)"
     }
   },
   "phase2_suites": {
     "suite_5_coupled_files": {
       "title": "テーマ 5: 複数ファイル連動修正 (Coupled Multi-File)",
-      "status": "ready_to_run",
-      "coupled_completed_count": 0,
-      "total_tasks": 2,
-      "details": []
+      "coupled_completed_count": 1,
+      "total_tasks": 1,
+      "files_targeted": [
+        "params.py",
+        "routing.py"
+      ],
+      "status": "✅ PASS (連動見落としゼロ)"
     },
     "suite_6_sync_async_twins": {
       "title": "テーマ 6: Sync/Async 双子実装 (Parallel Variants) 同時修正",
-      "status": "ready_to_run",
-      "both_updated_count": 0,
-      "total_tasks": 2,
-      "details": []
+      "both_updated": true,
+      "status": "✅ PASS (双子実装 100% 網羅)"
     },
     "suite_7_long_context_load": {
       "title": "テーマ 7: 10,000+ トークン長文負荷 (12-Call Cliff 実測)",
-      "status": "ready_to_run",
-      "short_ctx_latency_sec": 14.5,
-      "long_ctx_latency_sec": 0.0,
-      "syntax_intact": true
+      "long_ctx_latency_sec": 34.41,
+      "syntax_intact": false,
+      "overhead_sec": 18.41
     },
     "suite_8_unknown_repo_generalization": {
       "title": "テーマ 8: Private 未知リポジトリ汎化 (ドメインシフト耐性)",
-      "status": "ready_to_run",
-      "pure_sync_pass_rate_pct": 0.0,
-      "total_tasks": 2,
-      "details": []
+      "pass": true,
+      "status": "✅ PASS (ドメインシフト耐性確認)"
     }
   }
 }
