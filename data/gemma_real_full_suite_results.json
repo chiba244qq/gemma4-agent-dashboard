@@ -68,5 +68,35 @@
       "array_arg_detected": false,
       "status": "✅ PASS (フラット文字列厳守・フリーズ回避)"
     }
+  },
+  "phase2_suites": {
+    "suite_5_coupled_files": {
+      "title": "テーマ 5: 複数ファイル連動修正 (Coupled Multi-File)",
+      "status": "ready_to_run",
+      "coupled_completed_count": 0,
+      "total_tasks": 2,
+      "details": []
+    },
+    "suite_6_sync_async_twins": {
+      "title": "テーマ 6: Sync/Async 双子実装 (Parallel Variants) 同時修正",
+      "status": "ready_to_run",
+      "both_updated_count": 0,
+      "total_tasks": 2,
+      "details": []
+    },
+    "suite_7_long_context_load": {
+      "title": "テーマ 7: 10,000+ トークン長文負荷 (12-Call Cliff 実測)",
+      "status": "ready_to_run",
+      "short_ctx_latency_sec": 14.5,
+      "long_ctx_latency_sec": 0.0,
+      "syntax_intact": true
+    },
+    "suite_8_unknown_repo_generalization": {
+      "title": "テーマ 8: Private 未知リポジトリ汎化 (ドメインシフト耐性)",
+      "status": "ready_to_run",
+      "pure_sync_pass_rate_pct": 0.0,
+      "total_tasks": 2,
+      "details": []
+    }
   }
 }
