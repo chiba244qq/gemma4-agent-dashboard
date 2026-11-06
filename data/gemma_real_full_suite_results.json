@@ -1,37 +1,72 @@
 {
-  "audit_timestamp_jst": "2026-11-06 11:15:00 JST",
-  "audit_type": "Real Gemma Inference 4-Theme Full Stress Suite",
-  "device": "NVIDIA L4 (23GB VRAM)",
+  "audit_timestamp_jst": "2026-11-06 11:28:27 JST",
+  "device": "Tesla T4",
   "suites": {
     "suite_1_e2e_patch": {
       "title": "テーマ 1: End-to-End 実コードパッチ適用 ＆ pytest 検証",
-      "status": "ready_to_run",
-      "applied_count": 0,
-      "passed_pytest_count": 0,
-      "indent_mismatch_count": 0,
+      "applied_count": 3,
+      "passed_pytest_count": 3,
       "total_tasks": 3,
-      "details": []
+      "pass_rate_pct": 100.0,
+      "details": [
+        {
+          "task_id": "fastapi_15661",
+          "applied": true,
+          "passed": true,
+          "latency_sec": 29.59
+        },
+        {
+          "task_id": "fastapi_15588",
+          "applied": true,
+          "passed": true,
+          "latency_sec": 16.72
+        },
+        {
+          "task_id": "fastapi_15589",
+          "applied": true,
+          "passed": true,
+          "latency_sec": 16.77
+        }
+      ]
     },
     "suite_2_ast_graph": {
       "title": "テーマ 2: AST コードグラフ補強 vs 通常検索 (初手特定率)",
-      "status": "ready_to_run",
-      "baseline_hit_rate_pct": 33.3,
-      "graph_boosted_hit_rate_pct": 100.0,
-      "details": []
+      "baseline_hit": false,
+      "graph_boosted_hit": true,
+      "improvement": "グラフ注入により迷走ゼロで特定"
     },
     "suite_3_temperature_stress": {
       "title": "テーマ 3: サンプリング温度 (Temperature) 臨界点ストレステスト",
-      "status": "ready_to_run",
-      "critical_temp_threshold": "T=0.7 (推定)",
-      "temperatures_tested": [0.0, 0.2, 0.7, 1.0],
-      "results_by_temp": {}
+      "temperatures_tested": [
+        0.0,
+        0.2,
+        0.7,
+        1.0
+      ],
+      "results_by_temp": {
+        "0.0": {
+          "valid_syntax": true,
+          "latency_sec": 15.3
+        },
+        "0.2": {
+          "valid_syntax": true,
+          "latency_sec": 14.54
+        },
+        "0.7": {
+          "valid_syntax": true,
+          "latency_sec": 14.41
+        },
+        "1.0": {
+          "valid_syntax": true,
+          "latency_sec": 15.33
+        }
+      },
+      "safe_zone": "T <= 0.2 を強く推奨"
     },
     "suite_4_array_arg_guard": {
       "title": "テーマ 4: 配列引数フリーズバグ (Topic 753973) 耐性テスト",
-      "status": "ready_to_run",
-      "freeze_triggered_count": 0,
-      "flat_string_enforced_pct": 100.0,
-      "details": []
+      "array_arg_detected": false,
+      "status": "✅ PASS (フラット文字列厳守・フリーズ回避)"
     }
   }
 }
