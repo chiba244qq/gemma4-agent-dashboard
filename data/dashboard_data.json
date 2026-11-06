@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-06 00:09:41 UTC",
-  "last_updated_jst": "2026-11-06 09:09:41 JST",
+  "last_updated_utc": "2026-11-06 00:14:17 UTC",
+  "last_updated_jst": "2026-11-06 09:14:17 JST",
   "active_job": {
     "ref": 58038278,
     "description": "V9.2 Early-Edit Trigger (Call 8 Mandatory Edit, 0% Empty Patch on L4 Benchmark, 8m / T=0.2 / 2048 Think): Follow-up to Ref 58008114 (Score 0.15)",
@@ -36,6 +36,175 @@
       "insight": "実推論速度 17.25 tok/s (58ms/tok) の物理制約下では、思考や復唱でのトークン浪費が 58% Empty Patch の主因。既存コード復唱を禁止し、Call 8〜12 での早期編集到達がスコアを左右する。"
     }
   ],
+  "mini_kaggle_eval": {
+    "last_eval_jst": "2026-11-06 09:12:00 JST",
+    "eval_environment": "Colab Pro (NVIDIA L4 / 22GB VRAM)",
+    "tasks_evaluated_count": 5,
+    "models_summary": [
+      {
+        "model": "V9.2 Early-Edit Trigger",
+        "status_badge": "現在採点中 (Day 16)",
+        "badge_color": "emerald",
+        "passed_tasks": 4,
+        "failed_tasks": 1,
+        "empty_patch_tasks": 0,
+        "total_time_sec": 1170,
+        "pass_rate_pct": 80.0,
+        "empty_patch_pct": 0.0,
+        "avg_time_sec": 234.0,
+        "task_details": [
+          {
+            "task_id": "FASTAPI-01-ROUTING-TUPLE",
+            "title": "Sync dependency args unpacking in anyio worker thread",
+            "difficulty": "Core (Single-File)",
+            "passed": true,
+            "is_empty_patch": false,
+            "elapsed_sec": 210
+          },
+          {
+            "task_id": "FASTAPI-02-APPLICATION-COUPLED",
+            "title": "Mount router response_model_exclude_unset forwarding",
+            "difficulty": "Hard (Multi-File Coupled)",
+            "passed": false,
+            "is_empty_patch": false,
+            "elapsed_sec": 330
+          },
+          {
+            "task_id": "FASTAPI-03-DOCS-BODY-SYNTAX",
+            "title": "Tutorial Annotated Body syntax update in docs_src",
+            "difficulty": "Doc Code Trap",
+            "passed": true,
+            "is_empty_patch": false,
+            "elapsed_sec": 190
+          },
+          {
+            "task_id": "FASTAPI-04-PARAMS-SENTINEL",
+            "title": "Query parameter default value sentinel distinction",
+            "difficulty": "Boundary Check",
+            "passed": true,
+            "is_empty_patch": false,
+            "elapsed_sec": 220
+          },
+          {
+            "task_id": "FASTAPI-05-UTILS-CYCLE-EXC",
+            "title": "Circular dependency detection path HTTPException",
+            "difficulty": "Deep Logic",
+            "passed": true,
+            "is_empty_patch": false,
+            "elapsed_sec": 220
+          }
+        ]
+      },
+      {
+        "model": "V10 Diverse Sampling",
+        "status_badge": "次期候補 A (Day 17)",
+        "badge_color": "purple",
+        "passed_tasks": 3,
+        "failed_tasks": 2,
+        "empty_patch_tasks": 0,
+        "total_time_sec": 960,
+        "pass_rate_pct": 60.0,
+        "empty_patch_pct": 0.0,
+        "avg_time_sec": 192.0,
+        "task_details": [
+          {
+            "task_id": "FASTAPI-01-ROUTING-TUPLE",
+            "title": "Sync dependency args unpacking in anyio worker thread",
+            "difficulty": "Core (Single-File)",
+            "passed": true,
+            "is_empty_patch": false,
+            "elapsed_sec": 180
+          },
+          {
+            "task_id": "FASTAPI-02-APPLICATION-COUPLED",
+            "title": "Mount router response_model_exclude_unset forwarding",
+            "difficulty": "Hard (Multi-File Coupled)",
+            "passed": true,
+            "is_empty_patch": false,
+            "elapsed_sec": 190
+          },
+          {
+            "task_id": "FASTAPI-03-DOCS-BODY-SYNTAX",
+            "title": "Tutorial Annotated Body syntax update in docs_src",
+            "difficulty": "Doc Code Trap",
+            "passed": false,
+            "is_empty_patch": false,
+            "elapsed_sec": 190
+          },
+          {
+            "task_id": "FASTAPI-04-PARAMS-SENTINEL",
+            "title": "Query parameter default value sentinel distinction",
+            "difficulty": "Boundary Check",
+            "passed": true,
+            "is_empty_patch": false,
+            "elapsed_sec": 160
+          },
+          {
+            "task_id": "FASTAPI-05-UTILS-CYCLE-EXC",
+            "title": "Circular dependency detection path HTTPException",
+            "difficulty": "Deep Logic",
+            "passed": false,
+            "is_empty_patch": false,
+            "elapsed_sec": 240
+          }
+        ]
+      },
+      {
+        "model": "V9.1 Base-Restore",
+        "status_badge": "Day 15 実証完了 (0.15)",
+        "badge_color": "sky",
+        "passed_tasks": 2,
+        "failed_tasks": 3,
+        "empty_patch_tasks": 1,
+        "total_time_sec": 1460,
+        "pass_rate_pct": 40.0,
+        "empty_patch_pct": 20.0,
+        "avg_time_sec": 292.0,
+        "task_details": [
+          {
+            "task_id": "FASTAPI-01-ROUTING-TUPLE",
+            "title": "Sync dependency args unpacking in anyio worker thread",
+            "difficulty": "Core (Single-File)",
+            "passed": true,
+            "is_empty_patch": false,
+            "elapsed_sec": 240
+          },
+          {
+            "task_id": "FASTAPI-02-APPLICATION-COUPLED",
+            "title": "Mount router response_model_exclude_unset forwarding",
+            "difficulty": "Hard (Multi-File Coupled)",
+            "passed": false,
+            "is_empty_patch": false,
+            "elapsed_sec": 260
+          },
+          {
+            "task_id": "FASTAPI-03-DOCS-BODY-SYNTAX",
+            "title": "Tutorial Annotated Body syntax update in docs_src",
+            "difficulty": "Doc Code Trap",
+            "passed": false,
+            "is_empty_patch": false,
+            "elapsed_sec": 230
+          },
+          {
+            "task_id": "FASTAPI-04-PARAMS-SENTINEL",
+            "title": "Query parameter default value sentinel distinction",
+            "difficulty": "Boundary Check",
+            "passed": true,
+            "is_empty_patch": false,
+            "elapsed_sec": 250
+          },
+          {
+            "task_id": "FASTAPI-05-UTILS-CYCLE-EXC",
+            "title": "Circular dependency detection path HTTPException",
+            "difficulty": "Deep Logic",
+            "passed": false,
+            "is_empty_patch": true,
+            "elapsed_sec": 480
+          }
+        ]
+      }
+    ]
+  },
   "cutoffs": {
     "first_place": 0.29,
     "gold_safe": 0.24,

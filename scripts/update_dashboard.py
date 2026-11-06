@@ -150,6 +150,16 @@ def main():
             }
         ]
 
+    # Load Mini-Kaggle Evaluator results if present
+    mini_kaggle_data = None
+    mini_eval_file = BASE_DIR / "data" / "mini_kaggle_eval_results.json"
+    if mini_eval_file.exists():
+        try:
+            with open(mini_eval_file, "r", encoding="utf-8") as f:
+                mini_kaggle_data = json.load(f)
+        except Exception as e:
+            print(f"Failed to load mini_kaggle_eval_results.json: {e}")
+
     # 5. Assemble payload
     payload = {
         "last_updated_utc": now_utc.strftime("%Y-%m-%d %H:%M:%S UTC"),
@@ -158,6 +168,7 @@ def main():
         "my_team": my_team_info,
         "best_score": best_score,
         "gemini_forum_insights": gemini_insights,
+        "mini_kaggle_eval": mini_kaggle_data,
         "cutoffs": {
             "first_place": 0.29,
             "gold_safe": 0.24,

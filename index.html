@@ -582,6 +582,34 @@
       </div>
     </div>
 
+    <!-- MINI-KAGGLE OFFLINE EVALUATOR (COLAB PRO 疑似採点機) -->
+    <div class="glass-card rounded-2xl p-6 space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="check-check" class="w-4 h-4 text-emerald-400"></i>
+            Mini-Kaggle Offline Evaluator（Colab Pro 疑似採点機・実 pytest ハーネス）
+          </h3>
+          <p class="text-xs text-gray-400">Kaggle 本番採点機（Container B）を Colab L4 上に完全再現。エージェント patch に対する実 pytest 合否判定と正解率スコアボード</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2 self-start sm:self-auto">
+          <a href="https://colab.research.google.com/github/chiba244qq/gemma4-agent-dashboard/blob/main/notebooks/colab_mini_kaggle_evaluator.ipynb" target="_blank"
+             class="px-3 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 text-xs font-medium flex items-center gap-1.5 transition shadow-sm">
+            <i data-lucide="play" class="w-3.5 h-3.5"></i>
+            🚀 Colab で疑似採点機を実行
+          </a>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-dark-bg text-gray-300 border border-dark-border" id="mini-eval-timestamp">
+            同期済: 2026-11-06 09:12 JST
+          </span>
+        </div>
+      </div>
+
+      <!-- Models Evaluated Scoreboard Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="mini-kaggle-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
     <!-- KNOWN UNSOLVED CHALLENGES (わかっているが未解決の4大核心課題) -->
     <div class="space-y-4">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -1031,6 +1059,83 @@
                 <p class="text-[10.5px] text-gray-300 leading-snug">
                   ${c.current_hypothesis}
                 </p>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 2.9 Mini-Kaggle Evaluator Scoreboard
+      const miniGrid = document.getElementById('mini-kaggle-grid');
+      const miniTimestamp = document.getElementById('mini-eval-timestamp');
+      if (miniGrid && data.mini_kaggle_eval) {
+        if (miniTimestamp && data.mini_kaggle_eval.last_eval_jst) {
+          miniTimestamp.textContent = `同期済: ${data.mini_kaggle_eval.last_eval_jst}`;
+        }
+
+        const colorMap = {
+          emerald: 'border-emerald-500/40 bg-emerald-500/5',
+          purple: 'border-purple-500/40 bg-purple-500/5',
+          sky: 'border-sky-500/40 bg-sky-500/5'
+        };
+
+        const badgeMap = {
+          emerald: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+          purple: 'bg-purple-500/20 text-purple-300 border-purple-500/40',
+          sky: 'bg-sky-500/20 text-sky-300 border-sky-500/40'
+        };
+
+        miniGrid.innerHTML = (data.mini_kaggle_eval.models_summary || []).map(m => {
+          const colClass = colorMap[m.badge_color] || colorMap.emerald;
+          const bdClass = badgeMap[m.badge_color] || badgeMap.emerald;
+          const totalTasks = m.passed_tasks + m.failed_tasks;
+          const passRate = m.pass_rate_pct || ((m.passed_tasks / totalTasks) * 100);
+
+          return `
+            <div class="glass-card rounded-xl p-4 flex flex-col justify-between border ${colClass} shadow-lg transition hover:border-gray-500 relative overflow-hidden">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded font-mono border ${bdClass}">
+                    ${m.status_badge || m.model}
+                  </span>
+                  <span class="text-[10px] font-mono text-gray-400">N=${totalTasks} tasks</span>
+                </div>
+
+                <h4 class="text-xs font-bold text-white mb-2 leading-snug">
+                  ${m.model}
+                </h4>
+
+                <div class="grid grid-cols-2 gap-2 mb-3">
+                  <div class="p-2 rounded-lg bg-dark-bg/80 border border-dark-border text-center">
+                    <div class="text-[10px] font-mono text-gray-400 uppercase">疑似本番 正解率</div>
+                    <div class="text-lg font-black font-mono ${passRate >= 70 ? 'text-emerald-400' : (passRate >= 50 ? 'text-amber-400' : 'text-gray-300')}">
+                      ${m.passed_tasks}/${totalTasks} <span class="text-xs">(${passRate.toFixed(1)}%)</span>
+                    </div>
+                  </div>
+                  <div class="p-2 rounded-lg bg-dark-bg/80 border border-dark-border text-center">
+                    <div class="text-[10px] font-mono text-gray-400 uppercase">Empty Patch率</div>
+                    <div class="text-lg font-black font-mono ${m.empty_patch_tasks === 0 ? 'text-emerald-400' : 'text-rose-400'}">
+                      ${m.empty_patch_pct !== undefined ? m.empty_patch_pct.toFixed(1) : 0.0}%
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-1.5 text-[10.5px] font-mono text-gray-300 mb-2">
+                  <div class="text-[9.5px] uppercase tracking-wider text-gray-500 font-bold">タスク別 pytest 判定</div>
+                  ${(m.task_details || []).map(t => `
+                    <div class="flex items-center justify-between py-0.5 border-b border-dark-border/40">
+                      <span class="truncate max-w-[170px] text-gray-400" title="${t.title}">${t.task_id}</span>
+                      <span class="${t.passed ? 'text-emerald-400 font-bold' : (t.is_empty_patch ? 'text-rose-400 font-bold' : 'text-amber-400')}">
+                        ${t.passed ? 'PASS' : (t.is_empty_patch ? 'EMPTY' : 'FAIL')}
+                      </span>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+              <div class="pt-2 border-t border-dark-border flex items-center justify-between text-[10px] font-mono text-gray-400">
+                <span>平均: ${m.avg_time_sec ? m.avg_time_sec.toFixed(0) : '—'}s / 問</span>
+                <span>所要: ${(m.total_time_sec / 60).toFixed(1)} 分</span>
               </div>
             </div>
           `;
