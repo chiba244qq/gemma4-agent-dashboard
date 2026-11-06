@@ -1,167 +1,241 @@
 {
-  "last_eval_jst": "2026-11-06 09:12:00 JST",
-  "eval_environment": "Colab Pro (NVIDIA L4 / 22GB VRAM)",
+  "last_eval_jst": "2026-11-06 09:54:00 JST",
+  "eval_environment": "Colab Pro (NVIDIA L4 / 23GB VRAM + LocBench-v1 129-task Gold)",
   "tasks_evaluated_count": 5,
   "models_summary": [
     {
       "model": "V9.2 Early-Edit Trigger",
-      "status_badge": "現在採点中 (Day 16)",
+      "status_badge": "現在本番採点中 (Day 16)",
       "badge_color": "emerald",
+      "passed_tasks": 5,
+      "failed_tasks": 0,
+      "empty_patch_tasks": 0,
+      "total_time_sec": 1048,
+      "pass_rate_pct": 100.0,
+      "empty_patch_pct": 0.0,
+      "avg_time_sec": 209.6,
+      "task_details": [
+        {
+          "task_id": "fastapi_15661",
+          "title": "👷 Automate release preparation",
+          "target_file": "scripts/prepare_release.py",
+          "difficulty": "LocBench-Gold",
+          "passed": true,
+          "is_empty_patch": false,
+          "elapsed_sec": 225
+        },
+        {
+          "task_id": "fastapi_15588",
+          "title": "♻️ Validate Server Sent Event fields",
+          "target_file": "fastapi/sse.py",
+          "difficulty": "LocBench-Gold",
+          "passed": true,
+          "is_empty_patch": false,
+          "elapsed_sec": 202
+        },
+        {
+          "task_id": "fastapi_15589",
+          "title": "♻️ Do not accept underscore headers",
+          "target_file": "fastapi/dependencies/utils.py",
+          "difficulty": "LocBench-Gold",
+          "passed": true,
+          "is_empty_patch": false,
+          "elapsed_sec": 239
+        },
+        {
+          "task_id": "fastapi_15030",
+          "title": "✨ Add support for Server Sent Events",
+          "target_file": "docs_src/server_sent_events/tutorial001_py310.py",
+          "difficulty": "LocBench-Gold",
+          "passed": true,
+          "is_empty_patch": false,
+          "elapsed_sec": 191
+        },
+        {
+          "task_id": "fastapi_14962",
+          "title": "✨ Serialize JSON response with Pydantic",
+          "target_file": "docs_src/custom_response/tutorial010_py310.py",
+          "difficulty": "LocBench-Gold",
+          "passed": true,
+          "is_empty_patch": false,
+          "elapsed_sec": 191
+        }
+      ]
+    },
+    {
+      "model": "V12.3 Findfile-Safe",
+      "status_badge": "次期有力候補 (Day 17)",
+      "badge_color": "cyan",
       "passed_tasks": 4,
       "failed_tasks": 1,
       "empty_patch_tasks": 0,
-      "total_time_sec": 1170,
+      "total_time_sec": 1218,
       "pass_rate_pct": 80.0,
       "empty_patch_pct": 0.0,
-      "avg_time_sec": 234.0,
+      "avg_time_sec": 243.6,
       "task_details": [
         {
-          "task_id": "FASTAPI-01-ROUTING-TUPLE",
-          "title": "Sync dependency args unpacking in anyio worker thread",
-          "difficulty": "Core (Single-File)",
+          "task_id": "fastapi_15661",
+          "title": "👷 Automate release preparation",
+          "target_file": "scripts/prepare_release.py",
+          "difficulty": "LocBench-Gold",
           "passed": true,
           "is_empty_patch": false,
-          "elapsed_sec": 210
+          "elapsed_sec": 239
         },
         {
-          "task_id": "FASTAPI-02-APPLICATION-COUPLED",
-          "title": "Mount router response_model_exclude_unset forwarding",
-          "difficulty": "Hard (Multi-File Coupled)",
+          "task_id": "fastapi_15588",
+          "title": "♻️ Validate Server Sent Event fields",
+          "target_file": "fastapi/sse.py",
+          "difficulty": "LocBench-Gold",
           "passed": false,
           "is_empty_patch": false,
-          "elapsed_sec": 330
+          "elapsed_sec": 254
         },
         {
-          "task_id": "FASTAPI-03-DOCS-BODY-SYNTAX",
-          "title": "Tutorial Annotated Body syntax update in docs_src",
-          "difficulty": "Doc Code Trap",
+          "task_id": "fastapi_15589",
+          "title": "♻️ Do not accept underscore headers",
+          "target_file": "fastapi/dependencies/utils.py",
+          "difficulty": "LocBench-Gold",
           "passed": true,
           "is_empty_patch": false,
-          "elapsed_sec": 190
+          "elapsed_sec": 248
         },
         {
-          "task_id": "FASTAPI-04-PARAMS-SENTINEL",
-          "title": "Query parameter default value sentinel distinction",
-          "difficulty": "Boundary Check",
+          "task_id": "fastapi_15030",
+          "title": "✨ Add support for Server Sent Events",
+          "target_file": "docs_src/server_sent_events/tutorial001_py310.py",
+          "difficulty": "LocBench-Gold",
           "passed": true,
           "is_empty_patch": false,
-          "elapsed_sec": 220
+          "elapsed_sec": 262
         },
         {
-          "task_id": "FASTAPI-05-UTILS-CYCLE-EXC",
-          "title": "Circular dependency detection path HTTPException",
-          "difficulty": "Deep Logic",
+          "task_id": "fastapi_14962",
+          "title": "✨ Serialize JSON response with Pydantic",
+          "target_file": "docs_src/custom_response/tutorial010_py310.py",
+          "difficulty": "LocBench-Gold",
           "passed": true,
           "is_empty_patch": false,
-          "elapsed_sec": 220
+          "elapsed_sec": 215
         }
       ]
     },
     {
       "model": "V10 Diverse Sampling",
-      "status_badge": "次期候補 A (Day 17)",
+      "status_badge": "高T探索候補 (Day 17)",
       "badge_color": "purple",
-      "passed_tasks": 3,
-      "failed_tasks": 2,
+      "passed_tasks": 4,
+      "failed_tasks": 1,
       "empty_patch_tasks": 0,
-      "total_time_sec": 960,
-      "pass_rate_pct": 60.0,
+      "total_time_sec": 1485,
+      "pass_rate_pct": 80.0,
       "empty_patch_pct": 0.0,
-      "avg_time_sec": 192.0,
+      "avg_time_sec": 297.0,
       "task_details": [
         {
-          "task_id": "FASTAPI-01-ROUTING-TUPLE",
-          "title": "Sync dependency args unpacking in anyio worker thread",
-          "difficulty": "Core (Single-File)",
+          "task_id": "fastapi_15661",
+          "title": "👷 Automate release preparation",
+          "target_file": "scripts/prepare_release.py",
+          "difficulty": "LocBench-Gold",
           "passed": true,
           "is_empty_patch": false,
-          "elapsed_sec": 180
+          "elapsed_sec": 304
         },
         {
-          "task_id": "FASTAPI-02-APPLICATION-COUPLED",
-          "title": "Mount router response_model_exclude_unset forwarding",
-          "difficulty": "Hard (Multi-File Coupled)",
+          "task_id": "fastapi_15588",
+          "title": "♻️ Validate Server Sent Event fields",
+          "target_file": "fastapi/sse.py",
+          "difficulty": "LocBench-Gold",
           "passed": true,
           "is_empty_patch": false,
-          "elapsed_sec": 190
+          "elapsed_sec": 313
         },
         {
-          "task_id": "FASTAPI-03-DOCS-BODY-SYNTAX",
-          "title": "Tutorial Annotated Body syntax update in docs_src",
-          "difficulty": "Doc Code Trap",
+          "task_id": "fastapi_15589",
+          "title": "♻️ Do not accept underscore headers",
+          "target_file": "fastapi/dependencies/utils.py",
+          "difficulty": "LocBench-Gold",
           "passed": false,
           "is_empty_patch": false,
-          "elapsed_sec": 190
+          "elapsed_sec": 305
         },
         {
-          "task_id": "FASTAPI-04-PARAMS-SENTINEL",
-          "title": "Query parameter default value sentinel distinction",
-          "difficulty": "Boundary Check",
+          "task_id": "fastapi_15030",
+          "title": "✨ Add support for Server Sent Events",
+          "target_file": "docs_src/server_sent_events/tutorial001_py310.py",
+          "difficulty": "LocBench-Gold",
           "passed": true,
           "is_empty_patch": false,
-          "elapsed_sec": 160
+          "elapsed_sec": 291
         },
         {
-          "task_id": "FASTAPI-05-UTILS-CYCLE-EXC",
-          "title": "Circular dependency detection path HTTPException",
-          "difficulty": "Deep Logic",
-          "passed": false,
+          "task_id": "fastapi_14962",
+          "title": "✨ Serialize JSON response with Pydantic",
+          "target_file": "docs_src/custom_response/tutorial010_py310.py",
+          "difficulty": "LocBench-Gold",
+          "passed": true,
           "is_empty_patch": false,
-          "elapsed_sec": 240
+          "elapsed_sec": 272
         }
       ]
     },
     {
-      "model": "V9.1 Base-Restore",
-      "status_badge": "Day 15 実証完了 (0.15)",
-      "badge_color": "sky",
-      "passed_tasks": 2,
-      "failed_tasks": 3,
-      "empty_patch_tasks": 1,
-      "total_time_sec": 1460,
-      "pass_rate_pct": 40.0,
-      "empty_patch_pct": 20.0,
-      "avg_time_sec": 292.0,
+      "model": "V13 Hybrid Graph-Loc",
+      "status_badge": "研究開発中",
+      "badge_color": "blue",
+      "passed_tasks": 4,
+      "failed_tasks": 1,
+      "empty_patch_tasks": 0,
+      "total_time_sec": 1232,
+      "pass_rate_pct": 80.0,
+      "empty_patch_pct": 0.0,
+      "avg_time_sec": 246.4,
       "task_details": [
         {
-          "task_id": "FASTAPI-01-ROUTING-TUPLE",
-          "title": "Sync dependency args unpacking in anyio worker thread",
-          "difficulty": "Core (Single-File)",
+          "task_id": "fastapi_15661",
+          "title": "👷 Automate release preparation",
+          "target_file": "scripts/prepare_release.py",
+          "difficulty": "LocBench-Gold",
           "passed": true,
           "is_empty_patch": false,
-          "elapsed_sec": 240
+          "elapsed_sec": 232
         },
         {
-          "task_id": "FASTAPI-02-APPLICATION-COUPLED",
-          "title": "Mount router response_model_exclude_unset forwarding",
-          "difficulty": "Hard (Multi-File Coupled)",
+          "task_id": "fastapi_15588",
+          "title": "♻️ Validate Server Sent Event fields",
+          "target_file": "fastapi/sse.py",
+          "difficulty": "LocBench-Gold",
+          "passed": true,
+          "is_empty_patch": false,
+          "elapsed_sec": 254
+        },
+        {
+          "task_id": "fastapi_15589",
+          "title": "♻️ Do not accept underscore headers",
+          "target_file": "fastapi/dependencies/utils.py",
+          "difficulty": "LocBench-Gold",
           "passed": false,
+          "is_empty_patch": false,
+          "elapsed_sec": 231
+        },
+        {
+          "task_id": "fastapi_15030",
+          "title": "✨ Add support for Server Sent Events",
+          "target_file": "docs_src/server_sent_events/tutorial001_py310.py",
+          "difficulty": "LocBench-Gold",
+          "passed": true,
+          "is_empty_patch": false,
+          "elapsed_sec": 255
+        },
+        {
+          "task_id": "fastapi_14962",
+          "title": "✨ Serialize JSON response with Pydantic",
+          "target_file": "docs_src/custom_response/tutorial010_py310.py",
+          "difficulty": "LocBench-Gold",
+          "passed": true,
           "is_empty_patch": false,
           "elapsed_sec": 260
-        },
-        {
-          "task_id": "FASTAPI-03-DOCS-BODY-SYNTAX",
-          "title": "Tutorial Annotated Body syntax update in docs_src",
-          "difficulty": "Doc Code Trap",
-          "passed": false,
-          "is_empty_patch": false,
-          "elapsed_sec": 230
-        },
-        {
-          "task_id": "FASTAPI-04-PARAMS-SENTINEL",
-          "title": "Query parameter default value sentinel distinction",
-          "difficulty": "Boundary Check",
-          "passed": true,
-          "is_empty_patch": false,
-          "elapsed_sec": 250
-        },
-        {
-          "task_id": "FASTAPI-05-UTILS-CYCLE-EXC",
-          "title": "Circular dependency detection path HTTPException",
-          "difficulty": "Deep Logic",
-          "passed": false,
-          "is_empty_patch": true,
-          "elapsed_sec": 480
         }
       ]
     }
