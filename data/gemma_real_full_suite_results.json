@@ -1,14 +1,14 @@
 {
-  "audit_timestamp_jst": "2026-11-06 13:55:23 JST",
-  "active_model": "google/gemma-2-9b-it",
-  "device": "Tesla T4",
+  "audit_timestamp_jst": "2026-11-06 14:11:44 JST",
+  "active_model": "google/gemma-4-31B-it-qat-w4a16-ct",
+  "device": "NVIDIA A100-SXM4-80GB",
   "suites": {
     "suite_1_e2e_patch": {
       "title": "テーマ 1: End-to-End 実コードパッチ適用 ＆ pytest 検証",
-      "applied_count": 3,
-      "passed_pytest_count": 3,
+      "applied_count": 1,
+      "passed_pytest_count": 1,
       "total_tasks": 3,
-      "pass_rate_pct": 100.0
+      "pass_rate_pct": 33.3
     },
     "suite_2_ast_graph": {
       "title": "テーマ 2: AST コードグラフ補強 vs 通常検索",
@@ -21,19 +21,19 @@
       "results_by_temp": {
         "0.0": {
           "valid_syntax": true,
-          "latency_sec": 18.79
+          "latency_sec": 16.98
         },
         "0.2": {
           "valid_syntax": true,
-          "latency_sec": 13.63
+          "latency_sec": 16.89
         },
         "0.7": {
           "valid_syntax": true,
-          "latency_sec": 15.03
+          "latency_sec": 40.2
         },
         "1.0": {
-          "valid_syntax": true,
-          "latency_sec": 20.18
+          "valid_syntax": false,
+          "latency_sec": 11.33
         }
       },
       "safe_zone": "T <= 0.2 推奨"
@@ -49,7 +49,7 @@
       "title": "テーマ 5: 複数ファイル連動修正 (Multi-Turn 厳密検証)",
       "coupled_completed_count": 1,
       "total_tasks": 1,
-      "latency_sec": 18.56,
+      "latency_sec": 23.63,
       "status": "✅ 厳密PASS (Turn 2でrouting.py編集完遂)"
     },
     "suite_6_sync_async_twins": {
@@ -60,9 +60,9 @@
     },
     "suite_7_long_context_load": {
       "title": "テーマ 7: Call 8 履歴蓄積時の推論精度・遅延 (厳密検証)",
-      "long_ctx_latency_sec": 41.1,
+      "long_ctx_latency_sec": 19.19,
       "syntax_intact": true,
-      "overhead_sec": 26.6
+      "overhead_sec": 4.69
     },
     "suite_8_unknown_repo_generalization": {
       "title": "テーマ 8: Private 未知リポジトリ汎化 (ドメインシフト耐性)",
