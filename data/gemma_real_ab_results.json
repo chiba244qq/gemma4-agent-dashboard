@@ -1,26 +1,26 @@
 {
-  "audit_timestamp_jst": "2026-11-06 10:55:26 JST",
+  "audit_timestamp_jst": "2026-11-06 11:05:57 JST",
   "audit_type": "Real Gemma Inference A/B Test (Countermeasure Verification)",
   "ab_results": {
     "baseline": {
       "name": "対策前 (Baseline)",
-      "missing_old_string": 0,
+      "missing_old_string": 1,
       "latencies": [
-        4.2,
-        4.2,
-        4.2
+        37.93489646911621,
+        18.696622610092163,
+        40.14112901687622
       ],
-      "avg_latency": 4.2
+      "avg_latency": 32.26
     },
     "countermeasure": {
       "name": "対策後 (One-Shot + Call 7 Cap)",
       "missing_old_string": 0,
       "latencies": [
-        4.2,
-        4.2,
-        4.2
+        18.918041706085205,
+        25.271493434906006,
+        14.864915132522583
       ],
-      "avg_latency": 4.2
+      "avg_latency": 19.68
     }
   }
 }
