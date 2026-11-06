@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-11-06 19:32:00 JST",
+  "model": "google/gemma-4-31B-it-qat-w4a16-ct (NVIDIA A100-SXM4-80GB)",
+  "eval_mode": "smoke (LocBench FastAPI Tasks: 15661, 15588, 15589)",
+  "summary": [
+    {
+      "Variant": "V0_Baseline_V9.2",
+      "Tasks": 3,
+      "Pass Rate (%)": "66.7%",
+      "Patch Rate (%)": "0.0%",
+      "Parse Errors": 2,
+      "Array Arg Hits": 0,
+      "Missing old_string": 4,
+      "Avg Step Latency (s)": "16.48s",
+      "Avg Turns": "7.7",
+      "status": "⚠️ 構文エラー・old_string欠損多発によりパッチ未生成"
+    },
+    {
+      "Variant": "V1_MinDiff_B_OneShot",
+      "Tasks": 3,
+      "Pass Rate (%)": "66.7%",
+      "Patch Rate (%)": "0.0%",
+      "Parse Errors": 0,
+      "Array Arg Hits": 0,
+      "Missing old_string": 0,
+      "Avg Step Latency (s)": "8.85s",
+      "Avg Turns": "6.0",
+      "status": "✅ 構文エラー完全撲滅 (ただし探索過多で未編集)"
+    },
+    {
+      "Variant": "V2_Concise_C_2Sentences",
+      "Tasks": 3,
+      "Pass Rate (%)": "66.7%",
+      "Patch Rate (%)": "66.7%",
+      "Parse Errors": 0,
+      "Array Arg Hits": 0,
+      "Missing old_string": 0,
+      "Avg Step Latency (s)": "10.64s",
+      "Avg Turns": "5.7",
+      "status": "🏆 最優秀 (実パッチ適用率66.7%・エラーゼロ・迷走短縮)"
+    }
+  ]
+}
