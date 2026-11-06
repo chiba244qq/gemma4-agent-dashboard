@@ -36,7 +36,7 @@ nb = {
                 "from pathlib import Path\n",
                 "\n",
                 "print(\"[Setup] 依存パッケージをインストール中 (transformers, bitsandbytes, pytest, kaggle, etc.)...\")\n",
-                "!pip install --quiet transformers accelerate bitsandbytes sentencepiece pytest pytest-asyncio requests gitpython kaggle tabulate\n",
+                "!pip install --quiet transformers accelerate bitsandbytes compressed-tensors sentencepiece pytest pytest-asyncio requests gitpython kaggle tabulate\n",
                 "\n",
                 "import torch\n",
                 "gc.collect()\n",
