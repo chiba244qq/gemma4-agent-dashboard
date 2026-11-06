@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-06 04:58:38 UTC",
-  "last_updated_jst": "2026-11-06 13:58:38 JST",
+  "last_updated_utc": "2026-11-06 12:48:36 UTC",
+  "last_updated_jst": "2026-11-06 21:48:36 JST",
   "active_job": {
     "ref": 58038278,
     "description": "V9.2 Early-Edit Trigger (Call 8 Mandatory Edit, 0% Empty Patch on L4 Benchmark, 8m / T=0.2 / 2048 Think): Follow-up to Ref 58008114 (Score 0.15)",
     "start_jst": "2026-11-06 09:00:12 JST",
-    "elapsed_hours": 5.0,
-    "progress_pct": 17.8,
+    "elapsed_hours": 12.8,
+    "progress_pct": 45.7,
     "est_completion_jst": "2026-11-07 13:00:12 JST"
   },
   "my_team": {
@@ -544,14 +544,14 @@
       "comments": 2
     },
     {
-      "id": 750907,
-      "title": "Looking for 1–2 teammates — TPU eval engine that matches the scorer + LoRA pipeline (0.17)",
+      "id": 743683,
+      "title": "Rerunning Failed Submissions",
       "votes": 0,
-      "comments": 2
+      "comments": 107
     },
     {
-      "id": 756336,
-      "title": "swegemma, which is built on Google’s ADK",
+      "id": 756461,
+      "title": "Gold patches fail",
       "votes": 0,
       "comments": 0
     }
