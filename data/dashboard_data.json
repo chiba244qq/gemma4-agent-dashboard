@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-06 19:50:25 UTC",
-  "last_updated_jst": "2026-11-07 04:50:25 JST",
+  "last_updated_utc": "2026-11-06 23:56:03 UTC",
+  "last_updated_jst": "2026-11-07 08:56:03 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -470,31 +470,31 @@
     },
     {
       "rank": 11,
+      "team_name": "Serhii Mosiiash",
+      "score": 0.24,
+      "is_my_team": false
+    },
+    {
+      "rank": 12,
       "team_name": "Francis Joseph",
       "score": 0.22,
       "is_my_team": false
     },
     {
-      "rank": 12,
+      "rank": 13,
       "team_name": "Deepest Mind",
       "score": 0.22,
       "is_my_team": false
     },
     {
-      "rank": 13,
+      "rank": 14,
       "team_name": "Ayush Barai",
       "score": 0.22,
       "is_my_team": false
     },
     {
-      "rank": 14,
-      "team_name": "Lakshya Mewara0025",
-      "score": 0.22,
-      "is_my_team": false
-    },
-    {
       "rank": 15,
-      "team_name": "omallo",
+      "team_name": "Lakshya Mewara0025",
       "score": 0.22,
       "is_my_team": false
     }
