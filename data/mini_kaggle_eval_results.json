@@ -1,11 +1,11 @@
 {
-  "last_eval_jst": "2026-11-06 09:54:00 JST",
-  "eval_environment": "Colab Pro (NVIDIA L4 / 23GB VRAM + LocBench-v1 129-task Gold)",
+  "last_eval_jst": "2026-11-06 09:59:54 JST",
+  "eval_environment": "Colab Pro (NVIDIA L4 / 22GB VRAM + LocBench-v1)",
   "tasks_evaluated_count": 5,
   "models_summary": [
     {
       "model": "V9.2 Early-Edit Trigger",
-      "status_badge": "現在本番採点中 (Day 16)",
+      "status_badge": "現在採点中 (Day 16)",
       "badge_color": "emerald",
       "passed_tasks": 5,
       "failed_tasks": 0,
@@ -26,7 +26,7 @@
         },
         {
           "task_id": "fastapi_15588",
-          "title": "♻️ Validate Server Sent Event fields",
+          "title": "♻️ Validate Server Sent Event fields to avoid applications f",
           "target_file": "fastapi/sse.py",
           "difficulty": "LocBench-Gold",
           "passed": true,
@@ -35,7 +35,7 @@
         },
         {
           "task_id": "fastapi_15589",
-          "title": "♻️ Do not accept underscore headers",
+          "title": "♻️ Do not accept underscore headers when using `convert_unde",
           "target_file": "fastapi/dependencies/utils.py",
           "difficulty": "LocBench-Gold",
           "passed": true,
@@ -53,7 +53,7 @@
         },
         {
           "task_id": "fastapi_14962",
-          "title": "✨ Serialize JSON response with Pydantic",
+          "title": "✨ Serialize JSON response with Pydantic (in Rust), when ther",
           "target_file": "docs_src/custom_response/tutorial010_py310.py",
           "difficulty": "LocBench-Gold",
           "passed": true,
@@ -85,7 +85,7 @@
         },
         {
           "task_id": "fastapi_15588",
-          "title": "♻️ Validate Server Sent Event fields",
+          "title": "♻️ Validate Server Sent Event fields to avoid applications f",
           "target_file": "fastapi/sse.py",
           "difficulty": "LocBench-Gold",
           "passed": false,
@@ -94,7 +94,7 @@
         },
         {
           "task_id": "fastapi_15589",
-          "title": "♻️ Do not accept underscore headers",
+          "title": "♻️ Do not accept underscore headers when using `convert_unde",
           "target_file": "fastapi/dependencies/utils.py",
           "difficulty": "LocBench-Gold",
           "passed": true,
@@ -112,7 +112,7 @@
         },
         {
           "task_id": "fastapi_14962",
-          "title": "✨ Serialize JSON response with Pydantic",
+          "title": "✨ Serialize JSON response with Pydantic (in Rust), when ther",
           "target_file": "docs_src/custom_response/tutorial010_py310.py",
           "difficulty": "LocBench-Gold",
           "passed": true,
@@ -144,7 +144,7 @@
         },
         {
           "task_id": "fastapi_15588",
-          "title": "♻️ Validate Server Sent Event fields",
+          "title": "♻️ Validate Server Sent Event fields to avoid applications f",
           "target_file": "fastapi/sse.py",
           "difficulty": "LocBench-Gold",
           "passed": true,
@@ -153,7 +153,7 @@
         },
         {
           "task_id": "fastapi_15589",
-          "title": "♻️ Do not accept underscore headers",
+          "title": "♻️ Do not accept underscore headers when using `convert_unde",
           "target_file": "fastapi/dependencies/utils.py",
           "difficulty": "LocBench-Gold",
           "passed": false,
@@ -171,7 +171,7 @@
         },
         {
           "task_id": "fastapi_14962",
-          "title": "✨ Serialize JSON response with Pydantic",
+          "title": "✨ Serialize JSON response with Pydantic (in Rust), when ther",
           "target_file": "docs_src/custom_response/tutorial010_py310.py",
           "difficulty": "LocBench-Gold",
           "passed": true,
@@ -203,7 +203,7 @@
         },
         {
           "task_id": "fastapi_15588",
-          "title": "♻️ Validate Server Sent Event fields",
+          "title": "♻️ Validate Server Sent Event fields to avoid applications f",
           "target_file": "fastapi/sse.py",
           "difficulty": "LocBench-Gold",
           "passed": true,
@@ -212,7 +212,7 @@
         },
         {
           "task_id": "fastapi_15589",
-          "title": "♻️ Do not accept underscore headers",
+          "title": "♻️ Do not accept underscore headers when using `convert_unde",
           "target_file": "fastapi/dependencies/utils.py",
           "difficulty": "LocBench-Gold",
           "passed": false,
@@ -230,7 +230,7 @@
         },
         {
           "task_id": "fastapi_14962",
-          "title": "✨ Serialize JSON response with Pydantic",
+          "title": "✨ Serialize JSON response with Pydantic (in Rust), when ther",
           "target_file": "docs_src/custom_response/tutorial010_py310.py",
           "difficulty": "LocBench-Gold",
           "passed": true,
