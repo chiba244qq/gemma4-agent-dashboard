@@ -1,0 +1,25 @@
+{
+  "audit_timestamp_jst": "2026-11-06 10:39:12 JST",
+  "audit_type": "Real Gemma Inference vs Simulation Gap",
+  "results": {
+    "tasks_tested": 3,
+    "real_inference": {
+      "model_id": "google/gemma-2-9b-it",
+      "syntax_error_count": 0,
+      "old_string_missing_count": 2,
+      "step_latencies": [
+        56.41676640510559,
+        18.21471619606018,
+        24.636788606643677
+      ],
+      "avg_step_latency_sec": 33.09,
+      "empty_patch_rate_pct": 0.0
+    },
+    "simulation_reference": {
+      "assumed_pass_rate_pct": 100.0,
+      "assumed_empty_patch_pct": 0.0,
+      "assumed_step_latency_sec": 4.5
+    },
+    "gap_analysis": []
+  }
+}
