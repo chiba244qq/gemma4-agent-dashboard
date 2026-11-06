@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-06 14:58:56 UTC",
-  "last_updated_jst": "2026-11-06 23:58:56 JST",
+  "last_updated_utc": "2026-11-06 19:50:25 UTC",
+  "last_updated_jst": "2026-11-07 04:50:25 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -501,16 +501,16 @@
   ],
   "discussions": [
     {
+      "id": 751104,
+      "title": "🌟Bonus Prize: Small Model Development ($10,000)",
+      "votes": 0,
+      "comments": 7
+    },
+    {
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
       "votes": 0,
       "comments": 101
-    },
-    {
-      "id": 751104,
-      "title": "🌟Bonus Prize: Small Model Development ($10,000)",
-      "votes": 0,
-      "comments": 6
     },
     {
       "id": 748287,
@@ -537,16 +537,16 @@
       "comments": 2
     },
     {
+      "id": 756438,
+      "title": "How you guys considering time allocations",
+      "votes": 0,
+      "comments": 1
+    },
+    {
       "id": 755677,
       "title": "Scoring zero when using LoRA adapters",
       "votes": 0,
       "comments": 7
-    },
-    {
-      "id": 756461,
-      "title": "Gold patches fail",
-      "votes": 0,
-      "comments": 0
     }
   ],
   "pipeline": [
