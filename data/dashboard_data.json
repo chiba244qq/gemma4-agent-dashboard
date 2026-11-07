@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-07 00:22:25 UTC",
-  "last_updated_jst": "2026-11-07 09:22:25 JST",
+  "last_updated_utc": "2026-11-07 04:48:54 UTC",
+  "last_updated_jst": "2026-11-07 13:48:54 JST",
   "active_job": {
     "ref": 58073535,
     "description": "V14 Real-Proof (Call 8 Mandatory Edit + Concise Reasoning + One-Shot JSON, A/B Validated 66.7% Patch Rate): Follow-up to Ref 58038278 (Score 0.17)",
     "start_jst": "2026-11-07 09:21:44 JST",
-    "elapsed_hours": 0.0,
-    "progress_pct": 5.0,
+    "elapsed_hours": 4.5,
+    "progress_pct": 15.9,
     "est_completion_jst": "2026-11-08 13:21:44 JST"
   },
   "my_team": {
@@ -523,16 +523,16 @@
       "comments": 8
     },
     {
-      "id": 747519,
-      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
-      "votes": 0,
-      "comments": 101
-    },
-    {
       "id": 748287,
       "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
       "votes": 0,
       "comments": 38
+    },
+    {
+      "id": 747519,
+      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
+      "votes": 0,
+      "comments": 101
     },
     {
       "id": 745998,
@@ -553,16 +553,16 @@
       "comments": 2
     },
     {
-      "id": 756438,
-      "title": "How you guys considering time allocations",
+      "id": 756622,
+      "title": "How to get started with the solution development of this hackathon problem",
       "votes": 0,
       "comments": 1
     },
     {
-      "id": 755677,
-      "title": "Scoring zero when using LoRA adapters",
+      "id": 756607,
+      "title": "Team up: root cause of the edit_file old_string loss (+1-line fix) and a 286-task eval set — our GPU died, looking to merge before 11/25",
       "votes": 0,
-      "comments": 7
+      "comments": 0
     }
   ],
   "pipeline": [
