@@ -1,14 +1,7 @@
 {
-  "last_updated_utc": "2026-11-07 11:29:12 UTC",
-  "last_updated_jst": "2026-11-07 20:29:12 JST",
-  "active_job": {
-    "ref": 58073535,
-    "description": "V14 Real-Proof (Call 8 Mandatory Edit + Concise Reasoning + One-Shot JSON, A/B Validated 66.7% Patch Rate): Follow-up to Ref 58038278 (Score 0.17)",
-    "start_jst": "2026-11-07 09:21:44 JST",
-    "elapsed_hours": 11.1,
-    "progress_pct": 39.7,
-    "est_completion_jst": "2026-11-08 13:21:44 JST"
-  },
+  "last_updated_utc": "2026-11-07 17:23:15 UTC",
+  "last_updated_jst": "2026-11-08 02:23:15 JST",
+  "active_job": null,
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -291,8 +284,8 @@
       "ref": 58073535,
       "date_utc": "2026-11-07 00:21:44 UTC",
       "date_jst": "2026-11-07 09:21:44 JST",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.12,
       "description": "V14 Real-Proof (Call 8 Mandatory Edit + Concise Reasoning + One-Shot JSON, A/B Validated 66.7% Patch Rate): Follow-up to Ref 58038278 (Score 0.17)",
       "error": ""
     },
@@ -492,25 +485,25 @@
     },
     {
       "rank": 12,
+      "team_name": "LuisSpecian",
+      "score": 0.24,
+      "is_my_team": false
+    },
+    {
+      "rank": 13,
       "team_name": "Francis Joseph",
       "score": 0.22,
       "is_my_team": false
     },
     {
-      "rank": 13,
+      "rank": 14,
       "team_name": "Deepest Mind",
       "score": 0.22,
       "is_my_team": false
     },
     {
-      "rank": 14,
-      "team_name": "Ayush Barai",
-      "score": 0.22,
-      "is_my_team": false
-    },
-    {
       "rank": 15,
-      "team_name": "Lakshya Mewara0025",
+      "team_name": "Ayush Barai",
       "score": 0.22,
       "is_my_team": false
     }
@@ -535,7 +528,7 @@
     {
       "id": 748287,
       "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 35,
+      "votes": 36,
       "comments": 38,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
@@ -565,9 +558,17 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 756792,
+      "title": "Are hand-constructed LoRA adapters acceptable (weight edit from activation analysis, not gradient descent)?",
+      "votes": 1,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756792"
+    },
+    {
       "id": 755677,
       "title": "Scoring zero when using LoRA adapters",
-      "votes": 4,
+      "votes": 5,
       "comments": 8,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/755677"
@@ -575,7 +576,7 @@
     {
       "id": 756693,
       "title": "Team merger: which score does the merged Team carry?",
-      "votes": -1,
+      "votes": -2,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756693"
@@ -627,14 +628,6 @@
       "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756461"
-    },
-    {
-      "id": 756438,
-      "title": "How you guys considering time allocations",
-      "votes": 2,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756438"
     }
   ],
   "pipeline": [
