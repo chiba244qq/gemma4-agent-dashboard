@@ -103,17 +103,26 @@ def main():
     silver_cutoff_score = 0.21
     bronze_cutoff_score = 0.20
 
-    # 4. Fetch Discussions (Top 8)
+    # 4. Fetch Discussions (Top 15)
     print("Fetching forum topics...")
     topics = []
     try:
         t_resp = api.competition_list_topics(COMPETITION)
-        for t in t_resp.topics[:8]:
+        t_list = getattr(t_resp, "topics", []) if not isinstance(t_resp, list) else t_resp
+        for t in t_list[:15]:
+            tid = getattr(t, "id", "")
+            title = getattr(t, "title", "")
+            votes = getattr(t, "votes", 0) or getattr(t, "vote_count", 0)
+            comments = getattr(t, "comment_count", 0)
+            author = getattr(t, "author_name", "") or ""
+            url = getattr(t, "topic_url", "") or f"/competitions/{COMPETITION}/discussion/{tid}"
             topics.append({
-                "id": getattr(t, "id", ""),
-                "title": getattr(t, "title", ""),
-                "votes": getattr(t, "vote_count", 0),
-                "comments": getattr(t, "comment_count", 0),
+                "id": tid,
+                "title": title,
+                "votes": votes or 0,
+                "comments": comments or 0,
+                "author": author,
+                "url": f"https://www.kaggle.com{url}" if url.startswith("/") else url
             })
     except Exception as e:
         print("Forum fetch failed:", e)

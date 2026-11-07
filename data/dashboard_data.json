@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-07 04:48:54 UTC",
-  "last_updated_jst": "2026-11-07 13:48:54 JST",
+  "last_updated_utc": "2026-11-07 05:36:38 UTC",
+  "last_updated_jst": "2026-11-07 14:36:38 JST",
   "active_job": {
     "ref": 58073535,
     "description": "V14 Real-Proof (Call 8 Mandatory Edit + Concise Reasoning + One-Shot JSON, A/B Validated 66.7% Patch Rate): Follow-up to Ref 58038278 (Score 0.17)",
     "start_jst": "2026-11-07 09:21:44 JST",
-    "elapsed_hours": 4.5,
-    "progress_pct": 15.9,
+    "elapsed_hours": 5.2,
+    "progress_pct": 18.7,
     "est_completion_jst": "2026-11-08 13:21:44 JST"
   },
   "my_team": {
@@ -519,50 +519,122 @@
     {
       "id": 751104,
       "title": "🌟Bonus Prize: Small Model Development ($10,000)",
-      "votes": 0,
-      "comments": 8
+      "votes": 36,
+      "comments": 8,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
     },
     {
       "id": 748287,
       "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 0,
-      "comments": 38
+      "votes": 35,
+      "comments": 38,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
     },
     {
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
-      "votes": 0,
-      "comments": 101
+      "votes": 41,
+      "comments": 101,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
     },
     {
       "id": 745998,
       "title": "Note on Code Graphs for Async Functions",
-      "votes": 0,
-      "comments": 0
+      "votes": 6,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/745998"
     },
     {
       "id": 743007,
       "title": "Welcome to the Gemma 4 Developer Agent Competition",
-      "votes": 0,
-      "comments": 9
+      "votes": 11,
+      "comments": 9,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
     },
     {
       "id": 742815,
       "title": "How to get started + Competition's Official Discord",
-      "votes": 0,
-      "comments": 2
+      "votes": 7,
+      "comments": 2,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
       "id": 756622,
       "title": "How to get started with the solution development of this hackathon problem",
       "votes": 0,
-      "comments": 1
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756622"
     },
     {
       "id": 756607,
       "title": "Team up: root cause of the edit_file old_string loss (+1-line fix) and a 286-task eval set — our GPU died, looking to merge before 11/25",
+      "votes": -1,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756607"
+    },
+    {
+      "id": 756587,
+      "title": "Local evals: 27 public fastapi tasks can never pass in the sandbox",
       "votes": 0,
-      "comments": 0
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756587"
+    },
+    {
+      "id": 756461,
+      "title": "Gold patches fail",
+      "votes": 0,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756461"
+    },
+    {
+      "id": 756438,
+      "title": "How you guys considering time allocations",
+      "votes": 2,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756438"
+    },
+    {
+      "id": 756433,
+      "title": "Public code: configs, trajectories and analysis scripts for a Gemma 4 E2B agent failure study",
+      "votes": 2,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756433"
+    },
+    {
+      "id": 756400,
+      "title": "Audit: 61 of 129 public tasks can't tell agents apart (+ open configs and data)",
+      "votes": 1,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756400"
+    },
+    {
+      "id": 756336,
+      "title": "swegemma, which is built on Google’s ADK",
+      "votes": -2,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756336"
+    },
+    {
+      "id": 756315,
+      "title": "Community resource: pytest-verified context-selection harness + gemma4-locbench-v1 (probe set)",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756315"
     }
   ],
   "pipeline": [
