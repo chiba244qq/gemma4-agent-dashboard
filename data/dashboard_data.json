@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-08 15:46:01 UTC",
-  "last_updated_jst": "2026-11-09 00:46:01 JST",
+  "last_updated_utc": "2026-11-08 20:09:31 UTC",
+  "last_updated_jst": "2026-11-09 05:09:31 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -585,7 +585,7 @@
     {
       "id": 756693,
       "title": "Team merger: which score does the merged Team carry?",
-      "votes": -2,
+      "votes": -3,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756693"
@@ -602,7 +602,7 @@
       "id": 756607,
       "title": "Team up: root cause of the edit_file old_string loss (+1-line fix) and a 286-task eval set — our GPU died, looking to merge before 11/25",
       "votes": -2,
-      "comments": 1,
+      "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756607"
     },
