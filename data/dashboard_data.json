@@ -1,7 +1,14 @@
 {
-  "last_updated_utc": "2026-11-07 23:39:32 UTC",
-  "last_updated_jst": "2026-11-08 08:39:32 JST",
-  "active_job": null,
+  "last_updated_utc": "2026-11-08 01:03:29 UTC",
+  "last_updated_jst": "2026-11-08 10:03:29 JST",
+  "active_job": {
+    "ref": 58107756,
+    "description": "V9.2 Early-Edit Trigger (Call 8 Mandatory Edit, LB 0.17 Proven Baseline): Rollback follow-up to Ref 58073535 (Score 0.12)",
+    "start_jst": "2026-11-08 09:00:25 JST",
+    "elapsed_hours": 1.1,
+    "progress_pct": 5.0,
+    "est_completion_jst": "2026-11-09 13:00:25 JST"
+  },
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -280,6 +287,15 @@
     "bronze": 0.2
   },
   "submissions": [
+    {
+      "ref": 58107756,
+      "date_utc": "2026-11-08 00:00:25 UTC",
+      "date_jst": "2026-11-08 09:00:25 JST",
+      "status": "PENDING",
+      "score": null,
+      "description": "V9.2 Early-Edit Trigger (Call 8 Mandatory Edit, LB 0.17 Proven Baseline): Rollback follow-up to Ref 58073535 (Score 0.12)",
+      "error": ""
+    },
     {
       "ref": 58073535,
       "date_utc": "2026-11-07 00:21:44 UTC",
