@@ -1,14 +1,7 @@
 {
-  "last_updated_utc": "2026-11-09 07:37:32 UTC",
-  "last_updated_jst": "2026-11-09 16:37:32 JST",
-  "active_job": {
-    "ref": 58145086,
-    "description": "V15 Hybrid Production (Pinpoint Read-Before-Edit + Self-Correction, A/B Validated 66.7% Patch Rate, 6.5s Latency)",
-    "start_jst": "2026-11-09 09:12:24 JST",
-    "elapsed_hours": 7.4,
-    "progress_pct": 26.5,
-    "est_completion_jst": "2026-11-10 13:12:24 JST"
-  },
+  "last_updated_utc": "2026-11-09 13:41:48 UTC",
+  "last_updated_jst": "2026-11-09 22:41:48 JST",
+  "active_job": null,
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -291,8 +284,8 @@
       "ref": 58145086,
       "date_utc": "2026-11-09 00:12:24 UTC",
       "date_jst": "2026-11-09 09:12:24 JST",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.15,
       "description": "V15 Hybrid Production (Pinpoint Read-Before-Edit + Self-Correction, A/B Validated 66.7% Patch Rate, 6.5s Latency)",
       "error": ""
     },
@@ -583,10 +576,26 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 757244,
+      "title": "Clarification: Small Model Prize deadline",
+      "votes": 1,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757244"
+    },
+    {
+      "id": 757223,
+      "title": "Are LLM chat tools allowed for annotating our own agent trajectories?",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757223"
+    },
+    {
       "id": 757149,
       "title": "Will agents get the contents of issue links and screenshots during offline evaluation?",
       "votes": 1,
-      "comments": 1,
+      "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757149"
     },
@@ -637,22 +646,6 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756587"
-    },
-    {
-      "id": 756461,
-      "title": "Gold patches fail",
-      "votes": 0,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756461"
-    },
-    {
-      "id": 756438,
-      "title": "How you guys considering time allocations",
-      "votes": 3,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756438"
     }
   ],
   "pipeline": [
