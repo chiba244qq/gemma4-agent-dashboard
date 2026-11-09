@@ -1,7 +1,14 @@
 {
-  "last_updated_utc": "2026-11-08 23:43:27 UTC",
-  "last_updated_jst": "2026-11-09 08:43:27 JST",
-  "active_job": null,
+  "last_updated_utc": "2026-11-09 00:13:10 UTC",
+  "last_updated_jst": "2026-11-09 09:13:10 JST",
+  "active_job": {
+    "ref": 58145086,
+    "description": "V15 Hybrid Production (Pinpoint Read-Before-Edit + Self-Correction, A/B Validated 66.7% Patch Rate, 6.5s Latency)",
+    "start_jst": "2026-11-09 09:12:24 JST",
+    "elapsed_hours": 0.0,
+    "progress_pct": 5.0,
+    "est_completion_jst": "2026-11-10 13:12:24 JST"
+  },
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -280,6 +287,15 @@
     "bronze": 0.2
   },
   "submissions": [
+    {
+      "ref": 58145086,
+      "date_utc": "2026-11-09 00:12:24 UTC",
+      "date_jst": "2026-11-09 09:12:24 JST",
+      "status": "PENDING",
+      "score": null,
+      "description": "V15 Hybrid Production (Pinpoint Read-Before-Edit + Self-Correction, A/B Validated 66.7% Patch Rate, 6.5s Latency)",
+      "error": ""
+    },
     {
       "ref": 58107756,
       "date_utc": "2026-11-08 00:00:25 UTC",
