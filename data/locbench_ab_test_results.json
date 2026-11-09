@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-11-09 03:11:33 JST",
+  "timestamp": "2026-11-09 06:40:11 JST",
   "model": "google/gemma-4-31B-it-qat-w4a16-ct",
   "eval_mode": "clean_rich_tasks",
   "summary": [
     {
       "Variant": "V15_Hybrid_Production (Ref 58145086)",
       "Tasks": 3,
-      "Pass Rate (%)": "0.0%",
-      "Patch Rate (%)": "33.3%",
+      "Pass Rate (%)": "33.3%",
+      "Patch Rate (%)": "66.7%",
       "Parse Errors": 0,
       "Missing old_string": 0,
-      "Avg Step Latency": "31.49s",
+      "Avg Step Latency": "31.51s",
       "Avg Turns": "8.7"
     },
     {
-      "Variant": "V16_Production_Plus (LB 0.22 + Token-Budget)",
+      "Variant": "V17_Precision_Fast (Call 5 Edit + Fast Token)",
       "Tasks": 3,
       "Pass Rate (%)": "0.0%",
-      "Patch Rate (%)": "0.0%",
+      "Patch Rate (%)": "66.7%",
       "Parse Errors": 0,
       "Missing old_string": 0,
-      "Avg Step Latency": "6.45s",
+      "Avg Step Latency": "19.89s",
       "Avg Turns": "10.0"
     }
   ],
@@ -28,50 +28,50 @@
     {
       "task_id": "rich_4077",
       "variant": "V15_Hybrid_Production (Ref 58145086)",
+      "pytest_pass": true,
+      "has_diff": true,
+      "turns_used": 10,
+      "total_latency_sec": 247.79,
+      "avg_step_latency_sec": 24.78,
+      "parse_errors": 0,
+      "missing_old_str_count": 0,
+      "pytest_log": "...                                                                      [100%]\n3 passed in 0.05s"
+    },
+    {
+      "task_id": "rich_4077",
+      "variant": "V17_Precision_Fast (Call 5 Edit + Fast Token)",
       "pytest_pass": false,
       "has_diff": true,
       "turns_used": 10,
-      "total_latency_sec": 247.41,
-      "avg_step_latency_sec": 24.74,
+      "total_latency_sec": 411.04,
+      "avg_step_latency_sec": 41.1,
       "parse_errors": 0,
       "missing_old_str_count": 0,
       "pytest_log": "in flush\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 1704, in print\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 864, in __exit__\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 820, in _exit_buffer\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 2055, in _check_buffer\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 2124, in _write_buffer\nValueError: I/O operation on closed file"
     },
     {
-      "task_id": "rich_4077",
-      "variant": "V16_Production_Plus (LB 0.22 + Token-Budget)",
-      "pytest_pass": false,
-      "has_diff": false,
-      "turns_used": 10,
-      "total_latency_sec": 90.47,
-      "avg_step_latency_sec": 9.05,
-      "parse_errors": 0,
-      "missing_old_str_count": 0,
-      "pytest_log": ""
-    },
-    {
       "task_id": "rich_4076",
       "variant": "V15_Hybrid_Production (Ref 58145086)",
       "pytest_pass": false,
-      "has_diff": false,
+      "has_diff": true,
       "turns_used": 10,
-      "total_latency_sec": 265.52,
-      "avg_step_latency_sec": 26.55,
+      "total_latency_sec": 276.04,
+      "avg_step_latency_sec": 27.6,
       "parse_errors": 0,
       "missing_old_str_count": 0,
-      "pytest_log": ""
+      "pytest_log": "ff, use -v to show\nE         - urce files)\nE         + urce files)B\nE         ?            +\n\ntests/test_ansi.py:70: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_ansi.py::test_decode_issue_2688[\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n-Found 4 errors in 2 files (checked 18 source files)]\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed, 2 passed in 0.08s"
     },
     {
       "task_id": "rich_4076",
-      "variant": "V16_Production_Plus (LB 0.22 + Token-Budget)",
+      "variant": "V17_Precision_Fast (Call 5 Edit + Fast Token)",
       "pytest_pass": false,
-      "has_diff": false,
+      "has_diff": true,
       "turns_used": 10,
-      "total_latency_sec": 52.21,
-      "avg_step_latency_sec": 5.22,
+      "total_latency_sec": 132.73,
+      "avg_step_latency_sec": 13.27,
       "parse_errors": 0,
       "missing_old_str_count": 0,
-      "pytest_log": ""
+      "pytest_log": "ff, use -v to show\nE         - urce files)\nE         + urce files)B\nE         ?            +\n\ntests/test_ansi.py:70: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_ansi.py::test_decode_issue_2688[\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n-Found 4 errors in 2 files (checked 18 source files)]\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed, 2 passed in 0.08s"
     },
     {
       "task_id": "rich_3718",
@@ -79,20 +79,20 @@
       "pytest_pass": false,
       "has_diff": false,
       "turns_used": 6,
-      "total_latency_sec": 259.09,
-      "avg_step_latency_sec": 43.18,
+      "total_latency_sec": 252.82,
+      "avg_step_latency_sec": 42.14,
       "parse_errors": 0,
       "missing_old_str_count": 0,
       "pytest_log": ""
     },
     {
       "task_id": "rich_3718",
-      "variant": "V16_Production_Plus (LB 0.22 + Token-Budget)",
+      "variant": "V17_Precision_Fast (Call 5 Edit + Fast Token)",
       "pytest_pass": false,
       "has_diff": false,
       "turns_used": 10,
-      "total_latency_sec": 50.65,
-      "avg_step_latency_sec": 5.07,
+      "total_latency_sec": 53.03,
+      "avg_step_latency_sec": 5.3,
       "parse_errors": 0,
       "missing_old_str_count": 0,
       "pytest_log": ""
