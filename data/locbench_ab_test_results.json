@@ -1,101 +1,101 @@
 {
-  "timestamp": "2026-11-09 01:50:33 JST",
-  "model": "google/gemma-2-27b-it",
+  "timestamp": "2026-11-09 03:11:33 JST",
+  "model": "google/gemma-4-31B-it-qat-w4a16-ct",
   "eval_mode": "clean_rich_tasks",
   "summary": [
     {
       "Variant": "V15_Hybrid_Production (Ref 58145086)",
       "Tasks": 3,
-      "Pass Rate (%)": "100.0%",
-      "Patch Rate (%)": "100.0%",
+      "Pass Rate (%)": "0.0%",
+      "Patch Rate (%)": "33.3%",
       "Parse Errors": 0,
       "Missing old_string": 0,
-      "Avg Step Latency": "4.08s",
-      "Avg Turns": "4.3"
+      "Avg Step Latency": "31.49s",
+      "Avg Turns": "8.7"
     },
     {
       "Variant": "V16_Production_Plus (LB 0.22 + Token-Budget)",
       "Tasks": 3,
-      "Pass Rate (%)": "66.7%",
-      "Patch Rate (%)": "66.7%",
+      "Pass Rate (%)": "0.0%",
+      "Patch Rate (%)": "0.0%",
       "Parse Errors": 0,
       "Missing old_string": 0,
-      "Avg Step Latency": "4.41s",
-      "Avg Turns": "6.7"
+      "Avg Step Latency": "6.45s",
+      "Avg Turns": "10.0"
     }
   ],
   "detailed_results": [
     {
       "task_id": "rich_4077",
       "variant": "V15_Hybrid_Production (Ref 58145086)",
-      "pytest_pass": true,
+      "pytest_pass": false,
       "has_diff": true,
-      "turns_used": 5,
-      "total_latency_sec": 22.34,
-      "avg_step_latency_sec": 4.47,
+      "turns_used": 10,
+      "total_latency_sec": 247.41,
+      "avg_step_latency_sec": 24.74,
       "parse_errors": 0,
       "missing_old_str_count": 0,
-      "pytest_log": "...                                                                      [100%]\n3 passed in 0.07s"
+      "pytest_log": "in flush\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 1704, in print\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 864, in __exit__\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 820, in _exit_buffer\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 2055, in _check_buffer\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 2124, in _write_buffer\nValueError: I/O operation on closed file"
     },
     {
       "task_id": "rich_4077",
       "variant": "V16_Production_Plus (LB 0.22 + Token-Budget)",
       "pytest_pass": false,
       "has_diff": false,
-      "turns_used": 5,
-      "total_latency_sec": 19.75,
-      "avg_step_latency_sec": 3.95,
+      "turns_used": 10,
+      "total_latency_sec": 90.47,
+      "avg_step_latency_sec": 9.05,
       "parse_errors": 0,
       "missing_old_str_count": 0,
-      "pytest_log": "...                                                                      [100%]\n3 passed in 0.05s"
-    },
-    {
-      "task_id": "rich_4079",
-      "variant": "V15_Hybrid_Production (Ref 58145086)",
-      "pytest_pass": true,
-      "has_diff": true,
-      "turns_used": 4,
-      "total_latency_sec": 15.75,
-      "avg_step_latency_sec": 3.94,
-      "parse_errors": 0,
-      "missing_old_str_count": 0,
-      "pytest_log": ".......                                                                  [100%]\n7 passed in 0.56s"
-    },
-    {
-      "task_id": "rich_4079",
-      "variant": "V16_Production_Plus (LB 0.22 + Token-Budget)",
-      "pytest_pass": true,
-      "has_diff": true,
-      "turns_used": 7,
-      "total_latency_sec": 34.05,
-      "avg_step_latency_sec": 4.86,
-      "parse_errors": 0,
-      "missing_old_str_count": 0,
-      "pytest_log": ".......                                                                  [100%]\n7 passed in 0.40s"
+      "pytest_log": ""
     },
     {
       "task_id": "rich_4076",
       "variant": "V15_Hybrid_Production (Ref 58145086)",
-      "pytest_pass": true,
-      "has_diff": true,
-      "turns_used": 4,
-      "total_latency_sec": 15.29,
-      "avg_step_latency_sec": 3.82,
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 10,
+      "total_latency_sec": 265.52,
+      "avg_step_latency_sec": 26.55,
       "parse_errors": 0,
       "missing_old_str_count": 0,
-      "pytest_log": ".......................                                                  [100%]\n23 passed in 0.07s"
+      "pytest_log": ""
     },
     {
       "task_id": "rich_4076",
       "variant": "V16_Production_Plus (LB 0.22 + Token-Budget)",
-      "pytest_pass": true,
-      "has_diff": true,
-      "turns_used": 8,
-      "total_latency_sec": 35.29,
-      "avg_step_latency_sec": 4.41,
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 10,
+      "total_latency_sec": 52.21,
+      "avg_step_latency_sec": 5.22,
       "parse_errors": 0,
       "missing_old_str_count": 0,
-      "pytest_log": ".......................                                                  [100%]\n23 passed in 0.07s"
+      "pytest_log": ""
+    },
+    {
+      "task_id": "rich_3718",
+      "variant": "V15_Hybrid_Production (Ref 58145086)",
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 6,
+      "total_latency_sec": 259.09,
+      "avg_step_latency_sec": 43.18,
+      "parse_errors": 0,
+      "missing_old_str_count": 0,
+      "pytest_log": ""
+    },
+    {
+      "task_id": "rich_3718",
+      "variant": "V16_Production_Plus (LB 0.22 + Token-Budget)",
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 10,
+      "total_latency_sec": 50.65,
+      "avg_step_latency_sec": 5.07,
+      "parse_errors": 0,
+      "missing_old_str_count": 0,
+      "pytest_log": ""
     }
   ]
 }
