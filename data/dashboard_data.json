@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-10 00:12:48 UTC",
-  "last_updated_jst": "2026-11-10 09:12:48 JST",
+  "last_updated_utc": "2026-11-10 01:52:09 UTC",
+  "last_updated_jst": "2026-11-10 10:52:09 JST",
   "active_job": {
     "ref": 58179275,
     "description": "V17.1 Precision Balanced (Call 7 Hard Trigger + Test-Error Feedback, A/B Validated 66.7% Pass Rate, 12.2s Latency)",
     "start_jst": "2026-11-10 09:12:39 JST",
-    "elapsed_hours": 0.0,
-    "progress_pct": 5.0,
+    "elapsed_hours": 1.7,
+    "progress_pct": 5.9,
     "est_completion_jst": "2026-11-11 13:12:39 JST"
   },
   "my_team": {
@@ -552,20 +552,20 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
     },
     {
-      "id": 748287,
-      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 37,
-      "comments": 38,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
-    },
-    {
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
       "votes": 42,
       "comments": 102,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
+    },
+    {
+      "id": 748287,
+      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
+      "votes": 37,
+      "comments": 38,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
     },
     {
       "id": 745998,
@@ -592,6 +592,22 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 757564,
+      "title": "Is in-sandbox testing (enable_sandbox_testing) on during scoring?",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757564"
+    },
+    {
+      "id": 756792,
+      "title": "Are hand-constructed LoRA adapters acceptable (weight edit from activation analysis, not gradient descent)?",
+      "votes": 2,
+      "comments": 2,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756792"
+    },
+    {
       "id": 757336,
       "title": "Can a skill script reach the local inference server from the sandbox, and is that allowed?",
       "votes": 0,
@@ -616,12 +632,12 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757244"
     },
     {
-      "id": 757223,
-      "title": "Are LLM chat tools allowed for annotating our own agent trajectories?",
-      "votes": 0,
-      "comments": 0,
+      "id": 755677,
+      "title": "Scoring zero when using LoRA adapters",
+      "votes": 5,
+      "comments": 8,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757223"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/755677"
     },
     {
       "id": 757149,
@@ -632,36 +648,20 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757149"
     },
     {
-      "id": 756963,
-      "title": "Question regarding timelimits ",
+      "id": 757223,
+      "title": "Are LLM chat tools allowed for annotating our own agent trajectories?",
       "votes": 0,
       "comments": 0,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756963"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757223"
     },
     {
-      "id": 756792,
-      "title": "Are hand-constructed LoRA adapters acceptable (weight edit from activation analysis, not gradient descent)?",
-      "votes": 2,
-      "comments": 2,
+      "id": 753973,
+      "title": "[BUG REPORT] tool parser can loop forever on an array tool argument, freezing the inference server for the rest of the run",
+      "votes": 7,
+      "comments": 5,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756792"
-    },
-    {
-      "id": 756693,
-      "title": "Team merger: which score does the merged Team carry?",
-      "votes": -3,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756693"
-    },
-    {
-      "id": 756622,
-      "title": "How to get started with the solution development of this hackathon problem",
-      "votes": 0,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756622"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/753973"
     }
   ],
   "pipeline": [
