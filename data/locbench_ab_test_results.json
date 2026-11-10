@@ -1,101 +1,545 @@
 {
-  "timestamp": "2026-11-09 07:31:36 JST",
-  "model": "google/gemma-4-31B-it-qat-w4a16-ct",
+  "timestamp": "2026-11-10 06:44:45 JST",
+  "model": "google/gemma-2-9b-it",
   "eval_mode": "clean_rich_tasks",
   "summary": [
     {
-      "Variant": "V15_Hybrid_Production (Ref 58145086)",
-      "Tasks": 3,
-      "Pass Rate (%)": "33.3%",
-      "Patch Rate (%)": "66.7%",
+      "Variant": "V9.2_Proven_Baseline (LB 0.17)",
+      "Tasks": 6,
+      "Pass Rate (%)": "0.0%",
+      "Patch Rate (%)": "0.0%",
       "Parse Errors": 0,
       "Missing old_string": 0,
-      "Avg Step Latency": "39.53s",
-      "Avg Turns": "10.0"
+      "Avg Step Latency": "68.88s",
+      "Avg Turns": "2.5"
     },
     {
-      "Variant": "V17.1_Precision_Balanced (Call 7 Edit + Feedback)",
-      "Tasks": 3,
-      "Pass Rate (%)": "66.7%",
-      "Patch Rate (%)": "66.7%",
+      "Variant": "V18_Native_Clean (Call 7 + Feedback)",
+      "Tasks": 6,
+      "Pass Rate (%)": "0.0%",
+      "Patch Rate (%)": "0.0%",
       "Parse Errors": 0,
       "Missing old_string": 0,
-      "Avg Step Latency": "12.24s",
-      "Avg Turns": "10.0"
+      "Avg Step Latency": "16.79s",
+      "Avg Turns": "5.5"
     }
   ],
   "detailed_results": [
     {
       "task_id": "rich_4077",
-      "variant": "V15_Hybrid_Production (Ref 58145086)",
+      "variant": "V9.2_Proven_Baseline (LB 0.17)",
       "pytest_pass": false,
-      "has_diff": true,
-      "turns_used": 10,
-      "total_latency_sec": 245.47,
-      "avg_step_latency_sec": 24.55,
+      "has_diff": false,
+      "turns_used": 1,
+      "total_latency_sec": 89.17,
+      "avg_step_latency_sec": 89.17,
       "parse_errors": 0,
       "missing_old_str_count": 0,
-      "pytest_log": "in flush\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 1704, in print\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 864, in __exit__\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 820, in _exit_buffer\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 2055, in _check_buffer\n  File \"/content/mini_kaggle_sandbox/rich_repo/rich/console.py\", line 2124, in _write_buffer\nValueError: I/O operation on closed file"
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "submit_patch",
+          "args": "",
+          "result": "Submitted patch",
+          "latency_sec": 89.17
+        }
+      ],
+      "pytest_log": ""
     },
     {
       "task_id": "rich_4077",
-      "variant": "V17.1_Precision_Balanced (Call 7 Edit + Feedback)",
-      "pytest_pass": true,
-      "has_diff": true,
-      "turns_used": 10,
-      "total_latency_sec": 71.36,
-      "avg_step_latency_sec": 7.14,
+      "variant": "V18_Native_Clean (Call 7 + Feedback)",
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 1,
+      "total_latency_sec": 12.69,
+      "avg_step_latency_sec": 12.69,
       "parse_errors": 0,
       "missing_old_str_count": 0,
-      "pytest_log": "...                                                                      [100%]\n3 passed in 0.05s"
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "submit_patch",
+          "args": "",
+          "result": "Submitted patch",
+          "latency_sec": 12.69
+        }
+      ],
+      "pytest_log": ""
     },
     {
       "task_id": "rich_4076",
-      "variant": "V15_Hybrid_Production (Ref 58145086)",
-      "pytest_pass": true,
-      "has_diff": true,
-      "turns_used": 10,
-      "total_latency_sec": 647.68,
-      "avg_step_latency_sec": 64.77,
+      "variant": "V9.2_Proven_Baseline (LB 0.17)",
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 1,
+      "total_latency_sec": 70.91,
+      "avg_step_latency_sec": 70.91,
       "parse_errors": 0,
       "missing_old_str_count": 0,
-      "pytest_log": ".......................                                                  [100%]\n23 passed in 0.07s"
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "submit_patch",
+          "args": "",
+          "result": "Submitted patch",
+          "latency_sec": 70.91
+        }
+      ],
+      "pytest_log": ""
     },
     {
       "task_id": "rich_4076",
-      "variant": "V17.1_Precision_Balanced (Call 7 Edit + Feedback)",
+      "variant": "V18_Native_Clean (Call 7 + Feedback)",
       "pytest_pass": false,
       "has_diff": false,
       "turns_used": 10,
-      "total_latency_sec": 236.22,
-      "avg_step_latency_sec": 23.62,
+      "total_latency_sec": 66.41,
+      "avg_step_latency_sec": 6.64,
       "parse_errors": 0,
       "missing_old_str_count": 0,
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "run_command",
+          "args": "cmd='git grep -n \\'print(f\\\\\"\\\\n{text}\\\\n\")\\' -- \\'*.py\\''",
+          "result": "(No output, exit code: 1)",
+          "latency_sec": 4.13
+        },
+        {
+          "turn": 2,
+          "tool": "run_command",
+          "args": "cmd='git grep -n \\'print(f\\\\\"\\\\n{text}\\\\n\")\\' -- \\'*.py\\''",
+          "result": "(No output, exit code: 1)",
+          "latency_sec": 4.16
+        },
+        {
+          "turn": 3,
+          "tool": "read_file",
+          "args": "path='/workspace/rich/rich/console.py', lines=1..60",
+          "result": "1: import os\n2: import sys\n3: import threading\n4: from abc import ABC, abstractmethod\n5: from dataclasses import dataclass, field\n6: from datetime import datetime\n7: from functools import wraps\n8: from itertools import islice\n9: from math import ceil",
+          "latency_sec": 4.28
+        },
+        {
+          "turn": 4,
+          "tool": "read_file",
+          "args": "path='/workspace/rich/rich/console.py', lines=1..60",
+          "result": "1: import os\n2: import sys\n3: import threading\n4: from abc import ABC, abstractmethod\n5: from dataclasses import dataclass, field\n6: from datetime import datetime\n7: from functools import wraps\n8: from itertools import islice\n9: from math import ceil",
+          "latency_sec": 4.8
+        },
+        {
+          "turn": 5,
+          "tool": "read_file",
+          "args": "path='/workspace/rich/rich/console.py', lines=1..60",
+          "result": "1: import os\n2: import sys\n3: import threading\n4: from abc import ABC, abstractmethod\n5: from dataclasses import dataclass, field\n6: from datetime import datetime\n7: from functools import wraps\n8: from itertools import islice\n9: from math import ceil",
+          "latency_sec": 5.57
+        },
+        {
+          "turn": 6,
+          "tool": "read_file",
+          "args": "path='/workspace/rich/rich/console.py', lines=1..60",
+          "result": "1: import os\n2: import sys\n3: import threading\n4: from abc import ABC, abstractmethod\n5: from dataclasses import dataclass, field\n6: from datetime import datetime\n7: from functools import wraps\n8: from itertools import islice\n9: from math import ceil",
+          "latency_sec": 6.51
+        },
+        {
+          "turn": 7,
+          "tool": "read_file",
+          "args": "path='/workspace/rich/rich/console.py', lines=1..60",
+          "result": "1: import os\n2: import sys\n3: import threading\n4: from abc import ABC, abstractmethod\n5: from dataclasses import dataclass, field\n6: from datetime import datetime\n7: from functools import wraps\n8: from itertools import islice\n9: from math import ceil",
+          "latency_sec": 7.59
+        },
+        {
+          "turn": 8,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/rich/console.py', old=''",
+          "result": "Error: `old_string` is required and cannot be empty.",
+          "latency_sec": 9.74
+        },
+        {
+          "turn": 9,
+          "tool": "read_file",
+          "args": "path='/workspace/rich/rich/console.py', lines=1..60",
+          "result": "1: import os\n2: import sys\n3: import threading\n4: from abc import ABC, abstractmethod\n5: from dataclasses import dataclass, field\n6: from datetime import datetime\n7: from functools import wraps\n8: from itertools import islice\n9: from math import ceil",
+          "latency_sec": 9.0
+        },
+        {
+          "turn": 10,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/rich/console.py', old=''",
+          "result": "Error: `old_string` is required and cannot be empty.",
+          "latency_sec": 10.63
+        }
+      ],
       "pytest_log": ""
     },
     {
       "task_id": "rich_3718",
-      "variant": "V15_Hybrid_Production (Ref 58145086)",
+      "variant": "V9.2_Proven_Baseline (LB 0.17)",
       "pytest_pass": false,
       "has_diff": false,
-      "turns_used": 10,
-      "total_latency_sec": 292.76,
-      "avg_step_latency_sec": 29.28,
+      "turns_used": 1,
+      "total_latency_sec": 77.37,
+      "avg_step_latency_sec": 77.37,
       "parse_errors": 0,
       "missing_old_str_count": 0,
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "submit_patch",
+          "args": "",
+          "result": "Submitted patch",
+          "latency_sec": 77.37
+        }
+      ],
       "pytest_log": ""
     },
     {
       "task_id": "rich_3718",
-      "variant": "V17.1_Precision_Balanced (Call 7 Edit + Feedback)",
-      "pytest_pass": true,
-      "has_diff": true,
-      "turns_used": 10,
-      "total_latency_sec": 59.46,
-      "avg_step_latency_sec": 5.95,
+      "variant": "V18_Native_Clean (Call 7 + Feedback)",
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 1,
+      "total_latency_sec": 23.0,
+      "avg_step_latency_sec": 23.0,
       "parse_errors": 0,
       "missing_old_str_count": 0,
-      "pytest_log": "...........                                                              [100%]\n11 passed in 0.08s"
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "submit_patch",
+          "args": "",
+          "result": "Submitted patch",
+          "latency_sec": 23.0
+        }
+      ],
+      "pytest_log": ""
+    },
+    {
+      "task_id": "rich_3882",
+      "variant": "V9.2_Proven_Baseline (LB 0.17)",
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 1,
+      "total_latency_sec": 85.04,
+      "avg_step_latency_sec": 85.04,
+      "parse_errors": 0,
+      "missing_old_str_count": 0,
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "submit_patch",
+          "args": "",
+          "result": "Submitted patch",
+          "latency_sec": 85.04
+        }
+      ],
+      "pytest_log": ""
+    },
+    {
+      "task_id": "rich_3882",
+      "variant": "V18_Native_Clean (Call 7 + Feedback)",
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 10,
+      "total_latency_sec": 45.84,
+      "avg_step_latency_sec": 4.58,
+      "parse_errors": 0,
+      "missing_old_str_count": 0,
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "edit_file",
+          "args": "path='...', old='...'",
+          "result": "Error: File not found: ...",
+          "latency_sec": 7.13
+        },
+        {
+          "turn": 2,
+          "tool": "edit_file",
+          "args": "path='...', old='...'",
+          "result": "Error: File not found: ...",
+          "latency_sec": 7.22
+        },
+        {
+          "turn": 3,
+          "tool": "run_command",
+          "args": "cmd=\"git grep -n 'markup disabled' -- '*.py'\"",
+          "result": "(No output, exit code: 1)",
+          "latency_sec": 3.51
+        },
+        {
+          "turn": 4,
+          "tool": "run_command",
+          "args": "cmd=\"git grep -n 'markup disabled' -- '*.py'\"",
+          "result": "(No output, exit code: 1)",
+          "latency_sec": 3.36
+        },
+        {
+          "turn": 5,
+          "tool": "run_command",
+          "args": "cmd=\"git grep -n 'markup disabled' -- '*.py'\"",
+          "result": "(No output, exit code: 1)",
+          "latency_sec": 3.52
+        },
+        {
+          "turn": 6,
+          "tool": "run_command",
+          "args": "cmd=\"git grep -n 'markup disabled' -- '*.py'\"",
+          "result": "(No output, exit code: 1)",
+          "latency_sec": 3.56
+        },
+        {
+          "turn": 7,
+          "tool": "run_command",
+          "args": "cmd=\"git grep -n 'markup disabled' -- '*.py'\"",
+          "result": "(No output, exit code: 1)",
+          "latency_sec": 3.68
+        },
+        {
+          "turn": 8,
+          "tool": "run_command",
+          "args": "cmd=\"git grep -n 'markup disabled' -- '*.py'\"",
+          "result": "(No output, exit code: 1)",
+          "latency_sec": 3.83
+        },
+        {
+          "turn": 9,
+          "tool": "run_command",
+          "args": "cmd=\"git grep -n 'markup disabled' -- '*.py'\"",
+          "result": "(No output, exit code: 1)",
+          "latency_sec": 3.99
+        },
+        {
+          "turn": 10,
+          "tool": "edit_file",
+          "args": "path='...', old='...'",
+          "result": "Error: File not found: ...",
+          "latency_sec": 6.02
+        }
+      ],
+      "pytest_log": ""
+    },
+    {
+      "task_id": "rich_3518",
+      "variant": "V9.2_Proven_Baseline (LB 0.17)",
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 1,
+      "total_latency_sec": 78.6,
+      "avg_step_latency_sec": 78.6,
+      "parse_errors": 0,
+      "missing_old_str_count": 0,
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "submit_patch",
+          "args": "",
+          "result": "Submitted patch",
+          "latency_sec": 78.6
+        }
+      ],
+      "pytest_log": ""
+    },
+    {
+      "task_id": "rich_3518",
+      "variant": "V18_Native_Clean (Call 7 + Feedback)",
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 10,
+      "total_latency_sec": 314.23,
+      "avg_step_latency_sec": 31.42,
+      "parse_errors": 0,
+      "missing_old_str_count": 0,
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/table.py', old='column_highlight=False'",
+          "result": "Error: `old_string` not found in /workspace/rich/table.py. Make sure you call read_file(/workspace/rich/table.py, start_line, end_line) first and copy exact indentation.",
+          "latency_sec": 30.99
+        },
+        {
+          "turn": 2,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/table.py', old='column_highlight=False'",
+          "result": "Error: `old_string` not found in /workspace/rich/table.py. Make sure you call read_file(/workspace/rich/table.py, start_line, end_line) first and copy exact indentation.",
+          "latency_sec": 33.47
+        },
+        {
+          "turn": 3,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/table.py', old='column_highlight=False'",
+          "result": "Error: `old_string` not found in /workspace/rich/table.py. Make sure you call read_file(/workspace/rich/table.py, start_line, end_line) first and copy exact indentation.",
+          "latency_sec": 28.92
+        },
+        {
+          "turn": 4,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/table.py', old='column_highlight=False'",
+          "result": "Error: `old_string` not found in /workspace/rich/table.py. Make sure you call read_file(/workspace/rich/table.py, start_line, end_line) first and copy exact indentation.",
+          "latency_sec": 30.51
+        },
+        {
+          "turn": 5,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/table.py', old='column_highlight=False'",
+          "result": "Error: `old_string` not found in /workspace/rich/table.py. Make sure you call read_file(/workspace/rich/table.py, start_line, end_line) first and copy exact indentation.",
+          "latency_sec": 28.14
+        },
+        {
+          "turn": 6,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/table.py', old='column_highlight=False'",
+          "result": "Error: `old_string` not found in /workspace/rich/table.py. Make sure you call read_file(/workspace/rich/table.py, start_line, end_line) first and copy exact indentation.",
+          "latency_sec": 31.07
+        },
+        {
+          "turn": 7,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/table.py', old='column_highlight=False'",
+          "result": "Error: `old_string` not found in /workspace/rich/table.py. Make sure you call read_file(/workspace/rich/table.py, start_line, end_line) first and copy exact indentation.",
+          "latency_sec": 29.67
+        },
+        {
+          "turn": 8,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/table.py', old='column_highlight=False'",
+          "result": "Error: `old_string` not found in /workspace/rich/table.py. Make sure you call read_file(/workspace/rich/table.py, start_line, end_line) first and copy exact indentation.",
+          "latency_sec": 31.9
+        },
+        {
+          "turn": 9,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/table.py', old='column_highlight=False'",
+          "result": "Error: `old_string` not found in /workspace/rich/table.py. Make sure you call read_file(/workspace/rich/table.py, start_line, end_line) first and copy exact indentation.",
+          "latency_sec": 34.2
+        },
+        {
+          "turn": 10,
+          "tool": "edit_file",
+          "args": "path='/workspace/rich/table.py', old='column_highlight=False'",
+          "result": "Error: `old_string` not found in /workspace/rich/table.py. Make sure you call read_file(/workspace/rich/table.py, start_line, end_line) first and copy exact indentation.",
+          "latency_sec": 35.36
+        }
+      ],
+      "pytest_log": ""
+    },
+    {
+      "task_id": "rich_3278",
+      "variant": "V9.2_Proven_Baseline (LB 0.17)",
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 10,
+      "total_latency_sec": 121.95,
+      "avg_step_latency_sec": 12.2,
+      "parse_errors": 0,
+      "missing_old_str_count": 0,
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "run_command",
+          "args": "cmd=\"edit_file(path='rich/console/ansi.py', old_string='\\x1b0', new_string='')\"",
+          "result": "/bin/sh: 1: Syntax error: word unexpected (expecting \")\")",
+          "latency_sec": 4.65
+        },
+        {
+          "turn": 2,
+          "tool": "run_command",
+          "args": "cmd=\"edit_file(path='rich/console/ansi.py', old_string='\\\\x1b0', new_string='')\"",
+          "result": "/bin/sh: 1: Syntax error: word unexpected (expecting \")\")",
+          "latency_sec": 14.2
+        },
+        {
+          "turn": 3,
+          "tool": "run_command",
+          "args": "cmd=\"edit_file(path='rich/console/ansi.py', old_string='\\\\x1b0', new_string='')\"",
+          "result": "/bin/sh: 1: Syntax error: word unexpected (expecting \")\")",
+          "latency_sec": 10.78
+        },
+        {
+          "turn": 4,
+          "tool": "run_command",
+          "args": "cmd=\"read_file(path='rich/console/ansi.py', start_line=1, end_line=100)\"",
+          "result": "/bin/sh: 1: Syntax error: word unexpected (expecting \")\")",
+          "latency_sec": 12.7
+        },
+        {
+          "turn": 5,
+          "tool": "run_command",
+          "args": "cmd=\"read_file(path='rich/console/ansi.py', start_line=1, end_line=100)\"",
+          "result": "/bin/sh: 1: Syntax error: word unexpected (expecting \")\")",
+          "latency_sec": 14.14
+        },
+        {
+          "turn": 6,
+          "tool": "run_command",
+          "args": "cmd=\"read_file(path='rich/console/ansi.py', start_line=1, end_line=100)\"",
+          "result": "/bin/sh: 1: Syntax error: word unexpected (expecting \")\")",
+          "latency_sec": 12.03
+        },
+        {
+          "turn": 7,
+          "tool": "run_command",
+          "args": "cmd=\"read_file(path='rich/console/ansi.py', start_line=1, end_line=100)\"",
+          "result": "/bin/sh: 1: Syntax error: word unexpected (expecting \")\")",
+          "latency_sec": 13.53
+        },
+        {
+          "turn": 8,
+          "tool": "run_command",
+          "args": "cmd=\"read_file(path='rich/console/ansi.py', start_line=1, end_line=100)\"",
+          "result": "/bin/sh: 1: Syntax error: word unexpected (expecting \")\")",
+          "latency_sec": 12.94
+        },
+        {
+          "turn": 9,
+          "tool": "run_command",
+          "args": "cmd=\"read_file(path='rich/console/ansi.py', start_line=1, end_line=100)\"",
+          "result": "/bin/sh: 1: Syntax error: word unexpected (expecting \")\")",
+          "latency_sec": 12.6
+        },
+        {
+          "turn": 10,
+          "tool": "run_command",
+          "args": "cmd=\"edit_file(path='rich/console/ansi.py', old_string='\\x1b0', new_string='')\"",
+          "result": "/bin/sh: 1: Syntax error: word unexpected (expecting \")\")",
+          "latency_sec": 14.39
+        }
+      ],
+      "pytest_log": ""
+    },
+    {
+      "task_id": "rich_3278",
+      "variant": "V18_Native_Clean (Call 7 + Feedback)",
+      "pytest_pass": false,
+      "has_diff": false,
+      "turns_used": 1,
+      "total_latency_sec": 22.43,
+      "avg_step_latency_sec": 22.43,
+      "parse_errors": 0,
+      "missing_old_str_count": 0,
+      "agent_diff": "",
+      "trajectory": [
+        {
+          "turn": 1,
+          "tool": "submit_patch",
+          "args": "",
+          "result": "Submitted patch",
+          "latency_sec": 22.43
+        }
+      ],
+      "pytest_log": ""
     }
   ]
 }
