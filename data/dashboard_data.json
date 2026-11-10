@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-10 09:13:00 UTC",
-  "last_updated_jst": "2026-11-10 18:13:00 JST",
+  "last_updated_utc": "2026-11-10 17:28:03 UTC",
+  "last_updated_jst": "2026-11-11 02:28:03 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -518,19 +518,19 @@
     },
     {
       "rank": 13,
+      "team_name": "Radek",
+      "score": 0.24,
+      "is_my_team": false
+    },
+    {
+      "rank": 14,
       "team_name": "Francis Joseph",
       "score": 0.22,
       "is_my_team": false
     },
     {
-      "rank": 14,
-      "team_name": "Deepest Mind",
-      "score": 0.22,
-      "is_my_team": false
-    },
-    {
       "rank": 15,
-      "team_name": "Ayush Barai",
+      "team_name": "Deepest Mind",
       "score": 0.22,
       "is_my_team": false
     }
@@ -555,7 +555,7 @@
     {
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
-      "votes": 42,
+      "votes": 43,
       "comments": 102,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
@@ -585,10 +585,18 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 757661,
+      "title": "Question about the scoring environment for the reference patches",
+      "votes": 0,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757661"
+    },
+    {
       "id": 757626,
       "title": "Probing the public/private split to reallocate time",
-      "votes": 1,
-      "comments": 2,
+      "votes": 2,
+      "comments": 6,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757626"
     },
@@ -596,7 +604,7 @@
       "id": 757588,
       "title": "I reran a public 0.24 bundle unchanged and got 0.17 (data and short paper)",
       "votes": 2,
-      "comments": 0,
+      "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757588"
     },
@@ -647,14 +655,6 @@
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757149"
-    },
-    {
-      "id": 756963,
-      "title": "Question regarding timelimits ",
-      "votes": 1,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756963"
     }
   ],
   "pipeline": [
