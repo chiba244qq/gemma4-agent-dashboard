@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-10 17:28:03 UTC",
-  "last_updated_jst": "2026-11-11 02:28:03 JST",
+  "last_updated_utc": "2026-11-10 22:48:03 UTC",
+  "last_updated_jst": "2026-11-11 07:48:03 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -563,7 +563,7 @@
     {
       "id": 745998,
       "title": "Note on Code Graphs for Async Functions",
-      "votes": 7,
+      "votes": 8,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/745998"
@@ -583,6 +583,22 @@
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
+    },
+    {
+      "id": 757783,
+      "title": "Rules clarification — Using competition training examples on DeepInfra and RunPod (§4.b)",
+      "votes": -1,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757783"
+    },
+    {
+      "id": 757782,
+      "title": "Exact wheelhouse and L4×4 runtime metadata for the Gemma 4 Developer Agent competition",
+      "votes": -1,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757782"
     },
     {
       "id": 757661,
@@ -639,22 +655,6 @@
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757244"
-    },
-    {
-      "id": 757223,
-      "title": "Are LLM chat tools allowed for annotating our own agent trajectories?",
-      "votes": 1,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757223"
-    },
-    {
-      "id": 757149,
-      "title": "Will agents get the contents of issue links and screenshots during offline evaluation?",
-      "votes": 2,
-      "comments": 2,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757149"
     }
   ],
   "pipeline": [
