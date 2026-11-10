@@ -1,14 +1,7 @@
 {
-  "last_updated_utc": "2026-11-10 01:52:09 UTC",
-  "last_updated_jst": "2026-11-10 10:52:09 JST",
-  "active_job": {
-    "ref": 58179275,
-    "description": "V17.1 Precision Balanced (Call 7 Hard Trigger + Test-Error Feedback, A/B Validated 66.7% Pass Rate, 12.2s Latency)",
-    "start_jst": "2026-11-10 09:12:39 JST",
-    "elapsed_hours": 1.7,
-    "progress_pct": 5.9,
-    "est_completion_jst": "2026-11-11 13:12:39 JST"
-  },
+  "last_updated_utc": "2026-11-10 04:03:54 UTC",
+  "last_updated_jst": "2026-11-10 13:03:54 JST",
+  "active_job": null,
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -291,8 +284,8 @@
       "ref": 58179275,
       "date_utc": "2026-11-10 00:12:39 UTC",
       "date_jst": "2026-11-10 09:12:39 JST",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.0,
       "description": "V17.1 Precision Balanced (Call 7 Hard Trigger + Test-Error Feedback, A/B Validated 66.7% Pass Rate, 12.2s Latency)",
       "error": ""
     },
@@ -592,20 +585,52 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 756792,
+      "title": "Are hand-constructed LoRA adapters acceptable (weight edit from activation analysis, not gradient descent)?",
+      "votes": 3,
+      "comments": 3,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756792"
+    },
+    {
+      "id": 757322,
+      "title": "Kernel Stopped working while running Evaluation then failure to submit to competition then failed to authorize session",
+      "votes": 2,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757322"
+    },
+    {
+      "id": 757244,
+      "title": "Clarification: Small Model Prize deadline",
+      "votes": 2,
+      "comments": 2,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757244"
+    },
+    {
+      "id": 757149,
+      "title": "Will agents get the contents of issue links and screenshots during offline evaluation?",
+      "votes": 2,
+      "comments": 2,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757149"
+    },
+    {
       "id": 757564,
       "title": "Is in-sandbox testing (enable_sandbox_testing) on during scoring?",
-      "votes": 0,
+      "votes": 1,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757564"
     },
     {
-      "id": 756792,
-      "title": "Are hand-constructed LoRA adapters acceptable (weight edit from activation analysis, not gradient descent)?",
-      "votes": 2,
-      "comments": 2,
+      "id": 755677,
+      "title": "Scoring zero when using LoRA adapters",
+      "votes": 6,
+      "comments": 8,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756792"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/755677"
     },
     {
       "id": 757336,
@@ -616,41 +641,9 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757336"
     },
     {
-      "id": 757322,
-      "title": "Kernel Stopped working while running Evaluation then failure to submit to competition then failed to authorize session",
-      "votes": 1,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757322"
-    },
-    {
-      "id": 757244,
-      "title": "Clarification: Small Model Prize deadline",
-      "votes": 1,
-      "comments": 2,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757244"
-    },
-    {
-      "id": 755677,
-      "title": "Scoring zero when using LoRA adapters",
-      "votes": 5,
-      "comments": 8,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/755677"
-    },
-    {
-      "id": 757149,
-      "title": "Will agents get the contents of issue links and screenshots during offline evaluation?",
-      "votes": 1,
-      "comments": 2,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757149"
-    },
-    {
       "id": 757223,
       "title": "Are LLM chat tools allowed for annotating our own agent trajectories?",
-      "votes": 0,
+      "votes": 1,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757223"
@@ -658,7 +651,7 @@
     {
       "id": 753973,
       "title": "[BUG REPORT] tool parser can loop forever on an array tool argument, freezing the inference server for the rest of the run",
-      "votes": 7,
+      "votes": 9,
       "comments": 5,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/753973"
