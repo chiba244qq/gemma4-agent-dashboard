@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-11 10:17:05 UTC",
-  "last_updated_jst": "2026-11-11 19:17:05 JST",
+  "last_updated_utc": "2026-11-11 11:08:36 UTC",
+  "last_updated_jst": "2026-11-11 20:08:36 JST",
   "active_job": {
     "ref": 58226200,
     "description": "V18 Native Clean (Zero Prompt-Tool Contamination, True-Grader v9.4 Validated 66.7% vs 33.3% Baseline, 15.9s Latency)",
     "start_jst": "2026-11-11 14:15:33 JST",
-    "elapsed_hours": 5.0,
-    "progress_pct": 17.9,
+    "elapsed_hours": 5.9,
+    "progress_pct": 21.0,
     "est_completion_jst": "2026-11-12 18:15:33 JST"
   },
   "my_team": {
@@ -601,6 +601,14 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 757993,
+      "title": "Kaggle notebook runtime issue",
+      "votes": 1,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757993"
+    },
+    {
       "id": 757893,
       "title": "To the organizers: 5 concrete scorer fixes, plus an audited task list",
       "votes": -1,
@@ -655,14 +663,6 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757564"
-    },
-    {
-      "id": 757336,
-      "title": "Can a skill script reach the local inference server from the sandbox, and is that allowed?",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757336"
     },
     {
       "id": 757322,
