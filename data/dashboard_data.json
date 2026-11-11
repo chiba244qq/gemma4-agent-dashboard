@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-11 02:30:12 UTC",
-  "last_updated_jst": "2026-11-11 11:30:12 JST",
+  "last_updated_utc": "2026-11-11 05:14:48 UTC",
+  "last_updated_jst": "2026-11-11 14:14:48 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -556,7 +556,7 @@
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
       "votes": 43,
-      "comments": 102,
+      "comments": 104,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
     },
@@ -583,6 +583,14 @@
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
+    },
+    {
+      "id": 757893,
+      "title": "To the organizers: 5 concrete scorer fixes, plus an audited task list",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757893"
     },
     {
       "id": 757783,
@@ -619,7 +627,7 @@
     {
       "id": 757588,
       "title": "I reran a public 0.24 bundle unchanged and got 0.17 (data and short paper)",
-      "votes": 2,
+      "votes": 3,
       "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757588"
@@ -647,14 +655,6 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757322"
-    },
-    {
-      "id": 757244,
-      "title": "Clarification: Small Model Prize deadline",
-      "votes": 2,
-      "comments": 2,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757244"
     }
   ],
   "pipeline": [
