@@ -1,7 +1,14 @@
 {
-  "last_updated_utc": "2026-11-11 05:14:48 UTC",
-  "last_updated_jst": "2026-11-11 14:14:48 JST",
-  "active_job": null,
+  "last_updated_utc": "2026-11-11 05:15:49 UTC",
+  "last_updated_jst": "2026-11-11 14:15:49 JST",
+  "active_job": {
+    "ref": 58226200,
+    "description": "V18 Native Clean (Zero Prompt-Tool Contamination, True-Grader v9.4 Validated 66.7% vs 33.3% Baseline, 15.9s Latency)",
+    "start_jst": "2026-11-11 14:15:33 JST",
+    "elapsed_hours": 0.0,
+    "progress_pct": 5.0,
+    "est_completion_jst": "2026-11-12 18:15:33 JST"
+  },
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -280,6 +287,15 @@
     "bronze": 0.2
   },
   "submissions": [
+    {
+      "ref": 58226200,
+      "date_utc": "2026-11-11 05:15:33 UTC",
+      "date_jst": "2026-11-11 14:15:33 JST",
+      "status": "PENDING",
+      "score": null,
+      "description": "V18 Native Clean (Zero Prompt-Tool Contamination, True-Grader v9.4 Validated 66.7% vs 33.3% Baseline, 15.9s Latency)",
+      "error": ""
+    },
     {
       "ref": 58179275,
       "date_utc": "2026-11-10 00:12:39 UTC",
