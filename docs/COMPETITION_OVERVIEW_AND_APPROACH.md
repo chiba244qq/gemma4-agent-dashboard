@@ -278,9 +278,93 @@ Web フレームワーク `FastAPI` における、Server-Sent Events (SSE) 通�
 
 ---
 
-#### ③ AI エージェントはどうやってこれを解くのか？（4 フェーズの自律プロセス）
+#### ③ 【実例】「GitHub Issue (問題文) 受領」の生サンプルと構造
 
-エージェント（Gemma 4）は、人間が介入できない完全自律環境で、以下の 4 段階のツール呼び出しを連携させて問題を解きます。
+エージェント（Gemma 4）にタスク開始時に渡される「問題文（`problem_statement`）」は、**世界中の開発者が実際に GitHub の Issue 欄に投稿した生のテキストそのもの** です。  
+人間が解きやすく整理した要約ではなく、再現コード、エラーの Traceback、時にはユーザーの感情的な雑談や推測までそのまま含まれています。
+
+エージェントは、この雑多な長文の中から**「直すべき挙動の仕様」「エラーメッセージの厳密な文字列」「対象となる関数名やクラス名」**を瞬時に読み解かなければなりません。代表的な 2 つの実例サンプルをご紹介します。
+
+##### サンプル 1: 再現コード＆エラーログ付きのバグ報告型（Requests `requests_7505`）
+
+開発者が「自作のファイル風オブジェクトをアップロードしようとしたら例外で落ちた」と報告した生の Issue です。
+
+````markdown
+# Issue: Cannot upload custom file-like objects (e.g., custom streaming wrappers)
+
+## Problem Description
+When attempting to upload a custom streaming object that implements `.read()` but is not an instance of `io.IOBase` and doesn't inherit from built-in file types, `requests.post(..., files={'upload': obj})` fails with an unexpected exception during file encoding.
+
+## Reproducing Code
+```python
+class CustomFileReader:
+    def __init__(self, data: bytes):
+        self._data = data
+        self._pos = 0
+
+    def read(self, size: int = -1) -> bytes:
+        if size == -1:
+            chunk = self._data[self._pos:]
+            self._pos = len(self._data)
+            return chunk
+        chunk = self._data[self._pos:self._pos + size]
+        self._pos += len(chunk)
+        return chunk
+
+reader = CustomFileReader(b"hello world")
+response = requests.post("https://httpbin.org/post", files={"file": reader})
+```
+
+## Traceback
+```text
+Traceback (most recent call last):
+  File "test_upload.py", line 18, in <module>
+    response = requests.post("https://httpbin.org/post", files={"file": reader})
+  File "requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "requests/models.py", line 236, in _encode_files
+    fdata = fp.read()
+TypeError: expected bytes-like object or string, got CustomFileReader
+```
+
+## Expected Behavior
+Requests should recognize any object with a `.read()` method as a readable stream (duck typing) and not reject it just because `isinstance(fp, _SupportsRead)` fails for untyped proxy objects.
+````
+
+> 💡 **エージェントがここから読み取るべき重要情報**:
+> 1. **修正箇所の特定ヒント**: Traceback に `requests/models.py` の `_encode_files` 関数（236 行目付近）と明記されている。
+> 2. **バグの根本原因**: `isinstance(fp, _SupportsRead)` だけで判定しており、Python のダックタイピング（`.read()` を持っていればファイルとみなす）が考慮されていない。
+> 3. **書くべきコード**: `elif isinstance(fp, _SupportsRead) or hasattr(fp, "read"):`
+
+---
+
+##### サンプル 2: 仕様定義＆厳密な例外メッセージ指定型（FastAPI `fastapi_15588`）
+
+セキュリティやプロトコル整合性の観点から、不正な入力を弾くバリデーションの追加を求める Issue です。
+
+````markdown
+♻️ Validate Server Sent Event fields to avoid applications from sending broken data
+
+## Description
+This was reported multiple times as a "vulnerability" by users probably using automated AI tools, with the argument that if input was taken from the request and passed directly to an event unfiltered, it could break the client.
+
+If an app sets an `id` or `event` with multi-line content, I would consider that app broken, and probably the app itself vulnerable to something, not FastAPI. With this change, if any app sets invalid multi-line values (sourced from unfiltered input or in any other way), FastAPI will make it a server error (which it is, as the app is sending invalid data).
+
+Prevent badly written apps from shooting themselves in the foot by passing unsanitized data directly to a SSE.
+- Reject multi-line strings (containing '\r' or '\n') in 'id' and 'event' fields.
+- Raise ValueError with message: "SSE '{field_name}' must be a single line"
+````
+
+> 💡 **エージェントがここから読み取るべき重要情報**:
+> 1. **対象モジュール**: Server-Sent Events（SSE）の実装ファイル（`fastapi/sse.py`）。
+> 2. **検知すべき不正条件**: `id` または `event` フィールドに `\r` または `\n` が含まれていること。
+> 3. **厳格な例外仕様**: `ValueError` を投げること。エラーメッセージは **`f"SSE '{field_name}' must be a single line"`** と一字一句違わず完全一致させること（1 文字でもズレると裏の採点テストが落ちます）。
+
+---
+
+#### ④ AI エージェントはどうやってこれを解くのか？（4 フェーズの自律プロセス）
+
+エージェント（Gemma 4）は、人間が介入できない完全自律環境で、上記のような Issue を受け取った後、以下の 4 段階のツール呼び出しを連携させて問題を解きます。
 
 ```mermaid
 flowchart TD
@@ -306,7 +390,7 @@ flowchart TD
 
 ---
 
-#### ④ なぜ「たった 2 行の修正」が世界トップ AI にとっても超難問なのか？
+#### ⑤ なぜ「たった 2 行の修正」が世界トップ AI にとっても超難問なのか？
 
 世界中の最先端 AI でも「全体の 3 割（17 問）」しか解けない理由は、コード修正そのものではなく、**コンペ特有の過酷な物理的落とし穴** にあります。
 
