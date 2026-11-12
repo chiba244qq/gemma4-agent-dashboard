@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-12 09:35:11 UTC",
-  "last_updated_jst": "2026-11-12 18:35:11 JST",
+  "last_updated_utc": "2026-11-12 17:54:04 UTC",
+  "last_updated_jst": "2026-11-13 02:54:04 JST",
   "active_job": {
     "ref": 58268405,
     "description": "Day 22 Production: V18 Native Clean (Zero Prompt-Tool Contamination, Proven LB 0.18, True-Grader 66.7%)",
     "start_jst": "2026-11-12 18:34:51 JST",
-    "elapsed_hours": 0.0,
-    "progress_pct": 5.0,
+    "elapsed_hours": 8.3,
+    "progress_pct": 29.7,
     "est_completion_jst": "2026-11-13 22:34:51 JST"
   },
   "my_team": {
@@ -581,7 +581,7 @@
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
       "votes": 44,
-      "comments": 111,
+      "comments": 114,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
     },
@@ -610,9 +610,25 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 758599,
+      "title": "Submission stuck in \"Notebook Running\" for 3 days, blocking all new submissions (ID 58169362)",
+      "votes": 1,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758599"
+    },
+    {
+      "id": 758547,
+      "title": "Skill-only bundle scores 0.00 on the leaderboard but resolves tasks in the harness's Docker mode locally. Do skill scripts run on the scorer?",
+      "votes": 1,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758547"
+    },
+    {
       "id": 758289,
       "title": "Does the scorer serve with the vLLM / swegemma / adk-submission versions from the wheelhouse dataset?",
-      "votes": 0,
+      "votes": 1,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758289"
@@ -628,7 +644,7 @@
     {
       "id": 757993,
       "title": "Kaggle notebook runtime issue",
-      "votes": 6,
+      "votes": 7,
       "comments": 4,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757993"
@@ -644,7 +660,7 @@
     {
       "id": 757783,
       "title": "Rules clarification — Using competition training examples on DeepInfra and RunPod (§4.b)",
-      "votes": -2,
+      "votes": -3,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757783"
@@ -652,7 +668,7 @@
     {
       "id": 757782,
       "title": "Exact wheelhouse and L4×4 runtime metadata for the Gemma 4 Developer Agent competition",
-      "votes": -2,
+      "votes": -3,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757782"
@@ -664,22 +680,6 @@
       "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757661"
-    },
-    {
-      "id": 757626,
-      "title": "Probing the public/private split to reallocate time",
-      "votes": 4,
-      "comments": 6,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757626"
-    },
-    {
-      "id": 757588,
-      "title": "I reran a public 0.24 bundle unchanged and got 0.17 (data and short paper)",
-      "votes": 4,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757588"
     }
   ],
   "pipeline": [
