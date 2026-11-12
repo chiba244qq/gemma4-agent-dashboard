@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-12 01:17:44 UTC",
-  "last_updated_jst": "2026-11-12 10:17:44 JST",
+  "last_updated_utc": "2026-11-12 09:14:57 UTC",
+  "last_updated_jst": "2026-11-12 18:14:57 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -546,12 +546,12 @@
   ],
   "discussions": [
     {
-      "id": 747519,
-      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
-      "votes": 44,
-      "comments": 110,
+      "id": 751104,
+      "title": "🌟Bonus Prize: Small Model Development ($10,000)",
+      "votes": 39,
+      "comments": 8,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
     },
     {
       "id": 748287,
@@ -562,28 +562,12 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
     },
     {
-      "id": 743007,
-      "title": "Welcome to the Gemma 4 Developer Agent Competition",
-      "votes": 12,
-      "comments": 9,
+      "id": 747519,
+      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
+      "votes": 44,
+      "comments": 111,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
-    },
-    {
-      "id": 751104,
-      "title": "🌟Bonus Prize: Small Model Development ($10,000)",
-      "votes": 39,
-      "comments": 8,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
-    },
-    {
-      "id": 742815,
-      "title": "How to get started + Competition's Official Discord",
-      "votes": 8,
-      "comments": 2,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
     },
     {
       "id": 745998,
@@ -594,76 +578,92 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/745998"
     },
     {
-      "id": 743683,
-      "title": "Rerunning Failed Submissions",
-      "votes": 22,
-      "comments": 108,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743683"
-    },
-    {
-      "id": 751339,
-      "title": "\"Notebook Threw Exception\" on a non-LoRA submission that validates and compiles locally",
-      "votes": 20,
-      "comments": 44,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751339"
-    },
-    {
-      "id": 746480,
-      "title": "submission is running for 15h. is this due to evaluation ?",
-      "votes": 21,
-      "comments": 37,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/746480"
-    },
-    {
-      "id": 744807,
-      "title": "Submission errors after the Sep 30 wheelhouse update",
-      "votes": 21,
-      "comments": 22,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/744807"
-    },
-    {
-      "id": 748051,
-      "title": "The top of the leaderboard is dominated by those who trained LoRA's.",
+      "id": 743007,
+      "title": "Welcome to the Gemma 4 Developer Agent Competition",
       "votes": 12,
-      "comments": 21,
+      "comments": 9,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748051"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
     },
     {
-      "id": 742807,
-      "title": "Clarification on distillation from external LLMs",
-      "votes": 50,
-      "comments": 14,
+      "id": 742815,
+      "title": "How to get started + Competition's Official Discord",
+      "votes": 8,
+      "comments": 2,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742807"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
-      "id": 743213,
-      "title": "Official sample_submission scores FAILED — are submitted adapters meant to be registered as named LoRA modules?",
+      "id": 758289,
+      "title": "Does the scorer serve with the vLLM / swegemma / adk-submission versions from the wheelhouse dataset?",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758289"
+    },
+    {
+      "id": 758218,
+      "title": "How many of the 129 tasks are solved by the agentless 0.22 scorer?",
+      "votes": 2,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758218"
+    },
+    {
+      "id": 757993,
+      "title": "Kaggle notebook runtime issue",
+      "votes": 6,
+      "comments": 4,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757993"
+    },
+    {
+      "id": 757893,
+      "title": "To the organizers: 5 concrete scorer fixes, plus an audited task list",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757893"
+    },
+    {
+      "id": 757783,
+      "title": "Rules clarification — Using competition training examples on DeepInfra and RunPod (§4.b)",
+      "votes": -2,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757783"
+    },
+    {
+      "id": 757782,
+      "title": "Exact wheelhouse and L4×4 runtime metadata for the Gemma 4 Developer Agent competition",
+      "votes": -2,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757782"
+    },
+    {
+      "id": 757661,
+      "title": "Question about the scoring environment for the reference patches",
+      "votes": 0,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757661"
+    },
+    {
+      "id": 757626,
+      "title": "Probing the public/private split to reallocate time",
       "votes": 4,
-      "comments": 14,
+      "comments": 6,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743213"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757626"
     },
     {
-      "id": 742882,
-      "title": "Is the swegemma harness available for local evaluation?",
-      "votes": 16,
-      "comments": 12,
+      "id": 757588,
+      "title": "I reran a public 0.24 bundle unchanged and got 0.17 (data and short paper)",
+      "votes": 4,
+      "comments": 1,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742882"
-    },
-    {
-      "id": 747248,
-      "title": " fastapi tasks can't pass even with the gold patch",
-      "votes": 15,
-      "comments": 12,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747248"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757588"
     }
   ],
   "pipeline": [
