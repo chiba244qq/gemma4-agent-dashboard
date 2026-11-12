@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-12 17:54:04 UTC",
-  "last_updated_jst": "2026-11-13 02:54:04 JST",
+  "last_updated_utc": "2026-11-12 23:11:12 UTC",
+  "last_updated_jst": "2026-11-13 08:11:12 JST",
   "active_job": {
     "ref": 58268405,
     "description": "Day 22 Production: V18 Native Clean (Zero Prompt-Tool Contamination, Proven LB 0.18, True-Grader 66.7%)",
     "start_jst": "2026-11-12 18:34:51 JST",
-    "elapsed_hours": 8.3,
-    "progress_pct": 29.7,
+    "elapsed_hours": 13.6,
+    "progress_pct": 48.6,
     "est_completion_jst": "2026-11-13 22:34:51 JST"
   },
   "my_team": {
@@ -581,7 +581,7 @@
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
       "votes": 44,
-      "comments": 114,
+      "comments": 115,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
     },
@@ -610,6 +610,38 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 758854,
+      "title": "Harness pitfalls: no async functions in the code graph; bad skill names score 0.00",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758854"
+    },
+    {
+      "id": 758821,
+      "title": "Open code and data: agent configs, weight-editing library and held-out task sets (Gemma 4 E4B)",
+      "votes": 3,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758821"
+    },
+    {
+      "id": 758817,
+      "title": "Open toolkit for measuring noise in your agent runs",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758817"
+    },
+    {
+      "id": 758729,
+      "title": "Public repo with our agent configs and run data",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758729"
+    },
+    {
       "id": 758599,
       "title": "Submission stuck in \"Notebook Running\" for 3 days, blocking all new submissions (ID 58169362)",
       "votes": 1,
@@ -621,7 +653,7 @@
       "id": 758547,
       "title": "Skill-only bundle scores 0.00 on the leaderboard but resolves tasks in the harness's Docker mode locally. Do skill scripts run on the scorer?",
       "votes": 1,
-      "comments": 0,
+      "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758547"
     },
@@ -636,7 +668,7 @@
     {
       "id": 758218,
       "title": "How many of the 129 tasks are solved by the agentless 0.22 scorer?",
-      "votes": 2,
+      "votes": 3,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758218"
@@ -644,42 +676,10 @@
     {
       "id": 757993,
       "title": "Kaggle notebook runtime issue",
-      "votes": 7,
+      "votes": 8,
       "comments": 4,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757993"
-    },
-    {
-      "id": 757893,
-      "title": "To the organizers: 5 concrete scorer fixes, plus an audited task list",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757893"
-    },
-    {
-      "id": 757783,
-      "title": "Rules clarification — Using competition training examples on DeepInfra and RunPod (§4.b)",
-      "votes": -3,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757783"
-    },
-    {
-      "id": 757782,
-      "title": "Exact wheelhouse and L4×4 runtime metadata for the Gemma 4 Developer Agent competition",
-      "votes": -3,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757782"
-    },
-    {
-      "id": 757661,
-      "title": "Question about the scoring environment for the reference patches",
-      "votes": 0,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757661"
     }
   ],
   "pipeline": [
