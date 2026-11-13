@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-13 01:25:25 UTC",
-  "last_updated_jst": "2026-11-13 10:25:25 JST",
+  "last_updated_utc": "2026-11-13 04:56:47 UTC",
+  "last_updated_jst": "2026-11-13 13:56:47 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -542,13 +542,13 @@
     },
     {
       "rank": 14,
-      "team_name": "Francis Joseph",
-      "score": 0.22,
+      "team_name": "Sophia0817",
+      "score": 0.24,
       "is_my_team": false
     },
     {
       "rank": 15,
-      "team_name": "Deepest Mind",
+      "team_name": "Francis Joseph",
       "score": 0.22,
       "is_my_team": false
     }
@@ -566,7 +566,7 @@
       "id": 748287,
       "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
       "votes": 37,
-      "comments": 38,
+      "comments": 39,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
     },
@@ -574,7 +574,7 @@
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
       "votes": 44,
-      "comments": 115,
+      "comments": 117,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
     },
@@ -601,6 +601,22 @@
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
+    },
+    {
+      "id": 758954,
+      "title": "Scorer minutes: a toolkit to convert time caps between GPUs and measure run to run noise",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758954"
+    },
+    {
+      "id": 758953,
+      "title": "Are only November 9 submissions stuck in the queue",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758953"
     },
     {
       "id": 758854,
@@ -657,22 +673,6 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758289"
-    },
-    {
-      "id": 758218,
-      "title": "How many of the 129 tasks are solved by the agentless 0.22 scorer?",
-      "votes": 3,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758218"
-    },
-    {
-      "id": 757993,
-      "title": "Kaggle notebook runtime issue",
-      "votes": 8,
-      "comments": 4,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/757993"
     }
   ],
   "pipeline": [
