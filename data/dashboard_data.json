@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-13 04:56:47 UTC",
-  "last_updated_jst": "2026-11-13 13:56:47 JST",
+  "last_updated_utc": "2026-11-13 12:53:25 UTC",
+  "last_updated_jst": "2026-11-13 21:53:25 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -565,7 +565,7 @@
     {
       "id": 748287,
       "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 37,
+      "votes": 38,
       "comments": 39,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
@@ -574,7 +574,7 @@
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
       "votes": 44,
-      "comments": 117,
+      "comments": 125,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
     },
@@ -603,6 +603,30 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 758972,
+      "title": "Eval in kernel is 3x slower than API, vLLM Config to optimise speed",
+      "votes": 0,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758972"
+    },
+    {
+      "id": 758969,
+      "title": "Three lessons from 22 submissions: a zip bug, LB noise, and E4B quitting early",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758969"
+    },
+    {
+      "id": 758968,
+      "title": "LoRA habit adapters changed the agent's behaviour offline but not the live score: three mechanisms",
+      "votes": 0,
+      "comments": 2,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758968"
+    },
+    {
       "id": 758954,
       "title": "Scorer minutes: a toolkit to convert time caps between GPUs and measure run to run noise",
       "votes": 0,
@@ -613,8 +637,8 @@
     {
       "id": 758953,
       "title": "Are only November 9 submissions stuck in the queue",
-      "votes": 0,
-      "comments": 0,
+      "votes": 2,
+      "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758953"
     },
@@ -637,8 +661,8 @@
     {
       "id": 758817,
       "title": "Open toolkit for measuring noise in your agent runs",
-      "votes": 0,
-      "comments": 0,
+      "votes": 2,
+      "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758817"
     },
@@ -649,30 +673,6 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758729"
-    },
-    {
-      "id": 758599,
-      "title": "Submission stuck in \"Notebook Running\" for 3 days, blocking all new submissions (ID 58169362)",
-      "votes": 2,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758599"
-    },
-    {
-      "id": 758547,
-      "title": "Skill-only bundle scores 0.00 on the leaderboard but resolves tasks in the harness's Docker mode locally. Do skill scripts run on the scorer?",
-      "votes": 1,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758547"
-    },
-    {
-      "id": 758289,
-      "title": "Does the scorer serve with the vLLM / swegemma / adk-submission versions from the wheelhouse dataset?",
-      "votes": 1,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758289"
     }
   ],
   "pipeline": [
