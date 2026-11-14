@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-13 20:18:30 UTC",
-  "last_updated_jst": "2026-11-14 05:18:30 JST",
+  "last_updated_utc": "2026-11-14 01:15:47 UTC",
+  "last_updated_jst": "2026-11-14 10:15:47 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -603,10 +603,18 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 759154,
+      "title": "Testing configs offline on the 129 training tasks: my harness and results",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759154"
+    },
+    {
       "id": 758972,
       "title": "Eval in kernel is 3x slower than API, vLLM Config to optimise speed",
       "votes": 1,
-      "comments": 1,
+      "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758972"
     },
@@ -665,14 +673,6 @@
       "comments": 3,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758817"
-    },
-    {
-      "id": 758729,
-      "title": "Public repo with our agent configs and run data",
-      "votes": 1,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758729"
     }
   ],
   "pipeline": [
