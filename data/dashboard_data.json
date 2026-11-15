@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-14 20:23:01 UTC",
-  "last_updated_jst": "2026-11-15 05:23:01 JST",
+  "last_updated_utc": "2026-11-15 00:44:02 UTC",
+  "last_updated_jst": "2026-11-15 09:44:02 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -603,6 +603,14 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 759305,
+      "title": "Title: Submission stuck in \"Pending\" since Nov 9, blocking all new submissions",
+      "votes": 1,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759305"
+    },
+    {
       "id": 758854,
       "title": "Harness pitfalls: no async functions in the code graph; bad skill names score 0.00",
       "votes": 1,
@@ -621,7 +629,7 @@
     {
       "id": 759162,
       "title": "Submission stuck in PENDING for 5 days — please help unblock (Ref: 58167516)",
-      "votes": 6,
+      "votes": 7,
       "comments": 6,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759162"
@@ -665,14 +673,6 @@
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758972"
-    },
-    {
-      "id": 758817,
-      "title": "Open toolkit for measuring noise in your agent runs",
-      "votes": 3,
-      "comments": 3,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758817"
     }
   ],
   "pipeline": [
