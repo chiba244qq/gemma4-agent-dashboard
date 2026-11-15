@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-15 15:17:27 UTC",
-  "last_updated_jst": "2026-11-16 00:17:27 JST",
+  "last_updated_utc": "2026-11-15 20:47:46 UTC",
+  "last_updated_jst": "2026-11-16 05:47:46 JST",
   "active_job": {
     "ref": 58387461,
     "description": "V9 Ultimate (Proven LB 0.20, Gate 1 & Gate 2 PASS via Gemma-4-31B-bnb-4bit True-Grader v9.4)",
     "start_jst": "2026-11-15 23:05:08 JST",
-    "elapsed_hours": 1.2,
-    "progress_pct": 5.0,
+    "elapsed_hours": 6.7,
+    "progress_pct": 24.0,
     "est_completion_jst": "2026-11-17 03:05:08 JST"
   },
   "my_team": {
@@ -564,7 +564,7 @@
     {
       "id": 751104,
       "title": "🌟Bonus Prize: Small Model Development ($10,000)",
-      "votes": 39,
+      "votes": 40,
       "comments": 8,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
@@ -610,6 +610,14 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 759427,
+      "title": "Is generating SFT trajectories with the hosted Gemma-4-31B-IT API compliant?",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759427"
+    },
+    {
       "id": 759388,
       "title": "Three clarifications: 12-hour limit, scorer environment freeze, submissions after Nov 25",
       "votes": 0,
@@ -628,7 +636,7 @@
     {
       "id": 759322,
       "title": "We couldn't submit anything due to last submission stuck for 5 days",
-      "votes": 6,
+      "votes": 7,
       "comments": 4,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759322"
@@ -669,17 +677,9 @@
       "id": 759162,
       "title": "Submission stuck in PENDING for 5 days — please help unblock (Ref: 58167516)",
       "votes": 10,
-      "comments": 6,
+      "comments": 7,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759162"
-    },
-    {
-      "id": 759154,
-      "title": "Testing configs offline on the 129 training tasks: my harness and results",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759154"
     }
   ],
   "pipeline": [
