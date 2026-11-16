@@ -190,96 +190,93 @@ def main():
         "discussions": topics,
         "pipeline": [
             {
-                "version": "V9.2 Early-Edit Trigger",
-                "ref": 58038278,
-                "status": "RUNNING (PENDING)",
-                "status_color": "emerald",
-                "badge": "現在投入中（Day 16）",
-                "target_date": "2026-11-06 09:00 投入（採点進行中）",
-                "expected_score": "0.20 〜 0.24",
-                "objective": "失敗の58%を占める未編集死（Empty Patch）をCall 8で強制遮断",
-                "benefits": [
-                    "Colab L4 実機ベンチマークで『Empty Patch 率 0.0%（未編集ゼロ）』を事前実証済",
-                    "所要時間を 230 秒（-20%短縮）に圧縮し、12時間タイムアウト壁を安全完走",
-                    "Call 8 強制編集により、Grader-First 原則と連動して部分点を確実に拾い上げる"
-                ],
-                "risks": "推敲が浅い段階での編集によりテスト合格率がわずかに下がる懸念",
-                "condition": "現在 Kaggle 採点機上で進行中（4xL4 GPU）"
-            },
-            {
-                "version": "V10 Diverse Sampling (Idris Method)",
+                "version": "V23 Hybrid-Fast",
                 "ref": None,
-                "status": "NEXT CANDIDATE A (上振れ狙い)",
-                "status_color": "purple",
-                "badge": "次期候補 A (上振れ突破)",
-                "target_date": "Day 17 (2026-11-07 投入予定)",
-                "expected_score": "0.22 〜 0.25 (ゴールド境界突破)",
-                "objective": "Temperature 1.0 + Top-P 0.95 による多様な探索空間の獲得",
-                "benefits": [
-                    "Colab 実測最速 190秒（15.8分完走）の多様性サンプリングで難問を突破",
-                    "単一決定論的エージェント特有の同じ誤答ループを脱出し、ゴールド圏内（14問解決）を狙う",
-                    "Empty Patch 0.0% 実証済みの基盤上で多様性探索を展開"
-                ],
-                "risks": "高温サンプリングによる構文エラー・ハルシネーションの増加リスク",
-                "condition": "V9.2 で未編集死撲滅が確認された後に投入"
-            },
-            {
-                "version": "V9.1 Base-Restore",
-                "ref": 58008114,
-                "status": "COMPLETE (Score 0.15)",
-                "status_color": "sky",
-                "badge": "Day 15 実証完了",
-                "target_date": "18時間11分完走 (スコア 0.15 確定)",
-                "expected_score": "0.15 (9問解決)",
-                "objective": "自己ベスト V9 原文の完全復元 ＋ 復唱禁止による時間短縮",
-                "benefits": [
-                    "18時間11分で安定完走（11回連続完走達成・エラー0）",
-                    "復唱禁止により実行時間を短縮したが、長考によるEmpty Patchが20%残り0.15に留まる",
-                    "この実機データにより、V9.2のCall 8強制編集の必要性を完全に裏付けた"
-                ],
-                "risks": "開いた後に1行も編集できないEmpty Patchの病巣が再確認された",
-                "condition": "完了・知見抽出済"
-            },
-            {
-                "version": "V13 Coupled-Sync Hunter",
-                "ref": None,
-                "status": "FUTURE CANDIDATE (Private対策)",
+                "status": "TESTING (Colab A/B 待機)",
                 "status_color": "indigo",
-                "badge": "最終盤候補 (連動追随)",
-                "target_date": "Day 18 (2026-11-08 投入予定)",
-                "expected_score": "0.24+",
-                "objective": "28.6% 存在する「複数ファイル連動修正タスク」の追随解決",
+                "badge": "最新設計（Day 26）",
+                "target_date": "A100 Colab 実機比較中",
+                "expected_score": "0.20+ (安定化狙い)",
+                "objective": "V22 の 47% 高速化（コード引用禁止・出力短縮）を維持しつつ、read_file を 80-120 行へ緩和して Missing old_string を解消",
                 "benefits": [
-                    "主ファイルを編集した直後、定義変更されたシンボルを grep し連動ファイルを1回だけ確認",
-                    "1ファイルのみ修正して ImportError や引数不整合で落ちていた難問を救済",
-                    "Private テストセット（未知の同期 Python コードベース）での普遍的汎化力を担保"
+                    "V22 で実証された平均ステップ時間 45.62s → 24.15s（-47%）の高速化要因を継承",
+                    "max_output_tokens=16384 へ引き上げ（HARNESS_README 推奨）による <|tool_call> 途中切断防止",
+                    "Gate 1（ZIP構造 & vLLM ネイティブパーサー純粋性）通過済"
                 ],
-                "risks": "探索ターン数とトークン消費の増加（14,336 崖への接近リスク）",
-                "condition": "単一ファイル修正の安定後に導入"
+                "risks": "プロンプト調整のみではベースモデル 31B の限界（0.20 壁）を劇的に超えられない可能性",
+                "condition": "Colab A100 で V9_Ultimate (50.0%) を上回った場合のみ提出候補化"
+            },
+            {
+                "version": "V9_Ultimate (再提出) & V22_Context_Guard",
+                "ref": 58387461,
+                "status": "COMPLETE (0.12) / A/B不採用",
+                "status_color": "rose",
+                "badge": "Day 25-26 検証結果",
+                "target_date": "2026-11-16 確定（Ref 58387461: 0.12）",
+                "expected_score": "0.12 (同一ZIPで 0.20 → 0.12 へ分散下落)",
+                "objective": "過去ベスト V9_Ultimate の再現性検証、および V22 の 60 行制限によるコンパクション回避検証",
+                "benefits": [
+                    "V22 の出力短縮でレイテンシ半減（45.62s → 24.15s）と Patch Rate 向上（50% → 66.7%）を確認",
+                    "同一 V9_Ultimate ZIP の再提出で 0.20 → 0.12 となる大きなサンプリング分散を実測確認"
+                ],
+                "risks": "V22 は read_file 60行制限で Missing old_string が 0→4 へ悪化し True Pass Rate が 33.3% に低下（不採用）",
+                "condition": "完了・教訓を V23 へ反映済"
+            },
+            {
+                "version": "V18 Native Clean (2回提出) & V20/V21",
+                "ref": 58268405,
+                "status": "COMPLETE (0.18 → 0.13)",
+                "status_color": "amber",
+                "badge": "Day 21-24 検証結果",
+                "target_date": "2026-11-11〜13（Ref 58226200: 0.18 / 58268405: 0.13）",
+                "expected_score": "0.13〜0.18 (A/B 50.0% 頭打ち)",
+                "objective": "vLLM ネイティブパーサー純粋化（Day 20 0.00 事故の復旧）と V20/V21 の Colab A/B 検証",
+                "benefits": [
+                    "prompts/system.md からツール構文記述を完全排除し、Day 20 (0.00) から 0.18 へ即座に回復",
+                    "verify_pre_submission.py による Gate 1 / Gate 2 の提出前自動検査を確立"
+                ],
+                "risks": "V18/V20/V21 いずれも Colab True-Grader で 50.0%（3/6問）の天井を超えられず",
+                "condition": "V18 2回目も 0.13 に振れ、プロンプト単体最適化の限界が顕在化"
+            },
+            {
+                "version": "V17.1 (0.00事故) & V14/V15 (0.12〜0.15)",
+                "ref": 58179275,
+                "status": "FAILED / REJECTED",
+                "status_color": "rose",
+                "badge": "Day 17-20 失敗知見",
+                "target_date": "2026-11-07〜10",
+                "expected_score": "0.00 〜 0.15",
+                "objective": "Call 7/8 強制編集・構造化推論・シミュレータ用プロンプトの実験",
+                "benefits": [
+                    "V17.1 (0.00) により vLLM tool_call_parser='gemma4' との構文衝突（```python 混入致命傷）を特定",
+                    "V14 (0.12) / V15 (0.15) により過度な強制編集は精度を落とすことを確認"
+                ],
+                "risks": "プロンプトにシミュレータ用のツール構文例を書くと本番環境で全問 0 点になる",
+                "condition": "完全解決（Gate 1 禁止ワード検査で再発防止済）"
             }
         ],
         "unsolved_challenges": [
             {
                 "id": "CHALLENGE-01",
-                "title": "58% Empty Patch の壁（未編集死の撲滅）",
-                "category": "推論速度・行動規律",
+                "title": "同一 ZIP で 0.20 → 0.12 に振れる極端なスコア分散（T=0.2 の罠）",
+                "category": "評価安定性・サンプリング分散",
                 "severity": "CRITICAL",
                 "severity_color": "rose",
-                "metric": "失敗タスクの 58% (34/58問)",
-                "fact": "エージェントは特別ツールなしでも 93% の確率で 3 手目までに正解ファイルを開けている。しかし、開いた後に 58% が 1 行もコードを編集できず時間切れで 0 点（0-byte diff）になっている。",
-                "bottleneck": "4×L4 GPU 環境の推論速度が 17.25 tok/s (58ms/tok) と遅いため、思考（Thinking）や既存コードの復唱、read_file の追加呼出で 5,000 トークン上限を使い果たしてしまう。",
-                "current_hypothesis": "V9.1 で「復唱禁止」を入れ実効トークンを削る。それでも残る場合は V9.2 で「Call 8 初回編集強制」を導入し、思考より先に edit_file を打たせる。"
+                "metric": "V9_Ultimate: 0.20 → 0.12 / V18: 0.18 → 0.13",
+                "fact": "過去ベスト 0.20 を出した V9_Ultimate と完全同一のパッケージを再提出（Ref 58387461）したところ 0.12 を記録。V18 でも 0.18 → 0.13 と下落し、同一設定でも Public スコアが最大 0.08 変動することが実測された。",
+                "bottleneck": "Public テスト数が限られている上、temperature=0.2 の確率的サンプリングで 1〜2 手目の探索パスが分岐すると結果が大きく変わる。",
+                "current_hypothesis": "temperature を下げる（例: 0.0〜0.1）検証、またはプロンプト微調整を超えたモデル適応（SFT/LoRA やエージェント構造改革）の検討が必要。"
             },
             {
                 "id": "CHALLENGE-02",
-                "title": "12時間壁と8分枠の綱引き（スループット vs 深さ）",
-                "category": "物理タイムアウト制約",
+                "title": "プロンプト単体最適化の天井（0.20 の壁 vs 上位 0.24〜0.29）",
+                "category": "推論能力・モデル限界",
                 "severity": "CRITICAL",
                 "severity_color": "rose",
-                "metric": "全体 12h 上限 (1秒超過で No Score 0点)",
-                "fact": "7分枠（V12.3）は 18時間48分で確実に安全完走するが、7〜8分で解ける後半の難問を逃し 0.17 に圧縮。8分枠は 0.20 を出せるが全体時間が 26〜28 時間に迫り、12 時間壁の崖っぷちになる。",
-                "bottleneck": "Kaggle 採点サーバーの 12 時間グローバル制限。58 問を 1 問ずつ順次実行するため、1 問あたりの平均秒数が直接全体の完走可否を決定する。",
-                "current_hypothesis": "タスク上限時間は 8 分を維持しつつ、ツール出力の切り詰め（head -20）と復唱禁止により「中央値 5〜6 分」で解かせて早期 return を促す。"
+                "metric": "Colab 検証 33.3%〜50.0% 収束",
+                "fact": "V9.1 / V9.2 / V14 / V15 / V18 / V20 / V21 / V22 の 8 系統以上のプロンプト改良を試したが、いずれもローカル True-Grader で 50.0% 前後、本番 LB で 0.12〜0.18 に留まり、0.20 を安定超えできていない。",
+                "bottleneck": "31B ベースモデルのゼロショット推論能力と 14,336 トークン圧縮崖（LlmEventSummarizer のツール履歴欠落バグ）の両面が壁になっている。",
+                "current_hypothesis": "V23 でレイテンシ短縮と edit 精度の両立を測りつつ、必要に応じて AgentTool によるコンテキスト分離や temperature 低下等の構造変更を検証する。"
             },
             {
                 "id": "CHALLENGE-03",
@@ -288,82 +285,82 @@ def main():
                 "severity": "HIGH",
                 "severity_color": "amber",
                 "metric": "可解タスクの 28.6% (34/119問)",
-                "fact": "全可解タスクの 28.6% は 2 ファイル以上の連動修正を必要とする（例: FastAPI の applications.py と routing.py）。エージェントは 1 ファイル目を直すと満足して終了し、連動側の不整合でテストが落ちる。",
-                "bottleneck": "コンテキスト長制限（14k崖）を恐れるあまり単一ファイルに集中しすぎるバイアスと、モデルの複数ステップ計画能力の限界。",
-                "current_hypothesis": "主ファイル編集後に連動シンボルの grep を 1 手だけ許容する規律（V13 Coupled-Sync Hunter）を設計中。"
+                "fact": "全可解タスクの 28.6% は 2 ファイル以上の連動修正を必要とする。エージェントは 1 ファイル目を直すと満足して終了し、連動側の不整合でテストが落ちる。",
+                "bottleneck": "コンテキスト長制限（14k崖）と 8 分制限のため、十分なファイル間追跡ができない。",
+                "current_hypothesis": "read_file の過度な制限（V22 の 60 行制限）は Missing old_string を増やすため、80〜120 行に緩和しつつコマンド出力を圧縮する。"
             },
             {
                 "id": "CHALLENGE-04",
-                "title": "Private テストセットへの未知リポジトリ適応（ドメインシフト）",
-                "category": "汎化性能・過学習回避",
+                "title": "Public/Private キュー長期滞留（15〜33時間待ち）による試行回数制約",
+                "category": "インフラ・実験スループット",
                 "severity": "HIGH",
                 "severity_color": "amber",
-                "metric": "Private 重複 0% / 100% 同期コード",
-                "fact": "ホスト公式発表により、公開リポジトリ（FastAPI/Rich）は Private に 1 つも含まれず、Private は全問同期 Python コードであることが確定。公開セット専用ハックは Private で全滅する。",
-                "bottleneck": "ローカル検証や公開スコアを上げるために「:!docs_src」などの特定リポジトリ構造に依存した除外ルールを入れると、未知リポジトリで正解ファイルを不可視化してしまう。",
-                "current_hypothesis": "リポジトリ固有の仮定を全廃し、V9 の普遍的プロンプト規律（標準仕様抽出・3〜5行最小ブロック編集・Grader-First）を堅持する。"
+                "metric": "Pending 制限 + 20〜30時間待ち",
+                "fact": "Kaggle L4 GPU プール混雑により 1 回の提出結果確定に 20〜30 時間以上かかり、Pending 中は次提出が制限されるため本番試行回数が限られる。",
+                "bottleneck": "本番 LB での試行錯誤が困難であり、Colab A100 上での事前再現検証の精度が生命線となる。",
+                "current_hypothesis": "verify_pre_submission.py による Gate 1/2 通過品のみを厳選提出する運用を継続する。"
             }
         ],
         "key_findings": [
             {
-                "title": "ADK 14,336-Token Compaction Cliff",
-                "title_en": "ADK 14,336-Token Compaction Cliff",
-                "title_ja": "① Google ADK 14,336トークン圧縮崖（突然の記憶喪失）",
-                "tag": "STABILITY",
-                "tag_en": "STABILITY",
-                "tag_ja": "記憶制約",
-                "desc": "Google ADK summarizer drops all tool calls/results at 14,336 tokens, cutting resolution rate from 47.7% (0 compactions) to 7.1% (2+ compactions).",
-                "desc_en": "Google ADK summarizer drops all tool calls/results at 14,336 tokens, cutting resolution rate from 47.7% (0 compactions) to 7.1% (2+ compactions).",
-                "desc_ja": "Google ADKの履歴管理は累積14,336トークンを超えた瞬間に過去の全ツール結果・行番号・要件を要約消去します。実測で解決率が47.7%（0回）➔ 26.4%（1回）➔ 7.1%（2回以上）へ激減するため、14k未満の維持が必須です。",
-                "detail_ja": "【背景・技術仕様】\nファイルを丸ごと読み込むと1回で数千トークンを消費し、即座に14kの崖に到達します。read_fileを40〜80行に絞り、コマンド出力も head -20 で切り詰める必要があります（ただしプロンプト自体を削りすぎるとV11のように基礎推論力が落ちる点に注意）。"
-            },
-            {
-                "title": "17.25 tok/s Speed & 58% Empty Patch Trap",
-                "title_en": "17.25 tok/s Speed & 58% Empty Patch Trap",
-                "title_ja": "② 17.25 tok/s 物理定数と「未編集ゼロ点（58%）」の罠",
-                "tag": "HARDWARE",
-                "tag_en": "HARDWARE",
-                "tag_ja": "推論速度・未編集罠",
-                "desc": "Generation speed is fixed at 17.25 tok/s (~5,000 tokens/task). 93% of failed runs open the right file by Turn 3, yet 58% die with 0-byte empty patches.",
-                "desc_en": "Generation speed is fixed at 17.25 tok/s (~5,000 tokens/task). 93% of failed runs open the right file by Turn 3, yet 58% die with 0-byte empty patches.",
-                "desc_ja": "4×L4環境での生成速度は17.25 tok/s（58ms/tok、1問上限約5,000トークン）で固定。失敗タスクの93%は3手目までに正解ファイルを開いているにもかかわらず、58%がコード復唱や長考で時間切れとなり「1文字も編集せず（Empty Patch）」0点で死んでいます。",
-                "detail_ja": "【背景・技術仕様】\nV12.3で探索ミス率を3.2%に下げてもスコアが0.17で不変だった理由がこれです。ボトルネックは「ファイルを探すこと」ではなく「開いた後に復唱せず即座に edit_file を実行させること（No Restatement & Call 9-12 初回編集強制）」にあります。"
-            },
-            {
-                "title": "12-Hour Global Timeout Wall (7m vs 8m Cap)",
-                "title_en": "12-Hour Global Timeout Wall (7m vs 8m Cap)",
-                "title_ja": "③ 12時間グローバルタイムアウト壁（7分 vs 8分のジレンマ）",
-                "tag": "TIMEOUT",
-                "tag_en": "TIMEOUT",
-                "tag_ja": "時間制約",
-                "desc": "8m cap runs at ~28h edge (causing 0.24 / 0.17 / No Score variance). 7m cap (V12.3) finishes in 18h48m (-9h), trading late solves for 100% completion.",
-                "desc_en": "8m cap runs at ~28h edge (causing 0.24 / 0.17 / No Score variance). 7m cap (V12.3) finishes in 18h48m (-9h), trading late solves for 100% completion.",
-                "desc_ja": "全体制限（12hエンジン上限 / 実測約28h）を1秒でも超えると全問0点（No Score）で失格となります。8分設定は境界線上にあり、同一ZIPでも『0.24 / 0.17 / No Score』に分裂します。7分設定（V12.3）は実測18時間48分（-9時間短縮）で確実に完走します。",
-                "detail_ja": "【背景・技術仕様】\n7分キャップは完走を100%保証する一方、7〜8分目にギリギリ解ける1〜2問を切り捨てるためスコアが0.17前後に圧縮されます。現在進行中のV9.1は「8分枠を維持しつつ、復唱禁止で実質実行時間を削る」ハイブリッド戦略を採っています。"
-            },
-            {
-                "title": "Grader-First Rule (Two-Container Trap)",
-                "title_en": "Grader-First Rule (Two-Container Trap)",
-                "title_ja": "④ Grader-First 原則（二段階コンテナと偽陰性の罠）",
+                "title": "vLLM Native Parser Contamination (Day 20 Score 0.00)",
+                "title_en": "vLLM Native Parser Contamination (Day 20 Score 0.00)",
+                "title_ja": "① 本番 vLLM ネイティブパーサー汚染による 0.00 事故の解明",
                 "tag": "CRITICAL",
                 "tag_en": "CRITICAL",
-                "tag_ja": "採点仕様",
-                "desc": "Agent sandbox lacks anyio/typing_inspection wheels, causing false-negative pytest failures. Reverting valid edits via git checkout causes self-destruction.",
-                "desc_en": "Agent sandbox lacks anyio/typing_inspection wheels, causing false-negative pytest failures. Reverting valid edits via git checkout causes self-destruction.",
-                "desc_ja": "エージェントの作業コンテナ（Container A）は -p no:anyio 強制や wheel 不足により、正しいコードでも pytest がエラー（偽陰性）を出します。これに騙されて git checkout で正解パッチを自ら消去する自己破壊を防ぐ規律が Grader-First です。",
-                "detail_ja": "【背景・技術仕様】\n本番採点機（Container B）は提出された git diff だけをまっさらな完全環境に適用し、JUnit XML の4条件で採点します。手元のテストが環境起因で赤でも、仕様に合致したソース diff が残っていれば満点になります。"
+                "tag_ja": "パーサー互換性",
+                "desc": "Including markdown python tool syntax in prompts/system.md breaks vLLM tool_call_parser='gemma4', scoring 0.00 (Ref 58179275). Strict separation restored 0.18.",
+                "desc_en": "Including markdown python tool syntax in prompts/system.md breaks vLLM tool_call_parser='gemma4', scoring 0.00 (Ref 58179275). Strict separation restored 0.18.",
+                "desc_ja": "Day 20 (Ref 58179275) でプロンプトに ```python ツール形式を混入させた結果、本番 vLLM の gemma4 パーサーがツール呼出と認識できず全問 0 点（0.00）に転落。本番プロンプトからの完全分離により 0.18 へ復旧しました。",
+                "detail_ja": "【対策】\npre-submission-gate により本番 ZIP の prompts/system.md を自動検査し、シミュレータ用構文の混入を物理的にブロックしています。"
             },
             {
-                "title": "Private Domain Shift & Dead Tasks (Host Verified)",
-                "title_en": "Private Domain Shift & Dead Tasks (Host Verified)",
-                "title_ja": "⑤ 本番 Private の完全ドメインシフトとデッドタスク",
-                "tag": "BREAKTHROUGH",
-                "tag_en": "BREAKTHROUGH",
-                "tag_ja": "本番環境仕様",
-                "desc": "Host confirmed: (1) 0% of public repos (FastAPI/Rich) appear in Private test set, (2) 100% of Private tasks are solvable, (3) 0% touch async def.",
-                "desc_en": "Host confirmed: (1) 0% of public repos (FastAPI/Rich) appear in Private test set, (2) 100% of Private tasks are solvable, (3) 0% touch async def.",
-                "desc_ja": "ホスト公式発表（Topic 747248 / 745998）により、①公開リポジトリ（FastAPI, Rich等）は本番テストセットに1つも含まれない、②公開にあるデッドタスク（2問）と違い本番は全問100%解決可能、③本番に async def 修正は0件（100%同期コード）と確定。",
-                "detail_ja": "【背景・技術仕様】\nしたがって、FastAPI特有のディレクトリ構造や非同期専用ハックへの過学習（Overfitting）は本番Privateで一斉転落（Shakeup）を招きます。未知の同期Pythonリポジトリで普遍的に機能するV9系の仕様抽出＋3〜5行ブロック編集が最善の武器となります。"
+                "title": "Extreme Run-to-Run Variance (0.20 → 0.12 / 0.18 → 0.13)",
+                "title_en": "Extreme Run-to-Run Variance (0.20 → 0.12 / 0.18 → 0.13)",
+                "title_ja": "② 同一パッケージで ±0.08 振れる極端なスコア分散の実測",
+                "tag": "VARIANCE",
+                "tag_en": "VARIANCE",
+                "tag_ja": "再現性・分散",
+                "desc": "Re-submitting identical V9_Ultimate dropped from 0.20 to 0.12 (Ref 58387461); V18 dropped from 0.18 to 0.13 (Ref 58268405).",
+                "desc_en": "Re-submitting identical V9_Ultimate dropped from 0.20 to 0.12 (Ref 58387461); V18 dropped from 0.18 to 0.13 (Ref 58268405).",
+                "desc_ja": "V9_Ultimate (0.20) と同一 ZIP の再提出で 0.12、V18 (0.18) の再提出で 0.13 を記録。Public タスク数の少なさと temperature=0.2 の確率的揺らぎだけで 0.05〜0.08 のスコア変動が起きることを実測で確認しました。",
+                "detail_ja": "【示唆】\n直近のスコア低下はプロンプト改悪だけでなく、0.12〜0.20 の分散レンジ内の下振れが含まれています。プロンプトの微修正だけでは 0.24+ 帯への安定到達が困難であることが明白になりました。"
+            },
+            {
+                "title": "V22 Latency Halving vs Read-Line Over-Restriction",
+                "title_en": "V22 Latency Halving vs Read-Line Over-Restriction",
+                "title_ja": "③ コード引用禁止で推論時間 47% 短縮、ただし read 60行制限は逆効果",
+                "tag": "EXPERIMENT",
+                "tag_en": "EXPERIMENT",
+                "tag_ja": "A/B実験知見",
+                "desc": "V22 cut step latency from 45.62s to 24.15s (-47%), but capping read_file at 60 lines caused 4 Missing old_string errors (33.3% vs V9 50.0%).",
+                "desc_en": "V22 cut step latency from 45.62s to 24.15s (-47%), but capping read_file at 60 lines caused 4 Missing old_string errors (33.3% vs V9 50.0%).",
+                "desc_ja": "A100-40GB 実機 A/B テストにおいて、V22 はコード引用禁止と出力短縮により平均ステップ時間を 45.62s → 24.15s（約半減）へ短縮し Patch Rate も 66.7% へ向上しましたが、read_file 60行制限により編集位置不一致が 4 回発生し Pass Rate が 33.3% に低下しました。",
+                "detail_ja": "【次手】\nV23_Hybrid_Fast では高速化ルールのみを残し、read_file 上限を 80〜120 行へ緩和して検証します。"
+            },
+            {
+                "title": "ADK 14,336-Token Compaction Cliff & LlmEventSummarizer Bug",
+                "title_en": "ADK 14,336-Token Compaction Cliff & LlmEventSummarizer Bug",
+                "title_ja": "④ ADK 14,336トークン圧縮崖と LlmEventSummarizer のツール履歴欠落",
+                "tag": "STABILITY",
+                "tag_en": "STABILITY",
+                "tag_ja": "ハーネス仕様",
+                "desc": "swegemma compacts context at 14,336 tokens; default summarizer drops function_call/function_response parts, blinding the agent.",
+                "desc_en": "swegemma compacts context at 14,336 tokens; default summarizer drops function_call/function_response parts, blinding the agent.",
+                "desc_ja": "HARNESS_README 及び Kaggle 議論により、14,336 トークン到達時の自動要約（LlmEventSummarizer）が function_call / function_response を無視し、エージェントが過去の編集や調査を忘却する問題が判明。max_output_tokens=16384 化と出力圧縮による閾値回避が重要です。",
+                "detail_ja": "【公式ガイド知見】\nAgentTool (skip_summarization: true) による探索コンテキスト分離も有効な対策として挙げられています。"
+            },
+            {
+                "title": "Prompt-Only Ceiling vs LoRA Serving Overhead",
+                "title_en": "Prompt-Only Ceiling vs LoRA Serving Overhead",
+                "title_ja": "⑤ Prompt-Only の天井と LoRA 適用時の 15〜20% 遅延トレードオフ",
+                "tag": "STRATEGY",
+                "tag_en": "STRATEGY",
+                "tag_ja": "技術動向",
+                "desc": "Community reports prompt-only outperforms naive SFT/LoRA, as LoRA adds 15-20% serving latency and risks format overfitting.",
+                "desc_en": "Community reports prompt-only outperforms naive SFT/LoRA, as LoRA adds 15-20% serving latency and risks format overfitting.",
+                "desc_ja": "Kaggle 議論では、安易な SFT/LoRA はツール構文過学習や推論速度の 15〜20% 低下を招き、堅牢な Prompt-Only に劣るケースが多いと報告されています。上位帯（0.24〜0.29）はエージェント構造分離や厳選学習（GRPO/不確実性マスク等）を模索しています。",
+                "detail_ja": "【総括】\n当面はプロンプト内の冗長削減とコンテキスト境界管理（V23）で 0.20 帯の安定化を狙いつつ、次の抜本策を検討します。"
             }
         ]
     }
