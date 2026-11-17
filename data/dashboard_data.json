@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-17 01:32:07 UTC",
-  "last_updated_jst": "2026-11-17 10:32:07 JST",
+  "last_updated_utc": "2026-11-17 08:23:36 UTC",
+  "last_updated_jst": "2026-11-17 17:23:36 JST",
   "active_job": {
     "ref": 58451077,
     "description": "V23 Hybrid-Fast (Gate 1 & Gate 2 PASS: 23.52s latency -52.5% vs V9, 66.7% Patch Rate, 0 Missing old_string)",
     "start_jst": "2026-11-17 10:20:58 JST",
-    "elapsed_hours": 0.2,
-    "progress_pct": 5.0,
+    "elapsed_hours": 7.0,
+    "progress_pct": 25.2,
     "est_completion_jst": "2026-11-18 14:20:58 JST"
   },
   "my_team": {
@@ -562,12 +562,12 @@
   ],
   "discussions": [
     {
-      "id": 747519,
-      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
-      "votes": 44,
-      "comments": 147,
+      "id": 751104,
+      "title": "🌟Bonus Prize: Small Model Development ($10,000)",
+      "votes": 40,
+      "comments": 8,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
     },
     {
       "id": 748287,
@@ -578,20 +578,12 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
     },
     {
-      "id": 751104,
-      "title": "🌟Bonus Prize: Small Model Development ($10,000)",
-      "votes": 40,
-      "comments": 8,
+      "id": 747519,
+      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
+      "votes": 45,
+      "comments": 147,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
-    },
-    {
-      "id": 743007,
-      "title": "Welcome to the Gemma 4 Developer Agent Competition",
-      "votes": 12,
-      "comments": 9,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
     },
     {
       "id": 745998,
@@ -602,6 +594,14 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/745998"
     },
     {
+      "id": 743007,
+      "title": "Welcome to the Gemma 4 Developer Agent Competition",
+      "votes": 12,
+      "comments": 9,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
+    },
+    {
       "id": 742815,
       "title": "How to get started + Competition's Official Discord",
       "votes": 8,
@@ -610,12 +610,12 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
-      "id": 759514,
-      "title": "five LoRA probes with identical scores ",
-      "votes": 4,
-      "comments": 3,
+      "id": 759781,
+      "title": "My Agent Approach - Gemma 4 Developer Agent ",
+      "votes": -3,
+      "comments": 0,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759781"
     },
     {
       "id": 759702,
@@ -634,14 +634,6 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759630"
     },
     {
-      "id": 759162,
-      "title": "Submission stuck in PENDING for 5 days — please help unblock (Ref: 58167516)",
-      "votes": 13,
-      "comments": 8,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759162"
-    },
-    {
       "id": 759580,
       "title": "Submission #58412868 PENDING for 8h+: scorer-stage check and local parser reproduction",
       "votes": 0,
@@ -650,28 +642,12 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759580"
     },
     {
-      "id": 751311,
-      "title": "Request to hosts: inference kernels",
-      "votes": 3,
-      "comments": 4,
+      "id": 759514,
+      "title": "five LoRA probes with identical scores ",
+      "votes": 4,
+      "comments": 3,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751311"
-    },
-    {
-      "id": 758969,
-      "title": "Three lessons from 22 submissions: a zip bug, LB noise, and E4B quitting early",
-      "votes": 2,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758969"
-    },
-    {
-      "id": 759322,
-      "title": "We couldn't submit anything due to last submission stuck for 5 days",
-      "votes": 9,
-      "comments": 5,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759322"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
     },
     {
       "id": 759427,
@@ -680,108 +656,135 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759427"
+    },
+    {
+      "id": 759388,
+      "title": "Three clarifications: 12-hour limit, scorer environment freeze, submissions after Nov 25",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759388"
+    },
+    {
+      "id": 759329,
+      "title": "Looking for advice: thinking-budget experiments and a 0.15 → 0.13 repeat run",
+      "votes": 1,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759329"
+    },
+    {
+      "id": 759322,
+      "title": "We couldn't submit anything due to last submission stuck for 5 days",
+      "votes": 10,
+      "comments": 5,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759322"
     }
   ],
   "pipeline": [
     {
       "version": "V23 Hybrid-Fast",
+      "ref": 58451077,
+      "status": "RUNNING (PENDING)",
+      "status_color": "emerald",
+      "badge": "本番採点中（Day 27 / Ref 58451077）",
+      "target_date": "2026-11-17 10:20 JST 投入（評価完了待ち）",
+      "expected_score": "0.20 帯安定化（A100 33.3% / L4 50.0% 実測）",
+      "objective": "コード引用禁止・出力短縮による推論時間半減（-52.5%）と read_file 80-120行維持の両立",
+      "benefits": [
+        "L4 実機テストで True Pass Rate 50.0%（3/6: rich_4077, rich_3882, rich_3278 初突破）を記録",
+        "Avg Step Latency 22.62s（L4）/ 23.52s（A100）で V9_Ultimate（49.55s）から約半減・タイムアウト耐性高",
+        "Patch Rate 66.7% 達成、Gate 1 & Gate 2（pre-submission-gate）完全通過済"
+      ],
+      "risks": "max_time_minutes=8 設定のため、Kaggle 本番の全体制限（62問×処理時間）に対して余裕を注視する必要あり",
+      "condition": "現在 Kaggle L4 プールで採点進行中（確定結果を見て次手を判断）"
+    },
+    {
+      "version": "今後の方針（Phase 1〜3 戦略）",
       "ref": null,
-      "status": "TESTING (Colab A/B 待機)",
+      "status": "NEXT STRATEGY",
       "status_color": "indigo",
-      "badge": "最新設計（Day 26）",
-      "target_date": "A100 Colab 実機比較中",
-      "expected_score": "0.20+ (安定化狙い)",
-      "objective": "V22 の 47% 高速化（コード引用禁止・出力短縮）を維持しつつ、read_file を 80-120 行へ緩和して Missing old_string を解消",
+      "badge": "最新戦略ロードマップ",
+      "target_date": "Day 27〜Final（締切 2026-12-02）",
+      "expected_score": "再現性重視・0.20 壁の安定突破狙い",
+      "objective": "プロンプト文言の小手先調整を凍結し、統計的根拠とハーネス構造・検証規律に基づく改善に集中",
       "benefits": [
-        "V22 で実証された平均ステップ時間 45.62s → 24.15s（-47%）の高速化要因を継承",
-        "max_output_tokens=16384 へ引き上げ（HARNESS_README 推奨）による <|tool_call> 途中切断防止",
-        "Gate 1（ZIP構造 & vLLM ネイティブパーサー純粋性）通過済"
+        "方針1（V23 本番結果の評価）: mobassir 氏（11回同一提出で 0.14〜0.19 分散）および dominyellow 氏（6,187 ラン・30 変種比較で小規模微調整は全滅）の知見に基づき、プロンプト文言の反復微修正を凍結して Ref 58451077 のスコア・完走性を評価",
+        "方針2（時間安全枠 6〜7分最適化 & 挙動直接検証）: もし V23（8分枠）でタイムアウト傾向が出た場合は dominyellow 氏実証の 6〜7分枠へ調整し、evgendvorkin 氏の『既存テストだけでなく問題挙動そのものを直接検証する（Behavior Verification）』規律と AgentTool (skip_summarization: true) のみ検証",
+        "方針3（L4 高速評価基盤での評価タスク拡張）: swegemma 3-Tier 編集互換＋StoppingCriteria（約 20 分/6問）を拡張し、より多くのタスクでのペア比較で有意差が出た候補のみ提出"
       ],
-      "risks": "プロンプト調整のみではベースモデル 31B の限界（0.20 壁）を劇的に超えられない可能性",
-      "condition": "Colab A100 で V9_Ultimate (50.0%) を上回った場合のみ提出候補化"
+      "risks": "新規識別子（Issue文に無いシンボルを隠れテストが要求するタスク 17/96問）など 31B モデル構造上限に由来する限界が存在",
+      "condition": "Ref 58451077 の確定ステータスに応じて方針2を即時実行"
     },
     {
-      "version": "V9_Ultimate (再提出) & V22_Context_Guard",
-      "ref": 58387461,
-      "status": "COMPLETE (0.12) / A/B不採用",
-      "status_color": "rose",
-      "badge": "Day 25-26 検証結果",
-      "target_date": "2026-11-16 確定（Ref 58387461: 0.12）",
-      "expected_score": "0.12 (同一ZIPで 0.20 → 0.12 へ分散下落)",
-      "objective": "過去ベスト V9_Ultimate の再現性検証、および V22 の 60 行制限によるコンパクション回避検証",
-      "benefits": [
-        "V22 の出力短縮でレイテンシ半減（45.62s → 24.15s）と Patch Rate 向上（50% → 66.7%）を確認",
-        "同一 V9_Ultimate ZIP の再提出で 0.20 → 0.12 となる大きなサンプリング分散を実測確認"
-      ],
-      "risks": "V22 は read_file 60行制限で Missing old_string が 0→4 へ悪化し True Pass Rate が 33.3% に低下（不採用）",
-      "condition": "完了・教訓を V23 へ反映済"
-    },
-    {
-      "version": "V18 Native Clean (2回提出) & V20/V21",
-      "ref": 58268405,
-      "status": "COMPLETE (0.18 → 0.13)",
+      "version": "L4 4連続比較検証（V24 / V25 / V26 / V27）",
+      "ref": null,
+      "status": "REJECTED IN A/B",
       "status_color": "amber",
-      "badge": "Day 21-24 検証結果",
-      "target_date": "2026-11-11〜13（Ref 58226200: 0.18 / 58268405: 0.13）",
-      "expected_score": "0.13〜0.18 (A/B 50.0% 頭打ち)",
-      "objective": "vLLM ネイティブパーサー純粋化（Day 20 0.00 事故の復旧）と V20/V21 の Colab A/B 検証",
+      "badge": "Day 27 実機 A/B 不採用知見",
+      "target_date": "2026-11-17 L4 検証完了",
+      "expected_score": "L4 True Pass Rate 33.3%（V23 50.0% 未満）",
+      "objective": "公開有力手法（Patchsmith exp025, T=0.0, Think=512, ADK {problem_description} ピン留め）の横並び効果検証",
       "benefits": [
-        "prompts/system.md からツール構文記述を完全排除し、Day 20 (0.00) から 0.18 へ即座に回復",
-        "verify_pre_submission.py による Gate 1 / Gate 2 の提出前自動検査を確立"
+        "V25_Deterministic_T0（T=0.0）: 33.3%（25.55s）。決定論化は誤った探索経路から抜け出せず V23（T=0.2）に劣後",
+        "V26_Lean_Think512（512 tok）: 33.3%（19.11s 最速）。思考制限により Missing old_string が 2→7 に激増",
+        "V27_Issue_Pinned（{problem_description} ピン留め）: 33.3%（22.50s）。12ターン・L4 3584 tok 上限下では冗長となり効果限定的",
+        "V24_Patchsmith_Exp025: L4 途中で 1/5（長考 170s/turn＋thoughtループ多発）のため見送り"
       ],
-      "risks": "V18/V20/V21 いずれも Colab True-Grader で 50.0%（3/6問）の天井を超えられず",
-      "condition": "V18 2回目も 0.13 に振れ、プロンプト単体最適化の限界が顕在化"
+      "risks": "いずれも単体では V23_Hybrid_Fast（50.0%）を超えられなかったため本番提出から除外",
+      "condition": "不採用確定（L4 検証環境の高速化・3-Tier 編集改修の副産物を獲得）"
     },
     {
-      "version": "V17.1 (0.00事故) & V14/V15 (0.12〜0.15)",
-      "ref": 58179275,
-      "status": "FAILED / REJECTED",
+      "version": "V9_Ultimate (0.20 → 0.12) & V18 (0.18 → 0.13)",
+      "ref": 58387461,
+      "status": "VARIANCE PROOF",
       "status_color": "rose",
-      "badge": "Day 17-20 失敗知見",
-      "target_date": "2026-11-07〜10",
-      "expected_score": "0.00 〜 0.15",
-      "objective": "Call 7/8 強制編集・構造化推論・シミュレータ用プロンプトの実験",
+      "badge": "Day 20-26 分散・復旧実証",
+      "target_date": "2026-11-11〜16（Ref 58387461: 0.12 / 58268405: 0.13）",
+      "expected_score": "0.12 〜 0.20（同一 ZIP での実測振れ幅 ±0.08）",
+      "objective": "Day 20 (0.00) からの復旧、および同一パッケージ再提出による本番分散の実測",
       "benefits": [
-        "V17.1 (0.00) により vLLM tool_call_parser='gemma4' との構文衝突（```python 混入致命傷）を特定",
-        "V14 (0.12) / V15 (0.15) により過度な強制編集は精度を落とすことを確認"
+        "Day 20 (Ref 58179275: 0.00) で vLLM tool_call_parser='gemma4' との構文衝突を特定し、Gate 1/2 検査を確立",
+        "V9_Ultimate（0.20→0.12）と V18（0.18→0.13）の再提出により、同一設定でも Public LB が大きく上下する分散特性を自社データで証明"
       ],
-      "risks": "プロンプトにシミュレータ用のツール構文例を書くと本番環境で全問 0 点になる",
-      "condition": "完全解決（Gate 1 禁止ワード検査で再発防止済）"
+      "risks": "単発 LB スコア（58問中 1問=1.72点）に一喜一憂すると誤ったモデル選択を招く危険性",
+      "condition": "完了・統計的評価方針へ反映済"
     }
   ],
   "unsolved_challenges": [
     {
       "id": "CHALLENGE-01",
-      "title": "同一 ZIP で 0.20 → 0.12 に振れる極端なスコア分散（T=0.2 の罠）",
+      "title": "Public LB の高分散（同一 ZIP で 0.12〜0.20）と統計的検出力不足",
       "category": "評価安定性・サンプリング分散",
       "severity": "CRITICAL",
       "severity_color": "rose",
-      "metric": "V9_Ultimate: 0.20 → 0.12 / V18: 0.18 → 0.13",
-      "fact": "過去ベスト 0.20 を出した V9_Ultimate と完全同一のパッケージを再提出（Ref 58387461）したところ 0.12 を記録。V18 でも 0.18 → 0.13 と下落し、同一設定でも Public スコアが最大 0.08 変動することが実測された。",
-      "bottleneck": "Public テスト数が限られている上、temperature=0.2 の確率的サンプリングで 1〜2 手目の探索パスが分岐すると結果が大きく変わる。",
-      "current_hypothesis": "temperature を下げる（例: 0.0〜0.1）検証、またはプロンプト微調整を超えたモデル適応（SFT/LoRA やエージェント構造改革）の検討が必要。"
+      "metric": "V9: 0.20→0.12 / V18: 0.18→0.13 / 公開B: 0.14→0.19",
+      "fact": "我々の再提出実験に加え、mobassir 氏（11回提出で 8〜11問=0.14〜0.19）および dominyellow 氏（1タスク=0.017、同一ファイルで 1〜3問差は日常的）が示す通り、単発提出では ±0.03〜0.08 のノイズが乗る。",
+      "bottleneck": "1〜2 問の真の改善を Public LB で有意に検出するには 18〜37 回の提出が必要であり、1日1提出かつ20〜30時間待ちの環境ではテスト不可能。",
+      "current_hypothesis": "単発 LB でプロンプトを捨てず、L4 ローカル環境でタスク数を拡張した同条件ペア比較によってのみ採用・不採用を判定する。"
     },
     {
       "id": "CHALLENGE-02",
-      "title": "プロンプト単体最適化の天井（0.20 の壁 vs 上位 0.24〜0.29）",
-      "category": "推論能力・モデル限界",
+      "title": "Prompt-Only 微調整の限界と「Issue 文に無い新規識別子」の壁",
+      "category": "推論能力・情報欠損",
       "severity": "CRITICAL",
       "severity_color": "rose",
-      "metric": "Colab 検証 33.3%〜50.0% 収束",
-      "fact": "V9.1 / V9.2 / V14 / V15 / V18 / V20 / V21 / V22 の 8 系統以上のプロンプト改良を試したが、いずれもローカル True-Grader で 50.0% 前後、本番 LB で 0.12〜0.18 に留まり、0.20 を安定超えできていない。",
-      "bottleneck": "31B ベースモデルのゼロショット推論能力と 14,336 トークン圧縮崖（LlmEventSummarizer のツール履歴欠落バグ）の両面が壁になっている。",
-      "current_hypothesis": "V23 でレイテンシ短縮と edit 精度の両立を測りつつ、必要に応じて AgentTool によるコンテキスト分離や temperature 低下等の構造変更を検証する。"
+      "metric": "30変種全滅 (dominyellow) / 新規識別子タスク正答率 3%",
+      "fact": "dominyellow 氏の 6,187 ラン実験では 30 種のプロンプト・スキル変更のいずれも同時ペア比較で優位を示せず、また 96問中 17問は隠れテストが Issue に未記載の PR 作者命名識別子を直接 import するため解決率が 3%（通常 31%）に激減していた。",
+      "bottleneck": "我々の L4 検証（V24〜V27 すべて 33.3%）でもプロンプト調整のみの天井が再確認された。また mobassir 氏実験でも Open-SWE-Traces 蒸留 LoRA はループ増加で悪化、include_thoughts=false は再考増加でタイムアウト悪化と報告されている。",
+      "current_hypothesis": "文言微修正を止め、Behavior Verification（挙動の直接再現検証）と AgentTool によるコンテキスト分離、および 6〜7分予算バランスに絞る。"
     },
     {
       "id": "CHALLENGE-03",
-      "title": "28.6% の複数ファイル連動見落とし（Coupled Files Drift）",
-      "category": "コンテキスト把握・局所化",
+      "title": "28.6% の複数ファイル連動見落とし & 全体タイムアウト（8分 vs 6〜7分）",
+      "category": "時間予算・局所化",
       "severity": "HIGH",
       "severity_color": "amber",
-      "metric": "可解タスクの 28.6% (34/119問)",
-      "fact": "全可解タスクの 28.6% は 2 ファイル以上の連動修正を必要とする。エージェントは 1 ファイル目を直すと満足して終了し、連動側の不整合でテストが落ちる。",
-      "bottleneck": "コンテキスト長制限（14k崖）と 8 分制限のため、十分なファイル間追跡ができない。",
-      "current_hypothesis": "read_file の過度な制限（V22 の 60 行制限）は Missing old_string を増やすため、80〜120 行に緩和しつつコマンド出力を圧縮する。"
+      "metric": "連動修正 28.6% / 8分設定での Notebook Timeout 事例",
+      "fact": "全可解タスクの 28.6% は 2ファイル以上の連動修正を要する一方、dominyellow 氏は 8分/240s 設定や 15分設定で Kaggle 全体の壁時間超過（Notebook Timeout 0点）を経験し、6分/28 calls 設定に戻すことで安定完走（0.17〜0.18）を実現した。",
+      "bottleneck": "1問あたり上限を延ばすと全体タイムアウト失格リスクが跳ね上がり、短くしすぎると複数ファイル修正を最後までやり切れない。",
+      "current_hypothesis": "V23 の 22.62s/step 高速化を土台にしつつ、Ref 58451077 の完走結果次第で 6〜7分枠＋command timeout 60s の安全構成を比較検証する。"
     },
     {
       "id": "CHALLENGE-04",
@@ -790,71 +793,71 @@
       "severity": "HIGH",
       "severity_color": "amber",
       "metric": "Pending 制限 + 20〜30時間待ち",
-      "fact": "Kaggle L4 GPU プール混雑により 1 回の提出結果確定に 20〜30 時間以上かかり、Pending 中は次提出が制限されるため本番試行回数が限られる。",
-      "bottleneck": "本番 LB での試行錯誤が困難であり、Colab A100 上での事前再現検証の精度が生命線となる。",
-      "current_hypothesis": "verify_pre_submission.py による Gate 1/2 通過品のみを厳選提出する運用を継続する。"
+      "fact": "Kaggle L4 GPU プール混雑により 1 回の提出結果確定に 20〜30 時間以上かかり、Pending 中は次提出が制限されるため締切（2026-12-02）までの実提出枠が限られる。",
+      "bottleneck": "本番 LB に検証を頼れないため、Colab L4/A100 上のオフライン検証の忠実度と再現性が直接の勝敗要因になる。",
+      "current_hypothesis": "swegemma 3-Tier 編集互換・StoppingCriteria 搭載の L4 高速ハーネス（約20分完走）と verify_pre_submission.py ゲートを厳守する。"
     }
   ],
   "key_findings": [
     {
-      "title": "vLLM Native Parser Contamination (Day 20 Score 0.00)",
-      "title_en": "vLLM Native Parser Contamination (Day 20 Score 0.00)",
-      "title_ja": "① 本番 vLLM ネイティブパーサー汚染による 0.00 事故の解明",
-      "tag": "CRITICAL",
-      "tag_en": "CRITICAL",
-      "tag_ja": "パーサー互換性",
-      "desc": "Including markdown python tool syntax in prompts/system.md breaks vLLM tool_call_parser='gemma4', scoring 0.00 (Ref 58179275). Strict separation restored 0.18.",
-      "desc_en": "Including markdown python tool syntax in prompts/system.md breaks vLLM tool_call_parser='gemma4', scoring 0.00 (Ref 58179275). Strict separation restored 0.18.",
-      "desc_ja": "Day 20 (Ref 58179275) でプロンプトに ```python ツール形式を混入させた結果、本番 vLLM の gemma4 パーサーがツール呼出と認識できず全問 0 点（0.00）に転落。本番プロンプトからの完全分離により 0.18 へ復旧しました。",
-      "detail_ja": "【対策】\npre-submission-gate により本番 ZIP の prompts/system.md を自動検査し、シミュレータ用構文の混入を物理的にブロックしています。"
+      "title": "Community Meta-Analysis: 6,187 Runs & Statistical Power Limits",
+      "title_en": "Community Meta-Analysis: 6,187 Runs & Statistical Power Limits",
+      "title_ja": "① 大規模メタ分析（6,187ラン＆統計検出力）：プロンプト微調整の限界と分散",
+      "tag": "META-ANALYSIS",
+      "tag_en": "META-ANALYSIS",
+      "tag_ja": "コンペ全体知見",
+      "desc": "mobassir (11 draws: 0.14-0.19) and dominyellow (6,187 runs, 30 variants) prove prompt tweaks rarely beat baseline noise; new hidden test symbols drop solve rate from 31% to 3%.",
+      "desc_en": "mobassir (11 draws: 0.14-0.19) and dominyellow (6,187 runs, 30 variants) prove prompt tweaks rarely beat baseline noise; new hidden test symbols drop solve rate from 31% to 3%.",
+      "desc_ja": "mobassir 氏（同一構成 11回提出で 0.14〜0.19 分散）および dominyellow 氏（580時間・30変種ペア比較で時間予算以外すべて優位なし）の報告により、小幅なプロンプト変更の限界と単発 LB のノイズ（±0.05〜0.08）が判明。",
+      "detail_ja": "【今後の方針への反映】\n20問以下の小開発セットの偶然の上振れを追いかけず、不要なプロンプト微調整を凍結して、L4 ペア比較のタスク数拡張と時間・検証規律の最適化へ移行します。"
     },
     {
-      "title": "Extreme Run-to-Run Variance (0.20 → 0.12 / 0.18 → 0.13)",
-      "title_en": "Extreme Run-to-Run Variance (0.20 → 0.12 / 0.18 → 0.13)",
-      "title_ja": "② 同一パッケージで ±0.08 振れる極端なスコア分散の実測",
-      "tag": "VARIANCE",
-      "tag_en": "VARIANCE",
-      "tag_ja": "再現性・分散",
-      "desc": "Re-submitting identical V9_Ultimate dropped from 0.20 to 0.12 (Ref 58387461); V18 dropped from 0.18 to 0.13 (Ref 58268405).",
-      "desc_en": "Re-submitting identical V9_Ultimate dropped from 0.20 to 0.12 (Ref 58387461); V18 dropped from 0.18 to 0.13 (Ref 58268405).",
-      "desc_ja": "V9_Ultimate (0.20) と同一 ZIP の再提出で 0.12、V18 (0.18) の再提出で 0.13 を記録。Public タスク数の少なさと temperature=0.2 の確率的揺らぎだけで 0.05〜0.08 のスコア変動が起きることを実測で確認しました。",
-      "detail_ja": "【示唆】\n直近のスコア低下はプロンプト改悪だけでなく、0.12〜0.20 の分散レンジ内の下振れが含まれています。プロンプトの微修正だけでは 0.24+ 帯への安定到達が困難であることが明白になりました。"
+      "title": "V23_Hybrid_Fast L4 50.0% & Simulator 3-Tier / StoppingCriteria Breakthrough",
+      "title_en": "V23_Hybrid_Fast L4 50.0% & Simulator 3-Tier / StoppingCriteria Breakthrough",
+      "title_ja": "② L4 高速検証基盤の確立（22.62s/step）と V23 の rich_3278 初突破（50.0%）",
+      "tag": "BREAKTHROUGH",
+      "tag_en": "BREAKTHROUGH",
+      "tag_ja": "検証基盤・V23実績",
+      "desc": "Fixing L4 OOM, StoppingCriteria for thought loops, and swegemma 3-Tier raw_exact matching unlocked rich_3278 and lifted V23_Hybrid_Fast to 50.0% (22.62s/step) on L4.",
+      "desc_en": "Fixing L4 OOM, StoppingCriteria for thought loops, and swegemma 3-Tier raw_exact matching unlocked rich_3278 and lifted V23_Hybrid_Fast to 50.0% (22.62s/step) on L4.",
+      "desc_ja": "PYTORCH_CUDA_ALLOC_CONF 先行設定・vision_tower 破棄・logits_to_keep=1・StoppingCriteria により L4 23.7GB でも OOM ゼロで 20分完走する検証基盤を確立。さらに swegemma 3-Tier 互換の raw_exact 修正で V23_Hybrid_Fast が rich_3278 を初突破し True Pass Rate 50.0% を達成。",
+      "detail_ja": "【検証実績】\nV23 (50.0%, 22.62s) に対し、V24 (1/5 途中中止), V25 T=0.0 (33.3%, 25.55s), V26 Think=512 (33.3%, Missing old_string 7回), V27 Issue-Pinned (33.3%) のいずれも上回れず、現時点では V23 が最良です。"
     },
     {
-      "title": "V22 Latency Halving vs Read-Line Over-Restriction",
-      "title_en": "V22 Latency Halving vs Read-Line Over-Restriction",
-      "title_ja": "③ コード引用禁止で推論時間 47% 短縮、ただし read 60行制限は逆効果",
+      "title": "include_thoughts=true + Budget Cap vs include_thoughts=false Backfire",
+      "title_en": "include_thoughts=true + Budget Cap vs include_thoughts=false Backfire",
+      "title_ja": "③ thinking_budget と include_thoughts の適切なバランス（512以下は悪化）",
       "tag": "EXPERIMENT",
       "tag_en": "EXPERIMENT",
-      "tag_ja": "A/B実験知見",
-      "desc": "V22 cut step latency from 45.62s to 24.15s (-47%), but capping read_file at 60 lines caused 4 Missing old_string errors (33.3% vs V9 50.0%).",
-      "desc_en": "V22 cut step latency from 45.62s to 24.15s (-47%), but capping read_file at 60 lines caused 4 Missing old_string errors (33.3% vs V9 50.0%).",
-      "desc_ja": "A100-40GB 実機 A/B テストにおいて、V22 はコード引用禁止と出力短縮により平均ステップ時間を 45.62s → 24.15s（約半減）へ短縮し Patch Rate も 66.7% へ向上しましたが、read_file 60行制限により編集位置不一致が 4 回発生し Pass Rate が 33.3% に低下しました。",
-      "detail_ja": "【次手】\nV23_Hybrid_Fast では高速化ルールのみを残し、read_file 上限を 80〜120 行へ緩和して検証します。"
+      "tag_ja": "思考予算知見",
+      "desc": "mobassir showed include_thoughts=false backfires (re-thinking causes timeouts), while halving thinking_budget helps. Our V26 test showed 512 tokens drops precision (Missing old_string 2→7).",
+      "desc_en": "mobassir showed include_thoughts=false backfires (re-thinking causes timeouts), while halving thinking_budget helps. Our V26 test showed 512 tokens drops precision (Missing old_string 2→7).",
+      "desc_ja": "mobassir 実験では過去の思考履歴を消す（include_thoughts=false）と毎ターン再考が走りタイムアウトが激増。逆に thinking_budget を 4096→2048 に抑えるのが有効とされ、我々の V26（512制限）実測でも削りすぎは編集文字列不一致（7回）を招くため 2048 前後が適正と確認。",
+      "detail_ja": "【運用指針】\nconfigs/sampling.yaml は include_thoughts=true, thinking_budget=2048, max_output_tokens=16384, temperature=0.2 を基準値として維持します。"
     },
     {
-      "title": "ADK 14,336-Token Compaction Cliff & LlmEventSummarizer Bug",
-      "title_en": "ADK 14,336-Token Compaction Cliff & LlmEventSummarizer Bug",
-      "title_ja": "④ ADK 14,336トークン圧縮崖と LlmEventSummarizer のツール履歴欠落",
-      "tag": "STABILITY",
-      "tag_en": "STABILITY",
-      "tag_ja": "ハーネス仕様",
-      "desc": "swegemma compacts context at 14,336 tokens; default summarizer drops function_call/function_response parts, blinding the agent.",
-      "desc_en": "swegemma compacts context at 14,336 tokens; default summarizer drops function_call/function_response parts, blinding the agent.",
-      "desc_ja": "HARNESS_README 及び Kaggle 議論により、14,336 トークン到達時の自動要約（LlmEventSummarizer）が function_call / function_response を無視し、エージェントが過去の編集や調査を忘却する問題が判明。max_output_tokens=16384 化と出力圧縮による閾値回避が重要です。",
-      "detail_ja": "【公式ガイド知見】\nAgentTool (skip_summarization: true) による探索コンテキスト分離も有効な対策として挙げられています。"
+      "title": "Whole-Run Timeout Discipline (6-7m Safe Cap vs 8m Edge)",
+      "title_en": "Whole-Run Timeout Discipline (6-7m Safe Cap vs 8m Edge)",
+      "title_ja": "④ 全体制限（Notebook Timeout 0点）回避のための時間キャップ規律",
+      "tag": "TIMEOUT",
+      "tag_en": "TIMEOUT",
+      "tag_ja": "時間管理",
+      "desc": "dominyellow observed Notebook Timeout at 8m/240s and 15m/50calls while 6m/28calls always completed. Repair Lab exp025 caps single commands at 60s.",
+      "desc_en": "dominyellow observed Notebook Timeout at 8m/240s and 15m/50calls while 6m/28calls always completed. Repair Lab exp025 caps single commands at 60s.",
+      "desc_ja": "dominyellow 氏は 8分/240秒設定でも隠れテスト全体時間超過（0点）に陥り、6分/28コール設定で完走を安定させました。また Repair Lab exp025 では単一コマンド timeout を 60秒に絞っています。",
+      "detail_ja": "【次手への反映】\n現在採点中の Ref 58451077 (V23, 8分/240s) が万一タイムアウトする、または今後の安定版を作る際は max_time_minutes=6〜7・timeout_seconds=60〜120 の安全設定を適用します。"
     },
     {
-      "title": "Prompt-Only Ceiling vs LoRA Serving Overhead",
-      "title_en": "Prompt-Only Ceiling vs LoRA Serving Overhead",
-      "title_ja": "⑤ Prompt-Only の天井と LoRA 適用時の 15〜20% 遅延トレードオフ",
-      "tag": "STRATEGY",
-      "tag_en": "STRATEGY",
-      "tag_ja": "技術動向",
-      "desc": "Community reports prompt-only outperforms naive SFT/LoRA, as LoRA adds 15-20% serving latency and risks format overfitting.",
-      "desc_en": "Community reports prompt-only outperforms naive SFT/LoRA, as LoRA adds 15-20% serving latency and risks format overfitting.",
-      "desc_ja": "Kaggle 議論では、安易な SFT/LoRA はツール構文過学習や推論速度の 15〜20% 低下を招き、堅牢な Prompt-Only に劣るケースが多いと報告されています。上位帯（0.24〜0.29）はエージェント構造分離や厳選学習（GRPO/不確実性マスク等）を模索しています。",
-      "detail_ja": "【総括】\n当面はプロンプト内の冗長削減とコンテキスト境界管理（V23）で 0.20 帯の安定化を狙いつつ、次の抜本策を検討します。"
+      "title": "vLLM Native Parser Purity & Behavior Verification Focus",
+      "title_en": "vLLM Native Parser Purity & Behavior Verification Focus",
+      "title_ja": "⑤ vLLM パーサー純粋性ゲートと『問題挙動の直接検証（Behavior Check）』",
+      "tag": "CRITICAL",
+      "tag_en": "CRITICAL",
+      "tag_ja": "品質・検証規律",
+      "desc": "Gate 1/2 prevents Day 20 (0.00) tool-format leaks while permitting official ADK placeholders ({problem_description}, {hints?}). Next focus: verifying reported defect behavior directly.",
+      "desc_en": "Gate 1/2 prevents Day 20 (0.00) tool-format leaks while permitting official ADK placeholders ({problem_description}, {hints?}). Next focus: verifying reported defect behavior directly.",
+      "desc_ja": "verify_pre_submission.py は Day 20 (0.00) の再発を物理遮断しつつ、Google ADK 正規変数（{problem_description}, {hints?}）のみを許容するよう更新済み。今後は evgendvorkin 氏らが着目する『既存テストだけでなくバグ再現挙動そのものを直接検証する手順』と AgentTool 分離を検証します。",
+      "detail_ja": "【総括】\nLoRA/SFT は Open-SWE-Traces でのループ悪化や 15〜20% 遅延リスクが高いため見送り、Prompt＋検証規律＋時間枠制御にリソースを集中します。"
     }
   ]
 }
