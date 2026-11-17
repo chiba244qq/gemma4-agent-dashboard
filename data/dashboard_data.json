@@ -1,7 +1,14 @@
 {
-  "last_updated_utc": "2026-11-16 17:53:30 UTC",
-  "last_updated_jst": "2026-11-17 02:53:30 JST",
-  "active_job": null,
+  "last_updated_utc": "2026-11-17 01:32:07 UTC",
+  "last_updated_jst": "2026-11-17 10:32:07 JST",
+  "active_job": {
+    "ref": 58451077,
+    "description": "V23 Hybrid-Fast (Gate 1 & Gate 2 PASS: 23.52s latency -52.5% vs V9, 66.7% Patch Rate, 0 Missing old_string)",
+    "start_jst": "2026-11-17 10:20:58 JST",
+    "elapsed_hours": 0.2,
+    "progress_pct": 5.0,
+    "est_completion_jst": "2026-11-18 14:20:58 JST"
+  },
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -281,6 +288,15 @@
   },
   "submissions": [
     {
+      "ref": 58451077,
+      "date_utc": "2026-11-17 01:20:58 UTC",
+      "date_jst": "2026-11-17 10:20:58 JST",
+      "status": "PENDING",
+      "score": null,
+      "description": "V23 Hybrid-Fast (Gate 1 & Gate 2 PASS: 23.52s latency -52.5% vs V9, 66.7% Patch Rate, 0 Missing old_string)",
+      "error": ""
+    },
+    {
       "ref": 58387461,
       "date_utc": "2026-11-15 14:05:08 UTC",
       "date_jst": "2026-11-15 23:05:08 JST",
@@ -450,15 +466,6 @@
       "score": 0.15,
       "description": "V5 Budget-Fit: LB024 Prompts + 2048 Thinking Budget + 28 Calls Cap",
       "error": ""
-    },
-    {
-      "ref": 57502305,
-      "date_utc": "2026-10-22 00:13:31 UTC",
-      "date_jst": "2026-10-22 09:13:31 JST",
-      "status": "COMPLETE",
-      "score": null,
-      "description": "V3 Hybrid Architecture: Multi-Agent SubAgentTool + Graph Tools + Budget Override",
-      "error": "Your submission notebook exceeded the allowed runtime. Review the competition's Code Requirements page for the time limits. Note that the hidden dataset can be larger/smaller/different than the public dataset."
     }
   ],
   "leaderboard_sample": [
@@ -555,36 +562,28 @@
   ],
   "discussions": [
     {
+      "id": 747519,
+      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
+      "votes": 44,
+      "comments": 147,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
+    },
+    {
+      "id": 748287,
+      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
+      "votes": 40,
+      "comments": 39,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
+    },
+    {
       "id": 751104,
       "title": "🌟Bonus Prize: Small Model Development ($10,000)",
       "votes": 40,
       "comments": 8,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
-    },
-    {
-      "id": 748287,
-      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 39,
-      "comments": 39,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
-    },
-    {
-      "id": 747519,
-      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
-      "votes": 44,
-      "comments": 140,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
-    },
-    {
-      "id": 745998,
-      "title": "Note on Code Graphs for Async Functions",
-      "votes": 8,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/745998"
     },
     {
       "id": 743007,
@@ -595,6 +594,14 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
     },
     {
+      "id": 745998,
+      "title": "Note on Code Graphs for Async Functions",
+      "votes": 8,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/745998"
+    },
+    {
       "id": 742815,
       "title": "How to get started + Competition's Official Discord",
       "votes": 8,
@@ -603,12 +610,36 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 759514,
+      "title": "five LoRA probes with identical scores ",
+      "votes": 4,
+      "comments": 3,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
+    },
+    {
+      "id": 759702,
+      "title": " Submission 58171169 stuck in PENDING since 9 Nov ",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759702"
+    },
+    {
       "id": 759630,
       "title": "The Nov 9 stuck batch: 15 teams, one 3-hour window, everyone else is scoring normally. Evidence from the public API",
-      "votes": 2,
+      "votes": 3,
       "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759630"
+    },
+    {
+      "id": 759162,
+      "title": "Submission stuck in PENDING for 5 days — please help unblock (Ref: 58167516)",
+      "votes": 13,
+      "comments": 8,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759162"
     },
     {
       "id": 759580,
@@ -619,36 +650,20 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759580"
     },
     {
-      "id": 759514,
-      "title": "five LoRA probes with identical scores ",
+      "id": 751311,
+      "title": "Request to hosts: inference kernels",
+      "votes": 3,
+      "comments": 4,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751311"
+    },
+    {
+      "id": 758969,
+      "title": "Three lessons from 22 submissions: a zip bug, LB noise, and E4B quitting early",
       "votes": 2,
       "comments": 1,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
-    },
-    {
-      "id": 759427,
-      "title": "Is generating SFT trajectories with the hosted Gemma-4-31B-IT API compliant?",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759427"
-    },
-    {
-      "id": 759388,
-      "title": "Three clarifications: 12-hour limit, scorer environment freeze, submissions after Nov 25",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759388"
-    },
-    {
-      "id": 759329,
-      "title": "Looking for advice: thinking-budget experiments and a 0.15 → 0.13 repeat run",
-      "votes": 1,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759329"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/758969"
     },
     {
       "id": 759322,
@@ -659,20 +674,12 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759322"
     },
     {
-      "id": 759305,
-      "title": "Title: Submission stuck in \"Pending\" since Nov 9, blocking all new submissions",
-      "votes": 6,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759305"
-    },
-    {
-      "id": 759279,
-      "title": "Lora permission on model",
+      "id": 759427,
+      "title": "Is generating SFT trajectories with the hosted Gemma-4-31B-IT API compliant?",
       "votes": 0,
       "comments": 0,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759279"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759427"
     }
   ],
   "pipeline": [
