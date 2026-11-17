@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-17 10:08:11 UTC",
-  "last_updated_jst": "2026-11-17 19:08:11 JST",
+  "last_updated_utc": "2026-11-17 19:35:33 UTC",
+  "last_updated_jst": "2026-11-18 04:35:33 JST",
   "active_job": {
     "ref": 58451077,
     "description": "V23 Hybrid-Fast (Gate 1 & Gate 2 PASS: 23.52s latency -52.5% vs V9, 66.7% Patch Rate, 0 Missing old_string)",
     "start_jst": "2026-11-17 10:20:58 JST",
-    "elapsed_hours": 8.8,
-    "progress_pct": 31.4,
+    "elapsed_hours": 18.2,
+    "progress_pct": 65.2,
     "est_completion_jst": "2026-11-18 14:20:58 JST"
   },
   "my_team": {
@@ -565,7 +565,7 @@
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
       "votes": 45,
-      "comments": 148,
+      "comments": 150,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
     },
@@ -610,76 +610,76 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
-      "id": 742807,
-      "title": "Clarification on distillation from external LLMs",
-      "votes": 50,
-      "comments": 14,
+      "id": 754000,
+      "title": "Stuck Submission",
+      "votes": 4,
+      "comments": 1,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742807"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/754000"
     },
     {
-      "id": 746250,
-      "title": "Gemma 4 agent experiments: sampling, thinking, time limits, and tool ablations",
-      "votes": 49,
-      "comments": 11,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/746250"
-    },
-    {
-      "id": 747168,
-      "title": "Stronger models barely beat Gemma 4 31B in this harness — teacher comparison on 124 public tasks",
-      "votes": 39,
-      "comments": 4,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747168"
-    },
-    {
-      "id": 747915,
-      "title": "Suggestion: Temporarily Pause Gemma 4 for 24 Days to Address the L4x4 Shortage",
-      "votes": 30,
+      "id": 751596,
+      "title": "SFT / distillation LoRAs on Gemma 4 31B: loss falls a lot, solve rate doesn’t move. What would you try next?",
+      "votes": 5,
       "comments": 3,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747915"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751596"
     },
     {
-      "id": 743683,
-      "title": "Rerunning Failed Submissions",
-      "votes": 22,
-      "comments": 108,
+      "id": 759514,
+      "title": "five LoRA probes with identical scores ",
+      "votes": 6,
+      "comments": 4,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743683"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
     },
     {
-      "id": 743506,
-      "title": "The public leaderboard has exactly 58 tasks",
-      "votes": 22,
+      "id": 759322,
+      "title": "We couldn't submit anything due to last submission stuck for 5 days",
+      "votes": 11,
+      "comments": 6,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759322"
+    },
+    {
+      "id": 756792,
+      "title": "Are hand-constructed LoRA adapters acceptable (weight edit from activation analysis, not gradient descent)?",
+      "votes": 4,
+      "comments": 4,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756792"
+    },
+    {
+      "id": 759162,
+      "title": "Submission stuck in PENDING for 5 days — please help unblock (Ref: 58167516)",
+      "votes": 14,
+      "comments": 9,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759162"
+    },
+    {
+      "id": 759848,
+      "title": "Host ruling: is a PEFT LoRA derived by SVD of the model's own tensor acceptable? (not trained)",
+      "votes": 0,
       "comments": 0,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743506"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759848"
     },
     {
-      "id": 744807,
-      "title": "Submission errors after the Sep 30 wheelhouse update",
-      "votes": 21,
-      "comments": 22,
+      "id": 759781,
+      "title": "My Agent Approach - Gemma 4 Developer Agent ",
+      "votes": -3,
+      "comments": 0,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/744807"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759781"
     },
     {
-      "id": 746480,
-      "title": "submission is running for 15h. is this due to evaluation ?",
-      "votes": 21,
-      "comments": 37,
+      "id": 759702,
+      "title": " Submission 58171169 stuck in PENDING since 9 Nov ",
+      "votes": 0,
+      "comments": 0,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/746480"
-    },
-    {
-      "id": 751339,
-      "title": "\"Notebook Threw Exception\" on a non-LoRA submission that validates and compiles locally",
-      "votes": 20,
-      "comments": 44,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751339"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759702"
     }
   ],
   "pipeline": [
