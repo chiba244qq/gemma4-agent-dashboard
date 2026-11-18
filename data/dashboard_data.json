@@ -1,7 +1,14 @@
 {
-  "last_updated_utc": "2026-11-18 02:04:29 UTC",
-  "last_updated_jst": "2026-11-18 11:04:29 JST",
-  "active_job": null,
+  "last_updated_utc": "2026-11-18 11:04:26 UTC",
+  "last_updated_jst": "2026-11-18 20:04:26 JST",
+  "active_job": {
+    "ref": 58501048,
+    "description": "V31 SafeCap-Compile (Gate 1 & Gate 2 PASS: 12-task 25.0%, Missing old_string 5, 19.91s/step, 60s/7m/36calls)",
+    "start_jst": "2026-11-18 17:06:09 JST",
+    "elapsed_hours": 3.0,
+    "progress_pct": 10.6,
+    "est_completion_jst": "2026-11-19 21:06:09 JST"
+  },
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -281,6 +288,15 @@
   },
   "submissions": [
     {
+      "ref": 58501048,
+      "date_utc": "2026-11-18 08:06:09 UTC",
+      "date_jst": "2026-11-18 17:06:09 JST",
+      "status": "PENDING",
+      "score": null,
+      "description": "V31 SafeCap-Compile (Gate 1 & Gate 2 PASS: 12-task 25.0%, Missing old_string 5, 19.91s/step, 60s/7m/36calls)",
+      "error": ""
+    },
+    {
       "ref": 58451077,
       "date_utc": "2026-11-17 01:20:58 UTC",
       "date_jst": "2026-11-17 10:20:58 JST",
@@ -450,15 +466,6 @@
       "score": 0.17,
       "description": "V6 Multi-File Budget-Fit: Coupled Files Heuristics + 2048 Thinking Budget + 28 Calls Cap",
       "error": ""
-    },
-    {
-      "ref": 57550181,
-      "date_utc": "2026-10-23 05:19:28 UTC",
-      "date_jst": "2026-10-23 14:19:28 JST",
-      "status": "COMPLETE",
-      "score": 0.15,
-      "description": "V5 Budget-Fit: LB024 Prompts + 2048 Thinking Budget + 28 Calls Cap",
-      "error": ""
     }
   ],
   "leaderboard_sample": [
@@ -603,17 +610,33 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 754000,
+      "title": "Stuck Submission",
+      "votes": 3,
+      "comments": 2,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/754000"
+    },
+    {
+      "id": 760044,
+      "title": "About our entry: Training a GAN adapter on Gemma 4's internal states.",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760044"
+    },
+    {
       "id": 760014,
       "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
-      "votes": 1,
-      "comments": 0,
+      "votes": 6,
+      "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
     },
     {
       "id": 760012,
       "title": "On the competition experience",
-      "votes": 0,
+      "votes": -2,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760012"
@@ -625,14 +648,6 @@
       "comments": 6,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
-    },
-    {
-      "id": 754000,
-      "title": "Stuck Submission",
-      "votes": 3,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/754000"
     },
     {
       "id": 751596,
@@ -661,18 +676,10 @@
     {
       "id": 759162,
       "title": "Submission stuck in PENDING for 5 days — please help unblock (Ref: 58167516)",
-      "votes": 15,
+      "votes": 16,
       "comments": 9,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759162"
-    },
-    {
-      "id": 759848,
-      "title": "Host ruling: is a PEFT LoRA derived by SVD of the model's own tensor acceptable? (not trained)",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759848"
     }
   ],
   "pipeline": [
