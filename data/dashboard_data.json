@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-18 01:12:12 UTC",
-  "last_updated_jst": "2026-11-18 10:12:12 JST",
+  "last_updated_utc": "2026-11-18 02:04:29 UTC",
+  "last_updated_jst": "2026-11-18 11:04:29 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -605,7 +605,7 @@
     {
       "id": 760014,
       "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
-      "votes": 0,
+      "votes": 1,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
@@ -645,7 +645,7 @@
     {
       "id": 759322,
       "title": "We couldn't submit anything due to last submission stuck for 5 days",
-      "votes": 11,
+      "votes": 12,
       "comments": 6,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759322"
