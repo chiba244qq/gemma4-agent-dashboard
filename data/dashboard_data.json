@@ -1,14 +1,7 @@
 {
-  "last_updated_utc": "2026-11-17 19:35:33 UTC",
-  "last_updated_jst": "2026-11-18 04:35:33 JST",
-  "active_job": {
-    "ref": 58451077,
-    "description": "V23 Hybrid-Fast (Gate 1 & Gate 2 PASS: 23.52s latency -52.5% vs V9, 66.7% Patch Rate, 0 Missing old_string)",
-    "start_jst": "2026-11-17 10:20:58 JST",
-    "elapsed_hours": 18.2,
-    "progress_pct": 65.2,
-    "est_completion_jst": "2026-11-18 14:20:58 JST"
-  },
+  "last_updated_utc": "2026-11-18 01:12:12 UTC",
+  "last_updated_jst": "2026-11-18 10:12:12 JST",
+  "active_job": null,
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -291,8 +284,8 @@
       "ref": 58451077,
       "date_utc": "2026-11-17 01:20:58 UTC",
       "date_jst": "2026-11-17 10:20:58 JST",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.15,
       "description": "V23 Hybrid-Fast (Gate 1 & Gate 2 PASS: 23.52s latency -52.5% vs V9, 66.7% Patch Rate, 0 Missing old_string)",
       "error": ""
     },
@@ -610,9 +603,33 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 760014,
+      "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
+    },
+    {
+      "id": 760012,
+      "title": "On the competition experience",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760012"
+    },
+    {
+      "id": 759514,
+      "title": "five LoRA probes with identical scores ",
+      "votes": 6,
+      "comments": 6,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
+    },
+    {
       "id": 754000,
       "title": "Stuck Submission",
-      "votes": 4,
+      "votes": 3,
       "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/754000"
@@ -624,14 +641,6 @@
       "comments": 3,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751596"
-    },
-    {
-      "id": 759514,
-      "title": "five LoRA probes with identical scores ",
-      "votes": 6,
-      "comments": 4,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
     },
     {
       "id": 759322,
@@ -652,7 +661,7 @@
     {
       "id": 759162,
       "title": "Submission stuck in PENDING for 5 days — please help unblock (Ref: 58167516)",
-      "votes": 14,
+      "votes": 15,
       "comments": 9,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759162"
@@ -664,22 +673,6 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759848"
-    },
-    {
-      "id": 759781,
-      "title": "My Agent Approach - Gemma 4 Developer Agent ",
-      "votes": -3,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759781"
-    },
-    {
-      "id": 759702,
-      "title": " Submission 58171169 stuck in PENDING since 9 Nov ",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759702"
     }
   ],
   "pipeline": [
