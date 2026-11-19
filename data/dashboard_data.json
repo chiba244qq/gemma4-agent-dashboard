@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-19 09:51:19 UTC",
-  "last_updated_jst": "2026-11-19 18:51:19 JST",
+  "last_updated_utc": "2026-11-19 18:50:05 UTC",
+  "last_updated_jst": "2026-11-20 03:50:05 JST",
   "active_job": {
     "ref": 58551780,
     "description": "V32 Sequential-TwoStage (Gate 1 & Gate 2 PASS: A100-80GB 31B-QAT 41.7%, Patch Rate 91.7%, 0 Missing old_string)",
     "start_jst": "2026-11-19 17:49:02 JST",
-    "elapsed_hours": 1.0,
-    "progress_pct": 5.0,
+    "elapsed_hours": 10.0,
+    "progress_pct": 35.8,
     "est_completion_jst": "2026-11-20 21:49:02 JST"
   },
   "my_team": {
@@ -562,28 +562,12 @@
   ],
   "discussions": [
     {
-      "id": 747519,
-      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
-      "votes": 45,
-      "comments": 154,
+      "id": 760471,
+      "title": "11/18/26 Update on Submission Queue",
+      "votes": 1,
+      "comments": 1,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
-    },
-    {
-      "id": 743007,
-      "title": "Welcome to the Gemma 4 Developer Agent Competition",
-      "votes": 12,
-      "comments": 10,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
-    },
-    {
-      "id": 748287,
-      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 40,
-      "comments": 39,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
     },
     {
       "id": 751104,
@@ -594,12 +578,36 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
     },
     {
+      "id": 748287,
+      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
+      "votes": 40,
+      "comments": 39,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
+    },
+    {
+      "id": 747519,
+      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
+      "votes": 45,
+      "comments": 154,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
+    },
+    {
       "id": 745998,
       "title": "Note on Code Graphs for Async Functions",
       "votes": 8,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/745998"
+    },
+    {
+      "id": 743007,
+      "title": "Welcome to the Gemma 4 Developer Agent Competition",
+      "votes": 12,
+      "comments": 10,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
     },
     {
       "id": 742815,
@@ -610,34 +618,10 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
-      "id": 760260,
-      "title": "My agentful Orchestration!",
-      "votes": -5,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760260"
-    },
-    {
-      "id": 760126,
-      "title": "What happened to 0.29 score?",
-      "votes": 13,
-      "comments": 14,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
-    },
-    {
-      "id": 759514,
-      "title": "five LoRA probes with identical scores ",
-      "votes": 7,
-      "comments": 8,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
-    },
-    {
       "id": 760309,
       "title": "LoRA Inference Overhead Can Reduce Agent Performance Under Fixed Time Budgets",
-      "votes": 1,
-      "comments": 0,
+      "votes": 3,
+      "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760309"
     },
@@ -658,20 +642,12 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760140"
     },
     {
-      "id": 751596,
-      "title": "SFT / distillation LoRAs on Gemma 4 31B: loss falls a lot, solve rate doesn’t move. What would you try next?",
-      "votes": 6,
-      "comments": 6,
+      "id": 760126,
+      "title": "What happened to 0.29 score?",
+      "votes": 16,
+      "comments": 15,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751596"
-    },
-    {
-      "id": 754000,
-      "title": "Stuck Submission",
-      "votes": 3,
-      "comments": 4,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/754000"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
     },
     {
       "id": 760044,
@@ -680,6 +656,30 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760044"
+    },
+    {
+      "id": 760014,
+      "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
+      "votes": 9,
+      "comments": 2,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
+    },
+    {
+      "id": 759848,
+      "title": "Host ruling: is a PEFT LoRA derived by SVD of the model's own tensor acceptable? (not trained)",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759848"
+    },
+    {
+      "id": 759781,
+      "title": "My Agent Approach - Gemma 4 Developer Agent ",
+      "votes": -4,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759781"
     }
   ],
   "pipeline": [
