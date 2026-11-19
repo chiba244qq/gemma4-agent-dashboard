@@ -1,13 +1,13 @@
 {
-  "last_updated_utc": "2026-11-19 01:44:12 UTC",
-  "last_updated_jst": "2026-11-19 10:44:12 JST",
+  "last_updated_utc": "2026-11-19 09:51:19 UTC",
+  "last_updated_jst": "2026-11-19 18:51:19 JST",
   "active_job": {
-    "ref": 58501048,
-    "description": "V31 SafeCap-Compile (Gate 1 & Gate 2 PASS: 12-task 25.0%, Missing old_string 5, 19.91s/step, 60s/7m/36calls)",
-    "start_jst": "2026-11-18 17:06:09 JST",
-    "elapsed_hours": 17.6,
-    "progress_pct": 63.0,
-    "est_completion_jst": "2026-11-19 21:06:09 JST"
+    "ref": 58551780,
+    "description": "V32 Sequential-TwoStage (Gate 1 & Gate 2 PASS: A100-80GB 31B-QAT 41.7%, Patch Rate 91.7%, 0 Missing old_string)",
+    "start_jst": "2026-11-19 17:49:02 JST",
+    "elapsed_hours": 1.0,
+    "progress_pct": 5.0,
+    "est_completion_jst": "2026-11-20 21:49:02 JST"
   },
   "my_team": {
     "rank": 314,
@@ -288,11 +288,20 @@
   },
   "submissions": [
     {
+      "ref": 58551780,
+      "date_utc": "2026-11-19 08:49:02 UTC",
+      "date_jst": "2026-11-19 17:49:02 JST",
+      "status": "PENDING",
+      "score": null,
+      "description": "V32 Sequential-TwoStage (Gate 1 & Gate 2 PASS: A100-80GB 31B-QAT 41.7%, Patch Rate 91.7%, 0 Missing old_string)",
+      "error": ""
+    },
+    {
       "ref": 58501048,
       "date_utc": "2026-11-18 08:06:09 UTC",
       "date_jst": "2026-11-18 17:06:09 JST",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.17,
       "description": "V31 SafeCap-Compile (Gate 1 & Gate 2 PASS: 12-task 25.0%, Missing old_string 5, 19.91s/step, 60s/7m/36calls)",
       "error": ""
     },
@@ -457,15 +466,6 @@
       "score": 0.15,
       "description": "V6 Refined: Precision Coupled Files + Rich/Requests Rules + Mismatch Recovery + 2048 Thinking Budget",
       "error": ""
-    },
-    {
-      "ref": 57612521,
-      "date_utc": "2026-10-25 01:13:20 UTC",
-      "date_jst": "2026-10-25 10:13:20 JST",
-      "status": "COMPLETE",
-      "score": 0.17,
-      "description": "V6 Multi-File Budget-Fit: Coupled Files Heuristics + 2048 Thinking Budget + 28 Calls Cap",
-      "error": ""
     }
   ],
   "leaderboard_sample": [
@@ -565,9 +565,17 @@
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
       "votes": 45,
-      "comments": 152,
+      "comments": 154,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
+    },
+    {
+      "id": 743007,
+      "title": "Welcome to the Gemma 4 Developer Agent Competition",
+      "votes": 12,
+      "comments": 10,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
     },
     {
       "id": 748287,
@@ -580,18 +588,10 @@
     {
       "id": 751104,
       "title": "🌟Bonus Prize: Small Model Development ($10,000)",
-      "votes": 40,
+      "votes": 41,
       "comments": 8,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
-    },
-    {
-      "id": 743007,
-      "title": "Welcome to the Gemma 4 Developer Agent Competition",
-      "votes": 12,
-      "comments": 9,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
     },
     {
       "id": 745998,
@@ -610,20 +610,36 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 760260,
+      "title": "My agentful Orchestration!",
+      "votes": -5,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760260"
+    },
+    {
       "id": 760126,
       "title": "What happened to 0.29 score?",
-      "votes": 8,
-      "comments": 12,
+      "votes": 13,
+      "comments": 14,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
     },
     {
-      "id": 760260,
-      "title": "My agentful Orchestration!",
-      "votes": 0,
+      "id": 759514,
+      "title": "five LoRA probes with identical scores ",
+      "votes": 7,
+      "comments": 8,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
+    },
+    {
+      "id": 760309,
+      "title": "LoRA Inference Overhead Can Reduce Agent Performance Under Fixed Time Budgets",
+      "votes": 1,
       "comments": 0,
       "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760260"
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760309"
     },
     {
       "id": 760201,
@@ -664,22 +680,6 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760044"
-    },
-    {
-      "id": 760014,
-      "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
-      "votes": 8,
-      "comments": 2,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
-    },
-    {
-      "id": 759514,
-      "title": "five LoRA probes with identical scores ",
-      "votes": 6,
-      "comments": 6,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
     }
   ],
   "pipeline": [
