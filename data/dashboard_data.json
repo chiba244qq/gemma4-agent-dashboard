@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-18 19:56:14 UTC",
-  "last_updated_jst": "2026-11-19 04:56:14 JST",
+  "last_updated_utc": "2026-11-19 01:44:12 UTC",
+  "last_updated_jst": "2026-11-19 10:44:12 JST",
   "active_job": {
     "ref": 58501048,
     "description": "V31 SafeCap-Compile (Gate 1 & Gate 2 PASS: 12-task 25.0%, Missing old_string 5, 19.91s/step, 60s/7m/36calls)",
     "start_jst": "2026-11-18 17:06:09 JST",
-    "elapsed_hours": 11.8,
-    "progress_pct": 42.3,
+    "elapsed_hours": 17.6,
+    "progress_pct": 63.0,
     "est_completion_jst": "2026-11-19 21:06:09 JST"
   },
   "my_team": {
@@ -612,10 +612,26 @@
     {
       "id": 760126,
       "title": "What happened to 0.29 score?",
-      "votes": 5,
-      "comments": 11,
+      "votes": 8,
+      "comments": 12,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
+    },
+    {
+      "id": 760260,
+      "title": "My agentful Orchestration!",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760260"
+    },
+    {
+      "id": 760201,
+      "title": "My agent reads every new public notebook and arXiv paper overnight, then tests the ideas itself. 46 rounds till now, open source",
+      "votes": 1,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760201"
     },
     {
       "id": 760140,
@@ -664,22 +680,6 @@
       "comments": 6,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
-    },
-    {
-      "id": 759322,
-      "title": "We couldn't submit anything due to last submission stuck for 5 days",
-      "votes": 12,
-      "comments": 6,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759322"
-    },
-    {
-      "id": 756792,
-      "title": "Are hand-constructed LoRA adapters acceptable (weight edit from activation analysis, not gradient descent)?",
-      "votes": 4,
-      "comments": 4,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/756792"
     }
   ],
   "pipeline": [
