@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-20 09:38:11 UTC",
-  "last_updated_jst": "2026-11-20 18:38:11 JST",
+  "last_updated_utc": "2026-11-20 18:16:23 UTC",
+  "last_updated_jst": "2026-11-21 03:16:23 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -548,8 +548,8 @@
     },
     {
       "rank": 15,
-      "team_name": "Francis Joseph",
-      "score": 0.22,
+      "team_name": "Halley",
+      "score": 0.24,
       "is_my_team": false
     }
   ],
@@ -557,7 +557,7 @@
     {
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
-      "votes": 4,
+      "votes": 5,
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
@@ -611,17 +611,41 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 760014,
+      "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
+      "votes": 9,
+      "comments": 8,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
+    },
+    {
       "id": 760595,
       "title": "Where a small E4B agent loses tasks: a trace-level diagnosis on 91 practice tasks, two mechanical checks, and three prompt traps",
       "votes": 0,
-      "comments": 0,
+      "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760595"
     },
     {
+      "id": 760126,
+      "title": "What happened to 0.29 score?",
+      "votes": 19,
+      "comments": 18,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
+    },
+    {
+      "id": 760650,
+      "title": "Are Python startup hooks allowed in the task sandbox?",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760650"
+    },
+    {
       "id": 752693,
       "title": "Interested in teaming up? Please read our public Gemma smoke-test Code first",
-      "votes": -5,
+      "votes": -6,
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/752693"
@@ -633,14 +657,6 @@
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760309"
-    },
-    {
-      "id": 760126,
-      "title": "What happened to 0.29 score?",
-      "votes": 19,
-      "comments": 16,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
     },
     {
       "id": 751596,
@@ -657,22 +673,6 @@
       "comments": 8,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
-    },
-    {
-      "id": 760201,
-      "title": "My agent reads every new public notebook and arXiv paper overnight, then tests the ideas itself. 46 rounds till now, open source",
-      "votes": 2,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760201"
-    },
-    {
-      "id": 760140,
-      "title": "Submission 58480207: E4B LoRA starts on 4xL4; nullable budget parsing may explain scorer exception",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760140"
     }
   ],
   "pipeline": [
