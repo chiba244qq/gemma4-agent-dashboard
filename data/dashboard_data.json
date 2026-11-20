@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-19 18:50:05 UTC",
-  "last_updated_jst": "2026-11-20 03:50:05 JST",
+  "last_updated_utc": "2026-11-20 01:00:44 UTC",
+  "last_updated_jst": "2026-11-20 10:00:44 JST",
   "active_job": {
     "ref": 58551780,
     "description": "V32 Sequential-TwoStage (Gate 1 & Gate 2 PASS: A100-80GB 31B-QAT 41.7%, Patch Rate 91.7%, 0 Missing old_string)",
     "start_jst": "2026-11-19 17:49:02 JST",
-    "elapsed_hours": 10.0,
-    "progress_pct": 35.8,
+    "elapsed_hours": 16.2,
+    "progress_pct": 57.8,
     "est_completion_jst": "2026-11-20 21:49:02 JST"
   },
   "my_team": {
@@ -564,8 +564,8 @@
     {
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
-      "votes": 1,
-      "comments": 1,
+      "votes": 3,
+      "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
     },
@@ -620,15 +620,15 @@
     {
       "id": 760309,
       "title": "LoRA Inference Overhead Can Reduce Agent Performance Under Fixed Time Budgets",
-      "votes": 3,
-      "comments": 1,
+      "votes": 4,
+      "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760309"
     },
     {
       "id": 760201,
       "title": "My agent reads every new public notebook and arXiv paper overnight, then tests the ideas itself. 46 rounds till now, open source",
-      "votes": 1,
+      "votes": 2,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760201"
@@ -644,8 +644,8 @@
     {
       "id": 760126,
       "title": "What happened to 0.29 score?",
-      "votes": 16,
-      "comments": 15,
+      "votes": 18,
+      "comments": 16,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
     },
