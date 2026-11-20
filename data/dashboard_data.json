@@ -1,14 +1,7 @@
 {
-  "last_updated_utc": "2026-11-20 01:00:44 UTC",
-  "last_updated_jst": "2026-11-20 10:00:44 JST",
-  "active_job": {
-    "ref": 58551780,
-    "description": "V32 Sequential-TwoStage (Gate 1 & Gate 2 PASS: A100-80GB 31B-QAT 41.7%, Patch Rate 91.7%, 0 Missing old_string)",
-    "start_jst": "2026-11-19 17:49:02 JST",
-    "elapsed_hours": 16.2,
-    "progress_pct": 57.8,
-    "est_completion_jst": "2026-11-20 21:49:02 JST"
-  },
+  "last_updated_utc": "2026-11-20 09:38:11 UTC",
+  "last_updated_jst": "2026-11-20 18:38:11 JST",
+  "active_job": null,
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -291,8 +284,8 @@
       "ref": 58551780,
       "date_utc": "2026-11-19 08:49:02 UTC",
       "date_jst": "2026-11-19 17:49:02 JST",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.17,
       "description": "V32 Sequential-TwoStage (Gate 1 & Gate 2 PASS: A100-80GB 31B-QAT 41.7%, Patch Rate 91.7%, 0 Missing old_string)",
       "error": ""
     },
@@ -564,26 +557,10 @@
     {
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
-      "votes": 3,
+      "votes": 4,
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
-    },
-    {
-      "id": 751104,
-      "title": "🌟Bonus Prize: Small Model Development ($10,000)",
-      "votes": 41,
-      "comments": 8,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
-    },
-    {
-      "id": 748287,
-      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 40,
-      "comments": 39,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
     },
     {
       "id": 747519,
@@ -594,20 +571,36 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
     },
     {
-      "id": 745998,
-      "title": "Note on Code Graphs for Async Functions",
-      "votes": 8,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/745998"
-    },
-    {
       "id": 743007,
       "title": "Welcome to the Gemma 4 Developer Agent Competition",
       "votes": 12,
       "comments": 10,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
+    },
+    {
+      "id": 748287,
+      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
+      "votes": 40,
+      "comments": 39,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
+    },
+    {
+      "id": 751104,
+      "title": "🌟Bonus Prize: Small Model Development ($10,000)",
+      "votes": 41,
+      "comments": 8,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
+    },
+    {
+      "id": 745998,
+      "title": "Note on Code Graphs for Async Functions",
+      "votes": 8,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/745998"
     },
     {
       "id": 742815,
@@ -618,12 +611,52 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 760595,
+      "title": "Where a small E4B agent loses tasks: a trace-level diagnosis on 91 practice tasks, two mechanical checks, and three prompt traps",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760595"
+    },
+    {
+      "id": 752693,
+      "title": "Interested in teaming up? Please read our public Gemma smoke-test Code first",
+      "votes": -5,
+      "comments": 2,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/752693"
+    },
+    {
       "id": 760309,
       "title": "LoRA Inference Overhead Can Reduce Agent Performance Under Fixed Time Budgets",
       "votes": 4,
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760309"
+    },
+    {
+      "id": 760126,
+      "title": "What happened to 0.29 score?",
+      "votes": 19,
+      "comments": 16,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
+    },
+    {
+      "id": 751596,
+      "title": "SFT / distillation LoRAs on Gemma 4 31B: loss falls a lot, solve rate doesn’t move. What would you try next?",
+      "votes": 7,
+      "comments": 8,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751596"
+    },
+    {
+      "id": 759514,
+      "title": "five LoRA probes with identical scores ",
+      "votes": 7,
+      "comments": 8,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
     },
     {
       "id": 760201,
@@ -640,46 +673,6 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760140"
-    },
-    {
-      "id": 760126,
-      "title": "What happened to 0.29 score?",
-      "votes": 18,
-      "comments": 16,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
-    },
-    {
-      "id": 760044,
-      "title": "About our entry: Training a GAN adapter on Gemma 4's internal states.",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760044"
-    },
-    {
-      "id": 760014,
-      "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
-      "votes": 9,
-      "comments": 2,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
-    },
-    {
-      "id": 759848,
-      "title": "Host ruling: is a PEFT LoRA derived by SVD of the model's own tensor acceptable? (not trained)",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759848"
-    },
-    {
-      "id": 759781,
-      "title": "My Agent Approach - Gemma 4 Developer Agent ",
-      "votes": -4,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759781"
     }
   ],
   "pipeline": [
