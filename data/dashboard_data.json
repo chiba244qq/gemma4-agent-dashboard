@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-21 15:57:20 UTC",
-  "last_updated_jst": "2026-11-22 00:57:20 JST",
+  "last_updated_utc": "2026-11-21 21:29:52 UTC",
+  "last_updated_jst": "2026-11-22 06:29:52 JST",
   "active_job": {
     "ref": 58637410,
     "description": "V33 Sequential-Fixed (Gate 1 & Gate 2 PASS: L4 Faithful ADK Sim 33.3%, Patch Rate 83.3%, {problem_description}+{hints?} in Stage2, 8m/36calls)",
     "start_jst": "2026-11-21 07:05:20 JST",
-    "elapsed_hours": 17.9,
-    "progress_pct": 63.8,
+    "elapsed_hours": 23.4,
+    "progress_pct": 83.6,
     "est_completion_jst": "2026-11-22 11:05:20 JST"
   },
   "my_team": {
@@ -565,7 +565,7 @@
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
       "votes": 6,
-      "comments": 4,
+      "comments": 7,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
     },
@@ -588,7 +588,7 @@
     {
       "id": 748287,
       "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 40,
+      "votes": 41,
       "comments": 39,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
@@ -618,9 +618,33 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 760934,
+      "title": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760934"
+    },
+    {
+      "id": 760924,
+      "title": "Variation is the biggest differentiator for most public leaderboard rankings",
+      "votes": 1,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760924"
+    },
+    {
+      "id": 760126,
+      "title": "What happened to 0.29 score?",
+      "votes": 23,
+      "comments": 20,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
+    },
+    {
       "id": 760890,
       "title": "4xL4 Runtime & Tool-Call Budgeting for Gemma 4 ADK Agents (Reference Kit)",
-      "votes": 0,
+      "votes": 1,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760890"
@@ -628,7 +652,7 @@
     {
       "id": 760886,
       "title": "Skill calls write a temporary file inside /workspace",
-      "votes": 0,
+      "votes": 1,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760886"
@@ -652,34 +676,10 @@
     {
       "id": 760014,
       "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
-      "votes": 16,
+      "votes": 17,
       "comments": 11,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
-    },
-    {
-      "id": 760595,
-      "title": "Where a small E4B agent loses tasks: a trace-level diagnosis on 91 practice tasks, two mechanical checks, and three prompt traps",
-      "votes": 0,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760595"
-    },
-    {
-      "id": 760126,
-      "title": "What happened to 0.29 score?",
-      "votes": 23,
-      "comments": 18,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
-    },
-    {
-      "id": 760650,
-      "title": "Are Python startup hooks allowed in the task sandbox?",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760650"
     }
   ],
   "pipeline": [
