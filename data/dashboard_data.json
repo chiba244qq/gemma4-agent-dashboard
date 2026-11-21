@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-21 00:35:15 UTC",
-  "last_updated_jst": "2026-11-21 09:35:15 JST",
+  "last_updated_utc": "2026-11-21 07:57:19 UTC",
+  "last_updated_jst": "2026-11-21 16:57:19 JST",
   "active_job": {
     "ref": 58637410,
     "description": "V33 Sequential-Fixed (Gate 1 & Gate 2 PASS: L4 Faithful ADK Sim 33.3%, Patch Rate 83.3%, {problem_description}+{hints?} in Stage2, 8m/36calls)",
     "start_jst": "2026-11-21 07:05:20 JST",
-    "elapsed_hours": 2.5,
-    "progress_pct": 8.9,
+    "elapsed_hours": 9.9,
+    "progress_pct": 35.2,
     "est_completion_jst": "2026-11-22 11:05:20 JST"
   },
   "my_team": {
@@ -565,7 +565,7 @@
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
       "votes": 6,
-      "comments": 3,
+      "comments": 4,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
     },
@@ -618,9 +618,17 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 760830,
+      "title": "vLLM 0.19.1: the gemma4 tool-call parser can loop forever on a list argument (server stops responding)",
+      "votes": 1,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760830"
+    },
+    {
       "id": 760014,
       "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
-      "votes": 11,
+      "votes": 12,
       "comments": 11,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
@@ -672,14 +680,6 @@
       "comments": 8,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751596"
-    },
-    {
-      "id": 759514,
-      "title": "five LoRA probes with identical scores ",
-      "votes": 7,
-      "comments": 8,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
     }
   ],
   "pipeline": [
