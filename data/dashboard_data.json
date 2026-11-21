@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-21 07:57:19 UTC",
-  "last_updated_jst": "2026-11-21 16:57:19 JST",
+  "last_updated_utc": "2026-11-21 15:57:20 UTC",
+  "last_updated_jst": "2026-11-22 00:57:20 JST",
   "active_job": {
     "ref": 58637410,
     "description": "V33 Sequential-Fixed (Gate 1 & Gate 2 PASS: L4 Faithful ADK Sim 33.3%, Patch Rate 83.3%, {problem_description}+{hints?} in Stage2, 8m/36calls)",
     "start_jst": "2026-11-21 07:05:20 JST",
-    "elapsed_hours": 9.9,
-    "progress_pct": 35.2,
+    "elapsed_hours": 17.9,
+    "progress_pct": 63.8,
     "est_completion_jst": "2026-11-22 11:05:20 JST"
   },
   "my_team": {
@@ -618,9 +618,33 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 760890,
+      "title": "4xL4 Runtime & Tool-Call Budgeting for Gemma 4 ADK Agents (Reference Kit)",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760890"
+    },
+    {
+      "id": 760886,
+      "title": "Skill calls write a temporary file inside /workspace",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760886"
+    },
+    {
+      "id": 759514,
+      "title": "five LoRA probes with identical scores ",
+      "votes": 7,
+      "comments": 9,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
+    },
+    {
       "id": 760830,
       "title": "vLLM 0.19.1: the gemma4 tool-call parser can loop forever on a list argument (server stops responding)",
-      "votes": 1,
+      "votes": 2,
       "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760830"
@@ -628,7 +652,7 @@
     {
       "id": 760014,
       "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
-      "votes": 12,
+      "votes": 16,
       "comments": 11,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
@@ -644,7 +668,7 @@
     {
       "id": 760126,
       "title": "What happened to 0.29 score?",
-      "votes": 20,
+      "votes": 23,
       "comments": 18,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
@@ -656,30 +680,6 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760650"
-    },
-    {
-      "id": 752693,
-      "title": "Interested in teaming up? Please read our public Gemma smoke-test Code first",
-      "votes": -7,
-      "comments": 2,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/752693"
-    },
-    {
-      "id": 760309,
-      "title": "LoRA Inference Overhead Can Reduce Agent Performance Under Fixed Time Budgets",
-      "votes": 4,
-      "comments": 2,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760309"
-    },
-    {
-      "id": 751596,
-      "title": "SFT / distillation LoRAs on Gemma 4 31B: loss falls a lot, solve rate doesn’t move. What would you try next?",
-      "votes": 7,
-      "comments": 8,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751596"
     }
   ],
   "pipeline": [
