@@ -1,7 +1,14 @@
 {
-  "last_updated_utc": "2026-11-20 18:16:23 UTC",
-  "last_updated_jst": "2026-11-21 03:16:23 JST",
-  "active_job": null,
+  "last_updated_utc": "2026-11-21 00:35:15 UTC",
+  "last_updated_jst": "2026-11-21 09:35:15 JST",
+  "active_job": {
+    "ref": 58637410,
+    "description": "V33 Sequential-Fixed (Gate 1 & Gate 2 PASS: L4 Faithful ADK Sim 33.3%, Patch Rate 83.3%, {problem_description}+{hints?} in Stage2, 8m/36calls)",
+    "start_jst": "2026-11-21 07:05:20 JST",
+    "elapsed_hours": 2.5,
+    "progress_pct": 8.9,
+    "est_completion_jst": "2026-11-22 11:05:20 JST"
+  },
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -281,6 +288,15 @@
   },
   "submissions": [
     {
+      "ref": 58637410,
+      "date_utc": "2026-11-20 22:05:20 UTC",
+      "date_jst": "2026-11-21 07:05:20 JST",
+      "status": "PENDING",
+      "score": null,
+      "description": "V33 Sequential-Fixed (Gate 1 & Gate 2 PASS: L4 Faithful ADK Sim 33.3%, Patch Rate 83.3%, {problem_description}+{hints?} in Stage2, 8m/36calls)",
+      "error": ""
+    },
+    {
       "ref": 58551780,
       "date_utc": "2026-11-19 08:49:02 UTC",
       "date_jst": "2026-11-19 17:49:02 JST",
@@ -450,15 +466,6 @@
       "score": 0.12,
       "description": "V7 Tight-Budget Multi-File: 24 Calls Cap + 6 Min + 10th-Turn Edit + Coupled Files + 2048 Thinking Budget",
       "error": ""
-    },
-    {
-      "ref": 57652253,
-      "date_utc": "2026-10-26 03:36:22 UTC",
-      "date_jst": "2026-10-26 12:36:22 JST",
-      "status": "COMPLETE",
-      "score": 0.15,
-      "description": "V6 Refined: Precision Coupled Files + Rich/Requests Rules + Mismatch Recovery + 2048 Thinking Budget",
-      "error": ""
     }
   ],
   "leaderboard_sample": [
@@ -557,8 +564,8 @@
     {
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
-      "votes": 5,
-      "comments": 2,
+      "votes": 6,
+      "comments": 3,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
     },
@@ -613,8 +620,8 @@
     {
       "id": 760014,
       "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
-      "votes": 9,
-      "comments": 8,
+      "votes": 11,
+      "comments": 11,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
     },
@@ -629,7 +636,7 @@
     {
       "id": 760126,
       "title": "What happened to 0.29 score?",
-      "votes": 19,
+      "votes": 20,
       "comments": 18,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
@@ -645,7 +652,7 @@
     {
       "id": 752693,
       "title": "Interested in teaming up? Please read our public Gemma smoke-test Code first",
-      "votes": -6,
+      "votes": -7,
       "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/752693"
