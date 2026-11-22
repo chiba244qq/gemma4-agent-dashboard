@@ -1,7 +1,14 @@
 {
-  "last_updated_utc": "2026-11-22 09:19:02 UTC",
-  "last_updated_jst": "2026-11-22 18:19:02 JST",
-  "active_job": null,
+  "last_updated_utc": "2026-11-22 17:35:59 UTC",
+  "last_updated_jst": "2026-11-23 02:35:59 JST",
+  "active_job": {
+    "ref": 58716319,
+    "description": "V35 Single-Compacted-V2 (Gate 1 & Gate 2 PASS: L4 33.3%, 23.70s/step, Trap-Fixed, 7m/36calls)",
+    "start_jst": "2026-11-22 19:28:32 JST",
+    "elapsed_hours": 7.1,
+    "progress_pct": 25.4,
+    "est_completion_jst": "2026-11-23 23:28:32 JST"
+  },
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -281,6 +288,15 @@
   },
   "submissions": [
     {
+      "ref": 58716319,
+      "date_utc": "2026-11-22 10:28:32 UTC",
+      "date_jst": "2026-11-22 19:28:32 JST",
+      "status": "PENDING",
+      "score": null,
+      "description": "V35 Single-Compacted-V2 (Gate 1 & Gate 2 PASS: L4 33.3%, 23.70s/step, Trap-Fixed, 7m/36calls)",
+      "error": ""
+    },
+    {
       "ref": 58637410,
       "date_utc": "2026-11-20 22:05:20 UTC",
       "date_jst": "2026-11-21 07:05:20 JST",
@@ -450,15 +466,6 @@
       "score": 0.17,
       "description": "V8 Final Candidate: 28 Calls Cap + 8 Min + Parallel Sync/Async Rules + Resilient Heredoc + 2048 Thinking Budget",
       "error": ""
-    },
-    {
-      "ref": 57695500,
-      "date_utc": "2026-10-27 08:50:28 UTC",
-      "date_jst": "2026-10-27 17:50:28 JST",
-      "status": "COMPLETE",
-      "score": 0.12,
-      "description": "V7 Tight-Budget Multi-File: 24 Calls Cap + 6 Min + 10th-Turn Edit + Coupled Files + 2048 Thinking Budget",
-      "error": ""
     }
   ],
   "leaderboard_sample": [
@@ -555,20 +562,20 @@
   ],
   "discussions": [
     {
-      "id": 748287,
-      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 41,
-      "comments": 40,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
-    },
-    {
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
       "votes": 6,
-      "comments": 7,
+      "comments": 9,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
+    },
+    {
+      "id": 748287,
+      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
+      "votes": 42,
+      "comments": 40,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
     },
     {
       "id": 747519,
@@ -613,15 +620,23 @@
     {
       "id": 761004,
       "title": "Byte-identical resubmission scored 0.00 (COMPLETE, no error)",
-      "votes": 0,
-      "comments": 0,
+      "votes": 1,
+      "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761004"
     },
     {
+      "id": 761060,
+      "title": "What sets the ceiling here — model capability, task pool, or the 12-hour envelope?",
+      "votes": 2,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761060"
+    },
+    {
       "id": 760924,
       "title": "Variation is the biggest differentiator for most public leaderboard rankings",
-      "votes": 4,
+      "votes": 5,
       "comments": 3,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760924"
@@ -637,7 +652,7 @@
     {
       "id": 760126,
       "title": "What happened to 0.29 score?",
-      "votes": 23,
+      "votes": 24,
       "comments": 20,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
@@ -665,14 +680,6 @@
       "comments": 9,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
-    },
-    {
-      "id": 760830,
-      "title": "vLLM 0.19.1: the gemma4 tool-call parser can loop forever on a list argument (server stops responding)",
-      "votes": 2,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760830"
     }
   ],
   "pipeline": [
