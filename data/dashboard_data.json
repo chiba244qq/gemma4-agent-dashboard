@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-22 01:53:09 UTC",
-  "last_updated_jst": "2026-11-22 10:53:09 JST",
+  "last_updated_utc": "2026-11-22 09:19:02 UTC",
+  "last_updated_jst": "2026-11-22 18:19:02 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -555,6 +555,14 @@
   ],
   "discussions": [
     {
+      "id": 748287,
+      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
+      "votes": 41,
+      "comments": 40,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
+    },
+    {
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
       "votes": 6,
@@ -577,14 +585,6 @@
       "comments": 10,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
-    },
-    {
-      "id": 748287,
-      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 41,
-      "comments": 39,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
     },
     {
       "id": 751104,
@@ -611,9 +611,17 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 761004,
+      "title": "Byte-identical resubmission scored 0.00 (COMPLETE, no error)",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761004"
+    },
+    {
       "id": 760924,
       "title": "Variation is the biggest differentiator for most public leaderboard rankings",
-      "votes": 2,
+      "votes": 4,
       "comments": 3,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760924"
@@ -665,14 +673,6 @@
       "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760830"
-    },
-    {
-      "id": 760014,
-      "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
-      "votes": 17,
-      "comments": 11,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
     }
   ],
   "pipeline": [
