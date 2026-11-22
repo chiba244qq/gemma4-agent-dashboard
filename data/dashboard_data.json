@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-22 17:35:59 UTC",
-  "last_updated_jst": "2026-11-23 02:35:59 JST",
+  "last_updated_utc": "2026-11-22 23:12:04 UTC",
+  "last_updated_jst": "2026-11-23 08:12:04 JST",
   "active_job": {
     "ref": 58716319,
     "description": "V35 Single-Compacted-V2 (Gate 1 & Gate 2 PASS: L4 33.3%, 23.70s/step, Trap-Fixed, 7m/36calls)",
     "start_jst": "2026-11-22 19:28:32 JST",
-    "elapsed_hours": 7.1,
-    "progress_pct": 25.4,
+    "elapsed_hours": 12.7,
+    "progress_pct": 45.4,
     "est_completion_jst": "2026-11-23 23:28:32 JST"
   },
   "my_team": {
@@ -565,14 +565,14 @@
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
       "votes": 6,
-      "comments": 9,
+      "comments": 11,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
     },
     {
       "id": 748287,
       "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 42,
+      "votes": 43,
       "comments": 40,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
@@ -620,15 +620,15 @@
     {
       "id": 761004,
       "title": "Byte-identical resubmission scored 0.00 (COMPLETE, no error)",
-      "votes": 1,
-      "comments": 1,
+      "votes": 2,
+      "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761004"
     },
     {
       "id": 761060,
       "title": "What sets the ceiling here — model capability, task pool, or the 12-hour envelope?",
-      "votes": 2,
+      "votes": 1,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761060"
