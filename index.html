@@ -674,6 +674,41 @@
       </div>
     </div>
 
+    <!-- BEST SCORE & VERSION ARCHITECTURE COMPARISON TABLE -->
+    <div class="glass-card rounded-2xl p-6 overflow-hidden">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="award" class="w-4 h-4 text-amber-400"></i>
+            Best Score &amp; Version Architecture Comparison
+          </h3>
+          <p class="text-xs text-gray-400">歴代ベストスコア (<span class="text-amber-400 font-bold" id="comp-best-score">0.20</span>) と各提出バージョンの方式・設定・検証結果の比較</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/30 font-bold" id="comp-best-badge">
+            Best LB: 0.20 (V9 Ultimate / Ref 57774882)
+          </span>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto -mx-6">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-dark-card/50 text-gray-400 font-mono uppercase tracking-wider border-y border-dark-border">
+            <tr>
+              <th class="py-3 px-4">Version (Ref)</th>
+              <th class="py-3 px-4">Architecture</th>
+              <th class="py-3 px-4">Sampling / Budget</th>
+              <th class="py-3 px-4">Colab (12-Task)</th>
+              <th class="py-3 px-4 text-right">Kaggle LB</th>
+              <th class="py-3 px-4">Key Mechanism &amp; Notes</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-dark-border/70 font-mono" id="version-comparison-tbody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <!-- SUBMISSION HISTORY TABLE -->
     <div class="glass-card rounded-2xl p-6 overflow-hidden">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
@@ -1434,6 +1469,138 @@
           </tr>
         `;
       }).join('');
+
+      // 4.5 Version Architecture Comparison Table
+      const compTbody = document.getElementById('version-comparison-tbody');
+      if (compTbody) {
+        const subByRef = Object.fromEntries(subs.map(s => [String(s.ref), s]));
+        const bestScoreVal = (data.best_score || 0.20).toFixed(2);
+        const compBestEl = document.getElementById('comp-best-score');
+        if (compBestEl) compBestEl.textContent = bestScoreVal;
+
+        const versionRows = [
+          {
+            ver: 'V9 Ultimate',
+            ref: '57774882',
+            resubRef: '58387461',
+            arch: 'Single LlmAgent',
+            budget: 'T=0.2 / Think 2048 / 28calls / 8m / 240s',
+            colab: '— (legacy)',
+            fallbackScore: '0.20 ★ (再提出 0.12)',
+            isBest: true,
+            notes: '歴代ベスト。3-5行ユニーク一致、pytest -x早期停止、Sync/Async並列ルール、heredocリカバリ'
+          },
+          {
+            ver: 'V10 Diverse',
+            ref: '57837665',
+            arch: 'Single LlmAgent',
+            budget: 'T=1.0, K=64 / Think 4096 / 28calls / 8m',
+            colab: '— (legacy)',
+            fallbackScore: '0.18',
+            notes: 'V9プロンプト＋多様性サンプリング（T=1.0, TopK=64）'
+          },
+          {
+            ver: 'V18 Native Clean',
+            ref: '58226200',
+            resubRef: '58268405',
+            arch: 'Single LlmAgent',
+            budget: 'T=0.2 / Think 2048 / 28calls / 8m / 240s',
+            colab: '66.7% (旧ベンチ)',
+            fallbackScore: '0.18 (再提出 0.13)',
+            notes: 'プロンプト内のツール構文汚染を完全除去し、vLLM gemma4ネイティブパーサーに最適化'
+          },
+          {
+            ver: 'V23 Hybrid-Fast',
+            ref: '58451077',
+            arch: 'Single LlmAgent',
+            budget: 'T=0.2 / Think 2048 / 32calls / 8m',
+            colab: '66.7% Patch / 23.5s',
+            fallbackScore: '0.15',
+            notes: 'L4 OOM修正＋3-Tier raw_exact編集導入による高速化版'
+          },
+          {
+            ver: 'V31 SafeCap-Compile',
+            ref: '58501048',
+            arch: 'Single LlmAgent',
+            budget: 'T=0.2 / Think 2048 / 36calls / 7m / 60s',
+            colab: 'L4: 25.0% (3/12) / Patch 41.7%',
+            fallbackScore: '0.17',
+            notes: '安全予算(60s/7m/36calls)＋py_compile検証を導入'
+          },
+          {
+            ver: 'V32 Sequential-TwoStage',
+            ref: '58551780',
+            arch: 'SequentialAgent (2段階)',
+            budget: 'T=0.2 / Think 2048(S1:1024) / 36calls / 7m / 60s',
+            colab: 'L4: 25-41.7% / A100: 41.7% (旧Sim)',
+            fallbackScore: '0.17',
+            notes: '調査と編集を分離。ただし本番Stage2に{problem_description}欠落'
+          },
+          {
+            ver: 'V33 Sequential-Fixed',
+            ref: '58637410',
+            arch: 'SequentialAgent (2段階)',
+            budget: 'T=0.2 / Think 2048(S1:1024) / 36calls / 8m / 60s',
+            colab: 'L4(忠実7m): 33.3% (4/12) / Patch 83.3%',
+            fallbackScore: 'Error (12h超過)',
+            notes: 'Stage2へ{problem_description}+{hints?}追加。8m延長により本番12h全体タイムアウト'
+          },
+          {
+            ver: 'V35 Single-Compacted-V2',
+            ref: '58716319',
+            arch: 'Single + 履歴圧縮相性',
+            budget: 'T=0.2 / Think 2048 / 36calls / 7m / 60s',
+            colab: 'L4: 33.3% (4/12) / Patch 58.3% / 23.7s',
+            fallbackScore: 'PENDING',
+            notes: '単一構成に戻し、/tmp write_file禁止・パイプ終了コード隠蔽防止・git grep明示を追加'
+          },
+          {
+            ver: 'V34 / V36 / V37 (未提出検証)',
+            ref: '—',
+            arch: 'Single (各種実験)',
+            budget: 'Think 2048 vs 4096 / T=0.2 vs 1.0',
+            colab: 'V34: 33.3% | V36: 25.0%/16.7% | V37: 25.0%',
+            fallbackScore: '未提出',
+            notes: 'Think4096は61.6s/stepで悪化、T=1.0/TopK=64もL4ではMissing old_string増で不採用'
+          }
+        ];
+
+        compTbody.innerHTML = versionRows.map(r => {
+          let lbText = r.fallbackScore;
+          let lbClass = 'text-gray-200';
+          if (r.ref && subByRef[r.ref]) {
+            const live = subByRef[r.ref];
+            if (live.status === 'PENDING') {
+              lbText = '<span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/15 text-amber-300 border border-amber-500/30 animate-pulse">PENDING</span>';
+            } else if (live.score !== null && live.score !== undefined) {
+              const sStr = Number(live.score).toFixed(2);
+              if (r.resubRef && subByRef[r.resubRef] && subByRef[r.resubRef].score !== null) {
+                lbText = `${sStr} (再提出 ${Number(subByRef[r.resubRef].score).toFixed(2)})`;
+              } else {
+                lbText = sStr;
+              }
+              if (r.isBest) lbText = `${lbText} ★`;
+            } else if (live.error) {
+              lbText = '<span class="text-rose-400">Error (Timeout)</span>';
+            }
+          }
+          if (r.isBest) lbClass = 'text-amber-400 font-extrabold';
+          const rowBg = r.isBest ? 'bg-amber-500/5 hover:bg-amber-500/10' : 'hover:bg-dark-card/30';
+          return `
+            <tr class="${rowBg} transition">
+              <td class="py-3 px-4 whitespace-nowrap">
+                <div class="font-bold ${r.isBest ? 'text-amber-300' : 'text-white'}">${r.ver}</div>
+                <div class="text-[10px] text-gray-500">Ref: ${r.ref}${r.resubRef ? ' / ' + r.resubRef : ''}</div>
+              </td>
+              <td class="py-3 px-4 text-brand-300 whitespace-nowrap">${r.arch}</td>
+              <td class="py-3 px-4 text-gray-300">${r.budget}</td>
+              <td class="py-3 px-4 text-gray-300">${r.colab}</td>
+              <td class="py-3 px-4 text-right font-bold whitespace-nowrap ${lbClass}">${lbText}</td>
+              <td class="py-3 px-4 text-gray-400 font-sans text-[11px] leading-snug max-w-xs">${r.notes}</td>
+            </tr>
+          `;
+        }).join('');
+      }
 
       // 5. Gemini Forum Insights & Discussions Container
       const insightsContainer = document.getElementById('gemini-insights-container');
