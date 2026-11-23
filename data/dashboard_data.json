@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-22 23:12:04 UTC",
-  "last_updated_jst": "2026-11-23 08:12:04 JST",
+  "last_updated_utc": "2026-11-23 05:39:10 UTC",
+  "last_updated_jst": "2026-11-23 14:39:10 JST",
   "active_job": {
     "ref": 58716319,
     "description": "V35 Single-Compacted-V2 (Gate 1 & Gate 2 PASS: L4 33.3%, 23.70s/step, Trap-Fixed, 7m/36calls)",
     "start_jst": "2026-11-22 19:28:32 JST",
-    "elapsed_hours": 12.7,
-    "progress_pct": 45.4,
+    "elapsed_hours": 19.2,
+    "progress_pct": 68.5,
     "est_completion_jst": "2026-11-23 23:28:32 JST"
   },
   "my_team": {
@@ -562,9 +562,17 @@
   ],
   "discussions": [
     {
+      "id": 743007,
+      "title": "Welcome to the Gemma 4 Developer Agent Competition",
+      "votes": 12,
+      "comments": 11,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
+    },
+    {
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
-      "votes": 6,
+      "votes": 7,
       "comments": 11,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
@@ -580,18 +588,10 @@
     {
       "id": 747519,
       "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
-      "votes": 45,
+      "votes": 44,
       "comments": 154,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
-    },
-    {
-      "id": 743007,
-      "title": "Welcome to the Gemma 4 Developer Agent Competition",
-      "votes": 12,
-      "comments": 10,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
     },
     {
       "id": 751104,
@@ -618,25 +618,49 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
-      "id": 761004,
-      "title": "Byte-identical resubmission scored 0.00 (COMPLETE, no error)",
-      "votes": 2,
-      "comments": 2,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761004"
-    },
-    {
       "id": 761060,
       "title": "What sets the ceiling here — model capability, task pool, or the 12-hour envelope?",
       "votes": 1,
-      "comments": 0,
+      "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761060"
     },
     {
+      "id": 761004,
+      "title": "Byte-identical resubmission scored 0.00 (COMPLETE, no error)",
+      "votes": 2,
+      "comments": 3,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761004"
+    },
+    {
+      "id": 747740,
+      "title": "Submission stuck in \"Pending/Running\" for 26+ hours, blocking new submissions (pending limit)",
+      "votes": 7,
+      "comments": 10,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747740"
+    },
+    {
+      "id": 761165,
+      "title": "About broken test-suites",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761165"
+    },
+    {
+      "id": 760126,
+      "title": "What happened to 0.29 score?",
+      "votes": 24,
+      "comments": 21,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
+    },
+    {
       "id": 760924,
       "title": "Variation is the biggest differentiator for most public leaderboard rankings",
-      "votes": 5,
+      "votes": 6,
       "comments": 3,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760924"
@@ -650,36 +674,12 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760934"
     },
     {
-      "id": 760126,
-      "title": "What happened to 0.29 score?",
-      "votes": 24,
-      "comments": 20,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760126"
-    },
-    {
       "id": 760890,
       "title": "4xL4 Runtime & Tool-Call Budgeting for Gemma 4 ADK Agents (Reference Kit)",
       "votes": 1,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760890"
-    },
-    {
-      "id": 760886,
-      "title": "Skill calls write a temporary file inside /workspace",
-      "votes": 1,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760886"
-    },
-    {
-      "id": 759514,
-      "title": "five LoRA probes with identical scores ",
-      "votes": 7,
-      "comments": 9,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
     }
   ],
   "pipeline": [
