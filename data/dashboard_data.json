@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-24 14:31:38 UTC",
-  "last_updated_jst": "2026-11-24 23:31:38 JST",
+  "last_updated_utc": "2026-11-24 23:44:34 UTC",
+  "last_updated_jst": "2026-11-25 08:44:34 JST",
   "active_job": {
     "ref": 58825693,
     "description": "V35 Single-Compacted-V2 (Gate 1 & Gate 2 PASS: L4 41.7% vs V9 25.0%, 21.52s/step, 8m/120s/36calls)",
     "start_jst": "2026-11-24 20:00:04 JST",
-    "elapsed_hours": 3.5,
-    "progress_pct": 12.6,
+    "elapsed_hours": 12.7,
+    "progress_pct": 45.5,
     "est_completion_jst": "2026-11-26 00:00:04 JST"
   },
   "my_team": {
@@ -618,28 +618,44 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
-      "id": 761529,
-      "title": "Developer Agent competition: free GPU quota extension for evaluation",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761529"
-    },
-    {
       "id": 761004,
       "title": "Byte-identical resubmission scored 0.00 (COMPLETE, no error)",
       "votes": 3,
-      "comments": 6,
+      "comments": 9,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761004"
+    },
+    {
+      "id": 761467,
+      "title": "Submission exceeded runtime despite an 8-minute per-task limit — clarification on the 12-hour timer",
+      "votes": 0,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761467"
     },
     {
       "id": 761249,
       "title": "Looking for a team / teammates before merger deadline (Nov 25)",
       "votes": 0,
-      "comments": 1,
+      "comments": 2,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761249"
+    },
+    {
+      "id": 760830,
+      "title": "vLLM 0.19.1: the gemma4 tool-call parser can loop forever on a list argument (server stops responding)",
+      "votes": 2,
+      "comments": 2,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760830"
+    },
+    {
+      "id": 761529,
+      "title": "Developer Agent competition: free GPU quota extension for evaluation",
+      "votes": -3,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761529"
     },
     {
       "id": 759514,
@@ -650,17 +666,9 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
     },
     {
-      "id": 761467,
-      "title": "Submission exceeded runtime despite an 8-minute per-task limit — clarification on the 12-hour timer",
-      "votes": -1,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761467"
-    },
-    {
       "id": 761254,
       "title": "Suggestion to reduce luck in the final rankings",
-      "votes": 2,
+      "votes": 3,
       "comments": 4,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761254"
@@ -672,14 +680,6 @@
       "comments": 109,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743683"
-    },
-    {
-      "id": 760014,
-      "title": "Withdrawing, and sharing everything we measured: 1,800+ trials of a 4B quantized SWE agent (best custom 15/114 vs zero-think baseline 16/114)",
-      "votes": 20,
-      "comments": 13,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760014"
     }
   ],
   "pipeline": [
