@@ -1,5 +1,17 @@
 [
   {
+    "id": "VERSION_COMPARISON_20261124",
+    "file": "docs/VERSION_COMPARISON_20261124.md",
+    "order": 0,
+    "status": "active",
+    "step_label": "LATEST: 11/24 比較検証総括",
+    "date": "2026-11-24 (新規追加)",
+    "title": "歴代ベストスコア・各提出バージョン比較検証レポート（V9 vs V31〜V37）",
+    "badge": "最新比較レポート",
+    "badge_color": "amber",
+    "summary": "歴代ベストV9 Ultimate (0.20)とV31〜V37の方式・予算・Colab実測結果（V35 41.7% vs V9 25.0%直接ペア比較）、Think2048 vs 4096、T=0.2 vs 1.0、およびKaggle API通常ワーカーのT4制約までを1本に総括。"
+  },
+  {
     "id": "COMPETITION_OVERVIEW_AND_APPROACH",
     "file": "docs/COMPETITION_OVERVIEW_AND_APPROACH.md",
     "order": 1,

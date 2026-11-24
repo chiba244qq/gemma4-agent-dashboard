@@ -685,6 +685,10 @@
           <p class="text-xs text-gray-400">歴代ベストスコア (<span class="text-amber-400 font-bold" id="comp-best-score">0.20</span>) と各提出バージョンの方式・設定・検証結果の比較</p>
         </div>
         <div class="flex items-center gap-2 text-xs font-mono">
+          <button onclick="openDocModal('docs/VERSION_COMPARISON_20261124.md', '歴代ベストスコア・各提出バージョン比較検証レポート（2026-11-24）')"
+             class="px-2.5 py-1 rounded-lg bg-brand-500/15 hover:bg-brand-500/25 text-brand-300 border border-brand-500/30 transition flex items-center gap-1.5">
+            <i data-lucide="file-text" class="w-3.5 h-3.5"></i> 詳細レポート (.md)
+          </button>
           <span class="px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/30 font-bold" id="comp-best-badge">
             Best LB: 0.20 (V9 Ultimate / Ref 57774882)
           </span>
@@ -1485,7 +1489,7 @@
             resubRef: '58387461',
             arch: 'Single LlmAgent',
             budget: 'T=0.2 / Think 2048 / 28calls / 8m / 240s',
-            colab: '— (legacy)',
+            colab: 'L4: 25.0% (3/12) / Patch 50.0% / 38.1s',
             fallbackScore: '0.20 ★ (再提出 0.12)',
             isBest: true,
             notes: '歴代ベスト。3-5行ユニーク一致、pytest -x早期停止、Sync/Async並列ルール、heredocリカバリ'
@@ -1550,8 +1554,8 @@
             ref: '58716319',
             arch: 'Single + 履歴圧縮相性',
             budget: 'T=0.2 / Think 2048 / 36calls / 7m / 60s',
-            colab: 'L4: 33.3% (4/12) / Patch 58.3% / 23.7s',
-            fallbackScore: 'PENDING',
+            colab: 'L4: 33.3〜41.7% (4〜5/12) / 21.5〜23.7s',
+            fallbackScore: '0.15',
             notes: '単一構成に戻し、/tmp write_file禁止・パイプ終了コード隠蔽防止・git grep明示を追加'
           },
           {
