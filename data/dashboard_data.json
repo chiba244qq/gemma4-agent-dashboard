@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-11-24 23:44:34 UTC",
-  "last_updated_jst": "2026-11-25 08:44:34 JST",
+  "last_updated_utc": "2026-11-25 06:53:44 UTC",
+  "last_updated_jst": "2026-11-25 15:53:44 JST",
   "active_job": {
     "ref": 58825693,
     "description": "V35 Single-Compacted-V2 (Gate 1 & Gate 2 PASS: L4 41.7% vs V9 25.0%, 21.52s/step, 8m/120s/36calls)",
     "start_jst": "2026-11-24 20:00:04 JST",
-    "elapsed_hours": 12.7,
-    "progress_pct": 45.5,
+    "elapsed_hours": 19.9,
+    "progress_pct": 71.1,
     "est_completion_jst": "2026-11-26 00:00:04 JST"
   },
   "my_team": {
@@ -565,7 +565,7 @@
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
       "votes": 9,
-      "comments": 20,
+      "comments": 24,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
     },
@@ -618,12 +618,36 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 761733,
+      "title": "Submission stuck in Pending/Running for 27+ hours — 12h timeout & Phase 2 scoring query",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761733"
+    },
+    {
+      "id": 759514,
+      "title": "five LoRA probes with identical scores ",
+      "votes": 9,
+      "comments": 11,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
+    },
+    {
       "id": 761004,
       "title": "Byte-identical resubmission scored 0.00 (COMPLETE, no error)",
       "votes": 3,
-      "comments": 9,
+      "comments": 10,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761004"
+    },
+    {
+      "id": 761690,
+      "title": "Proposal for organisers: allow our own GPU quota for submissions",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761690"
     },
     {
       "id": 761467,
@@ -656,30 +680,6 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761529"
-    },
-    {
-      "id": 759514,
-      "title": "five LoRA probes with identical scores ",
-      "votes": 9,
-      "comments": 10,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
-    },
-    {
-      "id": 761254,
-      "title": "Suggestion to reduce luck in the final rankings",
-      "votes": 3,
-      "comments": 4,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761254"
-    },
-    {
-      "id": 743683,
-      "title": "Rerunning Failed Submissions",
-      "votes": 22,
-      "comments": 109,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743683"
     }
   ],
   "pipeline": [
