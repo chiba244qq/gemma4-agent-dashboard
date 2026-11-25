@@ -1552,11 +1552,12 @@
           {
             ver: 'V35 Single-Compacted-V2',
             ref: '58716319',
+            resubRef: '58825693',
             arch: 'Single + 履歴圧縮相性',
-            budget: 'T=0.2 / Think 2048 / 36calls / 7m / 60s',
-            colab: 'L4: 33.3〜41.7% (4〜5/12) / 21.5〜23.7s',
-            fallbackScore: '0.15',
-            notes: '単一構成に戻し、/tmp write_file禁止・パイプ終了コード隠蔽防止・git grep明示を追加'
+            budget: 'T=0.2 / Think 2048 / 36calls / 7m(8m) / 60s(120s)',
+            colab: 'L4: 33.3〜41.7% (4〜5/12) / Patch 58-67%',
+            fallbackScore: '0.15 (8m版 0.12)',
+            notes: 'Colab最高41.7%だがPatch Rate低め(58-67%)。repro作成等でNO_PATCHが増え8m版は0.12に低下'
           },
           {
             ver: 'V34 / V36 / V37 (未提出検証)',
