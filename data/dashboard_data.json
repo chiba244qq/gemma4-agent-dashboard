@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-26 10:25:32 UTC",
-  "last_updated_jst": "2026-11-26 19:25:32 JST",
+  "last_updated_utc": "2026-11-26 19:58:02 UTC",
+  "last_updated_jst": "2026-11-27 04:58:02 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -557,8 +557,8 @@
     {
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
-      "votes": 10,
-      "comments": 29,
+      "votes": 11,
+      "comments": 30,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
     },
@@ -611,6 +611,54 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 761176,
+      "title": "Top leaderboard score is disappointing, don't want competition to end on such low score :(",
+      "votes": 13,
+      "comments": 7,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761176"
+    },
+    {
+      "id": 762074,
+      "title": "Will our \"selected for scoring\" submissions be re-run for the final leaderboard ranking? Or will the current public leaderboard scores play a role in the final ranking...",
+      "votes": 1,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/762074"
+    },
+    {
+      "id": 762046,
+      "title": "Submission stuck on \"Notebook Running\" for over 24 hours (Budget-Aware Coding Agent v2)",
+      "votes": 0,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/762046"
+    },
+    {
+      "id": 762009,
+      "title": "Submission stuck in \"Scoring...\" for over 24 hours",
+      "votes": 1,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/762009"
+    },
+    {
+      "id": 762042,
+      "title": "My Gemma agent scored 0.05. How do you use AI to learn from a failed run?",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/762042"
+    },
+    {
+      "id": 761897,
+      "title": "Request: allow daily submission queueing while evaluation is pending",
+      "votes": 11,
+      "comments": 1,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761897"
+    },
+    {
       "id": 761995,
       "title": "Current behavior when a submission reaches the 12-hour limit",
       "votes": 0,
@@ -625,54 +673,6 @@
       "comments": 12,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
-    },
-    {
-      "id": 761975,
-      "title": "Request to cancel a pending submission (ID 58859494) so we can submit a fix",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761975"
-    },
-    {
-      "id": 761941,
-      "title": "Experiments with 31B and E4B, and what held up (local evaluation results + LB draws)",
-      "votes": 3,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761941"
-    },
-    {
-      "id": 761938,
-      "title": "Need Help - Not sure if my submission ran correctly",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761938"
-    },
-    {
-      "id": 761897,
-      "title": "Request: allow daily submission queueing while evaluation is pending",
-      "votes": 8,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761897"
-    },
-    {
-      "id": 743683,
-      "title": "Rerunning Failed Submissions",
-      "votes": 22,
-      "comments": 117,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743683"
-    },
-    {
-      "id": 761843,
-      "title": "Looking for a team",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761843"
     }
   ],
   "pipeline": [
