@@ -1,6 +1,6 @@
 {
-  "last_updated_utc": "2026-11-26 01:30:53 UTC",
-  "last_updated_jst": "2026-11-26 10:30:53 JST",
+  "last_updated_utc": "2026-11-26 10:25:32 UTC",
+  "last_updated_jst": "2026-11-26 19:25:32 JST",
   "active_job": null,
   "my_team": {
     "rank": 314,
@@ -558,41 +558,9 @@
       "id": 760471,
       "title": "11/18/26 Update on Submission Queue",
       "votes": 10,
-      "comments": 28,
+      "comments": 29,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/760471"
-    },
-    {
-      "id": 751104,
-      "title": "🌟Bonus Prize: Small Model Development ($10,000)",
-      "votes": 42,
-      "comments": 8,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
-    },
-    {
-      "id": 748287,
-      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
-      "votes": 43,
-      "comments": 40,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
-    },
-    {
-      "id": 747519,
-      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
-      "votes": 45,
-      "comments": 156,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
-    },
-    {
-      "id": 745998,
-      "title": "Note on Code Graphs for Async Functions",
-      "votes": 8,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/745998"
     },
     {
       "id": 743007,
@@ -603,6 +571,38 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743007"
     },
     {
+      "id": 747519,
+      "title": "Update on \"Kaggle Error\" Submissions & Queue Delays",
+      "votes": 45,
+      "comments": 156,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/747519"
+    },
+    {
+      "id": 748287,
+      "title": "New Gemma 4 Models Available: 12B, E4B, and E2B",
+      "votes": 43,
+      "comments": 40,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/748287"
+    },
+    {
+      "id": 751104,
+      "title": "🌟Bonus Prize: Small Model Development ($10,000)",
+      "votes": 42,
+      "comments": 8,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/751104"
+    },
+    {
+      "id": 745998,
+      "title": "Note on Code Graphs for Async Functions",
+      "votes": 8,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/745998"
+    },
+    {
       "id": 742815,
       "title": "How to get started + Competition's Official Discord",
       "votes": 8,
@@ -611,12 +611,60 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
+      "id": 761995,
+      "title": "Current behavior when a submission reaches the 12-hour limit",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761995"
+    },
+    {
+      "id": 759514,
+      "title": "five LoRA probes with identical scores ",
+      "votes": 9,
+      "comments": 12,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/759514"
+    },
+    {
+      "id": 761975,
+      "title": "Request to cancel a pending submission (ID 58859494) so we can submit a fix",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761975"
+    },
+    {
+      "id": 761941,
+      "title": "Experiments with 31B and E4B, and what held up (local evaluation results + LB draws)",
+      "votes": 3,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761941"
+    },
+    {
+      "id": 761938,
+      "title": "Need Help - Not sure if my submission ran correctly",
+      "votes": 0,
+      "comments": 0,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761938"
+    },
+    {
       "id": 761897,
       "title": "Request: allow daily submission queueing while evaluation is pending",
-      "votes": 6,
+      "votes": 8,
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761897"
+    },
+    {
+      "id": 743683,
+      "title": "Rerunning Failed Submissions",
+      "votes": 22,
+      "comments": 117,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/743683"
     },
     {
       "id": 761843,
@@ -625,54 +673,6 @@
       "comments": 0,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761843"
-    },
-    {
-      "id": 761784,
-      "title": "Gemma 4 Developer Agent: code and experiment notes",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761784"
-    },
-    {
-      "id": 761755,
-      "title": "Teaming up, looking for a data scientist / expert in ML ",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761755"
-    },
-    {
-      "id": 761733,
-      "title": "Submission stuck in Pending/Running for 27+ hours — 12h timeout & Phase 2 scoring query",
-      "votes": 1,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761733"
-    },
-    {
-      "id": 761690,
-      "title": "Proposal for organisers: allow our own GPU quota for submissions",
-      "votes": 0,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761690"
-    },
-    {
-      "id": 761529,
-      "title": "Developer Agent competition: free GPU quota extension for evaluation",
-      "votes": -3,
-      "comments": 0,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761529"
-    },
-    {
-      "id": 761467,
-      "title": "Submission exceeded runtime despite an 8-minute per-task limit — clarification on the 12-hour timer",
-      "votes": -1,
-      "comments": 1,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/761467"
     }
   ],
   "pipeline": [
