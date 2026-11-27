@@ -190,72 +190,69 @@ def main():
         "discussions": topics,
         "pipeline": [
             {
-                "version": "V23 Hybrid-Fast",
-                "ref": 58451077,
+                "version": "V37 Idris-V31 (T=1.0, top_k=64)",
+                "ref": 58985238,
                 "status": "RUNNING (PENDING)",
                 "status_color": "emerald",
-                "badge": "本番採点中（Day 27 / Ref 58451077）",
-                "target_date": "2026-11-17 10:20 JST 投入（評価完了待ち）",
-                "expected_score": "0.20 帯安定化（A100 33.3% / L4 50.0% 実測）",
-                "objective": "コード引用禁止・出力短縮による推論時間半減（-52.5%）と read_file 80-120行維持の両立",
+                "badge": "本番採点中（Ref 58985238）",
+                "target_date": "2026-11-27 15:14 JST 投入（評価完了待ち）",
+                "expected_score": "0.20 壁突破狙い（L4 2回連続 33.3% / タイムアウト 0 件）",
+                "objective": "Idris V31 の簡潔規律（One check, one repair, then submit）と T=1.0 / top_k=64 探索の 32k 本番環境での検証",
                 "benefits": [
-                    "L4 実機テストで True Pass Rate 50.0%（3/6: rich_4077, rich_3882, rich_3278 初突破）を記録",
-                    "Avg Step Latency 22.62s（L4）/ 23.52s（A100）で V9_Ultimate（49.55s）から約半減・タイムアウト耐性高",
-                    "Patch Rate 66.7% 達成、Gate 1 & Gate 2（pre-submission-gate）完全通過済"
+                    "L4 12問診断で 2 回連続 33.3%（4/12 PASS）を記録し、同環境での V9（25.0%）・V35（25.0%）を上回る安定性",
+                    "タイムアウト 0 件（V9 は 4 件・V35 は 2 件）、Avg Step Latency 25.88s〜27.65s と軽量",
+                    "Gate 1（vLLM パーサー純粋性）& Gate 2（Colab L4 6/6 test_patch=100%, 33.3% PASS）通過済"
                 ],
-                "risks": "max_time_minutes=8 設定のため、Kaggle 本番の全体制限（62問×処理時間）に対して余裕を注視する必要あり",
-                "condition": "現在 Kaggle L4 プールで採点進行中（確定結果を見て次手を判断）"
+                "risks": "Colab L4（3,584 トークン制限・4bit 量子化）上での検証であり、本番（32,768 トークン・高分散 Public LB）での優位再現は未確定",
+                "condition": "現在 Kaggle 評価キューで採点進行中（確定スコア待ち）"
             },
             {
-                "version": "今後の方針（Phase 1〜3 戦略）",
+                "version": "V38 Idris-Edit-Hardened (L4 A/B 完了)",
+                "ref": None,
+                "status": "HOLD (TIED IN A/B)",
+                "status_color": "amber",
+                "badge": "L4 12問ペア比較完了",
+                "target_date": "2026-11-27 02:57 JST L4 完了",
+                "expected_score": "L4 True Pass Rate 33.3%（V37 と 4/12 引き分け）",
+                "objective": "Call 8 編集前倒し・空 old_string 禁止 & python3 -c フォールバック・提出前 1 回チェックによる NO_DIFF / TEST_FAIL 削減",
+                "benefits": [
+                    "Avg 1st Edit Turn が 8.5 → 7.5 ターンへ早まり、Patch Rate も 50.0% → 58.3%（7/12）へ改善",
+                    "V37 と同一の 4 問（rich_4077, rich_3882, rich_3278, rich_3894）を安定突破"
+                ],
+                "risks": "rich_4076 で miss_old=6 により python3 -c フォールバックへ逃げられず NO_DIFF 終了。またプロンプト増量・提出前チェック必須化により L4 上の切り詰め回数が 48回 → 58回（Peak 11,959 tok）へ増加",
+                "condition": "V37 を上回れなかったため保留（まず V37 本番結果を確認）"
+            },
+            {
+                "version": "V35 Single-Compacted-V2 (本番 0.12 / L4 再検 25.0%)",
+                "ref": 58825693,
+                "status": "COMPLETE (0.12)",
+                "status_color": "rose",
+                "badge": "Colab 乖離・人工物検証済",
+                "target_date": "2026-11-24 20:00 JST 投入（Ref 58825693: 0.12）",
+                "expected_score": "Colab 41.7% → 本番 0.12（L4 再検では 25.0%）",
+                "objective": "ADK EventsCompactionConfig 相当の履歴圧縮（V35）による本番スコア向上の検証",
+                "benefits": [
+                    "L4 上の Patch Rate は 66.7%（8/12）と高く、平均レイテンシも 25.43s/step と高速"
+                ],
+                "risks": "Colab L4 の max_ctx=3584 左切り詰め（先頭 Issue 消失）下では圧縮が有利に働く『環境由来の人工物』が含まれていた懸念があり、本番（32,768 tokens）では 0.12 に留まった",
+                "condition": "L4 再比較でも V9 と同率 25.0%（3/12）に収束し、優位性を確認できず"
+            },
+            {
+                "version": "今後の方針（V37 本番評価 & 切り詰めなし検証）",
                 "ref": None,
                 "status": "NEXT STRATEGY",
                 "status_color": "indigo",
                 "badge": "最新戦略ロードマップ",
-                "target_date": "Day 27〜Final（締切 2026-12-02）",
-                "expected_score": "再現性重視・0.20 壁の安定突破狙い",
-                "objective": "プロンプト文言の小手先調整を凍結し、統計的根拠とハーネス構造・検証規律に基づく改善に集中",
+                "target_date": "〜Final（締切 2026-12-02）",
+                "expected_score": "環境ギャップ排除 & 0.20 壁突破",
+                "objective": "V37 本番スコアの確認と、A100 等での切り詰めなし環境・構造的ボトルネック（NO_DIFF）への対処",
                 "benefits": [
-                    "方針1（V23 本番結果の評価）: mobassir 氏（11回同一提出で 0.14〜0.19 分散）および dominyellow 氏（6,187 ラン・30 変種比較で小規模微調整は全滅）の知見に基づき、プロンプト文言の反復微修正を凍結して Ref 58451077 のスコア・完走性を評価",
-                    "方針2（時間安全枠 6〜7分最適化 & 挙動直接検証）: もし V23（8分枠）でタイムアウト傾向が出た場合は dominyellow 氏実証の 6〜7分枠へ調整し、evgendvorkin 氏の『既存テストだけでなく問題挙動そのものを直接検証する（Behavior Verification）』規律と AgentTool (skip_summarization: true) のみ検証",
-                    "方針3（L4 高速評価基盤での評価タスク拡張）: swegemma 3-Tier 編集互換＋StoppingCriteria（約 20 分/6問）を拡張し、より多くのタスクでのペア比較で有意差が出た候補のみ提出"
+                    "Ref 58985238（V37）の本番結果で Idris V31 規律 + T=1.0/top_k=64 が 32k 本番で機能するか評価",
+                    "A100 割当時に colab_a100_notrunc_diagnostic.ipynb（max_ctx=12,288〜20,480）で『切り詰め 0 回』の真の比較を実施",
+                    "12 問 L4 での小幅プロンプト調整のループを止め、失敗モード別の構造対策に集中"
                 ],
-                "risks": "新規識別子（Issue文に無いシンボルを隠れテストが要求するタスク 17/96問）など 31B モデル構造上限に由来する限界が存在",
-                "condition": "Ref 58451077 の確定ステータスに応じて方針2を即時実行"
-            },
-            {
-                "version": "L4 4連続比較検証（V24 / V25 / V26 / V27）",
-                "ref": None,
-                "status": "REJECTED IN A/B",
-                "status_color": "amber",
-                "badge": "Day 27 実機 A/B 不採用知見",
-                "target_date": "2026-11-17 L4 検証完了",
-                "expected_score": "L4 True Pass Rate 33.3%（V23 50.0% 未満）",
-                "objective": "公開有力手法（Patchsmith exp025, T=0.0, Think=512, ADK {problem_description} ピン留め）の横並び効果検証",
-                "benefits": [
-                    "V25_Deterministic_T0（T=0.0）: 33.3%（25.55s）。決定論化は誤った探索経路から抜け出せず V23（T=0.2）に劣後",
-                    "V26_Lean_Think512（512 tok）: 33.3%（19.11s 最速）。思考制限により Missing old_string が 2→7 に激増",
-                    "V27_Issue_Pinned（{problem_description} ピン留め）: 33.3%（22.50s）。12ターン・L4 3584 tok 上限下では冗長となり効果限定的",
-                    "V24_Patchsmith_Exp025: L4 途中で 1/5（長考 170s/turn＋thoughtループ多発）のため見送り"
-                ],
-                "risks": "いずれも単体では V23_Hybrid_Fast（50.0%）を超えられなかったため本番提出から除外",
-                "condition": "不採用確定（L4 検証環境の高速化・3-Tier 編集改修の副産物を獲得）"
-            },
-            {
-                "version": "V9_Ultimate (0.20 → 0.12) & V18 (0.18 → 0.13)",
-                "ref": 58387461,
-                "status": "VARIANCE PROOF",
-                "status_color": "rose",
-                "badge": "Day 20-26 分散・復旧実証",
-                "target_date": "2026-11-11〜16（Ref 58387461: 0.12 / 58268405: 0.13）",
-                "expected_score": "0.12 〜 0.20（同一 ZIP での実測振れ幅 ±0.08）",
-                "objective": "Day 20 (0.00) からの復旧、および同一パッケージ再提出による本番分散の実測",
-                "benefits": [
-                    "Day 20 (Ref 58179275: 0.00) で vLLM tool_call_parser='gemma4' との構文衝突を特定し、Gate 1/2 検査を確立",
-                    "V9_Ultimate（0.20→0.12）と V18（0.18→0.13）の再提出により、同一設定でも Public LB が大きく上下する分散特性を自社データで証明"
-                ],
-                "risks": "単発 LB スコア（58問中 1問=1.72点）に一喜一憂すると誤ったモデル選択を招く危険性",
-                "condition": "完了・統計的評価方針へ反映済"
+                "risks": "Public LB は同一 ZIP でも 0.12〜0.20 で大きく揺れるため、単発スコアの過度な解釈は禁物",
+                "condition": "Ref 58985238 確定待ち"
             }
         ],
         "unsolved_challenges": [
@@ -272,14 +269,14 @@ def main():
             },
             {
                 "id": "CHALLENGE-02",
-                "title": "Prompt-Only 微調整の限界と「Issue 文に無い新規識別子」の壁",
-                "category": "推論能力・情報欠損",
+                "title": "Colab L4 (3,584 tok) 切り詰め人工物 & 駆け込み NO_DIFF の壁",
+                "category": "検証環境ギャップ・編集失敗",
                 "severity": "CRITICAL",
                 "severity_color": "rose",
-                "metric": "30変種全滅 (dominyellow) / 新規識別子タスク正答率 3%",
-                "fact": "dominyellow 氏の 6,187 ラン実験では 30 種のプロンプト・スキル変更のいずれも同時ペア比較で優位を示せず、また 96問中 17問は隠れテストが Issue に未記載の PR 作者命名識別子を直接 import するため解決率が 3%（通常 31%）に激減していた。",
-                "bottleneck": "我々の L4 検証（V24〜V27 すべて 33.3%）でもプロンプト調整のみの天井が再確認された。また mobassir 氏実験でも Open-SWE-Traces 蒸留 LoRA はループ増加で悪化、include_thoughts=false は再考増加でタイムアウト悪化と報告されている。",
-                "current_hypothesis": "文言微修正を止め、Behavior Verification（挙動の直接再現検証）と AgentTool によるコンテキスト分離、および 6〜7分予算バランスに絞る。"
+                "metric": "L4 切り詰め 38〜62回 / V37・V38 L4 頭打ち 33.3%",
+                "fact": "Colab L4 は max_ctx=3584 で入力先頭を切り捨てるため、V9 (62回超過) より履歴圧縮の V35 (39回超過) が有利に見える環境由来の人工物が発生しやすい。また 12 ターン制限下では調査が長引き、edit_file(..., old='') による NO_DIFF が全系統で多発（V37: 5〜6件, V38: 4件）。",
+                "bottleneck": "本番は 32,768 トークン（ADK compaction 14,336）であり L4 と挙動が異なる。さらに 12 問規模の L4 ではプロンプト微調整をしても 33.3% 付近で頭打ち傾向が見られた。",
+                "current_hypothesis": "V37 本番結果（Ref 58985238）で 32k 環境での実力を確認しつつ、A100 による切り詰めゼロ比較と失敗モード別の構造対策へ移行する。"
             },
             {
                 "id": "CHALLENGE-03",
@@ -352,6 +349,18 @@ def main():
                 "desc_en": "dominyellow observed Notebook Timeout at 8m/240s and 15m/50calls while 6m/28calls always completed. Repair Lab exp025 caps single commands at 60s.",
                 "desc_ja": "dominyellow 氏は 8分/240秒設定でも隠れテスト全体時間超過（0点）に陥り、6分/28コール設定で完走を安定させました。また Repair Lab exp025 では単一コマンド timeout を 60秒に絞っています。",
                 "detail_ja": "【次手への反映】\n現在採点中の Ref 58451077 (V23, 8分/240s) が万一タイムアウトする、または今後の安定版を作る際は max_time_minutes=6〜7・timeout_seconds=60〜120 の安全設定を適用します。"
+            },
+            {
+                "title": "V37/V38 L4 A/B Diagnostics & Context Truncation Artifact Analysis",
+                "title_en": "V37/V38 L4 A/B Diagnostics & Context Truncation Artifact Analysis",
+                "title_ja": "⑥ V37/V38 L4 診断（33.3% 安定）と 3,584 トークン先頭切り詰め人工物の特定",
+                "tag": "DIAGNOSTICS",
+                "tag_en": "DIAGNOSTICS",
+                "tag_ja": "最新実測知見",
+                "desc": "V37 achieved 33.3% twice on L4 (0 timeouts), tying V38 (33.3%). Diagnostics revealed L4 max_ctx=3584 left-truncation drops issue heads and late empty-old_string edits cause NO_DIFF.",
+                "desc_en": "V37 achieved 33.3% twice on L4 (0 timeouts), tying V38 (33.3%). Diagnostics revealed L4 max_ctx=3584 left-truncation drops issue heads and late empty-old_string edits cause NO_DIFF.",
+                "desc_ja": "V35 (0.12) の乖離調査から、Colab L4 の max_ctx=3584 左切り詰めが『先頭の Issue 文』を削る環境由来の人工物（V9: 62回 vs V35: 39回超過）を生む点を特定。一方、V37 (T=1.0, top_k=64) は L4 で 2回連続 33.3%・タイムアウト 0件を記録し、V38 との比較でも 33.3% 同率だったため V37（Ref 58985238）を本番提出。",
+                "detail_ja": "【次手への反映】\n・V38 は着手ターン（8.5→7.5）と Patch Rate（50.0%→58.3%）を改善したものの、トークン膨張で切り詰めが 48回→58回に増え Pass Rate は 33.3% 止まり。\n・今後は Ref 58985238 (V37) の本番結果と A100 切り詰めゼロ検証で真の効果を切り分けます。"
             },
             {
                 "title": "vLLM Native Parser Purity & Behavior Verification Focus",
