@@ -207,6 +207,23 @@ def main():
                 "condition": "現在 Kaggle 評価キューで採点進行中（確定スコア待ち）"
             },
             {
+                "version": "V37 Idris-V31 (T=0.2, Gate PASS 待機中)",
+                "ref": None,
+                "status": "READY (GATE PASS)",
+                "status_color": "sky",
+                "badge": "L4 50.0% (3/6) Gate PASS",
+                "target_date": "2026-11-28 09:57 JST L4 検証完了（次提出候補）",
+                "expected_score": "0.20 壁突破狙い（L4 6問で 50.0% vs T=1.0 33.3%）",
+                "objective": "V37 Idris V31 規律を低温度 T=0.2（決定論寄り）で実行した際の精度・編集確定率の検証",
+                "benefits": [
+                    "L4 6問（colab_v37_t02_verify.ipynb）で True Pass Rate 50.0%（3/6: rich_3718, rich_3882, rich_3278 突破）を記録（同 6問での T=1.0 版は 33.3%）",
+                    "Avg 1st Edit Turn 6.8 ターン、Patch Rate 66.7%、Test Patch OK 100.0%",
+                    "submission_v37_idris_v31_t02.zip で Gate 1 & Gate 2 PASS 確認済"
+                ],
+                "risks": "6問の小サンプルかつ L4 (3,584 tok 切り詰め 25回) 上の結果であり、rich_4077 で 1件タイムアウト（528.89s）が発生している点には注意が必要",
+                "condition": "Ref 58985238（V37_T10_TopK64）の Pending 解除次第、次手として提出可能"
+            },
+            {
                 "version": "V38 Idris-Edit-Hardened (L4 A/B 完了)",
                 "ref": None,
                 "status": "HOLD (TIED IN A/B)",
