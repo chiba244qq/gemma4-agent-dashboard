@@ -1,14 +1,7 @@
 {
-  "last_updated_utc": "2026-11-28 09:59:23 UTC",
-  "last_updated_jst": "2026-11-28 18:59:23 JST",
-  "active_job": {
-    "ref": 58985238,
-    "description": "V37 Idris-V31 Discipline (T=1.0, top_k=64, Think2048, 8m/120s/40calls) - Gate PASS (L4 33.3%)",
-    "start_jst": "2026-11-27 15:14:39 JST",
-    "elapsed_hours": 27.7,
-    "progress_pct": 98.0,
-    "est_completion_jst": "2026-11-28 19:14:39 JST"
-  },
+  "last_updated_utc": "2026-11-28 12:40:44 UTC",
+  "last_updated_jst": "2026-11-28 21:40:44 JST",
+  "active_job": null,
   "my_team": {
     "rank": 314,
     "team_name": "Tsuyoshi Chiba",
@@ -291,8 +284,8 @@
       "ref": 58985238,
       "date_utc": "2026-11-27 06:14:39 UTC",
       "date_jst": "2026-11-27 15:14:39 JST",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.18,
       "description": "V37 Idris-V31 Discipline (T=1.0, top_k=64, Think2048, 8m/120s/40calls) - Gate PASS (L4 33.3%)",
       "error": ""
     },
@@ -618,20 +611,20 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/742815"
     },
     {
-      "id": 762442,
-      "title": "Why has nobody broken 0.24 yet?",
-      "votes": 5,
-      "comments": 5,
-      "author": "",
-      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/762442"
-    },
-    {
       "id": 762498,
       "title": "Gemma E4B score",
       "votes": -1,
-      "comments": 0,
+      "comments": 1,
       "author": "",
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/762498"
+    },
+    {
+      "id": 762442,
+      "title": "Why has nobody broken 0.24 yet?",
+      "votes": 7,
+      "comments": 5,
+      "author": "",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/discussion/762442"
     },
     {
       "id": 761004,
